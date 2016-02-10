@@ -199,13 +199,13 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2014/07/29/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/">Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</a>
+                                <a class="link-unstyled" href="/2014/10/29/JSONP/">JSONP</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Jul 29 2014 22:01:59 GMT+0300">
+    <time itemprop="datePublished" content="Wed Oct 29 2014 21:44:50 GMT+0200">
 	
-		    Jul 29, 2014
+		    Oct 29, 2014
     	
     </time>
     
@@ -219,11 +219,11 @@
                 </div>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
-                        <p>How to properly get instance of object.</p>
+                        <p>JSONP is really simple trick to overcome XMLHttpRequest same origin domain policy - you can’t send AJAX (XMLHttpRequest) request to different domain.</p>
                     
                     
                         
-                            <a href="/2014/07/29/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2014/10/29/JSONP/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
@@ -241,71 +241,15 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2014/07/25/Performance-Javascript-adding-text-to-a-node/">Performance: JavaScript adding text to a node</a>
+                                <a class="link-unstyled" href="/2014/10/16/git-pull-versus-git-pull-rebase/">git pull versus git pull --rebase</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Jul 25 2014 23:10:14 GMT+0300">
+    <time itemprop="datePublished" content="Thu Oct 16 2014 22:05:58 GMT+0300">
 	
-		    Jul 25, 2014
+		    Oct 16, 2014
     	
     </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/jQuery/">jQuery</a>
-
-
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>What is the most reasonable approach?</p>
-<ul>
-<li>jQuery’s <code>.html()</code> with previously encoded text</li>
-<li>Query’s <code>.text()</code></li>
-<li><code>innerHTML</code> with previously encoded text</li>
-<li><code>innerText</code> / <code>textContent</code></li>
-<li><code>document.createTextNode</code> once per element</li>
-<li><code>document.createTextNode</code> once per test run</li>
-</ul>
-                    
-                    
-                        
-                            <a href="/2014/07/25/Performance-Javascript-adding-text-to-a-node/" class="postShorten-excerpt_link link ">Continue reading</a>
-                            
-                        
-                    
-                    
-                </div>
-            </div>
-            
-        </article>
-    
-        
-        
-                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/07/19/Got-15-minutes-and-want-to-learn-Git/">Got 15 minutes and want to learn Git?</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Jul 19 2014 09:56:12 GMT+0300">
-	
-		    Jul 19, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Git/">Git</a>, <a class="category-link" href="/categories/Git/Web/">Web</a>
-
-
     
 </div>
                 </div>
@@ -313,12 +257,14 @@
                     
                         <p>
                             
-Initialize a GitGit allows groups of people to work on the same documents (often code) at the same time, and without stepping on each other’s toes. It’s a distributed version control system.
-Our term<br>
+
+Short answergit pull = git fetch + git merge
+git pull --rebase = git fetch + git rebaseFor more detail info how git pull and git rabase differs continue reading.
+Long answer: git merge and git rebas<br>
                     
                     
                         
-                            <a href="/2014/07/19/Got-15-minutes-and-want-to-learn-Git/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2014/10/16/git-pull-versus-git-pull-rebase/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
@@ -342,13 +288,64 @@ Our term<br>
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2014/07/17/Bootstrap3-CSS/">Bootstrap 3: CSS</a>
+                                <a class="link-unstyled" href="/2014/09/15/OOP-in-prototype-style/">OOP in prototype style</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Jul 17 2014 20:10:04 GMT+0300">
+    <time itemprop="datePublished" content="Mon Sep 15 2014 22:40:38 GMT+0300">
 	
-		    Jul 17, 2014
+		    Sep 15, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/OOP/">OOP</a>
+
+
+    
+</div>
+                </div>
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    
+                        <p>The main point is that one object can be <code>prototype</code> of another object. That means if property isn’t found in the object - than it takes from <code>prototype</code> object. In JavaScript this implementation is at the language level.</p>
+                    
+                    
+                        
+                            <a href="/2014/09/15/OOP-in-prototype-style/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            
+                        
+                    
+                    
+                </div>
+            </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/09/15/OOP-in-prototype-style/title.png"/>
+                </div>
+                
+            
+        </article>
+    
+        
+            
+                
+            
+        
+        
+            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
+        
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/09/08/Centering-in-CSS/">Centering in CSS</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Sep 08 2014 22:54:09 GMT+0300">
+	
+		    Sep 08, 2014
     	
     </time>
     
@@ -362,11 +359,11 @@ Our term<br>
                 </div>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
-                        <p>A detailed look for implementation of UI popular library.</p>
+                        <p>A fast guide to help centering everything with CSS.</p>
                     
                     
                         
-                            <a href="/2014/07/17/Bootstrap3-CSS/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2014/09/08/Centering-in-CSS/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
@@ -375,7 +372,58 @@ Our term<br>
             </div>
             
                 <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/07/17/Bootstrap3-CSS/title.jpg"/>
+                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/09/08/Centering-in-CSS/title.jpg"/>
+                </div>
+                
+            
+        </article>
+    
+        
+            
+                
+            
+        
+        
+            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
+        
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/09/01/Medium-Style-Page-Transition/">Medium-Style Page Transition</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Sep 01 2014 22:50:51 GMT+0300">
+	
+		    Sep 01, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/CSS/">CSS</a>, <a class="category-link" href="/categories/CSS/Inspiration/">Inspiration</a>, <a class="category-link" href="/categories/CSS/Inspiration/Javascript/">Javascript</a>
+
+
+    
+</div>
+                </div>
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    
+                        <p>An article on how to achieve <a href="https://medium.com/">Medium’s</a> next page transition effect—an effect that can be seen by clicking anywhere on the “Read Next” footer at the bottom of the page. This effect is characterized by the lower article easing upward as the current article fades up and out.</p>
+                    
+                    
+                        
+                            <a href="/2014/09/01/Medium-Style-Page-Transition/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            
+                        
+                    
+                    
+                </div>
+            </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/09/01/Medium-Style-Page-Transition/title.gif"/>
                 </div>
                 
             
@@ -389,19 +437,19 @@ Our term<br>
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2014/07/14/Deferred-and-promise-in-jQuery/">Deferred and promise in jQuery</a>
+                                <a class="link-unstyled" href="/2014/08/19/Article-Intro-Effects-Examples/">Article Intro Effects Examples</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Jul 14 2014 21:17:26 GMT+0300">
+    <time itemprop="datePublished" content="Tue Aug 19 2014 12:46:59 GMT+0300">
 	
-		    Jul 14, 2014
+		    Aug 19, 2014
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/jQuery/">jQuery</a>
+    <a class="category-link" href="/categories/CSS/">CSS</a>
 
 
     
@@ -409,11 +457,110 @@ Our term<br>
                 </div>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
-                        <p>How handle async code with jQuery via promises and creating own promise via deffered.</p>
+                        <p>Most of the effects we tried are highly experimental; animating large images can become a bit sluggish, also because a couple of transitions happening at the same time. The effect gets triggered when <code>scrolling begins</code>  or when the <code>button is clicked</code>.</p>
                     
                     
                         
-                            <a href="/2014/07/14/Deferred-and-promise-in-jQuery/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2014/08/19/Article-Intro-Effects-Examples/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            
+                        
+                    
+                    
+                </div>
+            </div>
+            
+        </article>
+    
+        
+            
+                
+            
+        
+        
+            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
+        
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/08/11/Canvas-off-icon-navigation-with-an-animated-border-effect/">Canvas-off icon navigation with an animated border effect</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Aug 11 2014 21:11:48 GMT+0300">
+	
+		    Aug 11, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/CSS/">CSS</a>
+
+
+    
+</div>
+                </div>
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    
+                        <p>
+                            
+
+The MarkupThe HTML structure for our menu will consist of a nav element that will contain a trigger anchor and an unordered list with the menu items which will consist of icons:
+123456789&lt;nav id=<br>
+                    
+                    
+                        
+                            <a href="/2014/08/11/Canvas-off-icon-navigation-with-an-animated-border-effect/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            
+                        
+                    
+                    
+                        </p>
+                    
+                </div>
+            </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/08/11/Canvas-off-icon-navigation-with-an-animated-border-effect/title.png"/>
+                </div>
+                
+            
+        </article>
+    
+        
+        
+                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting">
+        
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2014/08/10/Maybe-you-don-t-need-jQuery/">Maybe, You don&#39;t need jQuery</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Aug 10 2014 18:08:20 GMT+0300">
+	
+		    Aug 10, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/jQuery/">jQuery</a>
+
+
+    
+</div>
+                </div>
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    
+                        <p>Do you really need to use jQuery methods instead of vanila Javascript</p>
+                    
+                    
+                        
+                            <a href="/2014/08/10/Maybe-you-don-t-need-jQuery/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
@@ -431,13 +578,13 @@ Our term<br>
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2014/07/13/JavaScript-Promises/">JavaScript Promises</a>
+                                <a class="link-unstyled" href="/2014/08/06/Performance-JavaScript-loops/">Performance: JavaScript loops</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Jul 13 2014 13:43:08 GMT+0300">
+    <time itemprop="datePublished" content="Wed Aug 06 2014 20:38:48 GMT+0300">
 	
-		    Jul 13, 2014
+		    Aug 06, 2014
     	
     </time>
     
@@ -451,19 +598,14 @@ Our term<br>
                 </div>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
-                        <p>
-                            
-Promises arrive in JavaScript!Here’s how you create a promise:
-12345678910var promise = new Promise(function(resolve, reject) &#123;  // do a thing, possibly async, then…  if (/* everything turned ou<br>
+                        <p>Is it faster to use the native forEach or just loop with for?</p>
                     
                     
                         
-                            <a href="/2014/07/13/JavaScript-Promises/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2014/08/06/Performance-JavaScript-loops/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
-                    
-                        </p>
                     
                 </div>
             </div>
@@ -471,30 +613,26 @@ Promises arrive in JavaScript!Here’s how you create a promise:
         </article>
     
         
-            
-                
-            
         
-        
-            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
+                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting">
         
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2014/07/02/Class-manipulation-in-Javascript-jQuery-and-AngularJS/">Class manipulation in Javascript, jQuery and AngularJS</a>
+                                <a class="link-unstyled" href="/2014/08/03/CSS-Transforms/">CSS Transforms</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jul 02 2014 23:24:37 GMT+0300">
+    <time itemprop="datePublished" content="Sun Aug 03 2014 22:13:20 GMT+0300">
 	
-		    Jul 02, 2014
+		    Aug 03, 2014
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Angular/">Angular</a>, <a class="category-link" href="/categories/Angular/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Angular/Javascript/jQuery/">jQuery</a>
+    <a class="category-link" href="/categories/CSS/">CSS</a>
 
 
     
@@ -502,175 +640,17 @@ Promises arrive in JavaScript!Here’s how you create a promise:
                 </div>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
-                        <p>In this article, I would like to create short reference for how add/remove/toogle/… class in pure Javascript and with freemework.</p>
+                        <p>So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one state to another.<br>
                     
                     
                         
-                            <a href="/2014/07/02/Class-manipulation-in-Javascript-jQuery-and-AngularJS/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2014/08/03/CSS-Transforms/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
                     
                 </div>
             </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/07/02/Class-manipulation-in-Javascript-jQuery-and-AngularJS/title.jpg"/>
-                </div>
-                
-            
-        </article>
-    
-        
-            
-                
-            
-        
-        
-            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/06/14/CLI-in-Windows-useful-commands/">CLI in Windows, useful commands</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Jun 14 2014 10:22:15 GMT+0300">
-	
-		    Jun 14, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/CLI/">CLI</a>
-
-
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>The command line lets you communicate directly with your computer and instruct it to perform various tasks. For this you have to use specific commands</p>
-                    
-                    
-                        
-                            <a href="/2014/06/14/CLI-in-Windows-useful-commands/" class="postShorten-excerpt_link link ">Continue reading</a>
-                            
-                        
-                    
-                    
-                </div>
-            </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/06/14/CLI-in-Windows-useful-commands/title.jpg"/>
-                </div>
-                
-            
-        </article>
-    
-        
-            
-                
-            
-        
-        
-            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/05/31/Difference-of-HTTP-and-HTTPS/">Difference of HTTP and HTTPS</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat May 31 2014 06:00:36 GMT+0300">
-	
-		    May 31, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/HTTP/">HTTP</a>
-
-
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>Hyper Text Transfer Protocol Secure (HTTPS) is a <code>secure version</code> of the Hyper Text Transfer Protocol (HTTP). HTTPS allows secure e-commerce transactions, such as on-line banking.</p>
-                    
-                    
-                        
-                            <a href="/2014/05/31/Difference-of-HTTP-and-HTTPS/" class="postShorten-excerpt_link link ">Continue reading</a>
-                            
-                        
-                    
-                    
-                </div>
-            </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/05/31/Difference-of-HTTP-and-HTTPS/title.jpg"/>
-                </div>
-                
-            
-        </article>
-    
-        
-            
-                
-            
-        
-        
-            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/">Function Invocation Patterns in JavaScript</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu May 29 2014 05:47:57 GMT+0300">
-	
-		    May 29, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Pattern/">Pattern</a>
-
-
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>Describe different approaches to define and call functions</p>
-                    
-                    
-                        
-                            <a href="/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/" class="postShorten-excerpt_link link ">Continue reading</a>
-                            
-                        
-                    
-                    
-                </div>
-            </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/title.png"/>
-                </div>
-                
             
         </article>
     
@@ -694,7 +674,7 @@ Promises arrive in JavaScript!Here’s how you create a promise:
             </a>
         </li>
         
-        <li class="pagination-number">page 3 of 4</li>
+        <li class="pagination-number">page 3 of 6</li>
     </ul>
 </div>
 

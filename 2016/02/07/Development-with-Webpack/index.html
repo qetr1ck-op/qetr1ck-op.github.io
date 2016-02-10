@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Blog | qetr1ck-op">
+    <title>Development with Webpack and React part 1 - Blog | qetr1ck-op</title>
+    <meta name="author" content="Orest Prystayko">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.
+&amp;lt;!--toc--&amp;gt;">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Development with Webpack and React part 1">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/index.html">
+<meta property="og:site_name" content="Blog | qetr1ck-op">
+<meta property="og:description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.
+&amp;lt;!--toc--&amp;gt;">
+<meta property="og:updated_time" content="2016-02-10T19:21:23.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Development with Webpack and React part 1">
+<meta name="twitter:description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.
+&amp;lt;!--toc--&amp;gt;">
+<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
+    
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+    
+        <meta property="og:image" content="/2016/02/07/Development-with-Webpack/title.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/title.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="/#search">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Orest Prystayko</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">Linked In</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Development with Webpack and React part 1
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Feb 07 2016 12:11:41 GMT+0200">
+	
+		    Feb 07, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Begin with compression of build tools. Conception of bundlers. How to install and base configuration.</p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Task_Runners_and_Bundlers"><span class="toc-text">Task Runners and Bundlers</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Browserify"><span class="toc-text">Browserify</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Webpack"><span class="toc-text">Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why_use_webpack_3F"><span class="toc-text">Why use webpack?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Development_with_webpack"><span class="toc-text">Development with webpack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Directory_Structure"><span class="toc-text">Directory Structure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Setting_Up_Webpack_Configuration"><span class="toc-text">Setting Up Webpack Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Adding_a_Build_Shortcut"><span class="toc-text">Adding a Build Shortcut</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Setting_Up_webpack-dev-server"><span class="toc-text">Setting Up webpack-dev-server</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Splitting_Up_Configuration"><span class="toc-text">Splitting Up Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuring_Hot_Module_Replacement__28HMR_29"><span class="toc-text">Configuring Hot Module Replacement (HMR)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Refreshing_CSS"><span class="toc-text">Refreshing CSS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Enabling_Sourcemaps"><span class="toc-text">Enabling Sourcemaps</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Library_and_externals"><span class="toc-text">Library and externals</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NODE_ENV_and_plugins"><span class="toc-text">NODE_ENV and plugins</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Final_app_sources"><span class="toc-text">Final app sources</span></a></li></ol>
+<a id="more"></a>
+<h1 id="Task_Runners_and_Bundlers"><a href="#Task_Runners_and_Bundlers" class="headerlink" title="Task Runners and Bundlers"></a>Task Runners and Bundlers</h1><p>Webpack is a powerful module bundler. It hides a lot of power behind configuration. Once you understand its fundamentals, it becomes much easier to use this power.</p>
+<p>Historically speaking, there have been many build systems. <a href="https://en.wikipedia.org/wiki/Make_%28software%29" target="_blank" rel="external">Make</a> is perhaps the best known, and is still a viable option. To make things easier, specialized task runners, such as <a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a> and <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a> appeared. Plugins available through npm, made both task runners powerful.</p>
+<p>Task runners are great tools on a high level. They allow you to perform operations in a cross-platform manner. The problems begin when you need to splice various assets together and produce bundles. This is the reason we have bundlers, such as <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a> or <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a>.</p>
+<p>Continuing further on this path, <a href="http://jspm.io/" target="_blank" rel="external">JSPM</a> pushes package management directly to the browser. It relies on <a href="https://github.com/systemjs/systemjs" target="_blank" rel="external">System.js</a>, a dynamic module loader. Unlike Browserify and Webpack, it skips the bundling step altogether during development. You can generate a production bundle using it, however.</p>
+<h2 id="Browserify"><a href="#Browserify" class="headerlink" title="Browserify"></a>Browserify</h2><p>Browserify is one solution to the module problem. It provides a way to bundle <em>CommonJS</em> modules together. You can hook it up with Gulp. There are smaller transformation tools that allow you to move beyond the basic usage. For example, <em>watchify</em> provides a file watcher that creates bundles for you during development. This will save some effort and no doubt is a good solution up to a point.</p>
+<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><p>In its simplicity, it is a module bundler. It takes a bunch of assets in and outputs assets you can give to your client.</p>
+<p>Webpack takes a more monolithic approach than Browserify. Whereas Browserify consists of multiple small tools, Webpack comes with a core that provides a lot of functionality out of the box. The core can be extended using specific loaders and plugins.</p>
+<h3 id="Why_use_webpack_3F"><a href="#Why_use_webpack_3F" class="headerlink" title="Why use webpack?"></a>Why use webpack?</h3><ul>
+<li>Hot Module Replacement</li>
+<li>Dynamic bundle loading</li>
+<li>Loaders and Plugins</li>
+<li>Asset Hashing</li>
+<li>commonJS, AMD, ES6</li>
+<li>Live reload</li>
+</ul>
+<h1 id="Development_with_webpack"><a href="#Development_with_webpack" class="headerlink" title="Development with webpack"></a>Development with webpack</h1><p>Obviously for development you already should have <code>node.js</code>, better via <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">nvm</a>, <code>npm</code>, <code>git</code>, <code>.gitignore</code></p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="tag">i</span> webpack -D</span><br></pre></td></tr></table></figure>
+<p>npm maintains a directory where it installs possible executables of packages. You can display the exact path using</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> bin<span class="function"> -&gt;</span> ...<span class="pi">/node_modules/</span>.bin</span><br></pre></td></tr></table></figure>
+<h1 id="Directory_Structure"><a href="#Directory_Structure" class="headerlink" title="Directory Structure"></a>Directory Structure</h1><p>Set up a structure like this:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/app</span><br><span class="line">    index<span class="class">.js</span></span><br><span class="line">    component<span class="class">.js</span></span><br><span class="line">/build</span><br><span class="line">    index<span class="class">.html</span></span><br><span class="line">package<span class="class">.json</span></span><br><span class="line">webpack<span class="class">.config</span><span class="class">.js</span></span><br></pre></td></tr></table></figure>
+<h1 id="Setting_Up_Webpack_Configuration"><a href="#Setting_Up_Webpack_Configuration" class="headerlink" title="Setting Up Webpack Configuration"></a>Setting Up Webpack Configuration</h1><p>For this purpose we’ll build <code>webpack.config.js</code>.</p>
+<p>To map our application to build/bundle.js we need configuration like this:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PATHS = &#123;</span><br><span class="line">  app: path.join(__dirname, <span class="string">'app'</span>),</span><br><span class="line">  build: path.join(__dirname, <span class="string">'build'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="module"><span class="keyword">module</span>.exports = </span>&#123;</span><br><span class="line">  <span class="comment">// Entry accepts a path or an object of entries.</span></span><br><span class="line">  <span class="comment">// The build chapter contains an example of the latter.</span></span><br><span class="line">  entry: PATHS.app,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: PATHS.build,</span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Difference <a href="https://www.google.com.ua/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=0ahUKEwijtcCax-XKAhXCa3IKHeKEATYQFgggMAE&amp;url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F10822574%2Fdifference-between-path-normalize-and-path-resolve-in-node-js&amp;usg=AFQjCNHGkW_e3ZkNAa8LW-F3DlMKLThd2A&amp;sig2=KNJT8WqvuceEiFZK7nGDVw" target="_blank" rel="external">path.resolve vs path.join</a></p>
+<h1 id="Adding_a_Build_Shortcut"><a href="#Adding_a_Build_Shortcut" class="headerlink" title="Adding a Build Shortcut"></a>Adding a Build Shortcut</h1><p>Given executing node_modules/.bin/webpack is a little verbose, we should do something about it:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="attribute">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<p>This works because npm adds <code>node_modules/.bin</code> temporarily to the path. As a result, rather than having to write <code>&quot;build&quot;: &quot;node_modules/.bin/webpack&quot;</code>, we can do just <code>&quot;build&quot;: &quot;webpack&quot;</code>.</p>
+<h1 id="Setting_Up_webpack-dev-server"><a href="#Setting_Up_webpack-dev-server" class="headerlink" title="Setting Up webpack-dev-server"></a>Setting Up webpack-dev-server</h1><p>webpack-dev-server is a development server running in-memory. It refreshes content automatically in the browser while you develop your application. This makes it roughly equivalent to tools, such as <em>LiveReload</em> or <em>Browsersync</em>.</p>
+<p>The greatest advantage Webpack has over these tools is <em>Hot Module Replacement</em> (HMR). In short, it provides a way to patch the browser state without a full refresh. </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="tag">i</span> webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<p>Given our <code>index.html</code> is below <code>./build</code>, we should let<code>webpack-dev-server</code> to serve the content from there:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"></span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server --content-base build"</span> <span class="comment">// --port 3000</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<h1 id="Splitting_Up_Configuration"><a href="#Splitting_Up_Configuration" class="headerlink" title="Splitting Up Configuration"></a>Splitting Up Configuration</h1><p>As the development setup has certain requirements of its own, we’ll need to split our Webpack configuration. Given Webpack configuration is just JavaScript, there are many ways to achieve this. At least the following ways are feasible:</p>
+<ul>
+<li>Maintain configuration in multiple files and point Webpack to each through <code>--config</code> parameter. Share configuration through module imports. You can see this approach in action at <a href="https://github.com/HenrikJoreteg/hjs-webpack" target="_blank" rel="external">webpack/react-starter</a>.</li>
+<li>Push configuration to a library which you then consume. Example: <a href="https://github.com/HenrikJoreteg/hjs-webpack#usage" target="_blank" rel="external">HenrikJoreteg/hjs-webpack</a>.</li>
+<li>Maintain configuration within a single file and branch there. If we trigger a script through npm (i.e., <code>npm run test</code>), npm sets this information in an environment variable. We can match against it and return the configuration we want.</li>
+</ul>
+<p>To keep things simple and help with the approach, I’ve defined a custom <code>merge</code> function that concatenates arrays and merges objects. This is convenient with Webpack as we’ll soon see:</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-<span class="built_in">merge</span> --<span class="keyword">save</span>-dev</span><br></pre></td></tr></table></figure>
+<p>Next, we need to define some split points to our configuration so we can customize it per npm script:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> TARGET = process.env.npm_lifecycle_event;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PATHS = &#123;</span><br><span class="line">  app: path.join(__dirname, <span class="string">'app'</span>),</span><br><span class="line">  build: path.join(__dirname, <span class="string">'build'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="module"><span class="keyword">module</span>.exports = </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> common = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Entry accepts a path or an object of entries.</span></span><br><span class="line">    <span class="comment">// The build chapter contains an example of the latter.</span></span><br><span class="line">    entry: PATHS.app,</span><br><span class="line">    output: &#123;</span><br><span class="line">      path: PATHS.build,</span><br><span class="line">      filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Default configuration</span></span><br><span class="line">  <span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line">    <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(TARGET === <span class="string">'build'</span>) &#123;</span><br><span class="line">    <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;&#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Configuring_Hot_Module_Replacement__28HMR_29"><a href="#Configuring_Hot_Module_Replacement__28HMR_29" class="headerlink" title="Configuring Hot Module Replacement (HMR)"></a>Configuring Hot Module Replacement (HMR)</h1><p>Hot Module Replacement gives us simple means to refresh the browser automatically as we make changes. </p>
+<p>In order to make this work, we’ll need to connect the generated bundle running in-memory to the development server. Webpack uses <em>WebSocket</em> based communication to achieve this.</p>
+<p>Beyond this we’ll need to enable <code>HotModuleReplacementPlugin</code> to make the setup work:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;</span><br><span class="line">    devServer: &#123;</span><br><span class="line">      contentBase: PATHS.build,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Enable history API fallback so HTML5 History API based</span></span><br><span class="line">      <span class="comment">// routing works. This is a good default that will come</span></span><br><span class="line">      <span class="comment">// in handy in more complicated setups.</span></span><br><span class="line">      historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">      hot: <span class="literal">true</span>,</span><br><span class="line">      inline: <span class="literal">true</span>,</span><br><span class="line">      progress: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Display only errors to reduce the amount of output.</span></span><br><span class="line">      stats: <span class="string">'errors-only'</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Parse host and port from env so this is easy to customize.</span></span><br><span class="line">      host: process.env.HOST,</span><br><span class="line">      port: process.env.PORT</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">      <span class="keyword">new</span> webpack.HotModuleReplacementPlugin() <span class="comment">// (!)</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>Given we pushed <code>contentBase</code> configuration to JavaScript, we can remove it from <code>package.json</code>:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="attribute">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line"></span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server"</span> <span class="comment">//--watch-poll --inline --hot</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<h1 id="Refreshing_CSS"><a href="#Refreshing_CSS" class="headerlink" title="Refreshing CSS"></a>Refreshing CSS</h1><p><a href="http://webpack.github.io/docs/using-loaders.html]?" target="_blank" rel="external">What are loaders</a></p>
+<p>Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file as the parameter and return the new source.</p>
+<p>For example, you can use loaders to tell webpack to load <code>CoffeeScript</code> or <code>JSX</code></p>
+<p>To load CSS into a project, we’ll need to use a couple of loaders:</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i css-loader style-loader --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<p>Now that we have the loaders we need, we’ll need to make sure Webpack is aware of them:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> common = &#123;</span><br><span class="line">  ...</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="module"><span class="keyword">module</span>: </span>&#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// Test expects a RegExp! Note the slashes!</span></span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        loaders: [<span class="string">'style'</span>, <span class="string">'css'</span>],</span><br><span class="line">        <span class="comment">// Include accepts either a path or an array of paths.</span></span><br><span class="line">        include: PATHS.app <span class="comment">// It is a good idea to set up include always</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>The loaders are evaluated from right to left. In this case, <code>css-loader</code> gets evaluated first, then <code>style-loader</code>. <code>css-loader</code> will resolve <code>@import</code> and url statements in our CSS files. <code>style-loader</code> deals with require statements in our JavaScript. A similar approach works with CSS preprocessors, like Sass and Less, and their loaders.</p>
+<h1 id="Enabling_Sourcemaps"><a href="#Enabling_Sourcemaps" class="headerlink" title="Enabling Sourcemaps"></a>Enabling Sourcemaps</h1><p>In Webpack this is controlled through the devtool setting:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="attribute">...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(TARGET === <span class="string">'start'</span> <span class="subst">||</span> <span class="subst">!</span>TARGET) &#123;</span><br><span class="line">  module<span class="built_in">.</span>exports = merge(common, &#123;</span><br><span class="line">    devtool: <span class="string">'eval-source-map'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attribute">...</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<p>In this case, we’re using <code>eval-source-map</code>. It builds slowly initially, but it provides fast rebuild speed and yields real files.</p>
+<p>Faster development specific options, such as <code>cheap-module-eval-source-map</code> and <code>eval</code>, produce lower quality sourcemaps. Especially <code>eval</code> is fast and is the most suitable for large projects.</p>
+<h1 id="Library_and_externals"><a href="#Library_and_externals" class="headerlink" title="Library and externals"></a>Library and externals</h1><p>Recommended <a href="https://webpack.github.io/docs/library-and-externals.html" target="_blank" rel="external">configuration</a> (only relevant stuff):</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>webpack.config.js</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">output</span>: &#123;</span><br><span class="line">        <span class="regexp">//</span> export itself to a <span class="built_in">global</span> var</span><br><span class="line">        <span class="attribute">libraryTarget</span>: <span class="string">"var"</span>,</span><br><span class="line">        <span class="regexp">//</span> name <span class="keyword">of</span> the <span class="built_in">global</span> <span class="attribute">var</span>: <span class="string">"Foo"</span></span><br><span class="line">        <span class="attribute">library</span>: <span class="string">"Foo"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attribute">externals</span>: &#123;</span><br><span class="line">        <span class="regexp">//</span> <span class="built_in">require</span>(<span class="string">"jquery"</span>) <span class="keyword">is</span> external <span class="keyword">and</span> available</span><br><span class="line">        <span class="regexp">//</span>  <span class="literal">on</span> the <span class="built_in">global</span> var jQuery</span><br><span class="line">        <span class="string">"jquery"</span>: <span class="string">"jQuery"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="NODE_ENV_and_plugins"><a href="#NODE_ENV_and_plugins" class="headerlink" title="NODE_ENV and plugins"></a>NODE_ENV and plugins</h1><p>We will use standard for node.js developers variable <code>NODE_ENV</code> and plugin <a href="https://github.com/webpack/docs/wiki/internal-webpack-plugins#defineplugindefinitions" target="_blank" rel="external">DefinePlugin</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> NODE_ENV = process.env.NODE_ENV || <span class="string">'development'</span>;</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(webpack);</span><br><span class="line">...</span><br><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">        NODE_ENV: <span class="built_in">JSON</span>.stringify(NODE_ENV)</span><br><span class="line">    &#125;);</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h1 id="Final_app_sources"><a href="#Final_app_sources" class="headerlink" title="Final app sources"></a>Final app sources</h1><p>The final source of the article <a href="https://github.com/survivejs/webpack_react/tree/dev/project_source/02_developing_with_webpack/kanban_app" target="_blank" rel="external">here</a></p>
+<p>Save my day: (<a href="http://survivejs.com/)[http://survivejs.com/webpack_react/webpack_and_react/" target="_blank" rel="external">http://survivejs.com/)[http://survivejs.com/webpack_react/webpack_and_react/</a>]</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Webpack/">Webpack</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-p-2/"  data-tooltip="Development with Webpack and React part 2">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/05/Understanding-Components-approach-and-Thinking-in-React/" data-tooltip="Understanding Components approach and Thinking in React">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-p-2/"  data-tooltip="Development with Webpack and React part 2">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/05/Understanding-Components-approach-and-Thinking-in-React/" data-tooltip="Understanding Components approach and Thinking in React">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+        
+            <h4 id="about-card-name">Orest Prystayko</h4>
+        
+            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front-End Developer @ Eleks</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Ukraine, Lviv
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'qetr1ck-op';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
+    </script>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//qetr1ck-op.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
+
+</html>

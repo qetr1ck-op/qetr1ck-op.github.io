@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Blog | qetr1ck-op">
+    <title>Development with Webpack and React part 4 - Blog | qetr1ck-op</title>
+    <meta name="author" content="Orest Prystayko">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="React and Flux architecture with Alt
+&amp;lt;!--toc--&amp;gt;">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Development with Webpack and React part 4">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/index.html">
+<meta property="og:site_name" content="Blog | qetr1ck-op">
+<meta property="og:description" content="React and Flux architecture with Alt
+&amp;lt;!--toc--&amp;gt;">
+<meta property="og:image" content="http://qetr1ck-op.github.io/img.png">
+<meta property="og:image" content="http://qetr1ck-op.github.io/img2.png">
+<meta property="og:updated_time" content="2016-02-10T22:06:57.852Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Development with Webpack and React part 4">
+<meta name="twitter:description" content="React and Flux architecture with Alt
+&amp;lt;!--toc--&amp;gt;">
+<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
+    
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="/#search">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Orest Prystayko</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">Linked In</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Development with Webpack and React part 4
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Feb 10 2016 21:39:47 GMT+0200">
+	
+		    Feb 10, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>React and Flux architecture with Alt</p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction_to_Flux"><span class="toc-text">Introduction to Flux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Actions_and_Stores"><span class="toc-text">Actions and Stores</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dispatcher"><span class="toc-text">Dispatcher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flux_Dataflow"><span class="toc-text">Flux Dataflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Advantages_of_Flux"><span class="toc-text">Advantages of Flux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Which_Flux_Implementation_to_Use_3F"><span class="toc-text">Which Flux Implementation to Use?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Porting_to_Alt"><span class="toc-text">Porting to Alt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Setting_Up_an_Alt_Instance"><span class="toc-text">Setting Up an Alt Instance</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Defining_CRUD_API_for_Notes"><span class="toc-text">Defining CRUD API for Notes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Defining_a_Store_for_Notes"><span class="toc-text">Defining a Store for Notes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementing_create"><span class="toc-text">Implementing create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementing_update"><span class="toc-text">Implementing update</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementing_delete"><span class="toc-text">Implementing delete</span></a></li></ol></li></ol>
+<a id="more"></a>
+<p>You can get pretty far by keeping everything in components. Eventually, that will become painful.</p>
+<h1 id="Introduction_to_Flux"><a href="#Introduction_to_Flux" class="headerlink" title="Introduction to Flux"></a>Introduction to Flux</h1><p>So far, we’ve been dealing only with views. Flux architecture introduces a couple of new concepts to the mix. These are <em>actions</em>, <em>dispatcher</em>, and <em>stores</em>. </p>
+<p>Flux implements unidirectional flow in contrast to popular frameworks, such as Angular or Ember.</p>
+<p><img src="/img.png" alt="" title="Optional title"></p>
+<h1 id="Actions_and_Stores"><a href="#Actions_and_Stores" class="headerlink" title="Actions and Stores"></a>Actions and Stores</h1><p>In our case, we will model <code>NoteActions</code> and <code>NoteStore</code>. <code>NoteActions</code> provide concrete operations we can perform over our data. For instance, we can have <code>NoteActions.create({task: &#39;Learn React&#39;})</code>.</p>
+<h1 id="Dispatcher"><a href="#Dispatcher" class="headerlink" title="Dispatcher"></a>Dispatcher</h1><p>When we trigger the <em>action</em>, the <em>dispatcher</em> will get notified. The <em>dispatcher</em> will be able to deal with possible dependencies between <em>stores</em>. It is possible that a certain action needs to happen before another. The <em>dispatcher</em> allows us to achieve this.</p>
+<p>At the simplest level, actions can just pass the message to the <em>dispatcher</em> as is.</p>
+<p>Once the <em>dispatcher</em> has dealt with the action, <em>stores</em> that are listening to it get triggered. In our case, <code>NoteStore</code> gets notified. As a result, it will be able to update its internal state. After doing this it will notify possible listeners of the new state.</p>
+<h1 id="Flux_Dataflow"><a href="#Flux_Dataflow" class="headerlink" title="Flux Dataflow"></a>Flux Dataflow</h1><p>Usually, though, the unidirectional process has a cyclical flow and it doesn’t necessarily end. </p>
+<p>Eventually, the components depending on our store data become refreshed through this looping process.</p>
+<p><img src="/img2.png" alt="" title="Optional title"></p>
+<h1 id="Advantages_of_Flux"><a href="#Advantages_of_Flux" class="headerlink" title="Advantages of Flux"></a>Advantages of Flux</h1><p>Even though this sounds a little complicated, the arrangement gives our application flexibility. We can, for instance, implement API communication, caching, and i18n outside of our views. This way they stay clean of logic while keeping the application easier to understand.</p>
+<p>Implementing Flux architecture in your application will actually increase the amount of code. It has been designed to allow productivity across larger teams. You could say, “explicit is better than implicit”.</p>
+<h1 id="Which_Flux_Implementation_to_Use_3F"><a href="#Which_Flux_Implementation_to_Use_3F" class="headerlink" title="Which Flux Implementation to Use?"></a>Which Flux Implementation to Use?</h1><p>There is no single right way to interpret the architecture. You will find implementations that fit different tastes. <a href="https://github.com/voronianski/flux-comparison" target="_blank" rel="external">voronianski/flux-comparison</a> provides a nice comparison between some of the more popular ones.</p>
+<h1 id="Porting_to_Alt"><a href="#Porting_to_Alt" class="headerlink" title="Porting to Alt"></a>Porting to Alt</h1><p>It is a flexible, full-featured implementation that has been designed with universal (isomorphic) rendering in mind.</p>
+<p>In Alt, you’ll deal with actions and stores. The dispatcher is hidden, but you will still have access to it if needed. Compared to other implementations Alt hides a lot of boilerplate. There are special features to allow you to save and restore the application state. This is handy for implementing persistency and universal rendering.</p>
+<h1 id="Setting_Up_an_Alt_Instance"><a href="#Setting_Up_an_Alt_Instance" class="headerlink" title="Setting Up an Alt Instance"></a>Setting Up an Alt Instance</h1><p>Everything in Alt begins from an <em>Alt instance</em>. It keeps track of actions and stores and keeps communication going on. Set it up as follows:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/libs/alt.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Alt <span class="keyword">from</span> <span class="string">'alt'</span>;</span><br><span class="line"><span class="comment">//import chromeDebug from 'alt-utils/lib/chromeDebug';</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> alt = <span class="keyword">new</span> Alt();</span><br><span class="line"><span class="comment">//chromeDebug(alt);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> alt;</span><br></pre></td></tr></table></figure>
+<p>Webpack caches the modules so the next time you import Alt, it will return the same instance again.</p>
+<p>There is a Chrome plugin known as <a href="https://github.com/goatslacker/alt-devtool" target="_blank" rel="external">alt-devtool</a></p>
+<h1 id="Defining_CRUD_API_for_Notes"><a href="#Defining_CRUD_API_for_Notes" class="headerlink" title="Defining CRUD API for Notes"></a>Defining CRUD API for Notes</h1><p>Next, we’ll need to define a basic API for operating over the Note data. Alt provides a shorthand known as generateActions. We can use it like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/actions/NoteActions.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> alt <span class="keyword">from</span> <span class="string">'../libs/alt'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> alt.generateActions(<span class="string">'create'</span>, <span class="string">'update'</span>, <span class="string">'delete'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Defining_a_Store_for_Notes"><a href="#Defining_a_Store_for_Notes" class="headerlink" title="Defining a Store for Notes"></a>Defining a Store for Notes</h2><p>A store is a single source of truth for a part of your application state. In this case, we need one to maintain the state of the notes. We will connect all the actions we defined above using the <code>bindActions</code> function.</p>
+<p>We have the logic we need for our store already at <code>App</code>. We will move that logic to <code>NoteStore</code>.</p>
+<p>As a first step, we can set up a skeleton for our store. We can fill in the methods we need after that. Here’s a starting point:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/stores/NoteStore.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> uuid from <span class="string">'node-uuid'</span>;</span><br><span class="line"><span class="keyword">import</span> alt from <span class="string">'../libs/alt'</span>;</span><br><span class="line"><span class="keyword">import</span> NoteActions from <span class="string">'../actions/NoteActions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> NoteStore &#123;</span><br><span class="line">  <span class="constructor"><span class="keyword">constructor</span>() </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.bindActions(NoteActions);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.notes = [];</span><br><span class="line">  &#125;</span><br><span class="line">  create(note) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  update(updatedNote) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">delete</span>(id) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> alt.createStore(NoteStore, <span class="string">'NoteStore'</span>);</span><br></pre></td></tr></table></figure>
+<p>We call <code>bindActions</code> to map each action to a method by name. We trigger the appropriate logic at each method based on that. Finally, we connect the store with Alt using <code>alt.createStore</code>.</p>
+<p>Note that assigning a label to a store (<code>NoteStore</code> in this case) isn’t required. It is a good practice as it protects the code against minification and possible collisions. These labels become important when we persist the data.</p>
+<h2 id="Implementing_create"><a href="#Implementing_create" class="headerlink" title="Implementing create"></a>Implementing create</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/stores/NoteStore.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> uuid from <span class="string">'node-uuid'</span>;</span><br><span class="line"><span class="keyword">import</span> alt from <span class="string">'../libs/alt'</span>;</span><br><span class="line"><span class="keyword">import</span> NoteActions from <span class="string">'../actions/NoteActions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> NoteStore &#123;</span><br><span class="line">  <span class="constructor"><span class="keyword">constructor</span>() </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  create(note) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> notes = <span class="keyword">this</span>.notes;</span><br><span class="line"></span><br><span class="line">    note.id = uuid.v4();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      notes: notes.concat(note)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> alt.createStore(NoteStore, <span class="string">'NoteStore'</span>);</span><br></pre></td></tr></table></figure>
+<p>To keep the implementation clean, we are using <code>this.setState</code>. It is a feature of Alt that allows us to signify that we are going to alter the store state. Alt will signal the change to possible listeners.</p>
+<h2 id="Implementing_update"><a href="#Implementing_update" class="headerlink" title="Implementing update"></a>Implementing update</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">app</span>/stores/NoteStore.js</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> NoteStore &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">update</span>(updatedNote) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">notes</span> = this.<span class="keyword">notes</span>.map(<span class="keyword">note</span> =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">note</span>.id === updatedNote.id) &#123;</span><br><span class="line">        <span class="comment">// Object.assign is used to patch the note data here. It</span></span><br><span class="line">        <span class="comment">// mutates target (first parameter). In order to avoid that,</span></span><br><span class="line">        <span class="comment">// I use &#123;&#125; as its target and apply data on it.</span></span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="comment">// Example: &#123;&#125;, &#123;a: 5, b: 3&#125;, &#123;a: 17&#125; -&gt; &#123;a: 17, b: 3&#125;</span></span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">return</span> Object.assign(&#123;&#125;, <span class="keyword">note</span>, updatedNote);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">note</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// This is same as `this.setState(&#123;notes: notes&#125;)`</span></span><br><span class="line">    this.setState(&#123;<span class="keyword">notes</span>&#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  delete(id) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default alt.createStore(NoteStore, 'NoteStore');</span><br></pre></td></tr></table></figure>
+<h2 id="Implementing_delete"><a href="#Implementing_delete" class="headerlink" title="Implementing delete"></a>Implementing delete</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">app/stores/NoteStore.js</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoteStore</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  delete(id) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      notes: <span class="keyword">this</span>.notes.filter(note =&gt; note.id !== id)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="literal">export</span> <span class="keyword">default</span> alt.createStore(NoteStore, <span class="string">'NoteStore'</span>);</span><br></pre></td></tr></table></figure>
+<p>TODO</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Webpack/">Webpack</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/" data-tooltip="Kata (Fundamentals, Arrays): All, None &amp; Any">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/" data-tooltip="Kata (Fundamentals, Arrays): All, None &amp; Any">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+        
+            <h4 id="about-card-name">Orest Prystayko</h4>
+        
+            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front-End Developer @ Eleks</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Ukraine, Lviv
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'qetr1ck-op';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
+    </script>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//qetr1ck-op.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
+
+</html>

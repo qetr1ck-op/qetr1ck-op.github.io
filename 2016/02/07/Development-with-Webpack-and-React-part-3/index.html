@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Blog | qetr1ck-op">
+    <title>Development with Webpack and React part 3 - Blog | qetr1ck-op</title>
+    <meta name="author" content="Orest Prystayko">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="Implement a basic note application.
+&amp;lt;!--toc--&amp;gt;">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Development with Webpack and React part 3">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/index.html">
+<meta property="og:site_name" content="Blog | qetr1ck-op">
+<meta property="og:description" content="Implement a basic note application.
+&amp;lt;!--toc--&amp;gt;">
+<meta property="og:image" content="http://qetr1ck-op.github.io/img.png">
+<meta property="og:image" content="http://qetr1ck-op.github.io/img2.png">
+<meta property="og:image" content="http://qetr1ck-op.github.io/img3.png">
+<meta property="og:updated_time" content="2016-02-10T19:30:52.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Development with Webpack and React part 3">
+<meta name="twitter:description" content="Implement a basic note application.
+&amp;lt;!--toc--&amp;gt;">
+<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
+    
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="/#search">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Orest Prystayko</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">Linked In</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Development with Webpack and React part 3
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Feb 07 2016 20:33:51 GMT+0200">
+	
+		    Feb 07, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Implement a basic note application.</p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Initial_data_model_and_setting_up_App"><span class="toc-text">Initial data model and setting up App</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Adding_New_Items_to_the_List"><span class="toc-text">Adding New Items to the List</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Defining_addNote_Handler"><span class="toc-text">Defining addNote Handler</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Improving_Component_Hierarchy"><span class="toc-text">Improving Component Hierarchy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Extracting_Note"><span class="toc-text">Extracting Note</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Editing_Notes"><span class="toc-text">Editing Notes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tracking_Note_editing_State"><span class="toc-text">Tracking Note editing State</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Communicating_Note_State_Changes"><span class="toc-text">Communicating Note State Changes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Removing_Notes"><span class="toc-text">Removing Notes</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Understanding_React_Components"><span class="toc-text">Understanding React Components</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Final_app_sources"><span class="toc-text">Final app sources</span></a></li></ol>
+<a id="more"></a>
+<h1 id="Initial_data_model_and_setting_up_App"><a href="#Initial_data_model_and_setting_up_App" class="headerlink" title="Initial data model and setting up App"></a>Initial data model and setting up <code>App</code></h1><p>We’ll be using a Node.js implementation known as <code>node-uuid</code> and its <code>uuid.v4</code> variant. It will give us ids, such as <code>1c8e7a12-0b4c-4f23-938c-00d7161f94fc</code> and they are guaranteed to be unique with a very high probability.</p>
+<p>The simplest way to achieve that is to push the data directly to <code>render()</code> for now:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/App.jsx</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> uuid from <span class="symbol">'node</span>-uuid';</span><br><span class="line"><span class="keyword">import</span> <span class="type">React</span> from <span class="symbol">'reac</span>t';</span><br><span class="line"></span><br><span class="line">export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">React</span>.<span class="title">Component</span> &#123;</span></span><br><span class="line">  render() &#123;</span><br><span class="line"></span><br><span class="line">    const notes = [</span><br><span class="line">      &#123;</span><br><span class="line">        id: uuid.v4(),</span><br><span class="line">        task: <span class="symbol">'Learn</span> <span class="type">Webpack</span>'</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: uuid.v4(),</span><br><span class="line">        task: <span class="symbol">'Learn</span> <span class="type">React</span>'</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: uuid.v4(),</span><br><span class="line">        task: <span class="symbol">'Do</span> laundry'</span><br><span class="line">      &#125;</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;ul&gt;&#123;notes.map(note =&gt;</span><br><span class="line">          &lt;li key=&#123;note.id&#125;&gt;&#123;note.task&#125;&lt;/li&gt;</span><br><span class="line">        )&#125;&lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In order to tell React in which order to render the elements, we use the <code>key</code> property. It is important that this is unique or else React won’t be able to figure out the correct order in which to render. If not set, React will give a warning:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">li</span> key=&#123;<span class="keyword">note</span>.id&#125;&gt;&#123;<span class="keyword">note</span>.task&#125;&lt;/<span class="keyword">li</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>If you want to attach comments to your JSX, just use <code>{/* no comments */}</code></p>
+<h1 id="Adding_New_Items_to_the_List"><a href="#Adding_New_Items_to_the_List" class="headerlink" title="Adding New Items to the List"></a>Adding New Items to the List</h1><p>Currently the state of our application is tied to <code>render()</code>. In order to make it possible to modify it, we’ll need to convert it into component <code>state</code>:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/App.jsx</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> App extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">  <span class="constructor"><span class="keyword">constructor</span>(props) </span>&#123;</span><br><span class="line">    <span class="comment">// ------------------------</span></span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      notes: [</span><br><span class="line">        &#123;</span><br><span class="line">          id: uuid.v4(),</span><br><span class="line">          task: <span class="string">'Learn Webpack'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: uuid.v4(),</span><br><span class="line">          task: <span class="string">'Learn React'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: uuid.v4(),</span><br><span class="line">          task: <span class="string">'Do laundry'</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// ------------------------</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// -----------------------------</span></span><br><span class="line">    <span class="keyword">const</span> notes = <span class="keyword">this</span>.state.notes;</span><br><span class="line">    <span class="comment">// -----------------------------</span></span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In the earlier versions of React, you achieved the same result with <code>getInitialState</code>. We’re passing <code>props</code> to <code>super</code> by convention. If you don’t pass it, <code>this.props</code> won’t get set! Calling <code>super</code> invokes the same method of the parent class and you see this kind of usage in object oriented programming often.</p>
+<h1 id="Defining_addNote_Handler"><a href="#Defining_addNote_Handler" class="headerlink" title="Defining addNote Handler"></a>Defining addNote Handler</h1><p>Now that we have state, we can begin to modify it. A good way to achieve this is to add a simple button to <code>App</code> and then trigger <code>this.setState</code> to force React to alter the state and trigger <code>render()</code>:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">React</span>.<span class="title">Component</span> &#123;</span></span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    const notes = <span class="keyword">this</span>.state.notes;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.addNote&#125;&gt;+&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">        &lt;ul&gt;&#123;notes.map(note =&gt;</span><br><span class="line">          &lt;li key=&#123;note.id&#125;&gt;&#123;note.task&#125;&lt;/li&gt;</span><br><span class="line">        )&#125;&lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// We are using an experimental feature known as property</span></span><br><span class="line">  <span class="comment">// initializer here. It allows us to bind the method `this`</span></span><br><span class="line">  <span class="comment">// to point at our *App* instance.</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Alternatively we could `bind` at `constructor` using</span></span><br><span class="line">  <span class="comment">// a line, such as this.addNote = this.addNote.bind(this);</span></span><br><span class="line">  addNote = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      notes: <span class="keyword">this</span>.state.notes.concat([&#123;</span><br><span class="line">        id: uuid.v4(),</span><br><span class="line">        task: <span class="symbol">'New</span> task'</span><br><span class="line">      &#125;])</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>this.setState</code> accepts a second parameter like this: <code>this.setState({...}, () =&gt; console.log(&#39;set state!&#39;))</code>. This is handy to know if you want to trigger some behavior right after setState has completed.</p>
+<p>You could use <code>[...this.state.notes, {id: uuid.v4(), task: &#39;New task&#39;}]</code> to achieve the same result.</p>
+<h1 id="Improving_Component_Hierarchy"><a href="#Improving_Component_Hierarchy" class="headerlink" title="Improving Component Hierarchy"></a>Improving Component Hierarchy</h1><p>By looking at our application, we can see there’s a component hierarchy like this:</p>
+<p><code>App</code> - <code>App</code> retains application state and deals with the high level logic.<br><code>Notes</code> - <code>Notes</code> acts as an intermediate in between and renders individual <code>Note</code> components.<br><code>Note</code> - <code>Note</code> is the workhorse of our application. Editing and deletion will be triggered here. That logic will cascade to App through wiring.</p>
+<h1 id="Extracting_Note"><a href="#Extracting_Note" class="headerlink" title="Extracting Note"></a>Extracting Note</h1><p><code>Note</code> is a component which will need to receive task as a prop and render it as below:</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/Note.jsx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line">export <span class="keyword">default</span> (&#123;<span class="keyword">task</span>&#125;) =&gt; &lt;<span class="keyword">div</span>&gt;&#123;<span class="keyword">task</span>&#125;&lt;<span class="regexp">/div&gt;;</span></span><br></pre></td></tr></table></figure>
+<p>Extracting Notes is a similar operation:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/Notes.jsx</span></span><br><span class="line"></span><br><span class="line">import React from 'react';</span><br><span class="line">import <span class="keyword">Note</span> from './<span class="keyword">Note</span>.jsx';</span><br><span class="line"></span><br><span class="line">export default (&#123;<span class="keyword">notes</span>&#125;) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ul&gt;&#123;<span class="keyword">notes</span>.map(<span class="keyword">note</span> =&gt;</span><br><span class="line">      &lt;<span class="keyword">li</span> key=&#123;<span class="keyword">note</span>.id&#125;&gt;</span><br><span class="line">        <span class="comment">//------------------------</span></span><br><span class="line">        &lt;<span class="keyword">Note</span> task=&#123;<span class="keyword">note</span>.task&#125; /&gt;</span><br><span class="line">        <span class="comment">//------------------------</span></span><br><span class="line">      &lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    )&#125;&lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We should tweak App to connect the component with it:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/App.jsx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> uuid <span class="keyword">from</span> <span class="string">'node-uuid'</span>;</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Note <span class="keyword">from</span> <span class="string">'./Note.jsx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Notes <span class="keyword">from</span> <span class="string">'./Notes.jsx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> notes = <span class="keyword">this</span>.state.notes;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">button</span> <span class="attribute">onClick</span>=<span class="value">&#123;this.addNote&#125;</span>&gt;</span>+<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">        //---------------------------------------</span><br><span class="line">        <span class="tag">&lt;<span class="title">Notes</span> <span class="attribute">notes</span>=<span class="value">&#123;notes&#125;</span> /&gt;</span></span><br><span class="line">        //---------------------------------------</span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  addNote = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      notes: <span class="keyword">this</span>.state.notes.concat([&#123;</span><br><span class="line">        id: uuid.v4(),</span><br><span class="line">        task: <span class="string">'New task'</span></span><br><span class="line">      &#125;])</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Editing_Notes"><a href="#Editing_Notes" class="headerlink" title="Editing Notes"></a>Editing Notes</h1><p>This means <code>Note</code> will need to track its <code>editing</code> state somehow. In addition, we need to communicate that the value (<code>task</code>) has changed so that <code>App</code> knows to update its state.</p>
+<h2 id="Tracking_Note_editing_State"><a href="#Tracking_Note_editing_State" class="headerlink" title="Tracking Note editing State"></a>Tracking Note editing State</h2><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/Note.jsx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="type">React</span> from <span class="symbol">'reac</span>t';</span><br><span class="line"></span><br><span class="line">export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Note</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">React</span>.<span class="title">Component</span> &#123;</span></span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Track `editing` state.</span></span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      editing: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// Render the component differently based on state.</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.editing) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.renderEdit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.renderNote();</span><br><span class="line">  &#125;</span><br><span class="line">  renderEdit = () =&gt; &#123;</span><br><span class="line">    <span class="comment">// We deal with blur and input handlers here. These map to DOM events.</span></span><br><span class="line">    <span class="comment">// We also set selection to input end using a callback at a ref.</span></span><br><span class="line">    <span class="comment">// It gets triggered after the component is mounted.</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// We could also use a string reference (i.e., `ref="input") and</span></span><br><span class="line">    <span class="comment">// then refer to the element in question later in the code. This</span></span><br><span class="line">    <span class="comment">// would allow us to use the underlying DOM API through</span></span><br><span class="line">    <span class="comment">// this.refs.input. This can be useful when combined with</span></span><br><span class="line">    <span class="comment">// React lifecycle methods.</span></span><br><span class="line">    <span class="keyword">return</span> &lt;input <span class="class"><span class="keyword">type</span>=</span><span class="string">"text"</span></span><br><span class="line">      ref=&#123;</span><br><span class="line">        (e) =&gt; e ? e.selectionStart = <span class="keyword">this</span>.props.task.length : <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">      autoFocus=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">      defaultValue=&#123;<span class="keyword">this</span>.props.task&#125;</span><br><span class="line">      onBlur=&#123;<span class="keyword">this</span>.finishEdit&#125;</span><br><span class="line">      onKeyPress=&#123;<span class="keyword">this</span>.checkEnter&#125; /&gt;;</span><br><span class="line">  &#125;;</span><br><span class="line">  renderNote = () =&gt; &#123;</span><br><span class="line">    <span class="comment">// If the user clicks a normal note, trigger editing logic.</span></span><br><span class="line">    <span class="keyword">return</span> &lt;div onClick=&#123;<span class="keyword">this</span>.edit&#125;&gt;&#123;<span class="keyword">this</span>.props.task&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;;</span><br><span class="line">  edit = () =&gt; &#123;</span><br><span class="line">    <span class="comment">// Enter edit mode.</span></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      editing: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  checkEnter = (e) =&gt; &#123;</span><br><span class="line">    <span class="comment">// The user hit *enter*, let's finish up.</span></span><br><span class="line">    <span class="keyword">if</span>(e.key === <span class="symbol">'Ente</span>r') &#123;</span><br><span class="line">      <span class="keyword">this</span>.finishEdit(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  finishEdit = (e) =&gt; &#123;</span><br><span class="line">    <span class="comment">// `Note` will trigger an optional `onEdit` callback once it</span></span><br><span class="line">    <span class="comment">// has a new value. We will use this to communicate the change to</span></span><br><span class="line">    <span class="comment">// `App`.</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// A smarter way to deal with the default value would be to set</span></span><br><span class="line">    <span class="comment">// it through `defaultProps`.</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// See *Typing with React* chapter for more information.</span></span><br><span class="line">    const value = e.target.value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.props.onEdit &amp;&amp; value.trim()) &#123;</span><br><span class="line">      <span class="keyword">this</span>.props.onEdit(value);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Exit edit mode.</span></span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        editing: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If you try to edit a <code>Note</code> now, you should see an input and be able to edit the data. Given we haven’t set up <code>onEdit</code> handler, it doesn’t do anything useful yet, though. We’ll need to capture the edited data next and update <code>App</code> state so that the code works.</p>
+<p>It is a good idea to name your callbacks using <code>on</code> prefix. This will allow you to distinguish them from other props and keep your code a little tidier.</p>
+<h2 id="Communicating_Note_State_Changes"><a href="#Communicating_Note_State_Changes" class="headerlink" title="Communicating Note State Changes"></a>Communicating Note State Changes</h2><p>This can be achieved through data binding as illustrated by the diagram below:</p>
+<p><img src="/img.png" alt=""></p>
+<p>As <code>onEdit</code> is defined on <code>App</code> level, we’ll need to pass <code>onEdit</code> handler through <code>Notes</code>. So for the stub to work, changes in two files are needed. Here’s what it should look like for <code>App</code>:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid from <span class="symbol">'node</span>-uuid';</span><br><span class="line"><span class="keyword">import</span> <span class="type">React</span> from <span class="symbol">'reac</span>t';</span><br><span class="line"><span class="keyword">import</span> <span class="type">Notes</span> from './<span class="type">Notes</span>.jsx';</span><br><span class="line"></span><br><span class="line">export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">React</span>.<span class="title">Component</span> &#123;</span></span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    const notes = <span class="keyword">this</span>.state.notes;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.addNote&#125;&gt;+&lt;/button&gt;</span><br><span class="line">        <span class="comment">//---------------------------------------------</span></span><br><span class="line">        &lt;<span class="type">Notes</span> notes=&#123;notes&#125; onEdit=&#123;<span class="keyword">this</span>.editNote&#125; /&gt;</span><br><span class="line">        <span class="comment">//---------------------------------------------</span></span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">  addNote = () =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  editNote = (id, task) =&gt; &#123;</span><br><span class="line">    const notes = <span class="keyword">this</span>.state.notes.map(note =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span>(note.id === id &amp;&amp; task) &#123;</span><br><span class="line">        note.task = task;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> note;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;notes&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To make the scheme work as designed, we need to modify Notes to work according to the idea:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">app</span>/components/<span class="keyword">Notes</span>.jsx</span><br><span class="line"></span><br><span class="line">import React from 'react';</span><br><span class="line">import <span class="keyword">Note</span> from './<span class="keyword">Note</span>.jsx';</span><br><span class="line"></span><br><span class="line">export default (&#123;<span class="keyword">notes</span>&#125;) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">export default (&#123;<span class="keyword">notes</span>, onEdit&#125;) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ul&gt;&#123;<span class="keyword">notes</span>.map(<span class="keyword">note</span> =&gt;</span><br><span class="line"></span><br><span class="line">      &lt;<span class="keyword">li</span> key=&#123;<span class="keyword">note</span>.id&#125;&gt;</span><br><span class="line">        &lt;<span class="keyword">Note</span></span><br><span class="line">          task=&#123;<span class="keyword">note</span>.task&#125;</span><br><span class="line">          <span class="comment">//---------------------------------------------</span></span><br><span class="line">          onEdit=&#123;onEdit.bind(null, <span class="keyword">note</span>.id)&#125; /&gt;</span><br><span class="line">          <span class="comment">//---------------------------------------------</span></span><br><span class="line">      &lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">    )&#125;&lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Removing_Notes"><a href="#Removing_Notes" class="headerlink" title="Removing Notes"></a>Removing Notes</h1><p>Just like earlier, it will take three changes. We need to define logic at <code>App</code> level, bind the <code>id</code> at <code>Notes</code>, and then finally trigger the logic at <code>Note</code> through its user interface. To get started, <code>App</code> logic can be defined in terms of <code>filter</code>:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/App.jsx</span></span><br><span class="line"></span><br><span class="line">export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">React</span>.<span class="title">Component</span> &#123;</span></span><br><span class="line">  ...</span><br><span class="line">  render() &#123;</span><br><span class="line">    const notes = <span class="keyword">this</span>.state.notes;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.addNote&#125;&gt;+&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">        &lt;<span class="type">Notes</span> notes=&#123;notes&#125;</span><br><span class="line">          onEdit=&#123;<span class="keyword">this</span>.editNote&#125;</span><br><span class="line">          <span class="comment">//---------------------------------------------</span></span><br><span class="line">          onDelete=&#123;<span class="keyword">this</span>.deleteNote&#125; /&gt;</span><br><span class="line">          <span class="comment">//---------------------------------------------</span></span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  deleteNote = (id) =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      notes: <span class="keyword">this</span>.state.notes.filter(note =&gt; note.id !== id)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Notes will work similarly as earlier:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/Notes.jsx</span></span><br><span class="line"></span><br><span class="line"><span class="literal">import</span> React from <span class="string">'react'</span>;</span><br><span class="line"><span class="literal">import</span> Note from <span class="string">'./Note.jsx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="literal">export</span> <span class="keyword">default</span> (&#123;notes, onEdit&#125;) =&gt; &#123;</span><br><span class="line"></span><br><span class="line"><span class="literal">export</span> <span class="keyword">default</span> (&#123;notes, onEdit, onDelete&#125;) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ul&gt;&#123;notes.map(note =&gt;</span><br><span class="line">      &lt;li key=&#123;note.id&#125;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Note</span><br><span class="line">          task=&#123;note.task&#125;</span><br><span class="line">          onEdit=&#123;onEdit.bind(<span class="keyword">null</span>, note.id)&#125;</span><br><span class="line">          <span class="comment">//---------------------------------------------</span></span><br><span class="line">          onDelete=&#123;onDelete.bind(<span class="keyword">null</span>, note.id)&#125; /&gt;</span><br><span class="line">          <span class="comment">//---------------------------------------------</span></span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    )&#125;&lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Finally, we need to attach a delete button to each <code>Note</code> and then trigger <code>onDelete</code> when those are clicked:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app/components/Note.jsx</span></span><br><span class="line">...</span><br><span class="line">export <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Note</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">React</span>.<span class="title">Component</span> &#123;</span></span><br><span class="line">  ...</span><br><span class="line">  renderNote = () =&gt; &#123;</span><br><span class="line">    <span class="comment">// If the user clicks a normal note, trigger editing logic.</span></span><br><span class="line"></span><br><span class="line">    const onDelete = <span class="keyword">this</span>.props.onDelete;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="comment">//-----------------------------------------</span></span><br><span class="line">      &lt;div onClick=&#123;<span class="keyword">this</span>.edit&#125;&gt;</span><br><span class="line">        &lt;span&gt;&#123;<span class="keyword">this</span>.props.task&#125;&lt;/span&gt;</span><br><span class="line">        &#123;onDelete ? <span class="keyword">this</span>.renderDelete() : <span class="literal">null</span> &#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      <span class="comment">//-----------------------------------------</span></span><br><span class="line">    );</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//---------------------------------------------------------</span></span><br><span class="line">  renderDelete = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;button onClick=&#123;<span class="keyword">this</span>.props.onDelete&#125;&gt;x&lt;/button&gt;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//---------------------------------------------------------</span></span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<h1 id="Understanding_React_Components"><a href="#Understanding_React_Components" class="headerlink" title="Understanding React Components"></a>Understanding React Components</h1><p>Understanding how props and state work is important. Component lifecycle is another key concept. React provides the following lifecycle hooks:</p>
+<p>Process of initial render:</p>
+<p><img src="/img2.png" alt=""></p>
+<p>Lifecycle for state change:</p>
+<p><img src="/img3.png" alt=""></p>
+<p>More in <a href="https://facebook.github.io/react/docs/component-specs.html" target="_blank" rel="external">off docs</a>.</p>
+<h1 id="Final_app_sources"><a href="#Final_app_sources" class="headerlink" title="Final app sources"></a>Final app sources</h1><p>The final source of the article <a href="https://github.com/survivejs/webpack_react/tree/dev/project_source/04_implementing_notes/kanban_app" target="_blank" rel="external">here</a></p>
+<p>Save my day: (<a href="http://survivejs.com/)[http://survivejs.com/webpack_react/implementing_notes/" target="_blank" rel="external">http://survivejs.com/)[http://survivejs.com/webpack_react/implementing_notes/</a>]</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Webpack/">Webpack</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/09/Kata-Arrays-Are-they-square/"  data-tooltip="Kata (Array): Are they square?">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-p-2/" data-tooltip="Development with Webpack and React part 2">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/09/Kata-Arrays-Are-they-square/"  data-tooltip="Kata (Array): Are they square?">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-p-2/" data-tooltip="Development with Webpack and React part 2">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+        
+            <h4 id="about-card-name">Orest Prystayko</h4>
+        
+            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front-End Developer @ Eleks</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Ukraine, Lviv
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'qetr1ck-op';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
+    </script>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//qetr1ck-op.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
+
+</html>
