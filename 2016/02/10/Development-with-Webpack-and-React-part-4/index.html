@@ -22,7 +22,7 @@
 &amp;lt;!--toc--&amp;gt;">
 <meta property="og:image" content="http://qetr1ck-op.github.io/img.png">
 <meta property="og:image" content="http://qetr1ck-op.github.io/img2.png">
-<meta property="og:updated_time" content="2016-02-10T22:06:57.852Z">
+<meta property="og:updated_time" content="2016-02-10T22:21:42.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Development with Webpack and React part 4">
 <meta name="twitter:description" content="React and Flux architecture with Alt
@@ -256,7 +256,7 @@
 <p>To keep the implementation clean, we are using <code>this.setState</code>. It is a feature of Alt that allows us to signify that we are going to alter the store state. Alt will signal the change to possible listeners.</p>
 <h2 id="Implementing_update"><a href="#Implementing_update" class="headerlink" title="Implementing update"></a>Implementing update</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">app</span>/stores/NoteStore.js</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> NoteStore &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">update</span>(updatedNote) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">notes</span> = this.<span class="keyword">notes</span>.map(<span class="keyword">note</span> =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">note</span>.id === updatedNote.id) &#123;</span><br><span class="line">        <span class="comment">// Object.assign is used to patch the note data here. It</span></span><br><span class="line">        <span class="comment">// mutates target (first parameter). In order to avoid that,</span></span><br><span class="line">        <span class="comment">// I use &#123;&#125; as its target and apply data on it.</span></span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="comment">// Example: &#123;&#125;, &#123;a: 5, b: 3&#125;, &#123;a: 17&#125; -&gt; &#123;a: 17, b: 3&#125;</span></span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">return</span> Object.assign(&#123;&#125;, <span class="keyword">note</span>, updatedNote);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">note</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// This is same as `this.setState(&#123;notes: notes&#125;)`</span></span><br><span class="line">    this.setState(&#123;<span class="keyword">notes</span>&#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  delete(id) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default alt.createStore(NoteStore, 'NoteStore');</span><br></pre></td></tr></table></figure>
 <h2 id="Implementing_delete"><a href="#Implementing_delete" class="headerlink" title="Implementing delete"></a>Implementing delete</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">app/stores/NoteStore.js</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoteStore</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  delete(id) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      notes: <span class="keyword">this</span>.notes.filter(note =&gt; note.id !== id)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="literal">export</span> <span class="keyword">default</span> alt.createStore(NoteStore, <span class="string">'NoteStore'</span>);</span><br></pre></td></tr></table></figure>
-<p>TODO</p>
+<p>TODO..</p>
 
             
                 
@@ -278,7 +278,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/11/Kata-Curring-A-chain-adding-function/"  data-tooltip="Kata (Functions, Curring): A chain adding function">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -286,7 +286,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/" data-tooltip="Kata (Fundamentals, Arrays): All, None &amp; Any">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/" data-tooltip="Kata (Arrays): All, None &amp; Any">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -357,7 +357,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/11/Kata-Curring-A-chain-adding-function/"  data-tooltip="Kata (Functions, Curring): A chain adding function">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -365,7 +365,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/" data-tooltip="Kata (Fundamentals, Arrays): All, None &amp; Any">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/" data-tooltip="Kata (Arrays): All, None &amp; Any">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>

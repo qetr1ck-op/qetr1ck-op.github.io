@@ -6,25 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
-    <title>сусle.js fundamentals - Blog | qetr1ck-op</title>
+    <title>Data URIs - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Cycle.js is a framework where your app is described as a simple function taking an event stream as input and outputting an event stream.
-Cycle.js builds on RxJS and is as a reactive and functional Jav">
+    <meta name="description" content="Did you know that you don’t have to link to an external image file when using an &amp;lt;img&amp;gt; element in HTML, or declaring a background-image in CSS? You can embed the image data directly into the doc">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="сусle.js fundamentals">
-<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/index.html">
+<meta property="og:title" content="Data URIs">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2014/02/11/Data-URIs/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Cycle.js is a framework where your app is described as a simple function taking an event stream as input and outputting an event stream.
-Cycle.js builds on RxJS and is as a reactive and functional Jav">
-<meta property="og:updated_time" content="2016-02-03T21:44:37.475Z">
+<meta property="og:description" content="Did you know that you don’t have to link to an external image file when using an &amp;lt;img&amp;gt; element in HTML, or declaring a background-image in CSS? You can embed the image data directly into the doc">
+<meta property="og:updated_time" content="2016-02-11T21:53:30.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="сусle.js fundamentals">
-<meta name="twitter:description" content="Cycle.js is a framework where your app is described as a simple function taking an event stream as input and outputting an event stream.
-Cycle.js builds on RxJS and is as a reactive and functional Jav">
+<meta name="twitter:title" content="Data URIs">
+<meta name="twitter:description" content="Did you know that you don’t have to link to an external image file when using an &amp;lt;img&amp;gt; element in HTML, or declaring a background-image in CSS? You can embed the image data directly into the doc">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -198,19 +195,19 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            сусle.js fundamentals
+            Data URIs
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Feb 02 2016 16:32:47 GMT+0200">
+    <time itemprop="datePublished" content="Tue Feb 11 2014 12:48:12 GMT+0200">
 	
-		    Feb 02, 2016
+		    Feb 11, 2014
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/CSS/">CSS</a>, <a class="category-link" href="/categories/Javascript/CSS/Cycle-js/">Cycle.js</a>
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
 
 
     
@@ -219,21 +216,16 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Cycle.js is a framework where your app is described as a simple function taking an event stream as input and outputting an event stream.</p>
-<p>Cycle.js builds on RxJS and is as a reactive and functional JavaScript framework. What does that mean?<br><a id="more"></a></p>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-The_cycle-js_principle_3A_separate_logic_from_effects"><span class="toc-text">1.The cycle.js principle: separate logic from effects</span></a></li></ol>
-<h1 id="1-The_cycle-js_principle_3A_separate_logic_from_effects"><a href="#1-The_cycle-js_principle_3A_separate_logic_from_effects" class="headerlink" title="1.The cycle.js principle: separate logic from effects"></a>1.The cycle.js principle: separate logic from effects</h1><p>So <code>cycle.js</code> is based on <code>Rxjs</code> and virtual DOM.</p>
-<p>Get <code>Rxjs</code> from <code>cdn.js</code>:<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span>/<span class="regexp">/cdnjs.cloudflare.com/ajax</span><span class="regexp">/libs/rxjs</span><span class="regexp">/4.0.7/rx</span>.min.js</span><br></pre></td></tr></table></figure></p>
-<p>Creating element when everything will mount:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"app"</span>&gt;&lt;<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>Now create an observable timer, which will show elapsed seconds:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Rx.Observable.timer(<span class="number">0</span>, <span class="number">1000</span>)</span><br><span class="line">    .map(i =&gt; `Second elapsed $&#123;i&#125;`)</span><br><span class="line">    .subsribe(text =&gt; &#123;</span><br><span class="line">        <span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">'#app'</span>)</span><br><span class="line">            .textContent = text;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<p>So the guide principle in <code>cycle.js</code> is separate logic from affects.</p>
-<ul>
-<li>Affect is everything what change external world aka changing the DOM.</li>
-<li>Logic it’s just an event steam.</li>
-</ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Logic (functional), in developer hands</span></span><br><span class="line">Rx.Observable.timer(<span class="number">0</span>, <span class="number">1000</span>)</span><br><span class="line">    .map(i =&gt; `Second elapsed $&#123;i&#125;`)</span><br><span class="line"></span><br><span class="line"><span class="comment">//Effects (imperative), in framework</span></span><br><span class="line">    .subsribe(text =&gt; &#123;</span><br><span class="line">        <span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">'#app'</span>)</span><br><span class="line">            .textContent = text;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+            <p>Did you know that you don’t have to link to an external image file when using an <code>&lt;img&gt;</code> element in HTML, or declaring a <code>background-image</code> in CSS? You can embed the image data directly into the document with data URIs.</p>
+<a id="more"></a>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why_would_you_do_this_3F"><span class="toc-text">Why would you do this?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#How_do_you_get_the_code_3F"><span class="toc-text">How do you get the code?</span></a></li></ol>
+<h1 id="Why_would_you_do_this_3F"><a href="#Why_would_you_do_this_3F" class="headerlink" title="Why would you do this?"></a>Why would you do this?</h1><p>The biggest reason: it saves HTTP Requests. Other than pure document size, this is the #1 factor concerning how fast a page loads. Less = better.</p>
+<p>The format, to be specific:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:[<span class="link_label">&lt;mime type&gt;</span>][<span class="link_reference">;charset=&lt;charset&gt;</span>][<span class="link_label">;base64</span>],<span class="xml"><span class="tag">&lt;<span class="title">encoded</span> <span class="attribute">data</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>:</span><br><span class="line">    <span class="function">url</span>(<span class="string">data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7</span>)</span><br><span class="line">    no-repeat</span><br><span class="line">    left center;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">25px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">img</span> <span class="attribute">width</span>=<span class="string">"16"</span> <span class="attribute">height</span>=<span class="string">"16"</span> alt=<span class="string">"star"</span> src=<span class="string">"data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="How_do_you_get_the_code_3F"><a href="#How_do_you_get_the_code_3F" class="headerlink" title="How do you get the code?"></a>How do you get the code?</h1><p>Use this <a href="http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/" target="_blank" rel="external">online conversion tool</a>. It’s the nicest one I have found. Here’s a <a href="http://jpillora.com/base64-encoder/" target="_blank" rel="external">drag and drop one</a>.</p>
+<p>Save my day: <a href="https://css-tricks.com/data-uris/" target="_blank" rel="external">css-tricks.com</a></p>
 
             
                 
@@ -248,7 +240,7 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/03/Practical-design-patterns-in-JavaScript/"  data-tooltip="Practical design patterns in JavaScript">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/"  data-tooltip="Web Services, WSDL, SOAP envelope with JavaScript">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -256,7 +248,7 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/11/The-Difference-Between-Throttling-and-Debouncing/" data-tooltip="The Difference Between Throttling and Debouncing">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/02/02/What-is-event-bubbling-and-capturing/" data-tooltip="What is event bubbling and capturing?">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -271,17 +263,17 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -327,7 +319,7 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/03/Practical-design-patterns-in-JavaScript/"  data-tooltip="Practical design patterns in JavaScript">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/"  data-tooltip="Web Services, WSDL, SOAP envelope with JavaScript">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -335,7 +327,7 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/11/The-Difference-Between-Throttling-and-Debouncing/" data-tooltip="The Difference Between Throttling and Debouncing">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/02/02/What-is-event-bubbling-and-capturing/" data-tooltip="What is event bubbling and capturing?">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -350,17 +342,17 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -386,17 +378,17 @@ Cycle.js builds on RxJS and is as a reactive and functional Jav">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/02/cycle-js-fundamentals/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2014/02/11/Data-URIs/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
