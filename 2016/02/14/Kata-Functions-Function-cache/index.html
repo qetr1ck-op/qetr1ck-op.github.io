@@ -6,22 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
-    <title>Kata (String): Reverse words - Blog | qetr1ck-op</title>
+    <title>Kata (Functions): Function cache - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description">
+    <meta name="description" content="If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and ca">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Kata (String): Reverse words">
-<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/index.html">
+<meta property="og:title" content="Kata (Functions): Function cache">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-02-13T09:50:12.077Z">
+<meta property="og:description" content="If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and ca">
+<meta property="og:updated_time" content="2016-02-14T19:19:48.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kata (String): Reverse words">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Kata (Functions): Function cache">
+<meta name="twitter:description" content="If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and ca">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -195,22 +195,31 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Kata (String): Reverse words
+            Kata (Functions): Function cache
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Feb 13 2016 11:50:12 GMT+0200">
+    <time itemprop="datePublished" content="Sun Feb 14 2016 21:17:45 GMT+0200">
 	
-		    Feb 13, 2016
+		    Feb 14, 2016
     	
     </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.</p>
+<p>Usage example:</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> complexFunction = (arg1, arg2) =&gt; &#123; /* complex calculation <span class="keyword">in</span> here */ &#125;;</span><br><span class="line"><span class="keyword">const</span> cachedFunction = cache(complexFunction);</span><br><span class="line"></span><br><span class="line">cachedFunction('foo', 'bar'); // complex function should be executed</span><br><span class="line">cachedFunction('foo', 'bar'); // complex function should <span class="keyword">not</span> be invoked again, instead the cached <span class="literal">result</span> should be returned</span><br><span class="line">cachedFunction('foo', 'baz'); // should be executed, because the <span class="keyword">method</span> wasn't invoked before <span class="keyword">with</span> these arguments</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cache = fn =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> calls = &#123;&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(<span class="rest_arg">...args</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!calls[args]) &#123;</span><br><span class="line">      calls[args] = fn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn(...args);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             
                 
 
@@ -219,12 +228,19 @@
     </div>
     <div class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Functions/">Functions</a> <a class="tag tag--primary tag--small t-link" href="/tags/Kata/">Kata</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Kata-Functions-Function-cache/"  data-tooltip="Kata (Functions): Function cache">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -232,7 +248,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/11/Kata-Curring-A-chain-adding-function/" data-tooltip="Kata (Functions, Curring): A chain adding function">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/13/Kata-String-Reverse-words/" data-tooltip="Kata (String): Reverse words">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -247,17 +263,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -303,7 +319,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Kata-Functions-Function-cache/"  data-tooltip="Kata (Functions): Function cache">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -311,7 +327,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/11/Kata-Curring-A-chain-adding-function/" data-tooltip="Kata (Functions, Curring): A chain adding function">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/13/Kata-String-Reverse-words/" data-tooltip="Kata (String): Reverse words">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -326,17 +342,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -362,17 +378,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
