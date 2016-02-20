@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/14/Kata-Functions-Function-cache/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
 <meta property="og:description" content="If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and ca">
-<meta property="og:updated_time" content="2016-02-14T19:19:48.984Z">
+<meta property="og:updated_time" content="2016-02-15T20:47:30.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kata (Functions): Function cache">
 <meta name="twitter:description" content="If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and ca">
@@ -219,7 +219,8 @@
             <p>If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.</p>
 <p>Usage example:</p>
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> complexFunction = (arg1, arg2) =&gt; &#123; /* complex calculation <span class="keyword">in</span> here */ &#125;;</span><br><span class="line"><span class="keyword">const</span> cachedFunction = cache(complexFunction);</span><br><span class="line"></span><br><span class="line">cachedFunction('foo', 'bar'); // complex function should be executed</span><br><span class="line">cachedFunction('foo', 'bar'); // complex function should <span class="keyword">not</span> be invoked again, instead the cached <span class="literal">result</span> should be returned</span><br><span class="line">cachedFunction('foo', 'baz'); // should be executed, because the <span class="keyword">method</span> wasn't invoked before <span class="keyword">with</span> these arguments</span><br></pre></td></tr></table></figure>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cache = fn =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> calls = &#123;&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(<span class="rest_arg">...args</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!calls[args]) &#123;</span><br><span class="line">      calls[args] = fn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn(...args);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cache = fn =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> calls = &#123;&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(<span class="rest_arg">...args</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!calls[args]) &#123;</span><br><span class="line">      calls[args] = fn(...args);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> calls[args];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             
                 
 
@@ -240,7 +241,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/"  data-tooltip="Misconceptions About Inheritance in JavaScript">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -319,7 +320,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/"  data-tooltip="Misconceptions About Inheritance in JavaScript">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>

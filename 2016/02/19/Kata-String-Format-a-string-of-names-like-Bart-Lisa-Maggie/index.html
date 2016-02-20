@@ -6,25 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
-    <title>Kata (Array): Are they square? - Blog | qetr1ck-op</title>
+    <title>Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39; - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
-Your function should return true if all elements in">
+    <meta name="description" content="Given: an array containing hashes of names
+Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+Example:123456789">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Kata (Array): Are they square?">
-<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/index.html">
+<meta property="og:title" content="Format a string of names like 'Bart, Lisa & Maggie'">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
-Your function should return true if all elements in">
-<meta property="og:updated_time" content="2016-02-15T20:36:24.374Z">
+<meta property="og:description" content="Given: an array containing hashes of names
+Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+Example:123456789">
+<meta property="og:updated_time" content="2016-02-18T22:08:22.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kata (Array): Are they square?">
-<meta name="twitter:description" content="Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
-Your function should return true if all elements in">
+<meta name="twitter:title" content="Format a string of names like 'Bart, Lisa & Maggie'">
+<meta name="twitter:description" content="Given: an array containing hashes of names
+Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+Example:123456789">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -198,13 +201,13 @@ Your function should return true if all elements in">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Kata (Array): Are they square?
+            Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Feb 09 2016 23:54:01 GMT+0200">
+    <time itemprop="datePublished" content="Fri Feb 19 2016 00:05:14 GMT+0200">
 	
-		    Feb 09, 2016
+		    Feb 19, 2016
     	
     </time>
     
@@ -219,11 +222,13 @@ Your function should return true if all elements in">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.</p>
-<p>Your function should return true if all elements in the array are square numbers and false if not.</p>
-<p>An empty array should return undefined. You can assume that all array elements will be positive integers.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Test.describe(<span class="string">"isSquare"</span>,function() &#123;</span><br><span class="line">    Test.it(<span class="string">"Basic tests"</span>,function() &#123;    </span><br><span class="line">        Test.assertEquals(isSquare([<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>]), <span class="literal">true</span>);</span><br><span class="line">        Test.assertEquals(isSquare([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]), <span class="literal">false</span>);</span><br><span class="line">        Test.assertEquals(isSquare([]), undefined);</span><br><span class="line">        Test.assertEquals(isSquare([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">15</span>]), <span class="literal">false</span>); </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isSquare = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (arr.length) ? arr.every(x =&gt; <span class="built_in">Math</span>.sqrt(x) % <span class="number">1</span> === <span class="number">0</span>) : <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>Given: an array containing hashes of names</p>
+<p>Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.</p>
+<p>Example:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">list</span><span class="params">([ &#123;name: <span class="string">'Bart'</span>&#125;, &#123;name: <span class="string">'Lisa'</span>&#125;, &#123;name: <span class="string">'Maggie'</span>&#125; ])</span></span></span><br><span class="line"><span class="comment">// returns 'Bart, Lisa &amp; Maggie'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">list</span><span class="params">([ &#123;name: <span class="string">'Bart'</span>&#125;, &#123;name: <span class="string">'Lisa'</span>&#125; ])</span></span></span><br><span class="line"><span class="comment">// returns 'Bart &amp; Lisa'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">list</span><span class="params">([ &#123;name: <span class="string">'Bart'</span>&#125; ])</span></span></span><br><span class="line"><span class="comment">// returns 'Bart'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">list</span><span class="params">([])</span></span></span><br><span class="line"><span class="comment">// returns ''</span></span><br></pre></td></tr></table></figure></p>
+<p>Tests:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(list([&#123;name: <span class="string">'Bart'</span>&#125;,&#123;name: <span class="string">'Lisa'</span>&#125;,&#123;name: <span class="string">'Maggie'</span>&#125;,&#123;name: <span class="string">'Homer'</span>&#125;,&#123;name: <span class="string">'Marge'</span>&#125;])</span></span>, <span class="string">'Bart, Lisa, Maggie, Homer &amp; Marge'</span>,</span><br><span class="line"><span class="string">"Must work with many names"</span>)</span><br><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(list([&#123;name: <span class="string">'Bart'</span>&#125;,&#123;name: <span class="string">'Lisa'</span>&#125;,&#123;name: <span class="string">'Maggie'</span>&#125;])</span></span>, <span class="string">'Bart, Lisa &amp; Maggie'</span>,</span><br><span class="line"><span class="string">"Must work with many names"</span>)</span><br><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(list([&#123;name: <span class="string">'Bart'</span>&#125;,&#123;name: <span class="string">'Lisa'</span>&#125;])</span></span>, <span class="string">'Bart &amp; Lisa'</span>, </span><br><span class="line"><span class="string">"Must work with two names"</span>)</span><br><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(list([&#123;name: <span class="string">'Bart'</span>&#125;])</span></span>, <span class="string">'Bart'</span>, <span class="string">"Wrong output for a single name"</span>)</span><br><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(list([])</span></span>, <span class="string">''</span>, <span class="string">"Must work with no names"</span>)</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = names =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> names.reduce( (prev, current, index, array) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (index === <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> current.name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (index === array.length - <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;prev&#125;</span> &amp; <span class="subst">$&#123;current.name&#125;</span>`</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;prev&#125;</span>, <span class="subst">$&#123;current.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="string">''</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
             
                 
 
@@ -235,7 +240,7 @@ Your function should return true if all elements in">
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Arrays/">Arrays</a> <a class="tag tag--primary tag--small t-link" href="/tags/Kata/">Kata</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Kata/">Kata</a> <a class="tag tag--primary tag--small t-link" href="/tags/String/">String</a>
 
             </div>
         
@@ -244,7 +249,7 @@ Your function should return true if all elements in">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/"  data-tooltip="Kata (Arrays): All, None &amp; Any">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -252,7 +257,7 @@ Your function should return true if all elements in">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-part-3/" data-tooltip="Development with Webpack and React part 3">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/" data-tooltip="Kata (Array, RegExp): Filter through name/email">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -267,17 +272,17 @@ Your function should return true if all elements in">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -323,7 +328,7 @@ Your function should return true if all elements in">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/"  data-tooltip="Kata (Arrays): All, None &amp; Any">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -331,7 +336,7 @@ Your function should return true if all elements in">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-part-3/" data-tooltip="Development with Webpack and React part 3">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/" data-tooltip="Kata (Array, RegExp): Filter through name/email">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -346,17 +351,17 @@ Your function should return true if all elements in">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -382,17 +387,17 @@ Your function should return true if all elements in">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

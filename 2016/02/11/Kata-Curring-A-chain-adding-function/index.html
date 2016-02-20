@@ -12,22 +12,16 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:
-1reverseWords(&quot;This is an example!&quot;); // returns  &quot;sihT si na !elpmaxe&quot;
-1Test.assertEquals(revers">
+    <meta name="description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Kata (Functions, Curring): A chain adding function">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/11/Kata-Curring-A-chain-adding-function/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:
-1reverseWords(&quot;This is an example!&quot;); // returns  &quot;sihT si na !elpmaxe&quot;
-1Test.assertEquals(revers">
-<meta property="og:updated_time" content="2016-02-13T09:53:04.998Z">
+<meta property="og:description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:">
+<meta property="og:updated_time" content="2016-02-15T20:47:28.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kata (Functions, Curring): A chain adding function">
-<meta name="twitter:description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:
-1reverseWords(&quot;This is an example!&quot;); // returns  &quot;sihT si na !elpmaxe&quot;
-1Test.assertEquals(revers">
+<meta name="twitter:description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -223,6 +217,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>Write a reverseWords function that accepts a string a parameter, and reverses each word in the string:</p>
+<a id="more"></a>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverseWords(<span class="string">"This is an example!"</span>); <span class="regexp">//</span> returns  <span class="string">"sihT si na !elpmaxe"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(reverseWords(<span class="string">"This is an example!"</span>)</span></span>, <span class="string">"sihT si na !elpmaxe"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reverseWords = str =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(<span class="string">' '</span>)</span><br><span class="line">    .map( word =&gt; word.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>) )</span><br><span class="line">    .join(<span class="string">' '</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

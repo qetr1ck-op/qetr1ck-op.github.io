@@ -12,16 +12,16 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description">
+    <meta name="description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Kata (String): Reverse words">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/13/Kata-String-Reverse-words/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-02-13T09:50:12.077Z">
+<meta property="og:description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.">
+<meta property="og:updated_time" content="2016-02-15T20:46:14.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kata (String): Reverse words">
-<meta name="twitter:description">
+<meta name="twitter:description" content="Write a reverseWords function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -210,7 +210,14 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>Write a <code>reverseWords</code> function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.</p>
+<a id="more"></a>
+<p>Example:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverseWords(<span class="string">"This is an example!"</span>); <span class="regexp">//</span> returns  <span class="string">"sihT si na !elpmaxe"</span></span><br></pre></td></tr></table></figure>
+<p>Test:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.<span class="function"><span class="title">assertEquals</span><span class="params">(reverseWords(<span class="string">"This is an example!"</span>)</span></span>, <span class="string">"sihT si na !elpmaxe"</span>)</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reverseWords = <span class="built_in">str</span> =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">str</span></span><br><span class="line">    .<span class="built_in">split</span>(<span class="string">' '</span>)</span><br><span class="line">    .<span class="built_in">map</span>( word =&gt; word.<span class="built_in">split</span>(<span class="string">''</span>).<span class="built_in">reverse</span>().<span class="built_in">join</span>(<span class="string">''</span>) )</span><br><span class="line">    .<span class="built_in">join</span>(<span class="string">' '</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             
                 
 

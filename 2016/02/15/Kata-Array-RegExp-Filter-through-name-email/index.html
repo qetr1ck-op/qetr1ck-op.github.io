@@ -6,25 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
-    <title>Kata (Array): Are they square? - Blog | qetr1ck-op</title>
+    <title>Kata (Array, RegExp): Filter through name/email - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
-Your function should return true if all elements in">
+    <meta name="description" content="He has troubles with users ending or starting in a ., and his user-array is a flat array of user-email-pairs, like so:">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Kata (Array): Are they square?">
-<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/index.html">
+<meta property="og:title" content="Kata (Array, RegExp): Filter through name/email">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
-Your function should return true if all elements in">
-<meta property="og:updated_time" content="2016-02-15T20:36:24.374Z">
+<meta property="og:description" content="He has troubles with users ending or starting in a ., and his user-array is a flat array of user-email-pairs, like so:">
+<meta property="og:updated_time" content="2016-02-15T20:46:00.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kata (Array): Are they square?">
-<meta name="twitter:description" content="Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
-Your function should return true if all elements in">
+<meta name="twitter:title" content="Kata (Array, RegExp): Filter through name/email">
+<meta name="twitter:description" content="He has troubles with users ending or starting in a ., and his user-array is a flat array of user-email-pairs, like so:">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -198,13 +195,13 @@ Your function should return true if all elements in">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Kata (Array): Are they square?
+            Kata (Array, RegExp): Filter through name/email
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Feb 09 2016 23:54:01 GMT+0200">
+    <time itemprop="datePublished" content="Mon Feb 15 2016 22:34:45 GMT+0200">
 	
-		    Feb 09, 2016
+		    Feb 15, 2016
     	
     </time>
     
@@ -219,11 +216,14 @@ Your function should return true if all elements in">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.</p>
-<p>Your function should return true if all elements in the array are square numbers and false if not.</p>
-<p>An empty array should return undefined. You can assume that all array elements will be positive integers.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Test.describe(<span class="string">"isSquare"</span>,function() &#123;</span><br><span class="line">    Test.it(<span class="string">"Basic tests"</span>,function() &#123;    </span><br><span class="line">        Test.assertEquals(isSquare([<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>]), <span class="literal">true</span>);</span><br><span class="line">        Test.assertEquals(isSquare([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]), <span class="literal">false</span>);</span><br><span class="line">        Test.assertEquals(isSquare([]), undefined);</span><br><span class="line">        Test.assertEquals(isSquare([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">15</span>]), <span class="literal">false</span>); </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isSquare = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (arr.length) ? arr.every(x =&gt; <span class="built_in">Math</span>.sqrt(x) % <span class="number">1</span> === <span class="number">0</span>) : <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>He has troubles with users ending or starting in a <code>.</code>, and his user-array is a flat array of user-email-pairs, like so:</p>
+<a id="more"></a>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ <span class="string">"foo"</span>, <span class="string">"foo@bar.com"</span>, <span class="string">"bar"</span>, <span class="string">"bar@foo.com"</span>, <span class="string">".foo"</span>, <span class="string">"food@bar.com"</span> ]</span><br></pre></td></tr></table></figure>
+<p>He is only interested in e-mailing the users and ask them to sign up again, so no need to keep the user-name, only e-mail addresses for the user-names that start or end with a <code>.</code> should be returned. For the above array, the correct return-array would be</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ <span class="string">"food@bar.com"</span> ]</span><br></pre></td></tr></table></figure>
+<p>Test:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">describe<span class="list">( <span class="string">"Testing a list"</span>, function<span class="list">()</span>&#123;</span><br><span class="line">  it<span class="list">( <span class="string">"Basic list"</span>, function<span class="list">()</span>&#123;</span><br><span class="line">    var a = [ <span class="string">"foo"</span>, <span class="string">"foo@foo.com"</span>, <span class="string">"bar."</span>, <span class="string">"bar@bar.com"</span> ],</span><br><span class="line">    b = [ <span class="string">"bar@bar.com"</span> ]<span class="comment">;    </span></span><br><span class="line">    Test.assertSimilar<span class="list">( <span class="keyword">searchNames</span><span class="list">( <span class="keyword">a</span> )</span>, b,</span><br><span class="line">      <span class="string">"not correct "</span> + Test.inspect<span class="list">(<span class="keyword">a</span>)</span> + <span class="string">" given"</span> )</span><span class="comment">;</span></span><br><span class="line">  &#125; )</span><span class="comment">;</span></span><br><span class="line">&#125; )</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>Result:<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const searchNames = logins =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> logins.filter(</span><br><span class="line">        <span class="function"><span class="params">( login, i, ary)</span> =&gt;</span> i % <span class="number">2</span> === <span class="number">1</span> &amp;&amp; ary[i - <span class="number">1</span>].match(<span class="regexp">/^\.|\.$/</span>);</span><br><span class="line">    )</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+
             
                 
 
@@ -235,7 +235,7 @@ Your function should return true if all elements in">
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Arrays/">Arrays</a> <a class="tag tag--primary tag--small t-link" href="/tags/Kata/">Kata</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Arrays/">Arrays</a> <a class="tag tag--primary tag--small t-link" href="/tags/Kata/">Kata</a> <a class="tag tag--primary tag--small t-link" href="/tags/RegExp/">RegExp</a>
 
             </div>
         
@@ -244,7 +244,7 @@ Your function should return true if all elements in">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/"  data-tooltip="Kata (Arrays): All, None &amp; Any">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/"  data-tooltip="Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -252,7 +252,7 @@ Your function should return true if all elements in">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-part-3/" data-tooltip="Development with Webpack and React part 3">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/" data-tooltip="Misconceptions About Inheritance in JavaScript">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -267,17 +267,17 @@ Your function should return true if all elements in">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -323,7 +323,7 @@ Your function should return true if all elements in">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/"  data-tooltip="Kata (Arrays): All, None &amp; Any">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/"  data-tooltip="Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -331,7 +331,7 @@ Your function should return true if all elements in">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/07/Development-with-Webpack-and-React-part-3/" data-tooltip="Development with Webpack and React part 3">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/" data-tooltip="Misconceptions About Inheritance in JavaScript">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -346,17 +346,17 @@ Your function should return true if all elements in">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -382,17 +382,17 @@ Your function should return true if all elements in">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/09/Kata-Arrays-Are-they-square/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
