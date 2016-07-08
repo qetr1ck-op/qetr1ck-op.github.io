@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>Reading files in JavaScript with File API - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description" content="Reading files in Javascript with File API">
@@ -25,21 +26,27 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -47,19 +54,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -111,14 +124,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -130,7 +143,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -157,7 +170,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -184,7 +197,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -199,7 +212,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Aug 02 2014 15:39:09 GMT+0300">
+    <time itemprop="datePublished" datetime="2014-08-02T15:39:09+03:00">
 	
 		    Aug 02, 2014
     	
@@ -212,6 +225,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -230,7 +244,7 @@
 </ul>
 <h1 id="Check_for_the_File_API_support"><a href="#Check_for_the_File_API_support" class="headerlink" title="Check for the File API support."></a>Check for the File API support.</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Check for the various File API support.</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">window</span>.<span class="keyword">File</span> &amp;&amp; <span class="keyword">window</span>.FileReader &amp;&amp; <span class="keyword">window</span>.FileList &amp;&amp; <span class="keyword">window</span>.Blob) &#123;</span><br><span class="line">  <span class="comment">// Great success! All the File APIs are supported.</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert('The <span class="keyword">File</span> APIs are not fully supported <span class="keyword">in</span> this browser.');</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Using_form_input_for_selecting"><a href="#Using_form_input_for_selecting" class="headerlink" title="Using form input for selecting"></a>Using form input for selecting</h1><p>The most straightforward way to load a file is to use a standard <code>input type=&quot;file&quot;</code> element. JavaScript returns the list of selected <code>File</code> objects as a <code>FileList</code>. Here’s an example that uses the <code>multiple</code> attribute to allow selecting several files at once:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"files"</span> <span class="attribute">name</span>=<span class="value">"files[]"</span> <span class="attribute">multiple</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">output</span> <span class="attribute">id</span>=<span class="value">"list"</span>&gt;</span><span class="tag">&lt;/<span class="title">output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleFileSelect</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> files = evt.target.files; <span class="comment">// FileList object</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// files is a FileList of File objects. List some properties.</span></span><br><span class="line">    <span class="keyword">var</span> output = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, f; f = files[i]; i++) &#123;</span><br><span class="line">      output.push(<span class="string">'&lt;li&gt;**'</span>, <span class="built_in">escape</span>(f.name), <span class="string">'** ('</span>, f.type || <span class="string">'n/a'</span>, <span class="string">') - '</span>,</span><br><span class="line">                  f.size, <span class="string">' bytes, last modified: '</span>,</span><br><span class="line">                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : <span class="string">'n/a'</span>,</span><br><span class="line">                  <span class="string">'&lt;/li&gt;'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>).innerHTML = <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>).addEventListener(<span class="string">'change'</span>, handleFileSelect, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"files"</span> <span class="attr">name</span>=<span class="string">"files[]"</span> <span class="attr">multiple</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">output</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleFileSelect</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> files = evt.target.files; <span class="comment">// FileList object</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// files is a FileList of File objects. List some properties.</span></span><br><span class="line">    <span class="keyword">var</span> output = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, f; f = files[i]; i++) &#123;</span><br><span class="line">      output.push(<span class="string">'&lt;li&gt;**'</span>, <span class="built_in">escape</span>(f.name), <span class="string">'** ('</span>, f.type || <span class="string">'n/a'</span>, <span class="string">') - '</span>,</span><br><span class="line">                  f.size, <span class="string">' bytes, last modified: '</span>,</span><br><span class="line">                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : <span class="string">'n/a'</span>,</span><br><span class="line">                  <span class="string">'&lt;/li&gt;'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>).innerHTML = <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>).addEventListener(<span class="string">'change'</span>, handleFileSelect, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
 <p data-height="185" data-theme-id="10606" data-slug-hash="nhHCi" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/nhHCi/" target="_blank" rel="external">Using form input for selecting</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
 
@@ -249,12 +263,12 @@
 </ol>
 <p>Once one of these read methods is called on your <code>FileReader</code> object, the <code>onloadstart</code>, <code>onprogress</code>, <code>onload</code>, <code>onabort</code>, <code>onerror</code>, and <code>onloadend</code> can be used to track its progress.</p>
 <p>The example below filters out images from the user’s selection, calls <code>reader.readAsDataURL()</code> on the file, and renders a thumbnail by setting the <code>src</code> attribute to a data URL:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">  <span class="class">.thumb</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">75px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#000</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10px</span> <span class="number">5px</span> <span class="number">0</span> <span class="number">0</span></span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"files"</span> <span class="attribute">name</span>=<span class="value">"files[]"</span> <span class="attribute">multiple</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">output</span> <span class="attribute">id</span>=<span class="value">"list"</span>&gt;</span><span class="tag">&lt;/<span class="title">output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleFileSelect</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> files = evt.target.files; <span class="comment">// FileList object</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Loop through the FileList and render image files as thumbnails.</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, f; f = files[i]; i++) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Only process image files.</span></span><br><span class="line">      <span class="keyword">if</span> (!f.type.match(<span class="string">'image.*'</span>)) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Closure to capture the file information.</span></span><br><span class="line">      reader.onload = (<span class="function"><span class="keyword">function</span>(<span class="params">theFile</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">          <span class="comment">// Render thumbnail.</span></span><br><span class="line">          <span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">          span.innerHTML = [<span class="string">'![]()'</span>].join(<span class="string">''</span>);</span><br><span class="line">          <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>).insertBefore(span, <span class="literal">null</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;)(f);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Read in the image file as a data URL.</span></span><br><span class="line">      reader.readAsDataURL(f);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>).addEventListener(<span class="string">'change'</span>, handleFileSelect, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">  <span class="selector-class">.thumb</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">75px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">5px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"files"</span> <span class="attr">name</span>=<span class="string">"files[]"</span> <span class="attr">multiple</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">output</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleFileSelect</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> files = evt.target.files; <span class="comment">// FileList object</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Loop through the FileList and render image files as thumbnails.</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, f; f = files[i]; i++) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Only process image files.</span></span><br><span class="line">      <span class="keyword">if</span> (!f.type.match(<span class="string">'image.*'</span>)) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Closure to capture the file information.</span></span><br><span class="line">      reader.onload = (<span class="function"><span class="keyword">function</span>(<span class="params">theFile</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">          <span class="comment">// Render thumbnail.</span></span><br><span class="line">          <span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">          span.innerHTML = [<span class="string">'![]()'</span>].join(<span class="string">''</span>);</span><br><span class="line">          <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>).insertBefore(span, <span class="literal">null</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;)(f);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Read in the image file as a data URL.</span></span><br><span class="line">      reader.readAsDataURL(f);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>).addEventListener(<span class="string">'change'</span>, handleFileSelect, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p data-height="187" data-theme-id="10606" data-slug-hash="sJpmy" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/sJpmy/" target="_blank" rel="external">sJpmy</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
 
 <h1 id="Monitoring_the_progress_of_a_read"><a href="#Monitoring_the_progress_of_a_read" class="headerlink" title="Monitoring the progress of a read"></a>Monitoring the progress of a read</h1><p>One of the nice things that we get for free when using async event handling is the ability to monitor the progress of the file read; useful for large files, catching errors, and figuring out when a read is complete.</p>
 <p>The <code>onloadstart</code> and <code>onprogress</code> events can be used to monitor the progress of a read.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">  <span class="id">#progress_bar</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10px</span> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">3px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#000</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-moz-transition</span>:<span class="value"> opacity <span class="number">1s</span> linear</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-o-transition</span>:<span class="value"> opacity <span class="number">1s</span> linear</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-transition</span>:<span class="value"> opacity <span class="number">1s</span> linear</span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="id">#progress_bar</span><span class="class">.loading</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">1.0</span></span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="id">#progress_bar</span> <span class="class">.percent</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#99ccff</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> auto</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"files"</span> <span class="attribute">name</span>=<span class="value">"file"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">onclick</span>=<span class="value">"abortRead();"</span>&gt;</span>Cancel read<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"progress_bar"</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"percent"</span>&gt;</span>0%<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> reader;</span><br><span class="line">  <span class="keyword">var</span> progress = <span class="built_in">document</span>.querySelector(<span class="string">'.percent'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">abortRead</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    reader.abort();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">errorHandler</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(evt.target.error.code) &#123;</span><br><span class="line">      <span class="keyword">case</span> evt.target.error.NOT_FOUND_ERR:</span><br><span class="line">        alert(<span class="string">'File Not Found!'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> evt.target.error.NOT_READABLE_ERR:</span><br><span class="line">        alert(<span class="string">'File is not readable'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> evt.target.error.ABORT_ERR:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// noop</span></span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        alert(<span class="string">'An error occurred reading this file.'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">updateProgress</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// evt is an ProgressEvent.</span></span><br><span class="line">    <span class="keyword">if</span> (evt.lengthComputable) &#123;</span><br><span class="line">      <span class="keyword">var</span> percentLoaded = <span class="built_in">Math</span>.round((evt.loaded / evt.total) * <span class="number">100</span>);</span><br><span class="line">      <span class="comment">// Increase the progress bar length.</span></span><br><span class="line">      <span class="keyword">if</span> (percentLoaded &lt; <span class="number">100</span>) &#123;</span><br><span class="line">        progress.style.width = percentLoaded + <span class="string">'%'</span>;</span><br><span class="line">        progress.textContent = percentLoaded + <span class="string">'%'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleFileSelect</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Reset progress indicator on new file selection.</span></span><br><span class="line">    progress.style.width = <span class="string">'0%'</span>;</span><br><span class="line">    progress.textContent = <span class="string">'0%'</span>;</span><br><span class="line"></span><br><span class="line">    reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">    reader.onerror = errorHandler;</span><br><span class="line">    reader.onprogress = updateProgress;</span><br><span class="line">    reader.onabort = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      alert(<span class="string">'File read cancelled'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    reader.onloadstart = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">document</span>.getElementById(<span class="string">'progress_bar'</span>).className = <span class="string">'loading'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// Ensure that the progress bar displays 100% at the end.</span></span><br><span class="line">      progress.style.width = <span class="string">'100%'</span>;</span><br><span class="line">      progress.textContent = <span class="string">'100%'</span>;</span><br><span class="line">      setTimeout(<span class="string">"document.getElementById('progress_bar').className='';"</span>, <span class="number">2000</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read in the image file as a binary string.</span></span><br><span class="line">    reader.readAsBinaryString(evt.target.files[<span class="number">0</span>]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>).addEventListener(<span class="string">'change'</span>, handleFileSelect, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">  <span class="selector-id">#progress_bar</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">-moz-transition</span>: opacity <span class="number">1s</span> linear;</span><br><span class="line">    <span class="attribute">-o-transition</span>: opacity <span class="number">1s</span> linear;</span><br><span class="line">    <span class="attribute">-webkit-transition</span>: opacity <span class="number">1s</span> linear;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-id">#progress_bar</span><span class="selector-class">.loading</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1.0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-id">#progress_bar</span> <span class="selector-class">.percent</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#99ccff</span>;</span><br><span class="line">    <span class="attribute">height</span>: auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"files"</span> <span class="attr">name</span>=<span class="string">"file"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"abortRead();"</span>&gt;</span>Cancel read<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"progress_bar"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"percent"</span>&gt;</span>0%<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> reader;</span><br><span class="line">  <span class="keyword">var</span> progress = <span class="built_in">document</span>.querySelector(<span class="string">'.percent'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">abortRead</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    reader.abort();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">errorHandler</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(evt.target.error.code) &#123;</span><br><span class="line">      <span class="keyword">case</span> evt.target.error.NOT_FOUND_ERR:</span><br><span class="line">        alert(<span class="string">'File Not Found!'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> evt.target.error.NOT_READABLE_ERR:</span><br><span class="line">        alert(<span class="string">'File is not readable'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> evt.target.error.ABORT_ERR:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// noop</span></span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        alert(<span class="string">'An error occurred reading this file.'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">updateProgress</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// evt is an ProgressEvent.</span></span><br><span class="line">    <span class="keyword">if</span> (evt.lengthComputable) &#123;</span><br><span class="line">      <span class="keyword">var</span> percentLoaded = <span class="built_in">Math</span>.round((evt.loaded / evt.total) * <span class="number">100</span>);</span><br><span class="line">      <span class="comment">// Increase the progress bar length.</span></span><br><span class="line">      <span class="keyword">if</span> (percentLoaded &lt; <span class="number">100</span>) &#123;</span><br><span class="line">        progress.style.width = percentLoaded + <span class="string">'%'</span>;</span><br><span class="line">        progress.textContent = percentLoaded + <span class="string">'%'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleFileSelect</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Reset progress indicator on new file selection.</span></span><br><span class="line">    progress.style.width = <span class="string">'0%'</span>;</span><br><span class="line">    progress.textContent = <span class="string">'0%'</span>;</span><br><span class="line"></span><br><span class="line">    reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">    reader.onerror = errorHandler;</span><br><span class="line">    reader.onprogress = updateProgress;</span><br><span class="line">    reader.onabort = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      alert(<span class="string">'File read cancelled'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    reader.onloadstart = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">document</span>.getElementById(<span class="string">'progress_bar'</span>).className = <span class="string">'loading'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// Ensure that the progress bar displays 100% at the end.</span></span><br><span class="line">      progress.style.width = <span class="string">'100%'</span>;</span><br><span class="line">      progress.textContent = <span class="string">'100%'</span>;</span><br><span class="line">      setTimeout(<span class="string">"document.getElementById('progress_bar').className='';"</span>, <span class="number">2000</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read in the image file as a binary string.</span></span><br><span class="line">    reader.readAsBinaryString(evt.target.files[<span class="number">0</span>]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>).addEventListener(<span class="string">'change'</span>, handleFileSelect, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p data-height="216" data-theme-id="10606" data-slug-hash="GKbhy" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/GKbhy/" target="_blank" rel="external">Monitoring the progress of a read</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
 
 <h1 id="Example_3A_drag_and_drop_files_and_folders"><a href="#Example_3A_drag_and_drop_files_and_folders" class="headerlink" title="Example: drag and drop files and folders"></a>Example: drag and drop files and folders</h1><p><a href="http://savemyday.in/examples/drag-and-drop-files-and-folders/index.html" target="_blank" rel="external">Example: drag and drop files and folders</a></p>
@@ -264,12 +278,9 @@
 </ul>
 
             
-                
-
-            
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
@@ -329,7 +340,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -339,9 +350,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -356,7 +369,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -408,7 +421,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -418,7 +431,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/08/02/Reading-files-in-JavaScript-with-File-API/">
@@ -440,13 +453,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -457,7 +475,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -472,22 +490,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2014/08/02/Reading-files-in-JavaScript-with-File-API/';
+                 
+                    this.page.identifier = '2014/08/02/Reading-files-in-JavaScript-with-File-API/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -499,28 +525,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

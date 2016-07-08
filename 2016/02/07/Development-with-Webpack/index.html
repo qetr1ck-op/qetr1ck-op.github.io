@@ -3,49 +3,53 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>Development with Webpack and React part 1 - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.
-&amp;lt;!--toc--&amp;gt;">
+    <meta name="description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Development with Webpack and React part 1">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.
-&amp;lt;!--toc--&amp;gt;">
-<meta property="og:updated_time" content="2016-02-10T19:21:23.936Z">
+<meta property="og:description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.">
+<meta property="og:updated_time" content="2016-02-20T09:29:43.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Development with Webpack and React part 1">
-<meta name="twitter:description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.
-&amp;lt;!--toc--&amp;gt;">
+<meta name="twitter:description" content="Begin with compression of build tools. Conception of bundlers. How to install and base configuration.">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
-        <meta property="og:image" content="/2016/02/07/Development-with-Webpack/title.png"/>
+        <meta property="og:image" content="http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/title.png"/>
         <meta class="swiftype" name="image" data-type="enum" content="http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/title.png" />
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -53,19 +57,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -117,14 +127,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -136,7 +146,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -163,7 +173,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -190,7 +200,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -205,7 +215,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Feb 07 2016 12:11:41 GMT+0200">
+    <time itemprop="datePublished" datetime="2016-02-07T12:11:41+02:00">
 	
 		    Feb 07, 2016
     	
@@ -218,6 +228,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -241,70 +252,67 @@
 <li>Live reload</li>
 </ul>
 <h1 id="Development_with_webpack"><a href="#Development_with_webpack" class="headerlink" title="Development with webpack"></a>Development with webpack</h1><p>Obviously for development you already should have <code>node.js</code>, better via <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">nvm</a>, <code>npm</code>, <code>git</code>, <code>.gitignore</code></p>
-<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="tag">i</span> webpack -D</span><br></pre></td></tr></table></figure>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> webpack -D</span><br></pre></td></tr></table></figure>
 <p>npm maintains a directory where it installs possible executables of packages. You can display the exact path using</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> bin<span class="function"> -&gt;</span> ...<span class="pi">/node_modules/</span>.bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> bin<span class="function"> -&gt;</span> ...<span class="regexp">/node_modules/</span>.bin</span><br></pre></td></tr></table></figure>
 <h1 id="Directory_Structure"><a href="#Directory_Structure" class="headerlink" title="Directory Structure"></a>Directory Structure</h1><p>Set up a structure like this:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/app</span><br><span class="line">    index<span class="class">.js</span></span><br><span class="line">    component<span class="class">.js</span></span><br><span class="line">/build</span><br><span class="line">    index<span class="class">.html</span></span><br><span class="line">package<span class="class">.json</span></span><br><span class="line">webpack<span class="class">.config</span><span class="class">.js</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/app</span><br><span class="line">    index<span class="selector-class">.js</span></span><br><span class="line">    component<span class="selector-class">.js</span></span><br><span class="line">/build</span><br><span class="line">    index<span class="selector-class">.html</span></span><br><span class="line">package<span class="selector-class">.json</span></span><br><span class="line">webpack<span class="selector-class">.config</span><span class="selector-class">.js</span></span><br></pre></td></tr></table></figure>
 <h1 id="Setting_Up_Webpack_Configuration"><a href="#Setting_Up_Webpack_Configuration" class="headerlink" title="Setting Up Webpack Configuration"></a>Setting Up Webpack Configuration</h1><p>For this purpose we’ll build <code>webpack.config.js</code>.</p>
 <p>To map our application to build/bundle.js we need configuration like this:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PATHS = &#123;</span><br><span class="line">  app: path.join(__dirname, <span class="string">'app'</span>),</span><br><span class="line">  build: path.join(__dirname, <span class="string">'build'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="module"><span class="keyword">module</span>.exports = </span>&#123;</span><br><span class="line">  <span class="comment">// Entry accepts a path or an object of entries.</span></span><br><span class="line">  <span class="comment">// The build chapter contains an example of the latter.</span></span><br><span class="line">  entry: PATHS.app,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: PATHS.build,</span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PATHS = &#123;</span><br><span class="line">  app: path.join(__dirname, <span class="string">'app'</span>),</span><br><span class="line">  build: path.join(__dirname, <span class="string">'build'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// Entry accepts a path or an object of entries.</span></span><br><span class="line">  <span class="comment">// The build chapter contains an example of the latter.</span></span><br><span class="line">  entry: PATHS.app,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: PATHS.build,</span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>Difference <a href="https://www.google.com.ua/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=0ahUKEwijtcCax-XKAhXCa3IKHeKEATYQFgggMAE&amp;url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F10822574%2Fdifference-between-path-normalize-and-path-resolve-in-node-js&amp;usg=AFQjCNHGkW_e3ZkNAa8LW-F3DlMKLThd2A&amp;sig2=KNJT8WqvuceEiFZK7nGDVw" target="_blank" rel="external">path.resolve vs path.join</a></p>
 <h1 id="Adding_a_Build_Shortcut"><a href="#Adding_a_Build_Shortcut" class="headerlink" title="Adding a Build Shortcut"></a>Adding a Build Shortcut</h1><p>Given executing node_modules/.bin/webpack is a little verbose, we should do something about it:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="attribute">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="attr">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">...</span></span><br></pre></td></tr></table></figure>
 <p>This works because npm adds <code>node_modules/.bin</code> temporarily to the path. As a result, rather than having to write <code>&quot;build&quot;: &quot;node_modules/.bin/webpack&quot;</code>, we can do just <code>&quot;build&quot;: &quot;webpack&quot;</code>.</p>
 <h1 id="Setting_Up_webpack-dev-server"><a href="#Setting_Up_webpack-dev-server" class="headerlink" title="Setting Up webpack-dev-server"></a>Setting Up webpack-dev-server</h1><p>webpack-dev-server is a development server running in-memory. It refreshes content automatically in the browser while you develop your application. This makes it roughly equivalent to tools, such as <em>LiveReload</em> or <em>Browsersync</em>.</p>
 <p>The greatest advantage Webpack has over these tools is <em>Hot Module Replacement</em> (HMR). In short, it provides a way to patch the browser state without a full refresh. </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="tag">i</span> webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> webpack-dev-server -D</span><br></pre></td></tr></table></figure>
 <p>Given our <code>index.html</code> is below <code>./build</code>, we should let<code>webpack-dev-server</code> to serve the content from there:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"></span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server --content-base build"</span> <span class="comment">// --port 3000</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"></span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server --content-base build"</span> <span class="comment">// --port 3000</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">...</span></span><br></pre></td></tr></table></figure>
 <h1 id="Splitting_Up_Configuration"><a href="#Splitting_Up_Configuration" class="headerlink" title="Splitting Up Configuration"></a>Splitting Up Configuration</h1><p>As the development setup has certain requirements of its own, we’ll need to split our Webpack configuration. Given Webpack configuration is just JavaScript, there are many ways to achieve this. At least the following ways are feasible:</p>
 <ul>
-<li>Maintain configuration in multiple files and point Webpack to each through <code>--config</code> parameter. Share configuration through module imports. You can see this approach in action at <a href="https://github.com/HenrikJoreteg/hjs-webpack" target="_blank" rel="external">webpack/react-starter</a>.</li>
+<li>Share configuration through module imports. You can see this approach in action at <a href="https://github.com/webpack/react-starter/blob/master/make-webpack-config.js" target="_blank" rel="external">webpack/react-starter</a></li>
 <li>Push configuration to a library which you then consume. Example: <a href="https://github.com/HenrikJoreteg/hjs-webpack#usage" target="_blank" rel="external">HenrikJoreteg/hjs-webpack</a>.</li>
 <li>Maintain configuration within a single file and branch there. If we trigger a script through npm (i.e., <code>npm run test</code>), npm sets this information in an environment variable. We can match against it and return the configuration we want.</li>
 </ul>
 <p>To keep things simple and help with the approach, I’ve defined a custom <code>merge</code> function that concatenates arrays and merges objects. This is convenient with Webpack as we’ll soon see:</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-<span class="built_in">merge</span> --<span class="keyword">save</span>-dev</span><br></pre></td></tr></table></figure>
 <p>Next, we need to define some split points to our configuration so we can customize it per npm script:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> TARGET = process.env.npm_lifecycle_event;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PATHS = &#123;</span><br><span class="line">  app: path.join(__dirname, <span class="string">'app'</span>),</span><br><span class="line">  build: path.join(__dirname, <span class="string">'build'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="module"><span class="keyword">module</span>.exports = </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> common = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Entry accepts a path or an object of entries.</span></span><br><span class="line">    <span class="comment">// The build chapter contains an example of the latter.</span></span><br><span class="line">    entry: PATHS.app,</span><br><span class="line">    output: &#123;</span><br><span class="line">      path: PATHS.build,</span><br><span class="line">      filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Default configuration</span></span><br><span class="line">  <span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line">    <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(TARGET === <span class="string">'build'</span>) &#123;</span><br><span class="line">    <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;&#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> TARGET = process.env.npm_lifecycle_event;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PATHS = &#123;</span><br><span class="line">  app: path.join(__dirname, <span class="string">'app'</span>),</span><br><span class="line">  build: path.join(__dirname, <span class="string">'build'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span>.exports = &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> common = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Entry accepts a path or an object of entries.</span></span><br><span class="line">    <span class="comment">// The build chapter contains an example of the latter.</span></span><br><span class="line">    entry: PATHS.app,</span><br><span class="line">    output: &#123;</span><br><span class="line">      path: PATHS.build,</span><br><span class="line">      filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Default configuration</span></span><br><span class="line">  <span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line">    <span class="keyword">module</span>.exports = merge(common, &#123;&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(TARGET === <span class="string">'build'</span>) &#123;</span><br><span class="line">    <span class="keyword">module</span>.exports = merge(common, &#123;&#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Configuring_Hot_Module_Replacement__28HMR_29"><a href="#Configuring_Hot_Module_Replacement__28HMR_29" class="headerlink" title="Configuring Hot Module Replacement (HMR)"></a>Configuring Hot Module Replacement (HMR)</h1><p>Hot Module Replacement gives us simple means to refresh the browser automatically as we make changes. </p>
 <p>In order to make this work, we’ll need to connect the generated bundle running in-memory to the development server. Webpack uses <em>WebSocket</em> based communication to achieve this.</p>
 <p>Beyond this we’ll need to enable <code>HotModuleReplacementPlugin</code> to make the setup work:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="module"><span class="keyword">module</span>.exports = merge(common, </span>&#123;</span><br><span class="line">    devServer: &#123;</span><br><span class="line">      contentBase: PATHS.build,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Enable history API fallback so HTML5 History API based</span></span><br><span class="line">      <span class="comment">// routing works. This is a good default that will come</span></span><br><span class="line">      <span class="comment">// in handy in more complicated setups.</span></span><br><span class="line">      historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">      hot: <span class="literal">true</span>,</span><br><span class="line">      inline: <span class="literal">true</span>,</span><br><span class="line">      progress: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Display only errors to reduce the amount of output.</span></span><br><span class="line">      stats: <span class="string">'errors-only'</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Parse host and port from env so this is easy to customize.</span></span><br><span class="line">      host: process.env.HOST,</span><br><span class="line">      port: process.env.PORT</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">      <span class="keyword">new</span> webpack.HotModuleReplacementPlugin() <span class="comment">// (!)</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="attr">...</span></span><br><span class="line"></span><br><span class="line">const webpack = <span class="keyword">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line"><span class="attr">...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line"></span><br><span class="line">  module.exports = merge(common, &#123;</span><br><span class="line">    devServer: &#123;</span><br><span class="line">      contentBase: PATHS.build,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Enable history API fallback so HTML5 History API based</span></span><br><span class="line">      <span class="comment">// routing works. This is a good default that will come</span></span><br><span class="line">      <span class="comment">// in handy in more complicated setups.</span></span><br><span class="line">      historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">      hot: <span class="literal">true</span>,</span><br><span class="line">      <span class="keyword">inline</span>: <span class="literal">true</span>,</span><br><span class="line">      progress: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Display only errors to reduce the amount of output.</span></span><br><span class="line">      stats: <span class="string">'errors-only'</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Parse host and port from env so this is easy to customize.</span></span><br><span class="line">      host: process.env.HOST,</span><br><span class="line">      port: process.env.PORT</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: <span class="meta">[</span></span><br><span class="line">      <span class="literal">new</span> webpack.HotModuleReplacementPlugin() <span class="comment">// (!)</span></span><br><span class="line">    <span class="meta">]</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>Given we pushed <code>contentBase</code> configuration to JavaScript, we can remove it from <code>package.json</code>:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="attribute">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line"></span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server"</span> <span class="comment">//--watch-poll --inline --hot</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="attr">...</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line"></span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server"</span> <span class="comment">//--watch-poll --inline --hot</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">...</span></span><br></pre></td></tr></table></figure>
 <h1 id="Refreshing_CSS"><a href="#Refreshing_CSS" class="headerlink" title="Refreshing CSS"></a>Refreshing CSS</h1><p><a href="http://webpack.github.io/docs/using-loaders.html]?" target="_blank" rel="external">What are loaders</a></p>
 <p>Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file as the parameter and return the new source.</p>
 <p>For example, you can use loaders to tell webpack to load <code>CoffeeScript</code> or <code>JSX</code></p>
 <p>To load CSS into a project, we’ll need to use a couple of loaders:</p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i css-loader style-loader --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i css-loader <span class="built_in">style</span>-loader --<span class="built_in">save</span>-dev</span><br></pre></td></tr></table></figure>
 <p>Now that we have the loaders we need, we’ll need to make sure Webpack is aware of them:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> common = &#123;</span><br><span class="line">  ...</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="module"><span class="keyword">module</span>: </span>&#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// Test expects a RegExp! Note the slashes!</span></span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        loaders: [<span class="string">'style'</span>, <span class="string">'css'</span>],</span><br><span class="line">        <span class="comment">// Include accepts either a path or an array of paths.</span></span><br><span class="line">        include: PATHS.app <span class="comment">// It is a good idea to set up include always</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> common = &#123;</span><br><span class="line">  ...</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="keyword">module</span>: &#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// Test expects a RegExp! Note the slashes!</span></span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        loaders: [<span class="string">'style'</span>, <span class="string">'css'</span>],</span><br><span class="line">        <span class="comment">// Include accepts either a path or an array of paths.</span></span><br><span class="line">        include: PATHS.app <span class="comment">// It is a good idea to set up include always</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>The loaders are evaluated from right to left. In this case, <code>css-loader</code> gets evaluated first, then <code>style-loader</code>. <code>css-loader</code> will resolve <code>@import</code> and url statements in our CSS files. <code>style-loader</code> deals with require statements in our JavaScript. A similar approach works with CSS preprocessors, like Sass and Less, and their loaders.</p>
 <h1 id="Enabling_Sourcemaps"><a href="#Enabling_Sourcemaps" class="headerlink" title="Enabling Sourcemaps"></a>Enabling Sourcemaps</h1><p>In Webpack this is controlled through the devtool setting:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="attribute">...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(TARGET === <span class="string">'start'</span> <span class="subst">||</span> <span class="subst">!</span>TARGET) &#123;</span><br><span class="line">  module<span class="built_in">.</span>exports = merge(common, &#123;</span><br><span class="line">    devtool: <span class="string">'eval-source-map'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attribute">...</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="attr">...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(TARGET === <span class="string">'start'</span> || !TARGET) &#123;</span><br><span class="line">  module.exports = merge(common, &#123;</span><br><span class="line">    devtool: <span class="string">'eval-source-map'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">...</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">...</span></span><br></pre></td></tr></table></figure>
 <p>In this case, we’re using <code>eval-source-map</code>. It builds slowly initially, but it provides fast rebuild speed and yields real files.</p>
 <p>Faster development specific options, such as <code>cheap-module-eval-source-map</code> and <code>eval</code>, produce lower quality sourcemaps. Especially <code>eval</code> is fast and is the most suitable for large projects.</p>
 <h1 id="Library_and_externals"><a href="#Library_and_externals" class="headerlink" title="Library and externals"></a>Library and externals</h1><p>Recommended <a href="https://webpack.github.io/docs/library-and-externals.html" target="_blank" rel="external">configuration</a> (only relevant stuff):</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>webpack.config.js</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">output</span>: &#123;</span><br><span class="line">        <span class="regexp">//</span> export itself to a <span class="built_in">global</span> var</span><br><span class="line">        <span class="attribute">libraryTarget</span>: <span class="string">"var"</span>,</span><br><span class="line">        <span class="regexp">//</span> name <span class="keyword">of</span> the <span class="built_in">global</span> <span class="attribute">var</span>: <span class="string">"Foo"</span></span><br><span class="line">        <span class="attribute">library</span>: <span class="string">"Foo"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attribute">externals</span>: &#123;</span><br><span class="line">        <span class="regexp">//</span> <span class="built_in">require</span>(<span class="string">"jquery"</span>) <span class="keyword">is</span> external <span class="keyword">and</span> available</span><br><span class="line">        <span class="regexp">//</span>  <span class="literal">on</span> the <span class="built_in">global</span> var jQuery</span><br><span class="line">        <span class="string">"jquery"</span>: <span class="string">"jQuery"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="symbol">    output:</span> &#123;</span><br><span class="line">        <span class="comment">// export itself to a global var</span></span><br><span class="line"><span class="symbol">        libraryTarget:</span> <span class="string">"var"</span>,</span><br><span class="line">        <span class="comment">// name of the global var: "Foo"</span></span><br><span class="line"><span class="symbol">        library:</span> <span class="string">"Foo"</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="symbol">    externals:</span> &#123;</span><br><span class="line">        <span class="comment">// require("jquery") is external and available</span></span><br><span class="line">        <span class="comment">//  on the global var jQuery</span></span><br><span class="line">        <span class="string">"jquery"</span>: <span class="string">"jQuery"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="NODE_ENV_and_plugins"><a href="#NODE_ENV_and_plugins" class="headerlink" title="NODE_ENV and plugins"></a>NODE_ENV and plugins</h1><p>We will use standard for node.js developers variable <code>NODE_ENV</code> and plugin <a href="https://github.com/webpack/docs/wiki/internal-webpack-plugins#defineplugindefinitions" target="_blank" rel="external">DefinePlugin</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> NODE_ENV = process.env.NODE_ENV || <span class="string">'development'</span>;</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(webpack);</span><br><span class="line">...</span><br><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">        NODE_ENV: <span class="built_in">JSON</span>.stringify(NODE_ENV)</span><br><span class="line">    &#125;);</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> NODE_ENV = process.env.NODE_ENV || <span class="string">'development'</span>;</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(webpack);</span><br><span class="line">...</span><br><span class="line"><span class="attribute">plugins</span>: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">        <span class="attribute">NODE_ENV</span>: <span class="built_in">JSON</span>.stringify(NODE_ENV)</span><br><span class="line">    &#125;);</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <h1 id="Final_app_sources"><a href="#Final_app_sources" class="headerlink" title="Final app sources"></a>Final app sources</h1><p>The final source of the article <a href="https://github.com/survivejs/webpack_react/tree/dev/project_source/02_developing_with_webpack/kanban_app" target="_blank" rel="external">here</a></p>
-<p>Save my day: (<a href="http://survivejs.com/)[http://survivejs.com/webpack_react/webpack_and_react/" target="_blank" rel="external">http://survivejs.com/)[http://survivejs.com/webpack_react/webpack_and_react/</a>]</p>
-
-            
-                
+<p>Save my day: <a href="http://survivejs.com/webpack_react/webpack_and_react/(" target="_blank" rel="external">http://survivejs.com/</a></p>
 
             
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Webpack/">Webpack</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Alt/">Alt</a> <a class="tag tag--primary tag--small t-link" href="/tags/Babel/">Babel</a> <a class="tag tag--primary tag--small t-link" href="/tags/ES6/">ES6</a> <a class="tag tag--primary tag--small t-link" href="/tags/React/">React</a> <a class="tag tag--primary tag--small t-link" href="/tags/Webpack/">Webpack</a>
 
             </div>
         
@@ -359,7 +367,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -369,9 +377,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -386,7 +396,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -438,7 +448,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -448,7 +458,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/">
@@ -470,13 +480,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -487,7 +502,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -502,22 +517,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack/';
+                 
+                    this.page.identifier = '2016/02/07/Development-with-Webpack/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -529,28 +552,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>Huston, do we have a problem with promises? - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description" content="Many of us are using promises without really understanding them.">
@@ -25,24 +26,30 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
-        <meta property="og:image" content="/2015/02/02/Huston-do-we-have-a-problem-with-promises/title.jpg"/>
+        <meta property="og:image" content="http://qetr1ck-op.github.io/2015/02/02/Huston-do-we-have-a-problem-with-promises/title.jpg"/>
         <meta class="swiftype" name="image" data-type="enum" content="http://qetr1ck-op.github.io/2015/02/02/Huston-do-we-have-a-problem-with-promises/title.jpg" />
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -50,19 +57,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -114,14 +127,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -133,7 +146,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -160,7 +173,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -187,7 +200,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -202,7 +215,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Feb 02 2015 20:13:01 GMT+0200">
+    <time itemprop="datePublished" datetime="2015-02-02T20:13:01+02:00">
 	
 		    Feb 02, 2015
     	
@@ -215,6 +228,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -225,22 +239,22 @@
 <h1 id="Wherefore_promises_3F"><a href="#Wherefore_promises_3F" class="headerlink" title="Wherefore promises?"></a>Wherefore promises?</h1><p>If you read the literature on promises, you’ll often find references to the <em>pyramid of doom</em>, with some horrible callback-y code that steadily stretches toward the right side of the screen.</p>
 <p>The whole point of promises is to give us back the language fundamentals we lost when we went async: <code>return</code>, <code>throw</code>, and the <code>stack</code>. But you have to know how to use promises correctly in order to take advantage of them.</p>
 <h1 id="Rookie_mistakes"><a href="#Rookie_mistakes" class="headerlink" title="Rookie mistakes"></a>Rookie mistakes</h1><p>I’m only going to talk about the official spec, as exposed in modern browsers as <code>window.Promise</code>. Not all browsers have <code>window.Promise</code> though, so for a good <em>polyfill</em>, check out the cheekily-named <a href="https://github.com/calvinmetcalf/lie" target="_blank" rel="external">Lie</a>, which is about the smallest spec-compliant library out there.</p>
-<h1 id="Rookie_mistake__231_3A_the_promisey_pyramid_of_doom"><a href="#Rookie_mistake__231_3A_the_promisey_pyramid_of_doom" class="headerlink" title="Rookie mistake #1: the promisey pyramid of doom"></a>Rookie mistake #1: the promisey pyramid of doom</h1><p>The most common bad practice is this one:<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">remotedb.allDocs(&#123;</span><br><span class="line">  include_docs: <span class="literal">true</span>,</span><br><span class="line">  attachments: <span class="literal">true</span></span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> <span class="params">(result)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> docs = result.rows;</span><br><span class="line">  docs.forEach(<span class="function"><span class="keyword">function</span><span class="params">(element)</span> </span>&#123;</span><br><span class="line">    localdb.put(element.doc).then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span><br><span class="line">      alert(<span class="string">"Pulled doc with id "</span> + element.doc._id + <span class="string">" and added to local db."</span>);</span><br><span class="line">    &#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(err)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err.status == <span class="number">409</span>) &#123;</span><br><span class="line">        localdb.<span class="keyword">get</span>(element.doc._id).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span><br><span class="line">          localdb.remove(resp._id, resp._rev).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span><br><span class="line"><span class="comment">// et cetera...</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Rookie_mistake__231_3A_the_promisey_pyramid_of_doom"><a href="#Rookie_mistake__231_3A_the_promisey_pyramid_of_doom" class="headerlink" title="Rookie mistake #1: the promisey pyramid of doom"></a>Rookie mistake #1: the promisey pyramid of doom</h1><p>The most common bad practice is this one:<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">remotedb.allDocs(&#123;</span><br><span class="line">  include_docs: <span class="keyword">true</span>,</span><br><span class="line">  attachments: <span class="keyword">true</span></span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(result)</span></span> &#123;</span><br><span class="line">  var docs = result.rows;</span><br><span class="line">  docs.forEach(<span class="function"><span class="keyword">function</span><span class="params">(element)</span></span> &#123;</span><br><span class="line">    localdb.put(element.doc).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(response)</span></span> &#123;</span><br><span class="line">      alert(<span class="string">"Pulled doc with id "</span> + element.doc._id + <span class="string">" and added to local db."</span>);</span><br><span class="line">    &#125;).catch(<span class="function"><span class="keyword">function</span> <span class="params">(err)</span></span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (err.status == <span class="number">409</span>) &#123;</span><br><span class="line">        localdb.get(element.doc._id).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span></span> &#123;</span><br><span class="line">          localdb.remove(resp._id, resp._rev).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span></span> &#123;</span><br><span class="line">// et cetera...</span><br></pre></td></tr></table></figure></p>
 <p>Yes, it turns out you can use promises as if they were <em>callbacks</em>, and yes, it’s a lot like using a power sander to file your nails, but you can do it.</p>
 <p>A better style is this one:</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="transposed_variable">remotedb.</span>allDocs(...).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(resultOfAllDocs)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="transposed_variable">localdb.</span>put(...);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(resultOfPut)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="transposed_variable">localdb.</span>get(...);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(resultOfGet)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="transposed_variable">localdb.</span>put(...);</span><br><span class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(err)</span> &#123;</span></span><br><span class="line">  <span class="transposed_variable">console.</span>log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">remotedb.allDocs(...).<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>(resultOfAllDocs) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">localdb.put(...)</span>;</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>(resultOfPut) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">localdb.get(...)</span>;</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>(resultOfGet) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">localdb.put(...)</span>;</span><br><span class="line">&#125;).catch(<span class="keyword">function</span> <span class="title"></span>(err) &#123;</span><br><span class="line">  console.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>This is called composing promises, and it’s one of the great superpowers of promises. Each function will only be called when the previous promise has resolved, and it’ll be called with that promise’s output. More on that later.</p>
 <h1 id="Rookie_mistake__232_3A_WTF_2C_how_do_I_use_forEach_28_29_with_promises_3F"><a href="#Rookie_mistake__232_3A_WTF_2C_how_do_I_use_forEach_28_29_with_promises_3F" class="headerlink" title="Rookie mistake #2: WTF, how do I use forEach() with promises?"></a>Rookie mistake #2: WTF, how do I use forEach() with promises?</h1><p>This is where most people’s understanding of promises starts to break down. As soon as they reach for their familiar <code>forEach()</code> loop (or <code>for</code> loop, or <code>while</code> loop), they have no idea how to make it work with promises. So they write something like this:</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// I want to remove() all docs</span><br><span class="line">db.allDocs(&#123;include_docs: <span class="literal">true</span>&#125;).then(function (<span class="literal">result</span>) &#123;</span><br><span class="line">  <span class="literal">result</span>.rows.forEach(function (row) &#123;</span><br><span class="line">    db.remove(row.doc);  </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).then(function () &#123;</span><br><span class="line">  // I naively believe all docs have been removed() now!</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// I want to remove() all docs</span></span><br><span class="line">db.allDocs(&#123;include_docs: <span class="keyword">true</span>&#125;).then(<span class="function"><span class="keyword">function</span> <span class="params">(result)</span> </span>&#123;</span><br><span class="line">  result.rows.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span> <span class="params">(row)</span> </span>&#123;</span><br><span class="line">    db.remove(row.doc);  </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// I naively believe all docs have been removed() now!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>What’s the problem with this code? The problem is that the first function is actually returning <code>undefined</code>, meaning that the second function isn’t waiting for <code>db.remove()</code> to be called on all the documents. In fact, <em>it isn’t waiting on anything</em>, and can execute when any number of docs have been removed!</p>
 <p>The <em>TLDR</em> of all this is that <code>forEach()</code>/<code>for</code>/<code>while</code> are not the constructs you’re looking for. You want <code>Promise.all()</code>:</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.allDocs(&#123;include_docs: <span class="literal">true</span>&#125;).then(function (<span class="literal">result</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">Promise</span>.all(<span class="literal">result</span>.rows.map(function (row) &#123;</span><br><span class="line">    <span class="keyword">return</span> db.remove(row.doc);</span><br><span class="line">  &#125;));</span><br><span class="line">&#125;).then(function (arrayOfResults) &#123;</span><br><span class="line">  // <span class="type">All</span> docs have really been removed() now!</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.allDocs(&#123;include_docs: <span class="literal">true</span>&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.all(result.rows.map(<span class="function"><span class="keyword">function</span> (<span class="params">row</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> db.remove(row.doc);</span><br><span class="line">  &#125;));</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">arrayOfResults</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// All docs have really been removed() now!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>What’s going on here? Basically <code>Promise.all()</code> takes an array of promises as input, and then it gives you another promise that only resolves when every one of those other promises has resolved. It is the asynchronous equivalent of a <code>for-loop</code>.</p>
 <h1 id="Rookie_mistake__233_3A_forgetting_to_add_-catch_28_29"><a href="#Rookie_mistake__233_3A_forgetting_to_add_-catch_28_29" class="headerlink" title="Rookie mistake #3: forgetting to add .catch()"></a>Rookie mistake #3: forgetting to add .catch()</h1><p>Many developers forget to add a <code>.catch()</code> anywhere in their code. Unfortunately this means that any thrown errors will be swallowed, and you won’t even see them in your console. This can be a real pain to debug.</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">somePromise().<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> anotherPromise();</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> yetAnotherPromise();</span><br><span class="line">&#125;).<span class="keyword">catch</span>(<span class="transposed_variable">console.</span><span class="transposed_variable">log.</span>bind(console)); <span class="comment">// &lt;-- this is badass</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">somePromise().<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">anotherPromise()</span>;</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">yetAnotherPromise()</span>;</span><br><span class="line">&#125;).catch(console.log.bind(console)); // &lt;<span class="comment">-- this is badass</span></span><br></pre></td></tr></table></figure>
 <h1 id="Rookie_mistake__234_3A_using__u201Cdeferred_u201D"><a href="#Rookie_mistake__234_3A_using__u201Cdeferred_u201D" class="headerlink" title="Rookie mistake #4: using “deferred”"></a>Rookie mistake #4: using “deferred”</h1><p>If you are writing that word in your code you are doing something wrong. Here’s how to avoid it.</p>
 <p>First off, most promise libraries give you a way to <em>import</em> promises from third-party libraries. For instance, Angular’s <code>$q</code> module allows you to wrap non-$q promises using <code>$q.when()</code>. So Angular users can wrap PouchDB promises this way:</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$q</span>.<span class="keyword">when</span>(db.put(doc)).<span class="keyword">then</span>(/* ... */); // &lt;-- this is all the code you need</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$q.when(db.<span class="built_in">put</span>(doc)).<span class="keyword">then</span>(<span class="comment">/* ... */</span>);<span class="comment"> // &lt;-- this is all the code you need</span></span><br></pre></td></tr></table></figure>
 <p>Another strategy is to use the revealing constructor pattern, which is useful for wrapping <em>non-promise APIs</em>. For instance, to wrap a callback-based API like Node’s <code>fs.readFile()</code>, you can simply do:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  fs.readFile(<span class="string">'myfile.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, file</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">return</span> reject(err);</span><br><span class="line">    &#125;</span><br><span class="line">    resolve(file);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).then(<span class="comment">/* ... */</span>)</span><br></pre></td></tr></table></figure>
 <h1 id="Rookie_mistake__235_3A_using_side_effects_instead_of_returning"><a href="#Rookie_mistake__235_3A_using_side_effects_instead_of_returning" class="headerlink" title="Rookie mistake #5: using side effects instead of returning"></a>Rookie mistake #5: using side effects instead of returning</h1><p>What’s wrong with this code?</p>
@@ -250,55 +264,52 @@
 <p>What can we do here? There are three things:</p>
 <p>1.<code>return</code> another promise<br>2.<code>return</code> a synchronous value (or <code>undefined</code>)<br>3.<code>throw</code> a synchronous error</p>
 <h2 id="Return_another_promise"><a href="#Return_another_promise" class="headerlink" title="Return another promise"></a>Return another promise</h2><p>This is a common pattern you see in the promise literature, as in the <em>composing promises</em> example above:</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(<span class="transposed_variable">user.</span>id);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">  <span class="comment">// I got a user account!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">  <span class="comment">// I got a user account!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Notice that I’m returning the second promise – that <code>return</code> is crucial. If I didn’t say return, then the <code>getUserAccountById()</code> would actually be a <em>side effect</em>, and the next function would receive <code>undefined</code> instead of the <code>userAccount</code>.</p>
 <h2 id="Return_a_synchronous_value__28or_undefined_29"><a href="#Return_a_synchronous_value__28or_undefined_29" class="headerlink" title="Return a synchronous value (or undefined)"></a>Return a synchronous value (or undefined)</h2><p>Returning <code>undefined</code> is often a mistake, but returning a <em>synchronous value</em> is actually an awesome way to convert synchronous code into promisey code. For instance, let’s say we have an in-memory cache of users. We can do:</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">if</span> (inMemoryCache<span class="matrix">[user.id]</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> inMemoryCache<span class="matrix">[user.id]</span>;    <span class="comment">// returning a synchronous value!</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(<span class="transposed_variable">user.</span>id); <span class="comment">// returning a promise!</span></span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">  <span class="comment">// I got a user account!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">if</span> (inMemoryCache[user.id]) &#123;</span><br><span class="line">    <span class="keyword">return</span> inMemoryCache[user.id];    <span class="comment">// returning a synchronous value!</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id); <span class="comment">// returning a promise!</span></span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">  <span class="comment">// I got a user account!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>For this reason, I make it a personal habit to always return or throw from inside a <code>then()</code> function. I’d recommend you do the same.</p>
 <h2 id="Throw_a_synchronous_error"><a href="#Throw_a_synchronous_error" class="headerlink" title="Throw a synchronous error"></a>Throw a synchronous error</h2><p>Let’s say we want to throw a synchronous error in case the user is logged out. It’s quite easy:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).then(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (user.isLoggedOut()) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">'user logged out!'</span>); <span class="comment">// throwing a synchronous error!</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (inMemoryCache[user.id]) &#123;</span><br><span class="line">    <span class="keyword">return</span> inMemoryCache[user.id];       <span class="comment">// returning a synchronous value!</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id);    <span class="comment">// returning a promise!</span></span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// I got a user account!</span></span><br><span class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(err)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Boo, I got an error!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).then(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (user.isLoggedOut()) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">'user logged out!'</span>); <span class="comment">// throwing a synchronous error!</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (inMemoryCache[user.id]) &#123;</span><br><span class="line">    <span class="keyword">return</span> inMemoryCache[user.id];       <span class="comment">// returning a synchronous value!</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id);    <span class="comment">// returning a promise!</span></span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// I got a user account!</span></span><br><span class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(err)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Boo, I got an error!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h1 id="Advanced_mistake__231_3A_don_u2019t_know_about_Promise-resolve"><a href="#Advanced_mistake__231_3A_don_u2019t_know_about_Promise-resolve" class="headerlink" title="Advanced mistake #1: don’t know about Promise.resolve"></a>Advanced mistake #1: don’t know about Promise.resolve</h1><p>As I showed above, promises are very useful for wrapping synchronous code as asynchronous code. However, if you find yourself typing this a lot:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  resolve(someSynchronousValue);</span><br><span class="line">&#125;).then(<span class="comment">/* ... */</span>);</span><br></pre></td></tr></table></figure>
 <p>You can express this more succinctly using <code>Promise.resolve()</code>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Promise</span><span class="class">.resolve</span>(<span class="tag">someSynchronousValue</span>)<span class="class">.then</span>(<span class="comment">/* ... */</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise<span class="selector-class">.resolve</span>(someSynchronousValue)<span class="selector-class">.then</span>(<span class="comment">/* ... */</span>);</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//more verbose exapmle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">somePromiseAPI</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'foo'</span>;</span><br><span class="line">  &#125;).then(<span class="comment">/* ... */</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Advanced_mistake__232_3A_catch_28_29_isn_u2019t_exactly_like_then_28null_2C_cb_29"><a href="#Advanced_mistake__232_3A_catch_28_29_isn_u2019t_exactly_like_then_28null_2C_cb_29" class="headerlink" title="Advanced mistake #2: catch() isn’t exactly like then(null, cb)"></a>Advanced mistake #2: catch() isn’t exactly like then(null, cb)</h1><p>If you’re wondering why they’re not equivalent, consider what happens if the first function throws an error:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">somePromise().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'oh noes'</span>);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// I caught your error! :)</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">somePromise().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'oh noes'</span>);</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// I didn't catch your error! :(</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>As it turns out, when you use the then(resolveHandler, rejectHandler) format, the rejectHandler won’t actually catch an error if it’s thrown by the resolveHandler itself.</p>
 <h1 id="Advanced_mistake__233_3A_use_promise_in_paralel_or_promises_vs_promise_factories"><a href="#Advanced_mistake__233_3A_use_promise_in_paralel_or_promises_vs_promise_factories" class="headerlink" title="Advanced mistake #3: use promise in paralel or promises vs promise factories"></a>Advanced mistake #3: use promise in paralel or promises vs promise factories</h1><p>That is, you want something like <code>Promise.all()</code>, but which doesn’t execute the <em>promises in parallel</em>.</p>
 <p>You might naïvely write something like this:</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function executeSequentially(promises) &#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="literal">result</span> = <span class="type">Promise</span>.resolve();</span><br><span class="line">  promises.forEach(function (promise) &#123;</span><br><span class="line">    <span class="literal">result</span> = <span class="literal">result</span>.then(promise);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">executeSequentially</span>(<span class="params">promises</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">  promises.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">promise</span>) </span>&#123;</span><br><span class="line">    result = result.then(promise);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The promises you pass in to <code>executeSequentially()</code> will still execute in parallel.</p>
 <p>The reason this happens is that you don’t want to operate over an array of promises at all. Per the promise spec, as soon as a promise is created, it begins executing. So what you really want is an array of promise factories.</p>
 <p>A promise factory is very simple, though – it’s just a function that returns a promise:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myPromiseFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> somethingThatCreatesAPromise();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function executeSequentially(promiseFactories) &#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="literal">result</span> = <span class="type">Promise</span>.resolve();</span><br><span class="line">  promiseFactories.forEach(function (promiseFactory) &#123;</span><br><span class="line">    <span class="literal">result</span> = <span class="literal">result</span>.then(promiseFactory);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">myPromiseFactory</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">somethingThatCreatesAPromise()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">executeSequentially</span>(<span class="params">promiseFactories</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">  promiseFactories.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">promiseFactory</span>) </span>&#123;</span><br><span class="line">    result = result.then(promiseFactory);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Why does this work? It works because a promise factory doesn’t create the promise until it’s asked to. It works the same way as a <code>then</code> function – in fact, it’s the same thing!</p>
 <p>Another task, create code which will download recurses from array URLs in sequence:</p>
-<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = [</span><br><span class="line">  <span class="symbol">'user</span>.json',</span><br><span class="line">  <span class="symbol">'guest</span>.json'</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// begin <span class="keyword">of</span> the chain</span><br><span class="line"><span class="keyword">let</span> chain = <span class="type">Promise</span>.resolve();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> results = [];</span><br><span class="line"></span><br><span class="line">// <span class="keyword">in</span> loop add tasks <span class="keyword">in</span> chain</span><br><span class="line">urls.forEach(function(url) &#123;</span><br><span class="line">  // task are added <span class="keyword">in</span> sequence</span><br><span class="line">  chain = chain</span><br><span class="line">    .then(() =&gt; httpGet(url))</span><br><span class="line">    .then((<span class="literal">result</span>) =&gt; &#123;</span><br><span class="line">      results.push(<span class="literal">result</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// <span class="literal">result</span> <span class="keyword">of</span> promises</span><br><span class="line">chain.then(console.log.<span class="keyword">bind</span>(console));</span><br></pre></td></tr></table></figure>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = [</span><br><span class="line">  <span class="symbol">'user</span>.json',</span><br><span class="line">  <span class="symbol">'guest</span>.json'</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span> begin <span class="keyword">of</span> the chain</span><br><span class="line">let chain = Promise.resolve();</span><br><span class="line"></span><br><span class="line">let results = [];</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> <span class="keyword">in</span> <span class="keyword">loop</span> add tasks <span class="keyword">in</span> chain</span><br><span class="line">urls.forEach(function(url) &#123;</span><br><span class="line">  <span class="regexp">//</span> task are added <span class="keyword">in</span> sequence</span><br><span class="line">  chain = chain</span><br><span class="line">    .<span class="keyword">then</span>(<span class="function"><span class="params">()</span> =&gt;</span> httpGet(url))</span><br><span class="line">    .<span class="keyword">then</span>(<span class="function"><span class="params">(result)</span> =&gt;</span> &#123;</span><br><span class="line">      results.push(result);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> result <span class="keyword">of</span> promises</span><br><span class="line">chain.<span class="keyword">then</span>(<span class="built_in">console</span>.log.bind(<span class="built_in">console</span>));</span><br></pre></td></tr></table></figure>
 <p>The same approach with parallel:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Promise</span><span class="class">.all</span>( <span class="tag">urls</span><span class="class">.map</span>(<span class="tag">httpGet</span>) )</span><br><span class="line">  <span class="class">.then</span>(<span class="tag">console</span><span class="class">.log</span><span class="class">.bind</span>(<span class="tag">console</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Promise</span><span class="selector-class">.all</span>( <span class="selector-tag">urls</span><span class="selector-class">.map</span>(<span class="selector-tag">httpGet</span>) )</span><br><span class="line">  <span class="selector-class">.then</span>(<span class="selector-tag">console</span><span class="selector-class">.log</span><span class="selector-class">.bind</span>(<span class="selector-tag">console</span>));</span><br></pre></td></tr></table></figure>
 <h1 id="Advanced_mistake__234_3A_okay_2C_what_if_I_want_the_result_of_two_promises_3F"><a href="#Advanced_mistake__234_3A_okay_2C_what_if_I_want_the_result_of_two_promises_3F" class="headerlink" title="Advanced mistake #4: okay, what if I want the result of two promises?"></a>Advanced mistake #4: okay, what if I want the result of two promises?</h1><p>Often times, one promise will depend on another, but we’ll want the output of both promises. For instance:</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(<span class="transposed_variable">user.</span>id);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">  <span class="comment">// dangit, I need the "user" object too!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">  <span class="comment">// dangit, I need the "user" object too!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Wanting to be good JavaScript developers and avoid the pyramid of doom, we might just store the user object in a higher-scoped variable:</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> user;</span><br><span class="line">getUserByName('nolan').then(function (<span class="literal">result</span>) &#123;</span><br><span class="line">  user = <span class="literal">result</span>;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id);</span><br><span class="line">&#125;).then(function (userAccount) &#123;</span><br><span class="line">  // okay, I have both the <span class="string">"user"</span> <span class="keyword">and</span> the <span class="string">"userAccount"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var user;</span><br><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(result)</span></span> &#123;</span><br><span class="line">  user = result;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span></span> &#123;</span><br><span class="line">  // okay, I have both the <span class="string">"user"</span> <span class="keyword">and</span> the <span class="string">"userAccount"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>My recommended strategy: just let go of your preconceptions and embrace the pyramid:</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(<span class="transposed_variable">user.</span>id).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">    <span class="comment">// okay, I have both the "user" and the "userAccount"</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserByName(<span class="string">'nolan'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(user)</span></span> &#123;</span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span></span> &#123;</span><br><span class="line">    // okay, I have both the <span class="string">"user"</span> <span class="keyword">and</span> the <span class="string">"userAccount"</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>If the indentation ever becomes an issue, then you can do what JavaScript developers have been doing since time immemorial, and extract the function into a named function:</p>
-<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onGetUserAndUserAccount</span><span class="params">(user, userAccount)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> doSomething(user, userAccount);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onGetUser</span><span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(<span class="transposed_variable">user.</span>id).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">    <span class="keyword">return</span> onGetUserAndUserAccount(user, userAccount);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getUserByName(<span class="string">'nolan'</span>)</span><br><span class="line">  .<span class="keyword">then</span>(onGetUser)</span><br><span class="line">  .<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></span><br><span class="line">  <span class="comment">// at this point, doSomething() is done, and we are back to indentation 0</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onGetUserAndUserAccount</span><span class="params">(user, userAccount)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> doSomething(user, userAccount);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onGetUser</span><span class="params">(user)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> getUserAccountById(user.id).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(userAccount)</span> &#123;</span></span><br><span class="line">    <span class="keyword">return</span> onGetUserAndUserAccount(user, userAccount);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getUserByName(<span class="string">'nolan'</span>)</span><br><span class="line">  .<span class="keyword">then</span>(onGetUser)</span><br><span class="line">  .<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></span><br><span class="line">  <span class="comment">// at this point, doSomething() is done, and we are back to indentation 0</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>As your promise code starts to get more complex, you may find yourself extracting more and more functions into named functions. I find this leads to very aesthetically-pleasing code, which might look like this:</p>
-<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">putYourRightFootIn<span class="literal">()</span></span><br><span class="line">  .<span class="keyword">then</span>(putYourRightFootOut)</span><br><span class="line">  .<span class="keyword">then</span>(putYourRightFootIn)  </span><br><span class="line">  .<span class="keyword">then</span>(shakeItAllAbout);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">putYourRightFootIn()</span><br><span class="line">  .<span class="keyword">then</span>(putYourRightFootOut)</span><br><span class="line">  .<span class="keyword">then</span>(putYourRightFootIn)  </span><br><span class="line">  .<span class="keyword">then</span>(shakeItAllAbout);</span><br></pre></td></tr></table></figure>
 <p>Save my day:</p>
 <pre><code>*    [We have a problem with promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
 </code></pre>
             
-                
-
-            
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
@@ -358,7 +369,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -368,9 +379,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -385,7 +398,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -437,7 +450,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -447,7 +460,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2015/02/02/Huston-do-we-have-a-problem-with-promises/">
@@ -469,13 +482,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -486,7 +504,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -501,22 +519,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2015/02/02/Huston-do-we-have-a-problem-with-promises/';
+                 
+                    this.page.identifier = '2015/02/02/Huston-do-we-have-a-problem-with-promises/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -528,28 +554,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

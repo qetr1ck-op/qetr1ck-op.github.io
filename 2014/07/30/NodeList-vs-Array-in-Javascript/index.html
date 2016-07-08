@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>NodeList vs Array in Javascript - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description" content="Essentially, a NodeList is what you get when you call any method such as elem.getElemetsByTagName(), elem.querySelectorAll() and so on.">
@@ -25,24 +26,30 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
-        <meta property="og:image" content="/2014/07/30/NodeList-vs-Array-in-Javascript/title.png"/>
+        <meta property="og:image" content="http://qetr1ck-op.github.io/2014/07/30/NodeList-vs-Array-in-Javascript/title.png"/>
         <meta class="swiftype" name="image" data-type="enum" content="http://qetr1ck-op.github.io/2014/07/30/NodeList-vs-Array-in-Javascript/title.png" />
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -50,19 +57,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -114,14 +127,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -133,7 +146,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -160,7 +173,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -187,7 +200,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -202,7 +215,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jul 30 2014 22:39:40 GMT+0300">
+    <time itemprop="datePublished" datetime="2014-07-30T22:39:40+03:00">
 	
 		    Jul 30, 2014
     	
@@ -215,6 +228,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -222,24 +236,21 @@
             <p>Essentially, a <code>NodeList</code> is what you get when you call any method such as <code>elem.getElemetsByTagName()</code>, <code>elem.querySelectorAll()</code> and so on.</p>
 <a id="more"></a>
 <p>We should note here that <code>NodeLists</code> aren’t exactly part of the JavaScript but they are instead part of the <code>DOM APIs</code> the browsers provide through JavaScript. </p>
-<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myList = document.querySelectorAll(<span class="string">'.story-item'</span>);</span><br><span class="line">console.log(myList)</span><br><span class="line">[</span><br><span class="line">  &lt;<span class="keyword">div</span> class=<span class="variable">"story-item"</span>&gt;…&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  ,</span><br><span class="line">  &lt;<span class="keyword">div</span> class=<span class="variable">"story-item"</span>&gt;…&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  ,</span><br><span class="line">  […]</span><br><span class="line">  ,</span><br><span class="line">  &lt;<span class="keyword">div</span> class=<span class="variable">"story-item"</span>&gt;..&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  ,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">//basic array actions</span><br><span class="line">console.log(myList.length) // <span class="number">7</span></span><br><span class="line">console.log(myList[<span class="number">2</span>]) // &lt;<span class="keyword">div</span> class=<span class="variable">"story-item"</span>&gt;..&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.story-item'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myList)</span><br><span class="line">[</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"story-item"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  ,</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"story-item"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  ,</span><br><span class="line">  […]</span><br><span class="line">  ,</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"story-item"</span>&gt;</span>..<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  ,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">//basic array actions</span></span><br><span class="line"><span class="built_in">console</span>.log(myList.length) <span class="comment">// 7</span></span><br><span class="line"><span class="built_in">console</span>.log(myList[<span class="number">2</span>]) <span class="comment">// &lt;div class="story-item"&gt;..&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
 <p>So far, <code>myList</code> has been talking and walking like an array so we can probably assume that it’s an array of some sorts. However, it all goes to hell when you try to call any of the basic array <code>methods</code>:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myList.slice(<span class="number">2</span>)<span class="comment"> // indexed from 0</span></span><br><span class="line"></span><br><span class="line">TypeError: Result <span class="operator">of</span> expression <span class="string">'myList.slice'</span> [undefined] is <span class="operator">not</span> <span class="operator">a</span> <span class="function"><span class="keyword">function</span>.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myList.slice(<span class="number">2</span>)<span class="comment"> // indexed from 0</span></span><br><span class="line"></span><br><span class="line">TypeError: Result <span class="keyword">of</span> expression <span class="string">'myList.slice'</span> [undefined] is <span class="keyword">not</span> <span class="keyword">a</span> <span class="function"><span class="keyword">function</span>.</span></span><br></pre></td></tr></table></figure>
 <p>Wait, what happened? Well, this is where the between <code>NodeLists</code> and arrays in JavaScript start to surface. Let’s see what is distinguish <code>array</code> and <code>NodeList</code>: </p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.<span class="keyword">log</span>(myList.constructor.<span class="keyword">prototype</span>) // <span class="string">"[object NodeListConstructor]"</span></span><br><span class="line"></span><br><span class="line">var surelyArray = [<span class="string">'foo'</span>, <span class="string">'bar'</span>];</span><br><span class="line"></span><br><span class="line">console.<span class="keyword">log</span>(surelyArray.constructor.<span class="keyword">prototype</span>) //<span class="string">"function Array() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(myList.<span class="keyword">constructor</span>.prototype) <span class="comment">// "[object NodeListConstructor]"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> surelyArray = [<span class="string">'foo'</span>, <span class="string">'bar'</span>];</span><br><span class="line"></span><br><span class="line">console.log(surelyArray.<span class="keyword">constructor</span>.prototype) <span class="comment">//"function Array() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
 <p>So those two elements, <code>myList</code> and <code>surelyArray</code> are definitely constructed by different constructors so it’s no wonder that they don’t share the same methods.</p>
 <p>While <code>arrays</code> are essentially a collection of elements held in memory and are part of the JavaScript, <code>NodeLists</code> are live references to actual DOM elements.</p>
 <p>Let’s see a quick way to convert a <code>NodeList</code> into an array:</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//borrowing the slice() <span class="keyword">method</span> <span class="keyword">from</span> the <span class="type">Array</span>’s prototype</span><br><span class="line"><span class="keyword">var</span> myArray = <span class="type">Array</span>.prototype.slice.call(myList, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">console.log(myArray.constructor.prototype) //<span class="string">"function Array() &#123; [native code] &#125;"</span></span><br><span class="line"></span><br><span class="line">//call pop <span class="keyword">method</span></span><br><span class="line">myArray.pop() //&lt;<span class="keyword">div</span> class=<span class="string">"story-item"</span>&gt;…&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line"></span><br><span class="line">//<span class="type">Internet</span> <span class="type">Explorer</span> <span class="number">9</span> cannot handle calling slice() on <span class="type">NodeLists</span></span><br><span class="line"><span class="keyword">var</span> myIEArray = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; myList.length; ++i) &#123; myIEArray.push(myList[i]); &#125;</span><br><span class="line">console.log(myIEArray.constructor.prototype) //<span class="string">"function Array() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//borrowing the slice() method from the Array’s prototype</span></span><br><span class="line"><span class="keyword">var</span> myArray = <span class="keyword">Array</span>.prototype.slice.call(myList, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">console.log(myArray.<span class="keyword">constructor</span>.prototype) <span class="comment">//"function Array() &#123; [native code] &#125;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//call pop method</span></span><br><span class="line">myArray.pop() <span class="comment">//&lt;div class="story-item"&gt;…&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Internet Explorer 9 cannot handle calling slice() on NodeLists</span></span><br><span class="line"><span class="keyword">var</span> myIEArray = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; myList.length; ++i) <span class="comment">&#123; myIEArray.push(myList[i]); &#125;</span></span><br><span class="line">console.log(myIEArray.<span class="keyword">constructor</span>.prototype) <span class="comment">//"function Array() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
 <p>One thing is worth mentioning though; when you convert your <code>NodeList</code> into an <code>array</code>, you are no longer dealing with a live <code>NodeList</code> but instead an array of DOM nodes.</p>
-
-            
-                
 
             
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
         <div class="post-actions-wrap">
     <nav>
@@ -302,9 +313,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -319,7 +332,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -381,7 +394,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/07/30/NodeList-vs-Array-in-Javascript/">
@@ -403,13 +416,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -420,7 +438,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -435,22 +453,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2014/07/30/NodeList-vs-Array-in-Javascript/';
+                 
+                    this.page.identifier = '2014/07/30/NodeList-vs-Array-in-Javascript/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -462,28 +488,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

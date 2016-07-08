@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>JSONP - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description" content="JSONP is really simple trick to overcome XMLHttpRequest same origin domain policy - you can’t send AJAX (XMLHttpRequest) request to different domain.">
@@ -25,21 +26,27 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -47,19 +54,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -111,14 +124,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -130,7 +143,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -157,7 +170,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -184,7 +197,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -199,7 +212,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Oct 29 2014 21:44:50 GMT+0200">
+    <time itemprop="datePublished" datetime="2014-10-29T21:44:50+02:00">
 	
 		    Oct 29, 2014
     	
@@ -212,6 +225,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -219,22 +233,19 @@
             <p>JSONP is really simple trick to overcome XMLHttpRequest same origin domain policy - you can’t send AJAX (XMLHttpRequest) request to different domain.</p>
 <a id="more"></a>
 <p>So instead of using <code>XMLHttpRequest</code> we have to use <code>script</code> HTML tag to get data from another domain. And yes, it’s sound weird. Example:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">()</span> &#123;</span><br><span class="line">	var script = document.createElement<span class="list">(<span class="quoted">'script</span>')</span><span class="comment">;</span></span><br><span class="line">	script.type = <span class="quoted">'text/javascript</span>'</span><br><span class="line">	script.src = <span class="quoted">'http</span><span class="keyword">://www</span>.someWebApiServer.com/some-data?callback=my_callback'<span class="comment">;</span></span><br><span class="line">	document.getElementsByTagName<span class="list">(<span class="quoted">'head</span>')</span>[<span class="number">0</span>].appendChild<span class="list">(<span class="keyword">elem</span>)</span></span><br><span class="line">&#125;)</span><span class="list">()</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">function</span>() &#123;</span><br><span class="line">truevar script = document.createElement(<span class="symbol">'script</span>')<span class="comment">;</span></span><br><span class="line">truescript.type = <span class="symbol">'text/javascript</span>'</span><br><span class="line">truescript.src = <span class="symbol">'http://www.someWebApiServer.com/some-data?callback=my_callback</span>'<span class="comment">;</span></span><br><span class="line">truedocument.getElementsByTagName(<span class="symbol">'head</span>')[<span class="name">0</span>].appendChild(<span class="name">elem</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
 <p>Notice the <code>my_callback</code> function over here? So when when server receives request and finds callback parameter - instead of returning plain <code>JSON</code> object :</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;<span class="rule"><span class="attribute">foo</span>:<span class="value"> bar</span></span></span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">foo</span>: bar&#125;</span><br></pre></td></tr></table></figure>
 <p>It will return callback: </p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">my_callback(&#123;foo</span>: <span class="string">bar&#125;) // 'Response from another domain: with &#123;foo: bar&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="comment">//it's already implemented</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_callback</span>(<span class="params">resp</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'Response from another domain: '</span> + resp);</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">my_callback</span>(&#123;<span class="attribute">foo</span>: bar&#125;) <span class="comment">// 'Response from another domain: with &#123;foo: bar&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//it's already implemented</span></span><br><span class="line"><span class="selector-tag">function</span> <span class="selector-tag">my_callback</span>(resp) &#123;</span><br><span class="line">trueconsole<span class="selector-class">.log</span>(<span class="string">'Response from another domain: '</span> + resp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The profit is that we get automatic callback <code>my_callback</code> that will be triggered once we get the data.</p>
 <p>So <code>JSONP</code> is callback and script tags.</p>
-<p>Basic JavaScript example (simple Twitter feed using JSONP):<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span> = '<span class="attribute">twitterFeed</span>'&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myCallback</span>(<span class="params">dataWeGotViaJsonp</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> text = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> len = dataWeGotViaJsonp.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        twitterEntry = dataWeGotViaJsonp[i];</span><br><span class="line">        text += <span class="string">' + twitterEntry['</span>text<span class="string">']'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'twitterFeed'</span>).innerHTML = text;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-
-            
-                
+<p>Basic JavaScript example (simple Twitter feed using JSONP):<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">'twitterFeed'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myCallback</span>(<span class="params">dataWeGotViaJsonp</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> text = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> len = dataWeGotViaJsonp.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        twitterEntry = dataWeGotViaJsonp[i];</span><br><span class="line">        text += <span class="string">' + twitterEntry['</span>text<span class="string">']'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'twitterFeed'</span>).innerHTML = text;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
 
             
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
@@ -304,9 +315,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -321,7 +334,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -383,7 +396,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/10/29/JSONP/">
@@ -405,13 +418,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -422,7 +440,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -437,22 +455,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2014/10/29/JSONP/';
+                 
+                    this.page.identifier = '2014/10/29/JSONP/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -464,28 +490,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

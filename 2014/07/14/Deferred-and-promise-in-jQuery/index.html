@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>Deferred and promise in jQuery - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description" content="How handle async code with jQuery via promises and creating own promise via deffered.">
@@ -25,21 +26,27 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -47,19 +54,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -111,14 +124,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -130,7 +143,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -157,7 +170,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -184,7 +197,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -199,7 +212,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Jul 14 2014 21:17:26 GMT+0300">
+    <time itemprop="datePublished" datetime="2014-07-14T21:17:26+03:00">
 	
 		    Jul 14, 2014
     	
@@ -212,6 +225,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -225,12 +239,12 @@
 <p>Now we have a similar problem with <code>Ajax</code> calls. This time it’s not the events, but the fact that <code>Ajax</code> supports only one callback function. Not only the jQuery <code>$.ajax()</code> call, but also the underlying <code>XMLHttpRequest</code> object.</p>
 <p><code>Deferred</code> and <code>promise</code> are part of jQuery since version 1.5 and they help in handling asynchronous functions like Ajax.</p>
 <p>A typical <code>$.ajax()</code> call looked like this:</p>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$.</span>ajax(&#123;</span><br><span class="line">  url: <span class="string">"/myServerScript"</span>,</span><br><span class="line">  success: mySuccessFunction,</span><br><span class="line">  <span class="keyword">error</span>: myErrorFunction</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"><span class="symbol">  url:</span> <span class="string">"/myServerScript"</span>,</span><br><span class="line"><span class="symbol">  success:</span> mySuccessFunction,</span><br><span class="line"><span class="symbol">  error:</span> myErrorFunction</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Since version 1.5, the returned object implements the <a href="http://wiki.commonjs.org/wiki/Promises/A" target="_blank" rel="external">CommonJS Promises/A interface</a>. CommonJS is a initiative to define common and independent interfaces <code>API’s</code>. <code>Promises/A</code> is one such interface. The advantage is that these are not jQuery specific. For example, if you work with Node.js, there is a good chance you’ll program with this same interface.</p>
 <p>The way of assigning callbacks with Promises: </p>
 <figure class="highlight mercury"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">promise</span> <span class="built_in">=</span> $.ajax(&#123;</span><br><span class="line">  url: <span class="string">"/myServerScript"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">promise</span>.done(mySuccessFunction);</span><br><span class="line"><span class="keyword">promise</span>.<span class="built_in">fail</span>(myErrorFunction);</span><br></pre></td></tr></table></figure>
 <p>You can combine the <code>done()</code> and <code>fail()</code> functions in one <code>then()</code> function:</p>
-<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = $.ajax(&#123;</span><br><span class="line">  url: <span class="variable">"/myServerScript"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.<span class="keyword">then</span>(mySuccessFunction, myErrorFunction);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = $.ajax(&#123;</span><br><span class="line">  url: <span class="string">"/myServerScript"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.<span class="keyword">then</span>(mySuccessFunction, myErrorFunction);</span><br></pre></td></tr></table></figure>
 <p>The advantages of promises are:</p>
 <ul>
 <li>You can call the <code>done()</code> and <code>fail()</code> functions more times, with different callbacks. Maybe you have a callback function that stops an animation, one that does a new Ajax call and another function that shows the received data to the visitor:</li>
@@ -250,7 +264,7 @@
 <p>You can give <code>parameters</code> to both the <code>resolve()</code> and <code>reject()</code> functions and they will be passed on to the functions registered with <code>done()</code> and <code>fail()</code>.</p>
 <p>The <code>promise object</code> does not have resolve() or reject() functions. This is because you give the promise away to other scripts and you don’t want them to resolve or reject the promise.</p>
 <p>Below is a simple script that illustrates how it works:</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$('<span class="comment">#result').html('waiting...');</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> promise = wait();</span><br><span class="line">promise.done(<span class="literal">result</span>);</span><br><span class="line"></span><br><span class="line">function <span class="literal">result</span>() &#123;</span><br><span class="line">  $('<span class="comment">#result').html('done');</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function wait() &#123;</span><br><span class="line">  <span class="keyword">var</span> deferred = $.<span class="type">Deferred</span>(); // (!)</span><br><span class="line"></span><br><span class="line">  setTimeout(function() &#123;</span><br><span class="line">    deferred.resolve();</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> deferred.promise();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#result'</span>).html(<span class="string">'waiting...'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> promise = wait();</span><br><span class="line">promise.done(result);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">result</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">'#result'</span>).html(<span class="string">'done'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wait</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> deferred = $.Deferred(); <span class="comment">// (!)</span></span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    deferred.resolve();</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> deferred.promise();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The <code>wait()</code> function is the function returning a promise. This will be resolved with a setTimeout of two seconds. Instead of setTimeout, everything can be used that is asynchronous, like animations, Web workers etcetera. It should be clear that inside the <code>wait()</code> function, we use the deferred object, but we return the limited promise object.</p>
 <p>Save My Day:</p>
 <ul>
@@ -259,12 +273,9 @@
 </ul>
 
             
-                
-
-            
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
         <div class="post-actions-wrap">
     <nav>
@@ -317,7 +328,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -327,9 +338,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -344,7 +357,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -396,7 +409,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -406,7 +419,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/07/14/Deferred-and-promise-in-jQuery/">
@@ -428,13 +441,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -445,7 +463,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -460,22 +478,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2014/07/14/Deferred-and-promise-in-jQuery/';
+                 
+                    this.page.identifier = '2014/07/14/Deferred-and-promise-in-jQuery/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -487,28 +513,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

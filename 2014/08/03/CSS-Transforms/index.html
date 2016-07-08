@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>CSS Transforms - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description" content="So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one sta">
@@ -25,21 +26,27 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -47,19 +54,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -111,14 +124,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -130,7 +143,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -157,7 +170,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -184,7 +197,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -199,7 +212,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Aug 03 2014 22:13:20 GMT+0300">
+    <time itemprop="datePublished" datetime="2014-08-03T22:13:20+03:00">
 	
 		    Aug 03, 2014
     	
@@ -212,6 +225,7 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
@@ -219,10 +233,10 @@
             <p>So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one state to another.<br><a id="more"></a></p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <ul>
-<li><a href="/#How to use transforms">How to use transforms</a></li>
-<li><a href="/#2D examples">2D examples</a></li>
-<li><a href="/#3D examples">3D examples</a></li>
-<li><a href="/#3D Transform image slider">3D Transform image slider</a></li>
+<li><a href="#How to use transforms">How to use transforms</a></li>
+<li><a href="#2D examples">2D examples</a></li>
+<li><a href="#3D examples">3D examples</a></li>
+<li><a href="#3D Transform image slider">3D Transform image slider</a></li>
 </ul>
 <p><a href="" name="How to use transforms"></a></p>
 <div class="title-block">How to use transforms</div>
@@ -231,8 +245,8 @@
 <p><a href="" name="2D examples"></a></p>
 <div class="title-block">2D examples</div>
 
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//don't forget about prefixes</span></span><br><span class="line"><span class="id">#skew</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span><span class="value">:<span class="function">skew</span>(<span class="number">35deg</span>);</span></span><br><span class="line">   -moz-<span class="attribute">transform</span><span class="value">:<span class="function">skew</span>(<span class="number">35deg</span>);</span></span><br><span class="line">    -ms-<span class="attribute">transform</span><span class="value">:<span class="function">skew</span>(<span class="number">35deg</span>);</span></span><br><span class="line">     -o-<span class="attribute">transform</span><span class="value">:<span class="function">skew</span>(<span class="number">35deg</span>);</span></span><br><span class="line">        <span class="attribute">transform</span><span class="value">:<span class="function">skew</span>(<span class="number">35deg</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="id">#scale</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span><span class="value">:<span class="function">scale</span>(<span class="number">1</span>,<span class="number">0.5</span>);</span></span><br><span class="line">   -moz-<span class="attribute">transform</span><span class="value">:<span class="function">scale</span>(<span class="number">1</span>,<span class="number">0.5</span>);</span></span><br><span class="line">    -ms-<span class="attribute">transform</span><span class="value">:<span class="function">scale</span>(<span class="number">1</span>,<span class="number">0.5</span>);</span></span><br><span class="line">     -o-<span class="attribute">transform</span><span class="value">:<span class="function">scale</span>(<span class="number">1</span>,<span class="number">0.5</span>);</span></span><br><span class="line">        <span class="attribute">transform</span><span class="value">:<span class="function">scale</span>(<span class="number">1</span>,<span class="number">0.5</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="id">#rotate</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span><span class="value">:<span class="function">rotate</span>(<span class="number">45deg</span>);</span></span><br><span class="line">   -moz-<span class="attribute">transform</span><span class="value">:<span class="function">rotate</span>(<span class="number">45deg</span>);</span></span><br><span class="line">    -ms-<span class="attribute">transform</span><span class="value">:<span class="function">rotate</span>(<span class="number">45deg</span>);</span></span><br><span class="line">     -o-<span class="attribute">transform</span><span class="value">:<span class="function">rotate</span>(<span class="number">45deg</span>);</span></span><br><span class="line">        <span class="attribute">transform</span><span class="value">:<span class="function">rotate</span>(<span class="number">45deg</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="id">#translate</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span><span class="value">:<span class="function">translate</span>(<span class="number">10px</span>, <span class="number">20px</span>);</span></span><br><span class="line">   -moz-<span class="attribute">transform</span><span class="value">:<span class="function">translate</span>(<span class="number">10px</span>, <span class="number">20px</span>);</span></span><br><span class="line">    -ms-<span class="attribute">transform</span><span class="value">:<span class="function">translate</span>(<span class="number">10px</span>, <span class="number">20px</span>);</span></span><br><span class="line">     -o-<span class="attribute">transform</span><span class="value">:<span class="function">translate</span>(<span class="number">10px</span>, <span class="number">20px</span>);</span></span><br><span class="line">        <span class="attribute">transform</span><span class="value">:<span class="function">translate</span>(<span class="number">10px</span>, <span class="number">20px</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class">.thumbnail</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transition</span><span class="value">: all .<span class="number">5s</span> ease-in;</span></span><br><span class="line">  -moz-<span class="attribute">transition</span><span class="value">: all .<span class="number">5s</span> ease-in;</span>  </span><br><span class="line">  -o-<span class="attribute">transition</span><span class="value">: all .<span class="number">5s</span> ease-in;</span></span><br><span class="line">  <span class="attribute">transition</span><span class="value">: all .<span class="number">5s</span> ease-in;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p data-height="473" data-theme-id="10606" data-slug-hash="BGAaf" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/BGAaf/" target="_blank" rel="external">CSS Transforms: 2D examples</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><br><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br><br><a href="" name="3D examples"></a><br><div class="title-block">3D examples and hadle <code>onTransitionEnd</code></div><br><br>3D CSS transforms are similar to 2D CSS transforms. The basic properties are <code>translate3d</code>, <code>scale3d</code>, <code>rotateX</code>, <code>rotateY</code> and <code>rotateZ</code>. <code>translate3d</code> and <code>scale3d</code> take three arguments for x,y and z, whereas the rotates just take an angle. Here are some examples:<br><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#rotateX</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-transform</span>:<span class="value"><span class="function">rotateX</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">   <span class="rule"><span class="attribute">-moz-transform</span>:<span class="value"><span class="function">rotateX</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-ms-transform</span>:<span class="value"><span class="function">rotateX</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">     <span class="rule"><span class="attribute">-o-transform</span>:<span class="value"><span class="function">rotateX</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">rotateX</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#rotateY</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-transform</span>:<span class="value"><span class="function">rotateY</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">   <span class="rule"><span class="attribute">-moz-transform</span>:<span class="value"><span class="function">rotateY</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-ms-transform</span>:<span class="value"><span class="function">rotateY</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">     <span class="rule"><span class="attribute">-o-transform</span>:<span class="value"><span class="function">rotateY</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">rotateY</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#rotateZ</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-transform</span>:<span class="value"><span class="function">rotateZ</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">   <span class="rule"><span class="attribute">-moz-transform</span>:<span class="value"><span class="function">rotateZ</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-ms-transform</span>:<span class="value"><span class="function">rotateZ</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">     <span class="rule"><span class="attribute">-o-transform</span>:<span class="value"><span class="function">rotateZ</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">rotateZ</span>(<span class="number">180deg</span>)</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.thumbnail'</span>).on(<span class="string">'transitionend webkitTransitionEnd MSTransitionEnd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//transitionend fires for each property transitioned</span></span><br><span class="line">  <span class="keyword">if</span> (e.originalEvent.propertyName != <span class="string">'transform'</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  alert(<span class="string">'webkitTransitionEnd'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br><br><p data-height="474" data-theme-id="10606" data-slug-hash="CDrkj" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/CDrkj/" target="_blank" rel="external">CSS Transforms: 3D example and transtionEnd</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//don't forget about prefixes</span></span><br><span class="line"><span class="selector-id">#skew</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span>:skew(<span class="number">35deg</span>);</span><br><span class="line">   -moz-<span class="attribute">transform</span>:skew(<span class="number">35deg</span>);</span><br><span class="line">    -ms-<span class="attribute">transform</span>:skew(<span class="number">35deg</span>);</span><br><span class="line">     -o-<span class="attribute">transform</span>:skew(<span class="number">35deg</span>);</span><br><span class="line">        <span class="attribute">transform</span>:skew(<span class="number">35deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#scale</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span>:scale(<span class="number">1</span>,<span class="number">0.5</span>);</span><br><span class="line">   -moz-<span class="attribute">transform</span>:scale(<span class="number">1</span>,<span class="number">0.5</span>);</span><br><span class="line">    -ms-<span class="attribute">transform</span>:scale(<span class="number">1</span>,<span class="number">0.5</span>);</span><br><span class="line">     -o-<span class="attribute">transform</span>:scale(<span class="number">1</span>,<span class="number">0.5</span>);</span><br><span class="line">        <span class="attribute">transform</span>:scale(<span class="number">1</span>,<span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#rotate</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span>:rotate(<span class="number">45deg</span>);</span><br><span class="line">   -moz-<span class="attribute">transform</span>:rotate(<span class="number">45deg</span>);</span><br><span class="line">    -ms-<span class="attribute">transform</span>:rotate(<span class="number">45deg</span>);</span><br><span class="line">     -o-<span class="attribute">transform</span>:rotate(<span class="number">45deg</span>);</span><br><span class="line">        <span class="attribute">transform</span>:rotate(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#translate</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transform</span>:translate(<span class="number">10px</span>, <span class="number">20px</span>);</span><br><span class="line">   -moz-<span class="attribute">transform</span>:translate(<span class="number">10px</span>, <span class="number">20px</span>);</span><br><span class="line">    -ms-<span class="attribute">transform</span>:translate(<span class="number">10px</span>, <span class="number">20px</span>);</span><br><span class="line">     -o-<span class="attribute">transform</span>:translate(<span class="number">10px</span>, <span class="number">20px</span>);</span><br><span class="line">        <span class="attribute">transform</span>:translate(<span class="number">10px</span>, <span class="number">20px</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.thumbnail</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">transition</span>: all .<span class="number">5s</span> ease-in;</span><br><span class="line">  -moz-<span class="attribute">transition</span>: all .<span class="number">5s</span> ease-in;  </span><br><span class="line">  -o-<span class="attribute">transition</span>: all .<span class="number">5s</span> ease-in;</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">5s</span> ease-in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p data-height="473" data-theme-id="10606" data-slug-hash="BGAaf" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/BGAaf/" target="_blank" rel="external">CSS Transforms: 2D examples</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><br><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br><br><a href="" name="3D examples"></a><br><div class="title-block">3D examples and hadle <code>onTransitionEnd</code></div><br><br>3D CSS transforms are similar to 2D CSS transforms. The basic properties are <code>translate3d</code>, <code>scale3d</code>, <code>rotateX</code>, <code>rotateY</code> and <code>rotateZ</code>. <code>translate3d</code> and <code>scale3d</code> take three arguments for x,y and z, whereas the rotates just take an angle. Here are some examples:<br><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#rotateX</span>&#123;</span><br><span class="line"><span class="attribute">-webkit-transform</span>:<span class="built_in">rotateX</span>(180deg);</span><br><span class="line">   <span class="attribute">-moz-transform</span>:<span class="built_in">rotateX</span>(180deg);</span><br><span class="line">    <span class="attribute">-ms-transform</span>:<span class="built_in">rotateX</span>(180deg);</span><br><span class="line">     <span class="attribute">-o-transform</span>:<span class="built_in">rotateX</span>(180deg);</span><br><span class="line">        <span class="attribute">transform</span>:<span class="built_in">rotateX</span>(180deg);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#rotateY</span>&#123;</span><br><span class="line"><span class="attribute">-webkit-transform</span>:<span class="built_in">rotateY</span>(180deg);</span><br><span class="line">   <span class="attribute">-moz-transform</span>:<span class="built_in">rotateY</span>(180deg);</span><br><span class="line">    <span class="attribute">-ms-transform</span>:<span class="built_in">rotateY</span>(180deg);</span><br><span class="line">     <span class="attribute">-o-transform</span>:<span class="built_in">rotateY</span>(180deg);</span><br><span class="line">        <span class="attribute">transform</span>:<span class="built_in">rotateY</span>(180deg);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#rotateZ</span>&#123;</span><br><span class="line"><span class="attribute">-webkit-transform</span>:<span class="built_in">rotateZ</span>(180deg);</span><br><span class="line">   <span class="attribute">-moz-transform</span>:<span class="built_in">rotateZ</span>(180deg);</span><br><span class="line">    <span class="attribute">-ms-transform</span>:<span class="built_in">rotateZ</span>(180deg);</span><br><span class="line">     <span class="attribute">-o-transform</span>:<span class="built_in">rotateZ</span>(180deg);</span><br><span class="line">        <span class="attribute">transform</span>:<span class="built_in">rotateZ</span>(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.thumbnail'</span>).on(<span class="string">'transitionend webkitTransitionEnd MSTransitionEnd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//transitionend fires for each property transitioned</span></span><br><span class="line">  <span class="keyword">if</span> (e.originalEvent.propertyName != <span class="string">'transform'</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  alert(<span class="string">'webkitTransitionEnd'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br><br><p data-height="474" data-theme-id="10606" data-slug-hash="CDrkj" data-default-tab="result" data-user="qetr1ck-op" class="codepen">See the Pen <a href="http://codepen.io/qetr1ck-op/pen/CDrkj/" target="_blank" rel="external">CSS Transforms: 3D example and transtionEnd</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op" target="_blank" rel="external">@qetr1ck-op</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
 
 <p><a href="" name="3D Transform image slider"></a></p>
 <div class="title-block">3D Transform image slider</div>
@@ -246,12 +260,9 @@
 </ul>
 
             
-                
-
-            
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
         <div class="post-actions-wrap">
     <nav>
@@ -304,7 +315,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -314,9 +325,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -331,7 +344,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -383,7 +396,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -393,7 +406,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/08/03/CSS-Transforms/">
@@ -415,13 +428,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -432,7 +450,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -447,22 +465,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2014/08/03/CSS-Transforms/';
+                 
+                    this.page.identifier = '2014/08/03/CSS-Transforms/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -474,28 +500,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

@@ -3,13 +3,14 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>all-tags - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
     <meta name="description">
@@ -25,21 +26,27 @@
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="1">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="2">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -47,19 +54,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="1">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="2">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -111,14 +124,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -130,7 +143,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -157,7 +170,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -184,7 +197,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="2"
                  class="
                         hasCoverMetaIn
                         ">
@@ -192,8 +205,16 @@
     <form id="filter-form" action="#">
         <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search tag" autofocus="autofocus">
     </form>
-    <h4 class="archive-result text-color-base text-xlarge"></h4>
-    <section>
+    <h4 class="archive-result text-color-base text-xlarge"
+        data-message-zero="no tag found"
+        data-message-one="1 tag found"
+        data-message-other="{n} tags found"></h4>
+
+        <section>
+        
+            <a class="tag tag--primary tag--small" href="#Alt-list" data-tag="alt">
+                Alt
+            </a>
         
             <a class="tag tag--primary tag--small" href="#Angular-list" data-tag="angular">
                 Angular
@@ -207,6 +228,10 @@
                 Arrays
             </a>
         
+            <a class="tag tag--primary tag--small" href="#Babel-list" data-tag="babel">
+                Babel
+            </a>
+        
             <a class="tag tag--primary tag--small" href="#Bootstrap-list" data-tag="bootstrap">
                 Bootstrap
             </a>
@@ -217,6 +242,14 @@
         
             <a class="tag tag--primary tag--small" href="#Build Sytems-list" data-tag="build sytems">
                 Build Sytems
+            </a>
+        
+            <a class="tag tag--primary tag--small" href="#Cycle.js-list" data-tag="cycle.js">
+                Cycle.js
+            </a>
+        
+            <a class="tag tag--primary tag--small" href="#ES6-list" data-tag="es6">
+                ES6
             </a>
         
             <a class="tag tag--primary tag--small" href="#File API-list" data-tag="file api">
@@ -291,6 +324,10 @@
                 Promises
             </a>
         
+            <a class="tag tag--primary tag--small" href="#React-list" data-tag="react">
+                React
+            </a>
+        
             <a class="tag tag--primary tag--small" href="#RegExp-list" data-tag="regexp">
                 RegExp
             </a>
@@ -330,559 +367,1068 @@
     </section>
     <section class="boxes">
         
-            <div id="Angular-list" class="archive box" data-tag="angular">
+            <div id="Alt-list" class="archive box" data-tag="alt">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Angular">Angular (1)</a>
+                    <a class="link-unstyled" href="/tags/Alt">
+                        Alt (5)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2015/09/23/top-10-mistakes-when-you-develop-on-angularjs/">TOP 10 mistakes when you develop on AngularJS</a>
-                        <span class="archive-post-date"> - sep 23, 2015</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                                Development with Webpack and React part 3
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-p-2/">
+                                Development with Webpack and React part 2
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                                Development with Webpack and React part 4
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
+                                Development with Webpack and React part 5
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 21, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack/">
+                                Development with Webpack and React part 1
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="Angular-list" class="archive box" data-tag="angular">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/Angular">
+                        Angular (1)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2015/09/23/top-10-mistakes-when-you-develop-on-angularjs/">
+                                TOP 10 mistakes when you develop on AngularJS
+                            </a>
+                            <span class="archive-post-date">
+                                 - sep 23, 2015
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Array-list" class="archive box" data-tag="array">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Array">Array (1)</a>
+                    <a class="link-unstyled" href="/tags/Array">
+                        Array (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">Kata (Arrays): All, None &amp; Any</a>
-                        <span class="archive-post-date"> - feb 10, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+                                Kata: All, None &amp; Any
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Arrays-list" class="archive box" data-tag="arrays">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Arrays">Arrays (2)</a>
+                    <a class="link-unstyled" href="/tags/Arrays">
+                        Arrays (2)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/09/Kata-Arrays-Are-they-square/">Kata (Array): Are they square?</a>
-                        <span class="archive-post-date"> - feb 09, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
+                                Kata: Filter through name/email
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 15, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">Kata (Array, RegExp): Filter through name/email</a>
-                        <span class="archive-post-date"> - feb 15, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/09/Kata-Arrays-Are-they-square/">
+                                Kata: Are they square?
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 09, 2016
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="Babel-list" class="archive box" data-tag="babel">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/Babel">
+                        Babel (5)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                                Development with Webpack and React part 3
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-p-2/">
+                                Development with Webpack and React part 2
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                                Development with Webpack and React part 4
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
+                                Development with Webpack and React part 5
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 21, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack/">
+                                Development with Webpack and React part 1
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Bootstrap-list" class="archive box" data-tag="bootstrap">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Bootstrap">Bootstrap (2)</a>
+                    <a class="link-unstyled" href="/tags/Bootstrap">
+                        Bootstrap (2)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/08/02/Bootstrap3-Components/">Bootstrap 3: Components</a>
-                        <span class="archive-post-date"> - aug 02, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/08/02/Bootstrap3-Components/">
+                                Bootstrap 3: Components
+                            </a>
+                            <span class="archive-post-date">
+                                 - aug 02, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/07/17/Bootstrap3-CSS/">Bootstrap 3: CSS</a>
-                        <span class="archive-post-date"> - jul 17, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/07/17/Bootstrap3-CSS/">
+                                Bootstrap 3: CSS
+                            </a>
+                            <span class="archive-post-date">
+                                 - jul 17, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Browser-list" class="archive box" data-tag="browser">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Browser">Browser (1)</a>
+                    <a class="link-unstyled" href="/tags/Browser">
+                        Browser (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/12/02/Browsers-Layout-engines/">Browsers Layout engines</a>
-                        <span class="archive-post-date"> - dec 02, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/12/02/Browsers-Layout-engines/">
+                                Browsers Layout engines
+                            </a>
+                            <span class="archive-post-date">
+                                 - dec 02, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Build Sytems-list" class="archive box" data-tag="build sytems">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Build-Sytems">Build Sytems (1)</a>
+                    <a class="link-unstyled" href="/tags/Build-Sytems">
+                        Build Sytems (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/03/Gulp-instruction/">Gulp instruction</a>
-                        <span class="archive-post-date"> - feb 03, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/03/Gulp-instruction/">
+                                Gulp instruction
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 03, 2016
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="Cycle.js-list" class="archive box" data-tag="cycle.js">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/Cycle-js">
+                        Cycle.js (1)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/02/cycle-js-fundamentals/">
+                                сусle.js fundamentals
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 02, 2016
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="ES6-list" class="archive box" data-tag="es6">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/ES6">
+                        ES6 (5)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                                Development with Webpack and React part 3
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-p-2/">
+                                Development with Webpack and React part 2
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                                Development with Webpack and React part 4
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
+                                Development with Webpack and React part 5
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 21, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack/">
+                                Development with Webpack and React part 1
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="File API-list" class="archive box" data-tag="file api">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/File-API">File API (1)</a>
+                    <a class="link-unstyled" href="/tags/File-API">
+                        File API (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/08/02/Reading-files-in-JavaScript-with-File-API/">Reading files in JavaScript with File API</a>
-                        <span class="archive-post-date"> - aug 02, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/08/02/Reading-files-in-JavaScript-with-File-API/">
+                                Reading files in JavaScript with File API
+                            </a>
+                            <span class="archive-post-date">
+                                 - aug 02, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Firebase-list" class="archive box" data-tag="firebase">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Firebase">Firebase (1)</a>
+                    <a class="link-unstyled" href="/tags/Firebase">
+                        Firebase (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/12/10/Firebase-and-AngularJS/">Firebase and AngularJS</a>
-                        <span class="archive-post-date"> - dec 10, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/12/10/Firebase-and-AngularJS/">
+                                Firebase and AngularJS
+                            </a>
+                            <span class="archive-post-date">
+                                 - dec 10, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="First look-list" class="archive box" data-tag="first look">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/First-look">First look (1)</a>
+                    <a class="link-unstyled" href="/tags/First-look">
+                        First look (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/04/First-look-at-React-js/">First reaction about React.js</a>
-                        <span class="archive-post-date"> - feb 04, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/04/First-look-at-React-js/">
+                                First reaction about React.js
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 04, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Forms-list" class="archive box" data-tag="forms">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Forms">Forms (1)</a>
+                    <a class="link-unstyled" href="/tags/Forms">
+                        Forms (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/30/Form-pop-up-with-inputs-navigation/">Form pop-up with inputs navigation</a>
-                        <span class="archive-post-date"> - mar 30, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/30/Form-pop-up-with-inputs-navigation/">
+                                Form pop-up with inputs navigation
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 30, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Functions-list" class="archive box" data-tag="functions">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Functions">Functions (1)</a>
+                    <a class="link-unstyled" href="/tags/Functions">
+                        Functions (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/14/Kata-Functions-Function-cache/">Kata (Functions): Function cache</a>
-                        <span class="archive-post-date"> - feb 14, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/14/Kata-Functions-Function-cache/">
+                                Kata: Function cache
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 14, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Fundamentals-list" class="archive box" data-tag="fundamentals">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Fundamentals">Fundamentals (1)</a>
+                    <a class="link-unstyled" href="/tags/Fundamentals">
+                        Fundamentals (0)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
-                    
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">Kata (Arrays): All, None &amp; Any</a>
-                        <span class="archive-post-date"> - feb 10, 2016</span>
-                    </li>
                     
                 </ul>
             </div>
         
             <div id="Git-list" class="archive box" data-tag="git">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Git">Git (3)</a>
+                    <a class="link-unstyled" href="/tags/Git">
+                        Git (3)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/29/git-vs-github/">Git and GitHub, Git versus Subversion</a>
-                        <span class="archive-post-date"> - mar 29, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/07/19/Got-15-minutes-and-want-to-learn-Git/">
+                                Got 15 minutes and want to learn Git?
+                            </a>
+                            <span class="archive-post-date">
+                                 - jul 19, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/10/16/git-pull-versus-git-pull-rebase/">git pull versus git pull --rebase</a>
-                        <span class="archive-post-date"> - oct 16, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/10/16/git-pull-versus-git-pull-rebase/">
+                                git pull versus git pull --rebase
+                            </a>
+                            <span class="archive-post-date">
+                                 - oct 16, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/07/19/Got-15-minutes-and-want-to-learn-Git/">Got 15 minutes and want to learn Git?</a>
-                        <span class="archive-post-date"> - jul 19, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/29/git-vs-github/">
+                                Git and GitHub, Git versus Subversion
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 29, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="GitHub-list" class="archive box" data-tag="github">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/GitHub">GitHub (1)</a>
+                    <a class="link-unstyled" href="/tags/GitHub">
+                        GitHub (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/29/git-vs-github/">Git and GitHub, Git versus Subversion</a>
-                        <span class="archive-post-date"> - mar 29, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/29/git-vs-github/">
+                                Git and GitHub, Git versus Subversion
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 29, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Gulp-list" class="archive box" data-tag="gulp">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Gulp">Gulp (1)</a>
+                    <a class="link-unstyled" href="/tags/Gulp">
+                        Gulp (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/03/Gulp-instruction/">Gulp instruction</a>
-                        <span class="archive-post-date"> - feb 03, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/03/Gulp-instruction/">
+                                Gulp instruction
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 03, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Inspiration-list" class="archive box" data-tag="inspiration">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Inspiration">Inspiration (1)</a>
+                    <a class="link-unstyled" href="/tags/Inspiration">
+                        Inspiration (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/12/21/Full-screen-scrolling-page-effects-with-fullPage-js/">Full-screen scrolling page effects with fullPage.js</a>
-                        <span class="archive-post-date"> - dec 21, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/12/21/Full-screen-scrolling-page-effects-with-fullPage-js/">
+                                Full-screen scrolling page effects with fullPage.js
+                            </a>
+                            <span class="archive-post-date">
+                                 - dec 21, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Javascript-list" class="archive box" data-tag="javascript">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Javascript">Javascript (3)</a>
+                    <a class="link-unstyled" href="/tags/Javascript">
+                        Javascript (3)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">Web Services, WSDL, SOAP envelope with JavaScript</a>
-                        <span class="archive-post-date"> - mar 17, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/30/Form-pop-up-with-inputs-navigation/">
+                                Form pop-up with inputs navigation
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 30, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2015/09/23/top-10-mistakes-when-you-develop-on-angularjs/">TOP 10 mistakes when you develop on AngularJS</a>
-                        <span class="archive-post-date"> - sep 23, 2015</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">
+                                Web Services, WSDL, SOAP envelope with JavaScript
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 17, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/30/Form-pop-up-with-inputs-navigation/">Form pop-up with inputs navigation</a>
-                        <span class="archive-post-date"> - mar 30, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2015/09/23/top-10-mistakes-when-you-develop-on-angularjs/">
+                                TOP 10 mistakes when you develop on AngularJS
+                            </a>
+                            <span class="archive-post-date">
+                                 - sep 23, 2015
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Kata-list" class="archive box" data-tag="kata">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Kata">Kata (6)</a>
+                    <a class="link-unstyled" href="/tags/Kata">
+                        Kata (6)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</a>
-                        <span class="archive-post-date"> - feb 19, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
+                                Kata: Filter through name/email
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 15, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">Kata (Arrays): All, None &amp; Any</a>
-                        <span class="archive-post-date"> - feb 10, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/09/Kata-Arrays-Are-they-square/">
+                                Kata: Are they square?
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 09, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/14/Kata-Functions-Function-cache/">Kata (Functions): Function cache</a>
-                        <span class="archive-post-date"> - feb 14, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/11/Kata-Curring-A-chain-adding-function/">
+                                Kata: A chain adding function
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 11, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/11/Kata-Curring-A-chain-adding-function/">Kata (Functions, Curring): A chain adding function</a>
-                        <span class="archive-post-date"> - feb 11, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/14/Kata-Functions-Function-cache/">
+                                Kata: Function cache
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 14, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/09/Kata-Arrays-Are-they-square/">Kata (Array): Are they square?</a>
-                        <span class="archive-post-date"> - feb 09, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+                                Kata: All, None &amp; Any
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">Kata (Array, RegExp): Filter through name/email</a>
-                        <span class="archive-post-date"> - feb 15, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">
+                                Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 19, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="OOP-list" class="archive box" data-tag="oop">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/OOP">OOP (3)</a>
+                    <a class="link-unstyled" href="/tags/OOP">
+                        OOP (3)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/07/29/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/">Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</a>
-                        <span class="archive-post-date"> - jul 29, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/">
+                                Misconceptions About Inheritance in JavaScript
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 14, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/09/15/OOP-in-prototype-style/">OOP in prototype style</a>
-                        <span class="archive-post-date"> - sep 15, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/09/15/OOP-in-prototype-style/">
+                                OOP in prototype style
+                            </a>
+                            <span class="archive-post-date">
+                                 - sep 15, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/">Misconceptions About Inheritance in JavaScript</a>
-                        <span class="archive-post-date"> - feb 14, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/07/29/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/">
+                                Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism
+                            </a>
+                            <span class="archive-post-date">
+                                 - jul 29, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Patters-list" class="archive box" data-tag="patters">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Patters">Patters (1)</a>
+                    <a class="link-unstyled" href="/tags/Patters">
+                        Patters (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/03/Practical-design-patterns-in-JavaScript/">Practical design patterns in JavaScript</a>
-                        <span class="archive-post-date"> - feb 03, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/03/Practical-design-patterns-in-JavaScript/">
+                                Practical design patterns in JavaScript
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 03, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Perforamance-list" class="archive box" data-tag="perforamance">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Perforamance">Perforamance (1)</a>
+                    <a class="link-unstyled" href="/tags/Perforamance">
+                        Perforamance (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/08/06/Performance-JavaScript-loops/">Performance: JavaScript loops</a>
-                        <span class="archive-post-date"> - aug 06, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/08/06/Performance-JavaScript-loops/">
+                                Performance: JavaScript loops
+                            </a>
+                            <span class="archive-post-date">
+                                 - aug 06, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Performance-list" class="archive box" data-tag="performance">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Performance">Performance (3)</a>
+                    <a class="link-unstyled" href="/tags/Performance">
+                        Performance (3)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/02/02/What-is-event-bubbling-and-capturing/">What is event bubbling and capturing?</a>
-                        <span class="archive-post-date"> - feb 02, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/07/25/Performance-Javascript-adding-text-to-a-node/">
+                                Performance: JavaScript adding text to a node
+                            </a>
+                            <span class="archive-post-date">
+                                 - jul 25, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/01/11/The-Difference-Between-Throttling-and-Debouncing/">The Difference Between Throttling and Debouncing</a>
-                        <span class="archive-post-date"> - jan 11, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/01/11/The-Difference-Between-Throttling-and-Debouncing/">
+                                The Difference Between Throttling and Debouncing
+                            </a>
+                            <span class="archive-post-date">
+                                 - jan 11, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/07/25/Performance-Javascript-adding-text-to-a-node/">Performance: JavaScript adding text to a node</a>
-                        <span class="archive-post-date"> - jul 25, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/02/02/What-is-event-bubbling-and-capturing/">
+                                What is event bubbling and capturing?
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 02, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Promise-list" class="archive box" data-tag="promise">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Promise">Promise (1)</a>
+                    <a class="link-unstyled" href="/tags/Promise">
+                        Promise (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2015/02/02/Huston-do-we-have-a-problem-with-promises/">Huston, do we have a problem with promises?</a>
-                        <span class="archive-post-date"> - feb 02, 2015</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2015/02/02/Huston-do-we-have-a-problem-with-promises/">
+                                Huston, do we have a problem with promises?
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 02, 2015
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Promises-list" class="archive box" data-tag="promises">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Promises">Promises (1)</a>
+                    <a class="link-unstyled" href="/tags/Promises">
+                        Promises (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/07/13/JavaScript-Promises/">JavaScript Promises</a>
-                        <span class="archive-post-date"> - jul 13, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/07/13/JavaScript-Promises/">
+                                JavaScript Promises
+                            </a>
+                            <span class="archive-post-date">
+                                 - jul 13, 2014
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
+            <div id="React-list" class="archive box" data-tag="react">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/React">
+                        React (5)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                                Development with Webpack and React part 3
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-p-2/">
+                                Development with Webpack and React part 2
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                                Development with Webpack and React part 4
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
+                                Development with Webpack and React part 5
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 21, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack/">
+                                Development with Webpack and React part 1
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="RegExp-list" class="archive box" data-tag="regexp">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/RegExp">RegExp (1)</a>
+                    <a class="link-unstyled" href="/tags/RegExp">
+                        RegExp (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">Kata (Array, RegExp): Filter through name/email</a>
-                        <span class="archive-post-date"> - feb 15, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/">
+                                Kata: Filter through name/email
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 15, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="SOAP-list" class="archive box" data-tag="soap">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/SOAP">SOAP (1)</a>
+                    <a class="link-unstyled" href="/tags/SOAP">
+                        SOAP (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">Web Services, WSDL, SOAP envelope with JavaScript</a>
-                        <span class="archive-post-date"> - mar 17, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">
+                                Web Services, WSDL, SOAP envelope with JavaScript
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 17, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="String-list" class="archive box" data-tag="string">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/String">String (1)</a>
+                    <a class="link-unstyled" href="/tags/String">
+                        String (0)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
-                    
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/19/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/">Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</a>
-                        <span class="archive-post-date"> - feb 19, 2016</span>
-                    </li>
                     
                 </ul>
             </div>
         
             <div id="Strings-list" class="archive box" data-tag="strings">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Strings">Strings (1)</a>
+                    <a class="link-unstyled" href="/tags/Strings">
+                        Strings (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/11/Kata-Curring-A-chain-adding-function/">Kata (Functions, Curring): A chain adding function</a>
-                        <span class="archive-post-date"> - feb 11, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/11/Kata-Curring-A-chain-adding-function/">
+                                Kata: A chain adding function
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 11, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="WSDL-list" class="archive box" data-tag="wsdl">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/WSDL">WSDL (1)</a>
+                    <a class="link-unstyled" href="/tags/WSDL">
+                        WSDL (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">Web Services, WSDL, SOAP envelope with JavaScript</a>
-                        <span class="archive-post-date"> - mar 17, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">
+                                Web Services, WSDL, SOAP envelope with JavaScript
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 17, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Web-list" class="archive box" data-tag="web">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Web">Web (1)</a>
+                    <a class="link-unstyled" href="/tags/Web">
+                        Web (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">Web Services, WSDL, SOAP envelope with JavaScript</a>
-                        <span class="archive-post-date"> - mar 17, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/03/17/web-services-WSDL-SOAP-envelope-with-JavaScript/">
+                                Web Services, WSDL, SOAP envelope with JavaScript
+                            </a>
+                            <span class="archive-post-date">
+                                 - mar 17, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="Webpack-list" class="archive box" data-tag="webpack">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/Webpack">Webpack (4)</a>
+                    <a class="link-unstyled" href="/tags/Webpack">
+                        Webpack (5)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack/">Development with Webpack and React part 1</a>
-                        <span class="archive-post-date"> - feb 07, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-part-3/">
+                                Development with Webpack and React part 3
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/10/Development-with-Webpack-and-React-part-4/">Development with Webpack and React part 4</a>
-                        <span class="archive-post-date"> - feb 10, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-p-2/">
+                                Development with Webpack and React part 2
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-part-3/">Development with Webpack and React part 3</a>
-                        <span class="archive-post-date"> - feb 07, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/10/Development-with-Webpack-and-React-part-4/">
+                                Development with Webpack and React part 4
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 10, 2016
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack-and-React-p-2/">Development with Webpack and React part 2</a>
-                        <span class="archive-post-date"> - feb 07, 2016</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
+                                Development with Webpack and React part 5
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 21, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2016/02/07/Development-with-Webpack/">
+                                Development with Webpack and React part 1
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 07, 2016
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="XHR-list" class="archive box" data-tag="xhr">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/XHR">XHR (2)</a>
+                    <a class="link-unstyled" href="/tags/XHR">
+                        XHR (2)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/07/13/JavaScript-Promises/">JavaScript Promises</a>
-                        <span class="archive-post-date"> - jul 13, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/10/29/JSONP/">
+                                JSONP
+                            </a>
+                            <span class="archive-post-date">
+                                 - oct 29, 2014
+                            </span>
+                        </li>
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/10/29/JSONP/">JSONP</a>
-                        <span class="archive-post-date"> - oct 29, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/07/13/JavaScript-Promises/">
+                                JavaScript Promises
+                            </a>
+                            <span class="archive-post-date">
+                                 - jul 13, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
         
             <div id="async-list" class="archive box" data-tag="async">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="/tags/async">async (1)</a>
+                    <a class="link-unstyled" href="/tags/async">
+                        async (1)
+                    </a>
                 </h4>
                 <ul class="archive-posts">
                     
-                    <li class="archive-post">
-                        <a class="archive-post-title" href="/2014/12/20/Organizing-an-application-using-AMD-with-require-js/">Organizing an application using AMD with require.js</a>
-                        <span class="archive-post-date"> - dec 20, 2014</span>
-                    </li>
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2014/12/20/Organizing-an-application-using-AMD-with-require-js/">
+                                Organizing an application using AMD with require.js
+                            </a>
+                            <span class="archive-post-date">
+                                 - dec 20, 2014
+                            </span>
+                        </li>
                     
                 </ul>
             </div>
@@ -899,13 +1445,18 @@
             </div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -916,7 +1467,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -931,11 +1482,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/all-tags/index.html';
+                 
+                    this.page.identifier = 'all-tags/index.html';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -947,28 +1517,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>

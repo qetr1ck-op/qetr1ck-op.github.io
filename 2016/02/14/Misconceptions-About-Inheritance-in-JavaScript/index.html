@@ -3,46 +3,56 @@
 <html lang="en">
     
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
     <title>Misconceptions About Inheritance in JavaScript - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
-        <link rel="icon" href="/assets/images/favicon.ico">
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="What’s the Difference Between Class &amp;amp; Prototypal Inheritance?This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to learn">
+    <meta name="description" content="What’s the Difference Between Class &amp;amp; Prototypal Inheritance?
+This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to lear">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Misconceptions About Inheritance in JavaScript">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="What’s the Difference Between Class &amp;amp; Prototypal Inheritance?This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to learn">
-<meta property="og:updated_time" content="2016-02-20T09:03:05.689Z">
+<meta property="og:description" content="What’s the Difference Between Class &amp;amp; Prototypal Inheritance?
+This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to lear">
+<meta property="og:updated_time" content="2016-06-28T07:50:41.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Misconceptions About Inheritance in JavaScript">
-<meta name="twitter:description" content="What’s the Difference Between Class &amp;amp; Prototypal Inheritance?This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to learn">
+<meta name="twitter:description" content="What’s the Difference Between Class &amp;amp; Prototypal Inheritance?
+This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to lear">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
+        
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
     
-        <meta property="og:image" content="/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/title.png"/>
+        <meta property="og:image" content="http://qetr1ck-op.github.io/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/title.png"/>
         <meta class="swiftype" name="image" data-type="enum" content="http://qetr1ck-op.github.io/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/title.png" />
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-1ypxditl810oa2orjiy9qe0qftgjjwkw3blohah9riklnmw8hqbje2kp8z1m.min.css">
     <!--STYLES END-->
+    
     
 </head>
 
     <body>
         <div id="blog">
-            <header id="header" data-behavior="3">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -50,19 +60,25 @@
     
         
             <a  class="header-right-icon st-search-show-outputs"
-                href="/#search">
+                href="#search">
         
-                <i class="fa fa-lg fa-search"></i>
-            </a>
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
     
 </header>
-            <nav id="sidebar" data-behavior="3">
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
-                
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=90"/>
-                
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
             </a>
             <span class="sidebar-profile-name">Orest Prystayko</span>
         </div>
@@ -114,14 +130,14 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archive</span>
+                    <span class="sidebar-button-desc">Archives</span>
                 </a>
         </li>
         
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -133,7 +149,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -160,7 +176,7 @@
                     <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">Linked In</span>
+                    <span class="sidebar-button-desc">global.linked_in</span>
                 </a>
         </li>
         
@@ -187,7 +203,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -202,7 +218,7 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Feb 14 2016 22:54:55 GMT+0200">
+    <time itemprop="datePublished" datetime="2016-02-14T22:54:55+02:00">
 	
 		    Feb 14, 2016
     	
@@ -215,11 +231,13 @@
 
     
 </div>
+
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>What’s the Difference Between Class &amp; Prototypal Inheritance?<br>This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;A, so pay special attention to learning the differences, and how to apply the knowledge to write better code.</p>
+            <p>What’s the Difference Between Class &amp; Prototypal Inheritance?</p>
+<p>This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;A, so pay special attention to learning the differences, and how to apply the knowledge to write better code.</p>
 <a id="more"></a>
 <h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Aren_u2019t_classical_and_prototypal_inheritance_really_the_same_thing_2C_just_a_stylistic_preference_3F"><span class="toc-text">Aren’t classical and prototypal inheritance really the same thing, just a stylistic preference?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aren_u2019t_classes_the_right_way_to_create_objects_in_JavaScript_3F"><span class="toc-text">Aren’t classes the right way to create objects in JavaScript?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Don_u2019t_you_need_a_constructor_function_to_specify_object_instantiation_behavior_and_handle_object_initialization_3F"><span class="toc-text">Don’t you need a constructor function to specify object instantiation behavior and handle object initialization?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Don_u2019t_you_need_constructor_functions_for_privacy_in_JavaScript_3F"><span class="toc-text">Don’t you need constructor functions for privacy in JavaScript?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Does_new_mean_that_code_is_using_classical_inheritance_3F"><span class="toc-text">Does new mean that code is using classical inheritance?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Is_There_a_Big_Performance_Difference_Between_Classical_and_Prototypal_Inheritance_3F"><span class="toc-text">Is There a Big Performance Difference Between Classical and Prototypal Inheritance?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The_Native_APIs_use_Constructors-_Aren_u2019t_they_More_Idiomatic_than_Factories_3F"><span class="toc-text">The Native APIs use Constructors. Aren’t they More Idiomatic than Factories?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Doesn_u2019t_the_Choice_Between_Classical_and_Prototypal_Inheritance_Depend_on_the_Use_Case_3F"><span class="toc-text">Doesn’t the Choice Between Classical and Prototypal Inheritance Depend on the Use Case?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Why_Does_this_Matter_3F"><span class="toc-text">Why Does this Matter?</span></a></li></ol>
 <h1 id="Aren_u2019t_classical_and_prototypal_inheritance_really_the_same_thing_2C_just_a_stylistic_preference_3F"><a href="#Aren_u2019t_classical_and_prototypal_inheritance_really_the_same_thing_2C_just_a_stylistic_preference_3F" class="headerlink" title="Aren’t classical and prototypal inheritance really the same thing, just a stylistic preference?"></a>Aren’t classical and prototypal inheritance really the same thing, just a stylistic preference?</h1><p>No.</p>
@@ -228,7 +246,7 @@
 <p>In prototypal inheritance, <code>instances inherit from other instances</code>. Using delegate prototypes (setting the prototype of one instance to refer to an examplar object), it’s literally Objects Linking to Other Objects, or OLOO. Using concatenative inheritance, you just copy properties from an exemplar object to a new instance.</p>
 <h1 id="Aren_u2019t_classes_the_right_way_to_create_objects_in_JavaScript_3F"><a href="#Aren_u2019t_classes_the_right_way_to_create_objects_in_JavaScript_3F" class="headerlink" title="Aren’t classes the right way to create objects in JavaScript?"></a>Aren’t classes the right way to create objects in JavaScript?</h1><p>No.</p>
 <p>There are several right ways to create objects in JavaScript. The first and most common is an object literal:</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mouse = &#123;</span><br><span class="line">  <span class="attribute">furColor</span>: <span class="string">'brown'</span>,</span><br><span class="line">  <span class="attribute">legs</span>: <span class="number">4</span>,</span><br><span class="line">  <span class="attribute">tail</span>: <span class="string">'long, skinny'</span>,</span><br><span class="line">  describe () &#123;</span><br><span class="line">    <span class="keyword">return</span> `A mouse <span class="keyword">with</span> $&#123;<span class="keyword">this</span>.furColor&#125; fur,</span><br><span class="line">      $&#123;<span class="keyword">this</span>.legs&#125; legs, <span class="keyword">and</span> a $&#123;<span class="keyword">this</span>.tail&#125; tail.`;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let mouse = &#123;</span><br><span class="line">  furColor: <span class="string">'brown'</span>,</span><br><span class="line">  legs: <span class="number">4</span>,</span><br><span class="line">  tail: <span class="string">'long, skinny'</span>,</span><br><span class="line">  describe () &#123;</span><br><span class="line">    <span class="keyword">return</span> `A mouse with $&#123;<span class="keyword">this</span>.furColor&#125; fur,</span><br><span class="line">      $&#123;<span class="keyword">this</span>.legs&#125; legs, and a $&#123;<span class="keyword">this</span>.tail&#125; tail.`;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>You can attach delegate prototypes with <code>Object.create()</code>:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> animal = &#123;</span><br><span class="line">  animalType: <span class="string">'animal'</span>,</span><br><span class="line">  </span><br><span class="line">  describe () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`An <span class="subst">$&#123;this.animalType&#125;</span>, with <span class="subst">$&#123;this.furColor&#125;</span> fur, </span><br><span class="line">      <span class="subst">$&#123;this.legs&#125;</span> legs, and a <span class="subst">$&#123;this.tail&#125;</span> tail.`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mouse = <span class="built_in">Object</span>.assign(<span class="built_in">Object</span>.create(animal), &#123;</span><br><span class="line">  animalType: <span class="string">'mouse'</span>,</span><br><span class="line">  furColor: <span class="string">'brown'</span>,</span><br><span class="line">  legs: <span class="number">4</span>,</span><br><span class="line">  tail: <span class="string">'long, skinny'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Let’s break this one down a little:</p>
@@ -276,7 +294,7 @@
 <p>In Java, that was harder than class inheritance because you actually had to use classes to achieve it.</p>
 <p>In JavaScript, we don’t have that excuse. It’s actually much easier in JavaScript to simply create the object that you need by assembling various prototypes together than it is to manage object hierarchies.</p>
 <p>You don’t have to <code>extend</code> a <code>class</code>. JavaScript has dynamic object extension, and jQuery exposes its own prototype so you can just extend that:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">How to extend the jQuery prototype:</span><br><span class="line">So difficult.</span><br><span class="line">Brain hurts.</span><br><span class="line">ouch.</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line">jQuery.fn.megaCalendarWidget = megaCalendarWidget;</span><br><span class="line"></span><br><span class="line"><span class="comment">// omg I'm so glad that's over.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">How to extend the jQuery prototype:</span><br><span class="line">So difficult.</span><br><span class="line">Brain hurts.</span><br><span class="line">ouch.</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line">jQuery.<span class="keyword">fn</span>.megaCalendarWidget = megaCalendarWidget;</span><br><span class="line"></span><br><span class="line"><span class="comment">// omg I'm so glad that's over.</span></span><br></pre></td></tr></table></figure>
 <p>The next time you call the jQuery factory, you’ll get an instance that can make your date inputs mega awesome.</p>
 <p>Similarly, you can use <code>Object.assign()</code> to compose any number of objects together with last-in priority:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ninja <span class="keyword">from</span> <span class="string">'ninja'</span>;</span><br><span class="line"><span class="keyword">import</span> mouse <span class="keyword">from</span> <span class="string">'mouse'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ninjamouse = <span class="built_in">Object</span>.assign(&#123;&#125;, mouse, ninja);</span><br></pre></td></tr></table></figure>
@@ -296,12 +314,9 @@
 <p>Save my day - <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9#.2cya8y3jf" target="_blank" rel="external">Eric Elliott on Medium</a></p>
 
             
-                
-
-            
         </div>
     </div>
-    <div class="post-footer main-content-wrap">
+    <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
@@ -315,7 +330,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/"  data-tooltip="Kata (Array, RegExp): Filter through name/email">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/"  data-tooltip="Kata: Filter through name/email">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -323,7 +338,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Kata-Functions-Function-cache/" data-tooltip="Kata (Functions): Function cache">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Kata-Functions-Function-cache/" data-tooltip="Kata: Function cache">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -361,7 +376,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -371,9 +386,11 @@
 
 
         
-            <div id="disqus_thread">
+            
+                <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+            
         
     </div>
 </article>
@@ -388,13 +405,13 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/"  data-tooltip="Kata (Array, RegExp): Filter through name/email">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/15/Kata-Array-RegExp-Filter-through-name-email/"  data-tooltip="Kata: Filter through name/email">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -402,7 +419,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Kata-Functions-Function-cache/" data-tooltip="Kata (Functions): Function cache">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/14/Kata-Functions-Function-cache/" data-tooltip="Kata: Function cache">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -440,7 +457,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -450,7 +467,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/">
@@ -472,13 +489,18 @@
 <div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
-        <div id="about">
+        
+
+
+    
+
+<div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
         
             <h4 id="about-card-name">Orest Prystayko</h4>
         
@@ -489,7 +511,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front-End Developer @ Eleks</p>
+                <p>Front End Developer @ Eleks</p>
 
             </h5>
         
@@ -504,22 +526,30 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<script src="/assets/js/script-a0qmhtjwmff0mtcdvqzxlmmd4alojbs605wbemrsuzz1jwdrglwa58u354hf.min.js"></script>
 <!--SCRIPTS END-->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'qetr1ck-op';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/';
+                 
+                    this.page.identifier = '2016/02/14/Misconceptions-About-Inheritance-in-JavaScript/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script type="text/javascript">
@@ -531,28 +561,5 @@
         _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
     </script>
 
-
-<!-- <div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//qetr1ck-op.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 
 </html>
