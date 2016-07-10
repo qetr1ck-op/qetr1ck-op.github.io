@@ -27,7 +27,7 @@ Are">
 Are all properties copied by reference? 
 Are sub-properties merged or replaced? 
 Are">
-<meta property="og:updated_time" content="2016-07-10T09:43:53.330Z">
+<meta property="og:updated_time" content="2016-07-10T09:53:33.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to copy object in Javascript">
 <meta name="twitter:description" content="There are many ways to copy object in Javascript but most of the time such operation doesn’t do what we expected.
@@ -250,6 +250,7 @@ Are">
 <li>And what about Sumbols and other non-enumerable properties?</li>
 </ul>
 <a id="more"></a>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shallow_VS_Deep_copy"><span class="toc-text">Shallow VS Deep copy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object-assign_28target_2C__5B_2C_sourceN_5D_29"><span class="toc-text">Object.assign(target, [, sourceN])</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object-assign_side_effects"><span class="toc-text">Object.assign side effects</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Use_one_of_the_simple_npm_package_or_lodash/underscore/rambda"><span class="toc-text">Use one of the simple npm package or lodash/underscore/rambda</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSON-parse_28JSON-stringify_28object_29_29"><span class="toc-text">JSON.parse(JSON.stringify(object))</span></a></li></ol>
 <h1 id="Shallow_VS_Deep_copy"><a href="#Shallow_VS_Deep_copy" class="headerlink" title="Shallow VS Deep copy"></a>Shallow VS Deep copy</h1><p>When we copied reference nor a value, we are doing <strong>shallow</strong> copy.</p>
 <p>Whenever we do an operation like <code>a.prop = b.prop</code> we are performing a shallow copy, meaning that modifying the object property <code>a.prop</code> it will reflect changes in <code>b.prop</code> too.</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123; </span><br><span class="line">    obj: &#123;</span><br><span class="line">        <span class="keyword">test</span>: 'Foo'</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = &#123;&#125;;</span><br><span class="line">b.obj = a.obj;</span><br><span class="line"></span><br><span class="line"><span class="comment">//if we modify it</span></span><br><span class="line">b.obj.<span class="keyword">test</span> = 'Bar';</span><br><span class="line"></span><br><span class="line"><span class="comment">//it will be reflected in a </span></span><br><span class="line">a.obj.<span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
@@ -273,6 +274,11 @@ Are">
 <h1 id="JSON-parse_28JSON-stringify_28object_29_29"><a href="#JSON-parse_28JSON-stringify_28object_29_29" class="headerlink" title="JSON.parse(JSON.stringify(object))"></a>JSON.parse(JSON.stringify(object))</h1><p>If you don’t have function within your object, a very simple:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cloneOfA = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a));</span><br></pre></td></tr></table></figure>
 <p>This works with for all kinds of objects contain: <code>object</code>, <code>array</code>, <code>string</code>, <code>boolean</code>, <code>numbers</code>;</p>
+<p>Save my day:</p>
+<ul>
+<li><a href="https://www.webreflection.co.uk/blog/2015/10/06/how-to-copy-objects-in-javascript#shallow-vs-deep-copy" target="_blank" rel="external">www.webreflection.co.uk</a></li>
+<li><a href="http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object" target="_blank" rel="external">stackoverflow.com</a></li>
+</ul>
 
             
         </div>
@@ -330,7 +336,7 @@ Are">
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -411,7 +417,7 @@ Are">
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
