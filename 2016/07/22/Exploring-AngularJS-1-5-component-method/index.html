@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Blog | qetr1ck-op">
+    <title>Exploring AngularJS 1.5 .component() method - Blog | qetr1ck-op</title>
+    <meta name="author" content="Orest Prystayko">
+    
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="AngularJS 1.5 introduce .component() helper method which is much simpler than the .directive() definitions and advocates best practices and common default behavior.
+Using .component() will allow to wr">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Exploring AngularJS 1.5 .component() method">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/index.html">
+<meta property="og:site_name" content="Blog | qetr1ck-op">
+<meta property="og:description" content="AngularJS 1.5 introduce .component() helper method which is much simpler than the .directive() definitions and advocates best practices and common default behavior.
+Using .component() will allow to wr">
+<meta property="og:updated_time" content="2016-07-23T21:32:19.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Exploring AngularJS 1.5 .component() method">
+<meta name="twitter:description" content="AngularJS 1.5 introduce .component() helper method which is much simpler than the .directive() definitions and advocates best practices and common default behavior.
+Using .component() will allow to wr">
+<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+    
+        <meta property="og:image" content="http://html5-demos.appspot.com/static/webcomponents/images/logos/webcomponents.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://html5-demos.appspot.com/static/webcomponents/images/logos/webcomponents.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="#search">
+        
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Orest Prystayko</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">global.linked_in</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Exploring AngularJS 1.5 .component() method
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-07-22T22:20:03+03:00">
+	
+		    Jul 22, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/AngularJS/">AngularJS</a>
+
+
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>AngularJS 1.5 introduce <code>.component()</code> helper method which is much simpler than the <code>.directive()</code> definitions and advocates best practices and common default behavior.</p>
+<p>Using <code>.component()</code> will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.</p>
+<p>Let’s compare the difference in syntax and the possibility of new abstraction.</p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u201Cdirectrive_28_29_u201D_to__u201Ccomponent_28_29_u201D"><span class="toc-text">“directrive()” to “component()”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Function_to_Object"><span class="toc-text">Function to Object</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u201Cscope_u201D_and__u201CbindToController_u201D_become__u201Cbindings_u201D"><span class="toc-text">“scope” and “bindToController” become “bindings”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Controller_and__u201CcontorllerAs_u201D_changes"><span class="toc-text">Controller and “contorllerAs” changes</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Template"><span class="toc-text">Template</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A_life_demo_with_new__u201C-component_28_29_u201D_3A"><span class="toc-text">A life demo with new “.component()”:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Inheriting_behavior_with__u201Crequire_u201D"><span class="toc-text">Inheriting behavior with “require”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#One-way_binding"><span class="toc-text">One-way binding</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Upgrading_to_Angular_2"><span class="toc-text">Upgrading to Angular 2</span></a></li></ol>
+<a id="more"></a>
+<h1 id="u201Cdirectrive_28_29_u201D_to__u201Ccomponent_28_29_u201D"><a href="#u201Cdirectrive_28_29_u201D_to__u201Ccomponent_28_29_u201D" class="headerlink" title="“directrive()” to “component()”"></a>“directrive()” to “component()”</h1><p>The syntax change is simple:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// before</span></span><br><span class="line">module<span class="selector-class">.directive</span>(name, fn);</span><br><span class="line"></span><br><span class="line"><span class="comment">// after</span></span><br><span class="line">module<span class="selector-class">.component</span>(name, options);</span><br></pre></td></tr></table></figure>
+<p>I’ve rebuild a simple <code>counter</code> directive which which we’ll refactor to <code>component()</code>:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span></span><br><span class="line">  .directive(<span class="string">'counter'</span>, function counter() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      scope: &#123;&#125;,</span><br><span class="line">      bindToController: &#123;</span><br><span class="line">        count: <span class="string">'='</span></span><br><span class="line">      &#125;,</span><br><span class="line">      contorllerAs: <span class="string">'$ctlr'</span>,</span><br><span class="line">      controller: function() &#123;</span><br><span class="line">        <span class="keyword">this</span>.increment = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.count++;</span><br><span class="line">        <span class="keyword">this</span>.decrement = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.count--;</span><br><span class="line">      &#125;,</span><br><span class="line">      template: `<span class="javascript"></span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">ng-model</span>=<span class="string">"$ctlr.count"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"$ctrl.increment()"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"$ctrl.decrement()"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      </span>`</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<iframe src="http://embed.plnkr.co/K66Z99ejkma90mWNxfqs/" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+<h1 id="Function_to_Object"><a href="#Function_to_Object" class="headerlink" title="Function to Object"></a>Function to Object</h1><p>Let’s start from the top and refactor the function argument to object:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// before</span></span><br><span class="line"><span class="built_in">module</span></span><br><span class="line">  .directive(<span class="string">'counter'</span>, <span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// after</span></span><br><span class="line"><span class="built_in">module</span></span><br><span class="line">  .component(<span class="string">'counter'</span>, &#123;</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>Nice and simple.</p>
+<h1 id="u201Cscope_u201D_and__u201CbindToController_u201D_become__u201Cbindings_u201D"><a href="#u201Cscope_u201D_and__u201CbindToController_u201D_become__u201Cbindings_u201D" class="headerlink" title="“scope” and “bindToController” become “bindings”"></a>“scope” and “bindToController” become “bindings”</h1><p>In <code>directive()</code> the <code>scope</code> property allows us to define whether we want to isolate the <code>$scope</code> or inherit it. So repeating every time just create an extra boilerplate. With <a href="https://docs.angularjs.org/api/ng/service/$compile" target="_blank" rel="external">bindToController</a> we can explicitly define binding directly to instance of controller via <code>this</code>.</p>
+<p>With <code>bindings</code> we can remove this boilerplate and simple define what we want to pass down to the component.</p>
+<p>And <code>component()</code> will always have an isolated scope.</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// before</span></span><br><span class="line"><span class="selector-tag">module</span></span><br><span class="line">  <span class="selector-class">.directive</span>(<span class="string">'counter'</span>, function counter() &#123;</span><br><span class="line">    <span class="selector-tag">return</span> &#123;</span><br><span class="line">      <span class="attribute">scope</span>: &#123;</span><br><span class="line">        <span class="attribute">count</span>: <span class="string">'='</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attribute">bindToController</span>: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// after</span></span><br><span class="line"><span class="selector-tag">module</span></span><br><span class="line">  <span class="selector-class">.component</span>(<span class="string">'counter'</span>, &#123;</span><br><span class="line">    <span class="attribute">binding</span>: &#123;</span><br><span class="line">      <span class="attribute">count</span>: <span class="string">'='</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="Controller_and__u201CcontorllerAs_u201D_changes"><a href="#Controller_and__u201CcontorllerAs_u201D_changes" class="headerlink" title="Controller and “contorllerAs” changes"></a>Controller and “contorllerAs” changes</h1><p>Nothing has changed in the way we declare <code>controller</code>, however it’s now smarter and has a default <code>contorllerAs</code> value of <code>$ctrl</code>.</p>
+<p>Under the hood it looks like:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inside angular.js</span></span><br><span class="line">controllerAs: identifierForController(options.controller) || options.controllerAs || <span class="string">'$ctrl'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> CNTRL_REG = /^(\S+)(\s+<span class="keyword">as</span>\s+(\w+))?$/;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identifierForController</span><span class="params">(controller, ident)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (ident &amp;&amp; isString(ident)) <span class="keyword">return</span> ident;</span><br><span class="line">  <span class="keyword">if</span> (isString(controller)) &#123;</span><br><span class="line">    <span class="keyword">var</span> match = CNTRL_REG.exec(controller);</span><br><span class="line">    <span class="keyword">if</span> (match) <span class="keyword">return</span> match[<span class="number">3</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This allows us to do the following inside <code>.component()</code>:</p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  controller: <span class="symbol">'FooController</span> <span class="keyword">as</span> foo'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Based on the information we refactor our <code>Directive</code> to <code>Component</code> by dropping controllerAs property:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span> before</span><br><span class="line">.directive(<span class="string">'counter'</span>, function counter() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    scope: &#123;</span><br><span class="line">      count: <span class="string">'='</span></span><br><span class="line">    &#125;,</span><br><span class="line">    bindToController: <span class="literal">true</span>,</span><br><span class="line">    controller: function () &#123;</span><br><span class="line">      <span class="keyword">this</span>.increment = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.count++;</span><br><span class="line">      <span class="keyword">this</span>.decrement = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.count--;</span><br><span class="line">    &#125;,</span><br><span class="line">    controllerAs: <span class="string">'counter'</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> after</span><br><span class="line">.component(<span class="string">'counter'</span>, &#123;</span><br><span class="line">  bindings: &#123;</span><br><span class="line">    count: <span class="string">'='</span></span><br><span class="line">  &#125;,</span><br><span class="line">  controller: function () &#123;</span><br><span class="line">    <span class="keyword">this</span>.increment = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.count++;</span><br><span class="line">    <span class="keyword">this</span>.decrement = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.count--;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Things now are becoming much simpler and funny.</p>
+<h1 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h1><p>The <code>template</code> property can be defined as a function property with injected <code>$elem</code> and <code>$attrs</code> values:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  template: <span class="keyword">function</span> (<span class="variable">$element</span>, <span class="variable">$attrs</span>) &#123;</span><br><span class="line">    // access to <span class="variable">$element</span> and <span class="variable">$attrs</span></span><br><span class="line">    <span class="built_in">return</span> `</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"<span class="variable">$ctrl</span>.count"</span>&gt;</span><br><span class="line">        &lt;button <span class="built_in">type</span>=<span class="string">"button"</span> ng-click=<span class="string">"<span class="variable">$ctrl</span>.decrement();"</span>&gt;-&lt;/button&gt;</span><br><span class="line">        &lt;button <span class="built_in">type</span>=<span class="string">"button"</span> ng-click=<span class="string">"<span class="variable">$ctrl</span>.increment();"</span>&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    `</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="A_life_demo_with_new__u201C-component_28_29_u201D_3A"><a href="#A_life_demo_with_new__u201C-component_28_29_u201D_3A" class="headerlink" title="A life demo with new “.component()”:"></a>A life demo with new “.component()”:</h1><iframe src="http://embed.plnkr.co/CRSS2VkrfM6KK9U72mxg/" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+<h1 id="Inheriting_behavior_with__u201Crequire_u201D"><a href="#Inheriting_behavior_with__u201Crequire_u201D" class="headerlink" title="Inheriting behavior with “require”"></a>Inheriting behavior with “require”</h1><p>Inherited Directive or Component methods will be bound to <code>this.parent</code> property in the Controller:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">require</span>: &#123;</span><br><span class="line">    <span class="keyword">parent</span>: <span class="string">'^^parentComponet'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  controller: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// use this object to access to required Object</span></span><br><span class="line">    this.<span class="keyword">parent</span>.foo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="One-way_binding"><a href="#One-way_binding" class="headerlink" title="One-way binding"></a>One-way binding</h1><p>A new syntax expression for isolate scope values:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="selector-tag">bindings</span>: &#123;</span><br><span class="line">    <span class="attribute">oneWay</span>: <span class="string">'&lt;'</span>,</span><br><span class="line">    <span class="attribute">twoWay</span>: <span class="string">'='</span></span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>But still remember that object are passed by reference, and Angular doesn’t make a clone of the object when it passed via <code>one-way binding</code>, it actually sets the same value, which means that objects have still <code>two-way binding</code> somehow.</p>
+</blockquote>
+<h1 id="Upgrading_to_Angular_2"><a href="#Upgrading_to_Angular_2" class="headerlink" title="Upgrading to Angular 2"></a>Upgrading to Angular 2</h1><p>Writing in this style using <code>.component()</code> allows you easily transit to Angular 2, it’d look something like this:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span></span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'counter'</span>,</span><br><span class="line">  template: `<span class="javascript"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> [(<span class="attr">ng-model</span>)]=<span class="string">"count"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"increment()"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"decrement()"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  </span>`,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default <span class="class"><span class="keyword">class</span> <span class="title">CounterComponent</span> &#123;</span></span><br><span class="line">  constructor() &#123;&#125;</span><br><span class="line">  increment() &#123;</span><br><span class="line">    <span class="keyword">this</span>.count++;</span><br><span class="line">  &#125;</span><br><span class="line">  decrement() &#123;</span><br><span class="line">    <span class="keyword">this</span>.count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Save my day: </p>
+<ul>
+<li><a href="https://toddmotto.com/exploring-the-angular-1-5-component-method/" target="_blank" rel="external">toddmotto</a></li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/AngularJS/">AngularJS</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/11/5-principles-that-will-make-a-more-SOLID-Javascript-Engineer/" data-tooltip="5 principles that will make a more SOLID Javascript Engineer">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/11/5-principles-that-will-make-a-more-SOLID-Javascript-Engineer/" data-tooltip="5 principles that will make a more SOLID Javascript Engineer">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+        
+            <h4 id="about-card-name">Orest Prystayko</h4>
+        
+            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front End Developer @ Eleks</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Ukraine, Lviv
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/';
+                 
+                    this.page.identifier = '2016/07/22/Exploring-AngularJS-1-5-component-method/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
+    </script>
+
+
+</html>
