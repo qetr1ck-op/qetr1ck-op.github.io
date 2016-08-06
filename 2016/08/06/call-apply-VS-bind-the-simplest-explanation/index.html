@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Blog | qetr1ck-op">
+    <title>call &amp; apply VS bind, the simplest explanation - Blog | qetr1ck-op</title>
+    <meta name="author" content="Orest Prystayko">
+    
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="Every one know that apply() and call() are similar function, which set this (change context of function).
+But when should be used the bind() method?">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="call & apply VS bind, the simplest explanation">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/index.html">
+<meta property="og:site_name" content="Blog | qetr1ck-op">
+<meta property="og:description" content="Every one know that apply() and call() are similar function, which set this (change context of function).
+But when should be used the bind() method?">
+<meta property="og:updated_time" content="2016-08-06T09:36:45.370Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="call & apply VS bind, the simplest explanation">
+<meta name="twitter:description" content="Every one know that apply() and call() are similar function, which set this (change context of function).
+But when should be used the bind() method?">
+<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+    
+        <meta property="og:image" content="http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/title.gif"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/title.gif" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="#search">
+        
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Orest Prystayko</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">global.linked_in</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            call &amp; apply VS bind, the simplest explanation
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-08-06T12:03:54+03:00">
+	
+		    Aug 06, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Every one know that apply() and call() are similar function, which set this (change context of function).</p>
+<p>But when should be used the bind() method?</p>
+<a id="more"></a>
+<h1 id="table-of-contents">Table of Contents</h1>
+<p><code>call</code> and <code>apply</code> attach <code>this</code> into function/method and execute it immediately:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const foo = &#123;</span><br><span class="line">  <span class="symbol">name:</span> <span class="string">'Foo'</span>,</span><br><span class="line">  hello(toWhom) &#123;</span><br><span class="line">    <span class="keyword">return</span> `Hello from <span class="variable">$&#123;</span>this.name&#125; to <span class="variable">$&#123;</span>toWhom&#125;`;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo.hello(<span class="string">'bar'</span>); <span class="regexp">//</span> <span class="string">"Hello from Foo to bar"</span></span><br><span class="line">foo.hello.call(foo, <span class="string">'world'</span>); <span class="regexp">//</span> <span class="string">"Hello from Foo to world"</span></span><br></pre></td></tr></table></figure>
+<p><code>Function.prototype.bind()</code>, on the other hand, creates a new function with a given this value, and returns that function without executing it. It needes to be invoked separately:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;</span><br><span class="line">  name: <span class="string">'Foo'</span>,</span><br><span class="line">  hello(toWhom) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Hello from <span class="subst">$&#123;this.name&#125;</span> to <span class="subst">$&#123;toWhom&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newHello = foo.hello.bind(foo);</span><br><span class="line">newHello(<span class="string">'world'</span>); <span class="string">"Hello from Foo to world"</span></span><br></pre></td></tr></table></figure>
+<p>It’s very useful with callbacks:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bar = &#123; message: <span class="string">'Hello world'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.message;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(sayMsg.bind(bar)); <span class="comment">// Hello world</span></span><br></pre></td></tr></table></figure>
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/OOP/">OOP</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/26/Kangax-ES6-quiz-expained/" data-tooltip="Kangax ES2015 quiz, expained">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/26/Kangax-ES6-quiz-expained/" data-tooltip="Kangax ES2015 quiz, expained">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+        
+            <h4 id="about-card-name">Orest Prystayko</h4>
+        
+            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front End Developer @ Eleks</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Ukraine, Lviv
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/';
+                 
+                    this.page.identifier = '2016/08/06/call-apply-VS-bind-the-simplest-explanation/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
+    </script>
+
+
+</html>
