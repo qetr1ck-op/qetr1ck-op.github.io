@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/07/26/Kangax-ES6-quiz-expained/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
 <meta property="og:description" content="@kangax‘ve created a quiz, it’s very interesting, the solution explains a tricky moment of spec.">
-<meta property="og:updated_time" content="2016-08-06T08:59:51.543Z">
+<meta property="og:updated_time" content="2016-08-07T20:34:07.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kangax ES2015 quiz, expained">
 <meta name="twitter:description" content="@kangax‘ve created a quiz, it’s very interesting, the solution explains a tricky moment of spec.">
@@ -235,7 +235,7 @@
         <div class="main-content-wrap">
             <p><a href="https://twitter.com/kangax" target="_blank" rel="external">@kangax</a>‘ve created a <a href="http://perfectionkills.com/javascript-quiz-es6/" target="_blank" rel="external">quiz</a>, it’s very interesting, the solution explains a tricky moment of spec.</p>
 <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_1"><span class="toc-text">Question 1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_2"><span class="toc-text">Question 2</span></a></li></ol>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_1"><span class="toc-text">Question 1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_2"><span class="toc-text">Question 2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_3"><span class="toc-text">Question 3</span></a></li></ol>
 <h1 id="Question_1"><a href="#Question_1" class="headerlink" title="Question 1"></a>Question 1</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">x, f = (</span>) =&gt; <span class="title">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x;</span><br><span class="line">  <span class="keyword">var</span> y = x;</span><br><span class="line">  x = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [x, y, f()];</span><br><span class="line">&#125;)(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>[2, 1, 1]</strong></li>
@@ -254,7 +254,7 @@
 <li>Now it’s tricky <code>f()</code>. It is created in the <code>scope of parameters</code>, so <code>x</code> refers to the parameter <code>x</code>, which is <code>1</code>.</li>
 <li>Final values are <code>[2, 1, 1]</code></li>
 </ol>
-<h1 id="Question_2"><a href="#Question_2" class="headerlink" title="Question 2"></a>Question 2</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [</span><br><span class="line">    (() =&gt; <span class="keyword">this</span>.x).bind(&#123;x: <span class="string">'inner'</span>&#125;),</span><br><span class="line">    (() =&gt; <span class="keyword">this</span>.x)()</span><br><span class="line">  ];</span><br><span class="line">&#125;)().call(&#123;x: <span class="string">'outer'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="Question_2"><a href="#Question_2" class="headerlink" title="Question 2"></a>Question 2</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [</span><br><span class="line">    ( () =&gt; <span class="keyword">this</span>.x ).bind(&#123; x: <span class="string">'inner'</span> &#125;),</span><br><span class="line">    ( () =&gt; <span class="keyword">this</span>.x )()</span><br><span class="line">  ];</span><br><span class="line">&#125;)().call(&#123; x: <span class="string">'outer'</span> &#125;);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>[‘inner’, ‘outer’]</li>
 <li><strong>[‘outer’, ‘outer’]</strong></li>
@@ -262,6 +262,20 @@
 <li>Error</li>
 </ul>
 <p>Arrow function have <code>lexical this</code> value. This means that, it inherits <code>this</code> value from the context they are defined.<br>And later it stays unchangeable, even if explicitly bound or called with different context.</p>
+<p>In this case both arrow function are created within the context of <code>{x: &#39;outer&#39;}</code>, and <code>bind({x: &#39;inner&#39;})</code> applied on the first arrow function doesn’t make a difference.</p>
+<h1 id="Question_3"><a href="#Question_3" class="headerlink" title="Question 3"></a>Question 3</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x, &#123; x: y = <span class="number">1</span>&#125; = &#123; x &#125;; y;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>undefined</li>
+<li><strong>1</strong></li>
+<li>{ x: 1}</li>
+<li>Error</li>
+</ul>
+<ol>
+<li><code>let x</code> defines <code>x</code>  with value <code>undefined</code></li>
+<li>Destructive assignment <code>{ x: y = 1} = { x }</code>, on the right side has a short notation for an object literal - <code>{ x }</code> which is equalent to <code>{ x: x }</code>, that is in our case an object <code>{ x: undefined }</code></li>
+<li>Once it destucted the pattern<code>{ x: y = 1}</code>, we extract variable <code>y</code>, which correspond to the propery <code>x</code>. Since propery <code>x</code> is <code>undefined</code>, the default value <code>1</code> is assigned to it.</li>
+</ol>
+<p>TODO: finish the post…</p>
 <p>Save my day:</p>
 <ul>
 <li><a href="https://gist.github.com/DmitrySoshnikov/3928607cb8fdba42e712" target="_blank" rel="external">DmitrySoshnikov</a></li>
