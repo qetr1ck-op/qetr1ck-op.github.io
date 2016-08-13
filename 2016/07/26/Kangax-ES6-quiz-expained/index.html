@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/07/26/Kangax-ES6-quiz-expained/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
 <meta property="og:description" content="@kangax‘ve created a quiz, it’s very interesting, the solution explains a tricky moment of spec.">
-<meta property="og:updated_time" content="2016-08-07T20:34:07.135Z">
+<meta property="og:updated_time" content="2016-08-13T21:19:36.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kangax ES2015 quiz, expained">
 <meta name="twitter:description" content="@kangax‘ve created a quiz, it’s very interesting, the solution explains a tricky moment of spec.">
@@ -235,7 +235,7 @@
         <div class="main-content-wrap">
             <p><a href="https://twitter.com/kangax" target="_blank" rel="external">@kangax</a>‘ve created a <a href="http://perfectionkills.com/javascript-quiz-es6/" target="_blank" rel="external">quiz</a>, it’s very interesting, the solution explains a tricky moment of spec.</p>
 <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_1"><span class="toc-text">Question 1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_2"><span class="toc-text">Question 2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_3"><span class="toc-text">Question 3</span></a></li></ol>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_1"><span class="toc-text">Question 1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_2"><span class="toc-text">Question 2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_3"><span class="toc-text">Question 3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_4"><span class="toc-text">Question 4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_5"><span class="toc-text">Question 5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_6"><span class="toc-text">Question 6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_7"><span class="toc-text">Question 7</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_8"><span class="toc-text">Question 8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_9"><span class="toc-text">Question 9</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Question_10"><span class="toc-text">Question 10</span></a></li></ol>
 <h1 id="Question_1"><a href="#Question_1" class="headerlink" title="Question 1"></a>Question 1</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">x, f = (</span>) =&gt; <span class="title">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x;</span><br><span class="line">  <span class="keyword">var</span> y = x;</span><br><span class="line">  x = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [x, y, f()];</span><br><span class="line">&#125;)(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>[2, 1, 1]</strong></li>
@@ -275,7 +275,87 @@
 <li>Destructive assignment <code>{ x: y = 1} = { x }</code>, on the right side has a short notation for an object literal - <code>{ x }</code> which is equalent to <code>{ x: x }</code>, that is in our case an object <code>{ x: undefined }</code></li>
 <li>Once it destucted the pattern<code>{ x: y = 1}</code>, we extract variable <code>y</code>, which correspond to the propery <code>x</code>. Since propery <code>x</code> is <code>undefined</code>, the default value <code>1</code> is assigned to it.</li>
 </ol>
-<p>TODO: finish the post…</p>
+<h1 id="Question_4"><a href="#Question_4" class="headerlink" title="Question 4"></a>Question 4</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> f = <span class="keyword">this</span> ? <span class="class"><span class="keyword">class</span> <span class="title">g</span> </span>&#123;&#125; : <span class="class"><span class="keyword">class</span> <span class="title">h</span> </span>&#123;&#125;;</span><br><span class="line">  <span class="keyword">return</span> [</span><br><span class="line">    <span class="keyword">typeof</span> f,</span><br><span class="line">    <span class="keyword">typeof</span> h</span><br><span class="line">  ] </span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>[‘function’, undefined]</strong></li>
+<li>[‘function’, ‘function’]</li>
+<li>[‘function’, ‘function’]</li>
+<li>[‘undefined’, ‘undefined’]</li>
+<li>Error</li>
+</ul>
+<ol>
+<li>The IIFE is executed with no explicit <code>this</code> value. In ES6 or with <code>use strict</code> directive it means it will be <code>undefined</code>;</li>
+<li>So variable <code>f</code> is a reference to <code>class h {}</code>. It’s type is a <code>function</code> because essentially classes in ES6 are syntactic sugar on top of <code>contructor function</code>.</li>
+<li>However, the <code>class h {}</code> is created in expression position, that means <code>h</code> isn’t added to to the environment, and return <code>undefined</code>.</li>
+</ol>
+<h1 id="Question_5"><a href="#Question_5" class="headerlink" title="Question 5"></a>Question 5</h1><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">typeof</span> (<span class="name"><span class="builtin-name">new</span></span> (<span class="name"><span class="builtin-name">class</span></span> &#123; class () &#123;&#125; &#125;)))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>‘function’</li>
+<li><strong>‘object’</strong></li>
+<li>‘undefined’</li>
+<li>Error</li>
+</ul>
+<p>This is an obfuscated syntax playing, let’s try to figure it out!</p>
+<ol>
+<li>The ES6 allow concise method definition, that allows dropping the <code>: function</code> part. So <code>class () {}</code> is a method inside in <a href="/anonymous class expression">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class#Examples</a>.</li>
+<li>Now instead of assigning it to variable, we can instantiate it directly: <code>new class { class() { } }</code></li>
+<li>The result of default class is always an object. So <code>typeof</code> should return <code>object</code>.</li>
+</ol>
+<h1 id="Question_6"><a href="#Question_6" class="headerlink" title="Question 6"></a>Question 6</h1><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof (<span class="keyword">new</span> (<span class="class"><span class="keyword">class</span> <span class="title">F</span> <span class="keyword">extends</span> (<span class="params"><span class="type">String</span>, <span class="type">Array</span></span>) </span>&#123; &#125;)).substring</span><br></pre></td></tr></table></figure>
+<ul>
+<li>‘function’</li>
+<li>‘object’</li>
+<li><strong>‘undefined’</strong></li>
+<li>Error</li>
+</ul>
+<p>Again an obfuscated syntax.</p>
+<ol>
+<li>The grouping operator always return the last argument, so the result of <code>(String, Array)</code> is actually just <code>Array</code></li>
+<li>So we get <code>class F extends Array {}</code></li>
+<li>We can image as it’s assigning operation <code>let f = new F</code></li>
+<li>Obviously that <code>typeof f.substring</code> is <code>undefined</code></li>
+</ol>
+<h1 id="Question_7"><a href="#Question_7" class="headerlink" title="Question 7"></a>Question 7</h1><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="name"><span class="builtin-name">...</span></span>[<span class="name"><span class="builtin-name">...</span></span><span class="symbol">'...</span>']].length</span><br></pre></td></tr></table></figure>
+<ul>
+<li>1</li>
+<li><strong>3</strong></li>
+<li>6</li>
+<li>Error</li>
+</ul>
+<p>The <code>spread</code> operator allows to spread all the elements to the array. It works with any <code>iterable</code> object.</p>
+<ol>
+<li>String are iterable, meaning that we can iterate char by char. So inner <code>[...&#39;...&#39;]</code> results to an array <code>[&#39;.&#39;, &#39;.&#39;, &#39;.&#39;]</code></li>
+<li>Array is iterable as well, so outer array spreads into new array.</li>
+<li>Result of <code>[&#39;.&#39;, &#39;.&#39;, &#39;.&#39;].length</code> is <code>3</code></li>
+</ol>
+<h1 id="Question_8"><a href="#Question_8" class="headerlink" title="Question 8"></a>Question 8</h1><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof (function* f() &#123; yield f &#125;)().next().next()</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Generator object has <code>next</code> method, that returns the next value at the <code>yield</code> position. The returned value has signature: <code>{ value: &lt;returned value&gt;, done: boolean}</code></li>
+<li>First <code>g.next()</code> has result <code>{value: function f, done: false}</code></li>
+<li>The returned value value itself doesn’t have <code>next()</code> method, so trying to chain methods is an error.</li>
+</ol>
+<h1 id="Question_9"><a href="#Question_9" class="headerlink" title="Question 9"></a>Question 9</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof (new class f() &#123; [<span class="string">f</span>](<span class="link"></span>) &#123; &#125;, f: &#123; &#125; &#125;)[<span class="code">`$&#123;f&#125;`</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>‘function’</li>
+<li>‘undefined’</li>
+<li>‘object’</li>
+<li><strong>Error</strong></li>
+</ul>
+<p>Since the syntax of class isn’t correct <code>class f()</code>, the result is an error.</p>
+<h1 id="Question_10"><a href="#Question_10" class="headerlink" title="Question 10"></a>Question 10</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">`<span class="subst">$&#123;&#123;Object&#125;</span>&#125;`</span>.prototype</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“function”</li>
+<li>“undefined”</li>
+<li>“object”</li>
+<li><strong>Error</strong></li>
+</ul>
+<p>That one is very tricky!</p>
+<p>We have something that looks a bit strange: it isn’t <code>${Object}</code> how it “should be”, but the <code>$</code>. It isn’t a special syntax it is still a value <code>{Object}</code> in template string <code>${}</code>.</p>
+<ol>
+<li>What is <code>${Object}</code>? ES6 has short notation for object literal, so in fact it’s just: <code>{Object: Object}</code>, a simple object with the property named <code>&#39;Object&#39;</code>, and the value <code>Object</code> (the built in constructor).</li>
+<li>So <code>${ {Object: Object} }</code>, become <code>&#39;[object Object]&#39;</code>. Because the <code>${x}</code> is roughly equivalent to the <code>x + &#39;&#39;</code> or <code>x.toString()</code></li>
+<li>Now the <code>&#39;[object Object]&#39;.prototype</code> is <code>undefined</code></li>
+</ol>
 <p>Save my day:</p>
 <ul>
 <li><a href="https://gist.github.com/DmitrySoshnikov/3928607cb8fdba42e712" target="_blank" rel="external">DmitrySoshnikov</a></li>
