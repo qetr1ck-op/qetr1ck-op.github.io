@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Blog | qetr1ck-op">
+    <title>Front End Interview Questions - Blog | qetr1ck-op</title>
+    <meta name="author" content="Orest Prystayko">
+    
+    
+        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It’s a one stop solution for front end">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Front End Interview Questions">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/index.html">
+<meta property="og:site_name" content="Blog | qetr1ck-op">
+<meta property="og:description" content="To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It’s a one stop solution for front end">
+<meta property="og:updated_time" content="2016-08-15T20:16:11.441Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Front End Interview Questions">
+<meta name="twitter:description" content="To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It’s a one stop solution for front end">
+<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
+    
+    
+        <meta property="og:image" content="https://media.giphy.com/media/4BgU4OMAjkwyQ/giphy.gif"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://media.giphy.com/media/4BgU4OMAjkwyQ/giphy.gif" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="#search">
+        
+        
+            <i class="fa fa-lg fa-search"></i>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Orest Prystayko</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">global.linked_in</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Front End Interview Questions
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-08-14T11:39:13+03:00">
+	
+		    Aug 14, 2016
+    	
+    </time>
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It’s a one stop solution for front end interview process.</p>
+<a id="more"></a>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript_3A_basics"><span class="toc-text">JavaScript: basics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null_vs_undefined-_What_are_the_differences_between__u201Cnull_u201D_and__u201Cundefined_u201D_3F"><span class="toc-text">null vs undefined. What are the differences between “null” and “undefined”?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D_3D_Vs__3D_3D_3D-_What_are_the_differences_between__u201C_3D_3D_u201D_and__u201C_3D_3D_3D_u201D_3F"><span class="toc-text">== Vs ===. What are the differences between “==” and “===”?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rapid_fire_table_of_type_conversions_3A"><span class="toc-text">Rapid fire table of type conversions:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object_Equality-_How_would_you_compare_two_objects_3F"><span class="toc-text">Object Equality. How would you compare two objects?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#True_Lies-_11+_true_false_related_questions_that_will_trick_you"><span class="toc-text">True Lies. 11+ true false related questions that will trick you</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Truthy_isn_u2019t_Equal_to_true-_As__u201C_5B_5D_u201D_is_true_2C__u201C_5B_5D__3D_3D_true_u201D_should_also_be__u201Ctrue_u201D_2C_right_3F"><span class="toc-text">Truthy isn’t Equal to true. As “[]” is true, “[] == true” should also be “true”, right?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extend_Core_Object_2C_prototype"><span class="toc-text">Extend Core Object, prototype.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arguments_and_call-_Write_a_simple_function_to_tell_whether_2_is_passed_as_parameter_or_not_3F"><span class="toc-text">arguments and call. Write a simple function to tell whether 2 is passed as parameter or not?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call/apply_and_bind-_If_you_want_to_use_an_arbitrary_object_as_value_of_this_2C_how_will_you_do_that_3F"><span class="toc-text">call/apply and bind. If you want to use an arbitrary object as value of this, how will you do that?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apply-_How_could_you_use_Math-max_to_find_the_max_value_in_an_array_3F"><span class="toc-text">apply. How could you use Math.max to find the max value in an array?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this-_What_the_heck_is__u201Cthis_u201D_in_JavaScript_3F"><span class="toc-text">this. What the heck is “this” in JavaScript?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log_prefix-_How_could_you_set_a_prefix_before_everything_you_log_3F_for_example_2C_if_you__u201Clog_28_u2018my_message_u2019_29_u201D_u201D_it_will_log_3A__u201C_28app_29_my_message_u201D"><span class="toc-text">log prefix. How could you set a prefix before everything you log? for example, if you “log(‘my message’)”” it will log: “(app) my message”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scope_and_hoisting-_What_will_you_see_in_the_console_for_the_following_example_3F"><span class="toc-text">Scope and hoisting. What will you see in the console for the following example?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Closure-_What_is_a__u201Cclosure_u201D_in_JavaScript_3F_Provide_an_example"><span class="toc-text">Closure. What is a “closure” in JavaScript? Provide an example.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Closure-_Closures_Inside_in_loop_with__u201CsetTimeout_u201D"><span class="toc-text">Closure. Closures Inside in loop with “setTimeout”.</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS"><span class="toc-text">AngularJS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List_at_least_three_ways_to_communicate_between_modules_of_your_application_using_core_AngularJS_functionality"><span class="toc-text">List at least three ways to communicate between modules of your application using core AngularJS functionality.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Which_means_of_communication_between_modules_of_your_application_are_easily_testable_3F"><span class="toc-text">Which means of communication between modules of your application are easily testable?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The_most_popular_e2e_testing_tool_for_AngularJS_is_Protractor-_There_are_also_others_which_rely_on_similar_mechanisms-_Describe_how_e2e_testing_of_AngularJS_applications_work"><span class="toc-text">The most popular e2e testing tool for AngularJS is Protractor. There are also others which rely on similar mechanisms. Describe how e2e testing of AngularJS applications work.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_are_the_basic_steps_to_unit_test_an_AngularJS_filter_3F"><span class="toc-text">What are the basic steps to unit test an AngularJS filter?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#When_a_scope_is_terminated_2C_two_similar__u201Cdestroy_u201D_events_are_fired-_What_are_they_used_for_2C_and_why_are_there_two_3F"><span class="toc-text">When a scope is terminated, two similar “destroy” events are fired. What are they used for, and why are there two?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_do_you_reset_a__u201C_24timeout_u201D_2C_and_disable_a__u201C_24watch_28_29_u201D_3F"><span class="toc-text">How do you reset a “$timeout”, and disable a “$watch()”?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Name_and_describe_the_phases_of_a_directive_definition_function_execution_2C_or_describe_how_directives_are_instantiated"><span class="toc-text">Name and describe the phases of a directive definition function execution, or describe how directives are instantiated.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_does_interpolation_2C_e-g-__u201C_7B__7B_someModel__7D__7D_u201D_2C_actually_work_3F"><span class="toc-text">How does interpolation, e.g. “{ { someModel } }”, actually work?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_does_the_digest_phase_work_3F"><span class="toc-text">How does the digest phase work?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List_a_few_ways_to_improve_performance_in_an_AngularJS_app"><span class="toc-text">List a few ways to improve performance in an AngularJS app</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is__24rootScope_and_how_does_it_relate_to__24scope_3F"><span class="toc-text">What is $rootScope and how does it relate to $scope?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is_the_difference_between__u201Cng-show_u201D/_u201Cng-hide_u201D_and__u201Cng-if_u201D_directives_3F"><span class="toc-text">What is the difference between “ng-show”/“ng-hide” and “ng-if” directives?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Where_should_we_implement_the_DOM_manipulation_in_AngularJS_3F"><span class="toc-text">Where should we implement the DOM manipulation in AngularJS?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Is_it_a_good_or_bad_practice_to_use_AngularJS_together_with_jQuery_3F"><span class="toc-text">Is it a good or bad practice to use AngularJS together with jQuery?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#If_you_were_to_migrate_from_Angular_1-4_to_Angular_1-5_2C_what_is_the_main_thing_that_would_need_refactoring_3F"><span class="toc-text">If you were to migrate from Angular 1.4 to Angular 1.5, what is the main thing that would need refactoring?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle_hooks_in_Angular_1-5"><span class="toc-text">Lifecycle hooks in Angular 1.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_would_you_specify_that_a_scope_variable_should_have_one-time_binding_only_3F"><span class="toc-text">How would you specify that a scope variable should have one-time binding only?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is_the_difference_between_one-way_binding_and_two-way_binding_3F"><span class="toc-text">What is the difference between one-way binding and two-way binding?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_is_the_role_of_services_in_AngularJS_and_name_any_services_made_available_by_default_3F"><span class="toc-text">What is the role of services in AngularJS and name any services made available by default?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What_are_Providers_and_when_to_use_them_3F"><span class="toc-text">What are Providers and when to use them?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Algorithms"><span class="toc-text">Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Binary_search"><span class="toc-text">Binary search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The_fastest_method_to_create_unique_items_in_array"><span class="toc-text">The fastest method to create unique items in array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The_fastest_method_to_find_items_in_array"><span class="toc-text">The fastest method to find items in array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Big-O_Complexity_Chart"><span class="toc-text">Big-O Complexity Chart</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6"><span class="toc-text">ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#When_standard_was_finalized_3F"><span class="toc-text">When standard was finalized?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tooling"><span class="toc-text">Tooling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Assignment_Destructuring_2C_the_Rapid_Table"><span class="toc-text">Assignment Destructuring, the Rapid Table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spread_Operator_and_Rest_Parameters"><span class="toc-text">Spread Operator and Rest Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrow_Functions"><span class="toc-text">Arrow Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Template_Literals"><span class="toc-text">Template Literals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object_Literals"><span class="toc-text">Object Literals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classes"><span class="toc-text">Classes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let_and_Const"><span class="toc-text">Let and Const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbols"><span class="toc-text">Symbols</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterators"><span class="toc-text">Iterators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generators"><span class="toc-text">Generators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promises"><span class="toc-text">Promises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maps_/_WeakMaps"><span class="toc-text">Maps / WeakMaps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sets_/_WeakSets"><span class="toc-text">Sets / WeakSets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules"><span class="toc-text">Modules</span></a></li></ol></li></ol>
+<h1 id="JavaScript_3A_basics"><a href="#JavaScript_3A_basics" class="headerlink" title="JavaScript: basics"></a>JavaScript: basics</h1><h2 id="null_vs_undefined-_What_are_the_differences_between__u201Cnull_u201D_and__u201Cundefined_u201D_3F"><a href="#null_vs_undefined-_What_are_the_differences_between__u201Cnull_u201D_and__u201Cundefined_u201D_3F" class="headerlink" title="null vs undefined. What are the differences between “null” and “undefined”?"></a>null vs undefined. What are the differences between “null” and “undefined”?</h2><p><strong>Answer:</strong> JavaScript has two distinct values for nothing, <code>null</code> and <code>undefined</code>.</p>
+<p><code>undefined</code> means, value of the variable is not defined. JavaScript has a global variable <code>undefined</code> whose value is “undefined” and typeof <code>undefined</code> is also “undefined”. Remember, <code>undefined</code> is not a constant or a keyword. <code>undefined</code> is a type with exactly one value: <code>undefined</code>.</p>
+<p><code>null</code> means empty or non-existent value which is used by programmers to indicate “no value”. <code>null</code> is a primitive value and you can assign <code>null</code> to any variable. <code>null</code> is not an object, it is a primitive value. For example, you cannot add properties to it. Sometimes people wrongly assume that it is an object, because typeof <code>null</code> returns “object”.</p>
+<p>With non strict comparison th <code>null == undefined</code> is <code>true</code>, because that is in <a href="http://es5.github.io/x11.html#x11.9.3" target="_blank" rel="external">spec</a>, and here <a href="https://learn.javascript.ru/types-conversion#специальные-значения" target="_blank" rel="external">learn.javascript.ru</a></p>
+<h2 id="3D_3D_Vs__3D_3D_3D-_What_are_the_differences_between__u201C_3D_3D_u201D_and__u201C_3D_3D_3D_u201D_3F"><a href="#3D_3D_Vs__3D_3D_3D-_What_are_the_differences_between__u201C_3D_3D_u201D_and__u201C_3D_3D_3D_u201D_3F" class="headerlink" title="== Vs ===. What are the differences between “==” and “===”?"></a>== Vs ===. What are the differences between “==” and “===”?</h2><p><strong>Answer:</strong> The simplest way of saying that, <code>==</code> will not check types and <code>===</code> will check whether both sides are of same type. So, <code>==</code> under the hood converts to number type if they have not the same type and then do the comparison.</p>
+<p><code>===</code> compares the types and values. Hence, if both sides are not same type, answer is always false. For example, if you are comparing two strings, they must have identical character sets. For other primitives (number, boolean) must share the same value.</p>
+<h2 id="Rapid_fire_table_of_type_conversions_3A"><a href="#Rapid_fire_table_of_type_conversions_3A" class="headerlink" title="Rapid fire table of type conversions:"></a>Rapid fire table of type conversions:</h2><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“” + 1 + 0</td>
+<td>“10”</td>
+</tr>
+<tr>
+<td>“” - 1 + 0</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>true + false</td>
+<td>1</td>
+</tr>
+<tr>
+<td>“2” * “3”</td>
+<td>6</td>
+</tr>
+<tr>
+<td>6 / “3”</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4 + 5 + “px”</td>
+<td>“9px”</td>
+</tr>
+<tr>
+<td>“$” + 4 + 5</td>
+<td>“$45”</td>
+</tr>
+<tr>
+<td>“4” - 2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>“4px” - 2</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>7 / 0</td>
+<td>Infinity</td>
+</tr>
+<tr>
+<td>“ -9\n” + 5</td>
+<td>“ -9\n5”</td>
+</tr>
+<tr>
+<td>“ -9\n” - 5</td>
+<td>-14</td>
+</tr>
+<tr>
+<td>5 &amp;&amp; 2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2 &amp;&amp; 5</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>null + 1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>undefined + 1</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>null == “\n0\n”</td>
+<td>false</td>
+</tr>
+<tr>
+<td>+null == +”\n0\n”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>typeof []</td>
+<td>Object. Actually Array is derived from Object.  If you want to check array use Array.isArray(arr) or {}.toString.call([])</td>
+</tr>
+<tr>
+<td>What is typeof arguments</td>
+<td>Object. arguments are array like but not array. it has length, can access by index but can’t push pop, etc</td>
+</tr>
+<tr>
+<td>var a = (2, 3, 5);  what is the value of a?</td>
+<td>5. The comma operator evaluates each of its operands (from left to right) and returns the value of the last operand</td>
+</tr>
+<tr>
+<td>parseFloat(‘12.3.4’)</td>
+<td>12.3</td>
+</tr>
+<tr>
+<td>Math.max([2,3,4,5])</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>3 instanceof Number</td>
+<td>false</td>
+</tr>
+<tr>
+<td>typeof bar</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>typeof(NaN)</td>
+<td>“number”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Object_Equality-_How_would_you_compare_two_objects_3F"><a href="#Object_Equality-_How_would_you_compare_two_objects_3F" class="headerlink" title="Object Equality. How would you compare two objects?"></a>Object Equality. How would you compare two objects?</h2><p><strong>Answer:</strong> JavaScript has two different approaches for testing equality. Primitives like strings and numbers are compared by their value, while objects like arrays, dates, and user defined objects are compared by their reference. This means it compares whether two objects are referring to the same location in memory.</p>
+<p>Equality check will check whether two objects have same value for same property. To check that, you can get the keys for both the objects. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEqual</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aProps = <span class="built_in">Object</span>.getOwnPropertyNames(a),</span><br><span class="line">        bProps = <span class="built_in">Object</span>.getOwnPropertyNames(b);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (aProps.length != bProps.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aProps.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> propName = aProps[i];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (a[propName] !== b[propName]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Or use <a href="https://www.npmjs.com/package/lodash.isequal" target="_blank" rel="external">lodash</a> equivalent.</p>
+<h2 id="True_Lies-_11+_true_false_related_questions_that_will_trick_you"><a href="#True_Lies-_11+_true_false_related_questions_that_will_trick_you" class="headerlink" title="True Lies. 11+ true false related questions that will trick you"></a>True Lies. 11+ true false related questions that will trick you</h2><p><strong>Answer:</strong>  There are only two truthy things - <code>true</code> and everything that is not false.</p>
+<p>The 6 things are falsy and they are - <code>false</code>, <code>null</code>, <code>undefined</code>, <code>&#39;&#39;</code>, <code>0</code>, <code>NaN</code>.</p>
+<p>True / False Rapid Fire Table:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is <code>&#39;false&#39;</code> is <code>false</code>?</td>
+<td>No. Because, it’s a string with length greater than 0. Only empty string is false</td>
+</tr>
+<tr>
+<td>Is <code>&#39; &#39;</code> is <code>false</code>?</td>
+<td>No. Because, it’s not an empty string. There is a white space in it.</td>
+</tr>
+<tr>
+<td>What about <code>{}</code>?</td>
+<td>true. It’s an object. An object without any property is an object can’t be falsy.</td>
+</tr>
+<tr>
+<td>Tell me about <code>[]</code>?</td>
+<td>This is also truthy. It’s an array object (array is child of object) is truthy.</td>
+</tr>
+<tr>
+<td>You talked bout <code>&#39;&#39;</code> to be falsy.  What about <code>new String(&#39;&#39;)</code>?</td>
+<td>true. Though you are passing empty string to the string constructor, it is creating an String object.  More precisely a instance of String object. It becomes an object.</td>
+</tr>
+<tr>
+<td>Tell me about <code>new Boolean(false)</code></td>
+<td>As it creates an instance of the Boolean object which is an object. Object is truthy.</td>
+</tr>
+<tr>
+<td><code>Boolean(function(){})</code></td>
+<td>true if you pass a truthy value to Boolean, it will be true.</td>
+</tr>
+<tr>
+<td><code>true%1</code></td>
+<td>0. When you are trying to find reminder of true, true becomes 1 and reminder of 1 while dividing by 1 is 0.</td>
+</tr>
+<tr>
+<td><code>&#39;&#39;%1</code></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Truthy_isn_u2019t_Equal_to_true-_As__u201C_5B_5D_u201D_is_true_2C__u201C_5B_5D__3D_3D_true_u201D_should_also_be__u201Ctrue_u201D_2C_right_3F"><a href="#Truthy_isn_u2019t_Equal_to_true-_As__u201C_5B_5D_u201D_is_true_2C__u201C_5B_5D__3D_3D_true_u201D_should_also_be__u201Ctrue_u201D_2C_right_3F" class="headerlink" title="Truthy isn’t Equal to true. As “[]” is true, “[] == true” should also be “true”, right?"></a>Truthy isn’t Equal to true. As “[]” is true, “[] == true” should also be “true”, right?</h2><p><strong>Answer:</strong> Not.</p>
+<p>You are right about first part, <code>[]</code>, empty array is an object and object is always truthy. </p>
+<p>However, special case about <code>==</code> (not-strict equal) is that it will do some implicit coercion.</p>
+<ol>
+<li>Since left and right side of the equality are two different types, JavaScript can’t compare them directl.</li>
+<li>JavaScript implementation will try to convert <code>[]</code> by using <code>toPrimitive</code> (of JavaScript implementation). since <code>[].valueOf</code> is not primitive will use <code>toString</code> and will get <code>&quot;&quot;</code>.</li>
+<li>Now you are comparing <code>&quot;&quot; == 1</code> and still left and right is not same type. Hence left side will be converted again to a number and empty string will be <code>0</code>.</li>
+<li>Finally, they are of same type, you are comparing <code>0 === 1</code> which will be <code>false</code>.</li>
+</ol>
+<h2 id="Extend_Core_Object_2C_prototype"><a href="#Extend_Core_Object_2C_prototype" class="headerlink" title="Extend Core Object, prototype."></a>Extend Core Object, prototype.</h2><p><strong>Question:</strong> How could you write a method on instance of a date which will give you next day?</p>
+<p><strong>Answer:</strong> I have to declare a method on the prototype of Date object. To get access to the current value of the instance of the date, i will use <code>this</code></p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.nextDay = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">this</span>.setDate(<span class="keyword">this</span>.getDate() + <span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="keyword">new</span> <span class="built_in">Date</span>(); </span><br><span class="line"><span class="built_in">date</span>; <span class="comment">//Fri May 16 2014 20:47:14 GMT-0500 (Central Daylight Time)</span></span><br><span class="line"><span class="built_in">date</span>.nextDay();<span class="comment">//Sat May 17 2014 20:47:14 GMT-0500 (Central Daylight Time)</span></span><br></pre></td></tr></table></figure>
+<p><strong>Question:</strong> If i have a var <code>str = &#39;hello world&#39;</code>, how could i get <code>str.reverse()</code> return <code>&#39;dlrow olleh&#39;</code>?</p>
+<p><strong>Answer:</strong> You have to extend the core String Object</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span>.prototype.<span class="built_in">reverse</span> = function()&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.<span class="built_in">split</span>(<span class="string">''</span>).<span class="built_in">reverse</span>().<span class="built_in">join</span>(<span class="string">''</span>); <span class="comment">// or better [...this].reverse().join('');</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var <span class="built_in">str</span> = <span class="string">'hello world'</span>;</span><br><span class="line"><span class="built_in">str</span>.<span class="built_in">reverse</span>();<span class="comment">//"dlrow olleh"</span></span><br></pre></td></tr></table></figure>
+<p><strong>Question:</strong> How could you make this work <code>[1,2,3,4,5].duplicator()</code> to return <code>[1,2,3,4,5,1,2,3,4,5]</code> ?</p>
+<p><strong>Answer:</strong> We need to add a method in the prototype of Array object.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.duplicator = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.concat(<span class="keyword">this</span>); <span class="comment">// or better [...this, ...this];</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].duplicator(); <span class="comment">// [1,2,3,4,5,1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<h2 id="arguments_and_call-_Write_a_simple_function_to_tell_whether_2_is_passed_as_parameter_or_not_3F"><a href="#arguments_and_call-_Write_a_simple_function_to_tell_whether_2_is_passed_as_parameter_or_not_3F" class="headerlink" title="arguments and call. Write a simple function to tell whether 2 is passed as parameter or not?"></a>arguments and call. Write a simple function to tell whether 2 is passed as parameter or not?</h2><p><strong>Answer:</strong> First convert arguments to an array with <code>rest</code> operator, after that simply use <code>Array.prototype.includes</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isTwoPassed</span>(<span class="params">...params</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> params.includes(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">ES5 way</span><br><span class="line">function isTwoPassed()&#123;</span><br><span class="line">  var args = Array.prototype.slice.call(arguments);</span><br><span class="line">  return args.indexOf(2) != -1;</span><br><span class="line">&#125;</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line">isTwoPassed(<span class="number">1</span>,<span class="number">4</span>); <span class="comment">//false</span></span><br><span class="line">isTowPassed(<span class="number">5</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="call/apply_and_bind-_If_you_want_to_use_an_arbitrary_object_as_value_of_this_2C_how_will_you_do_that_3F"><a href="#call/apply_and_bind-_If_you_want_to_use_an_arbitrary_object_as_value_of_this_2C_how_will_you_do_that_3F" class="headerlink" title="call/apply and bind. If you want to use an arbitrary object as value of this, how will you do that?"></a>call/apply and bind. If you want to use an arbitrary object as value of this, how will you do that?</h2><p><strong>Answer:</strong> There are at least four different ways to doing this by using <code>bind</code>, <code>call</code>, <code>apply</code> and <code>arrow function</code> with parent lexical scope.</p>
+<p>For example, I have a method named deductMontlyFee in the object <code>monica</code> and by default value of this would be <code>monica</code> inside the method.</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const monica = &#123;</span><br><span class="line">  name: <span class="string">'Monica Geller'</span>,</span><br><span class="line">  total: <span class="number">400</span>,</span><br><span class="line">  deductMontlyFee(fee)&#123;</span><br><span class="line">     <span class="keyword">this</span>.total = <span class="keyword">this</span>.total - fee;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">' remaining balance is '</span>+ <span class="keyword">this</span>.total; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If I bind the deductMontlyFee of <code>monica</code> with another object <code>rachel</code> and pass <code>rachel</code> as first parameter of the bind function, <code>rachel</code> would be the value of this:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rachel = &#123;name: <span class="string">'Rachel Green'</span>, total: <span class="number">1500</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> rachelFeeDeductor = monica.deductMonthlyFee.bind(rachel, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">rachelFeeDeductor(); <span class="comment">//"Rachel Green remaining balance is 1300"</span></span><br><span class="line">rachelFeeDeductor(); <span class="comment">//"Rachel Green remaining balance is 1100"</span></span><br></pre></td></tr></table></figure>
+<p>With call:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">monica</span><span class="selector-class">.deductMonthlyFee</span><span class="selector-class">.apply</span>(<span class="selector-tag">rachel</span>, 200);</span><br></pre></td></tr></table></figure>
+<p><a href="http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">call &amp; apply VS bind, the simplest explanation</a></p>
+<h2 id="apply-_How_could_you_use_Math-max_to_find_the_max_value_in_an_array_3F"><a href="#apply-_How_could_you_use_Math-max_to_find_the_max_value_in_an_array_3F" class="headerlink" title="apply. How could you use Math.max to find the max value in an array?"></a>apply. How could you use Math.max to find the max value in an array?</h2><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.<span class="keyword">max</span>(<span class="attr">...</span>arr);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//ES5 way</span></span><br><span class="line"><span class="comment">//Math.max.apply(Math, arr);</span></span><br></pre></td></tr></table></figure>
+<h2 id="this-_What_the_heck_is__u201Cthis_u201D_in_JavaScript_3F"><a href="#this-_What_the_heck_is__u201Cthis_u201D_in_JavaScript_3F" class="headerlink" title="this. What the heck is “this” in JavaScript?"></a>this. What the heck is “this” in JavaScript?</h2><p><strong>Answer:</strong> At the time of execution of every function, JavaScript engine sets a property to the function called <code>this</code> which refer to the current execution context. <code>this</code> is always refer to an object and depends on how function is called:</p>
+<ol>
+<li>In the global context or inside a function this refers to the <code>window</code>/<code>global</code> object. In ES6 or with <code>use strict</code> directive it’s <code>undefined</code></li>
+<li>While executing a method in the context of an object, the object becomes the value of <code>this</code></li>
+<li>If you use a constructor (by using new keyword) to create an object, the value of <code>this</code> will refer to the newly created object.</li>
+<li>Set the value of <code>this</code> to any arbitrary object by passing the object as the first parameter of <code>bind</code>, <code>call</code> or <code>apply</code></li>
+<li>Use <code>arrow function</code> for use parent lexical scope.</li>
+</ol>
+<h2 id="log_prefix-_How_could_you_set_a_prefix_before_everything_you_log_3F_for_example_2C_if_you__u201Clog_28_u2018my_message_u2019_29_u201D_u201D_it_will_log_3A__u201C_28app_29_my_message_u201D"><a href="#log_prefix-_How_could_you_set_a_prefix_before_everything_you_log_3F_for_example_2C_if_you__u201Clog_28_u2018my_message_u2019_29_u201D_u201D_it_will_log_3A__u201C_28app_29_my_message_u201D" class="headerlink" title="log prefix. How could you set a prefix before everything you log? for example, if you “log(‘my message’)”” it will log: “(app) my message”"></a>log prefix. How could you set a prefix before everything you log? for example, if you “log(‘my message’)”” it will log: “(app) my message”</h2><p><strong>Answer:</strong> Just get the arguments, convert it to an array and unshift whatever prefix you want to set. Finally, use apply to pass all the arguments to console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">  args.unshift(<span class="string">'(app)'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'my message'</span>); <span class="comment">//(app) my message</span></span><br><span class="line">log(<span class="string">'my message'</span>, <span class="string">'your message'</span>); <span class="comment">//(app) my message your message</span></span><br></pre></td></tr></table></figure>
+<p><strong>ES6 Answer:</strong> </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(<span class="rest_arg">...params</span>)</span></span>&#123;</span><br><span class="line">  console.log([<span class="string">'(app)'</span>, ...params]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Scope_and_hoisting-_What_will_you_see_in_the_console_for_the_following_example_3F"><a href="#Scope_and_hoisting-_What_will_you_see_in_the_console_for_the_following_example_3F" class="headerlink" title="Scope and hoisting. What will you see in the console for the following example?"></a>Scope and hoisting. What will you see in the console for the following example?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    a = <span class="number">10</span>; </span><br><span class="line">    <span class="keyword">return</span>; </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125; </span><br><span class="line">&#125; </span><br><span class="line">b(); </span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<p><strong>Answer:</strong> 1</p>
+<ul>
+<li>function declaration <code>function a(){ }</code> is hoisted first and it behaves like <code>var a = function () { };</code>. Hence in local scope variable <code>a</code> is created.</li>
+<li>If you have two variables with same name (one in global another in local), local variable always get precedence over global variable.</li>
+<li>When you set <code>a = 10;</code>, you are setting the local variable <code>a</code>, not the global one. Hence, the value of global variable remain same and you get, <code>1</code> in the log.</li>
+<li>Extra: If you didnt have a function named as “a”, you will see 10 in the log.</li>
+</ul>
+<p>For the following code, what will be returned for executing foo:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bar();</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">foo();<span class="comment">//?</span></span><br></pre></td></tr></table></figure>
+<p><strong>Answer:</strong> 8</p>
+<p>As function declaration is get hoisted. the first bar is at the top and second bar after the return will also be hoisted. Since there is already a bar (first function declaration), the second one will replace the first one. As there could be one function for a single name and the last one stays. Hence, when you executing bar, you are executed the second one (after hoisting) and you get.</p>
+<h2 id="Closure-_What_is_a__u201Cclosure_u201D_in_JavaScript_3F_Provide_an_example"><a href="#Closure-_What_is_a__u201Cclosure_u201D_in_JavaScript_3F_Provide_an_example" class="headerlink" title="Closure. What is a “closure” in JavaScript? Provide an example."></a>Closure. What is a “closure” in JavaScript? Provide an example.</h2><blockquote>
+<p>Closure is a function with all accessible variables in lexical environment</p>
+</blockquote>
+<p>A closure is an inner function that has access to the variables in the outer (enclosing) function’s scope chain. The closure has access to variables in three scopes; specifically: (1) variable in its own scope, (2) variables in the enclosing function’s scope, and (3) global variables.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> globalVar = <span class="string">'foo'</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">outerFunc</span>(<span class="params">outerArg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> outerVar = <span class="string">'a'</span>;</span><br><span class="line">  </span><br><span class="line">  (<span class="function"><span class="keyword">function</span> <span class="title">innerFunc</span>(<span class="params">innerArg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> innerVar = <span class="string">'b'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log(</span><br><span class="line">      <span class="string">`outerArg = <span class="subst">$&#123;outerArg&#125;</span></span><br><span class="line">      outerVar = <span class="subst">$&#123;outerVar&#125;</span></span><br><span class="line">      innerArg = <span class="subst">$&#123;innerArg&#125;</span></span><br><span class="line">      innerVar = <span class="subst">$&#123;innerVar&#125;</span></span><br><span class="line">      globalVar = <span class="subst">$&#123;globalVar&#125;</span>`</span></span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line">  &#125;)(<span class="number">456</span>);</span><br><span class="line">&#125;)(<span class="number">123</span>);</span><br><span class="line"><span class="comment">/*</span><br><span class="line">outerArg = 123</span><br><span class="line">innerArg = 456</span><br><span class="line">outerVar = a</span><br><span class="line">innerVar = b</span><br><span class="line">globalVar = xyz</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="Closure-_Closures_Inside_in_loop_with__u201CsetTimeout_u201D"><a href="#Closure-_Closures_Inside_in_loop_with__u201CsetTimeout_u201D" class="headerlink" title="Closure. Closures Inside in loop with “setTimeout”."></a>Closure. Closures Inside in loop with “setTimeout”.</h2><p>If log the loop counter inside <code>setTimeout</code>, what will be logged?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);  </span><br><span class="line">  &#125;, <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Answer</strong>: The above will not output the numbers 0 through 9, but will simply print the number 10 ten times.</p>
+<p><strong>Explanation</strong>: </p>
+<ol>
+<li>The console log is inside the anonymous function of <code>setTimeout</code> and <code>setTimeout</code> is executed when current call stack is over. </li>
+<li>So, the loop finishes and before setTimeout get the chance to execute. However, anonymous functions keep a reference to <code>i</code> by creating a closure. </li>
+<li>Since, the loop is already finished, the value <code>i</code> has been set to <code>10</code>.</li>
+</ol>
+<p><strong>Solution:</strong> You can fix it by avoiding closure. Just create a <code>IIFE</code> (Immediately Invoked Function Expression), it will create its own scope and you can pass i to the function. In that case i will be a local variable (will not refer to i in the closure) and value of the i in every loop will be preserved.</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for(<span class="name">var</span> i = <span class="number">0</span><span class="comment">; i &lt; 10; i++) &#123;</span></span><br><span class="line">    setTimeout((<span class="name">function</span>(<span class="name">i</span>) &#123;</span><br><span class="line">      console.log(<span class="name">i</span>)<span class="comment">;</span></span><br><span class="line">    &#125;)(<span class="name">i</span>), <span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//or</span><br><span class="line"></span><br><span class="line">for(<span class="name">var</span> i = <span class="number">0</span><span class="comment">; i &lt; 10; i++) &#123;</span></span><br><span class="line">  setTimeout(<span class="name">console</span>.log.bind(<span class="name">console</span>, i), <span class="number">10</span>)<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>ES6 Solution:</strong></p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(let i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);  </span><br><span class="line">  &#125;, <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h2 id="List_at_least_three_ways_to_communicate_between_modules_of_your_application_using_core_AngularJS_functionality"><a href="#List_at_least_three_ways_to_communicate_between_modules_of_your_application_using_core_AngularJS_functionality" class="headerlink" title="List at least three ways to communicate between modules of your application using core AngularJS functionality."></a>List at least three ways to communicate between modules of your application using core AngularJS functionality.</h2><ul>
+<li>Using services</li>
+<li>Using events</li>
+<li>By assigning models on <code>$rootScope</code></li>
+<li>Directly between controllers, using <code>ControllerAs</code>, or other forms of inheritance</li>
+<li>Directly between controllers, using <code>$parent</code>, <code>$$childHead</code>, <code>$$nextSibling</code>, etc.</li>
+</ul>
+<h2 id="Which_means_of_communication_between_modules_of_your_application_are_easily_testable_3F"><a href="#Which_means_of_communication_between_modules_of_your_application_are_easily_testable_3F" class="headerlink" title="Which means of communication between modules of your application are easily testable?"></a>Which means of communication between modules of your application are easily testable?</h2><p>Using a service is definitely easy to test. Services are injected, and in a test either a real service can be used or it can be mocked.</p>
+<p>Events can be tested. In unit testing controllers, they usually are instantiated. For testing events on <code>$rootScope</code>, it must be injected into the test.</p>
+<p>For testing direct communication between controllers, the expected results should probably be mocked. Otherwise, controllers would need to be manually instantiated to have the right context.</p>
+<h2 id="The_most_popular_e2e_testing_tool_for_AngularJS_is_Protractor-_There_are_also_others_which_rely_on_similar_mechanisms-_Describe_how_e2e_testing_of_AngularJS_applications_work"><a href="#The_most_popular_e2e_testing_tool_for_AngularJS_is_Protractor-_There_are_also_others_which_rely_on_similar_mechanisms-_Describe_how_e2e_testing_of_AngularJS_applications_work" class="headerlink" title="The most popular e2e testing tool for AngularJS is Protractor. There are also others which rely on similar mechanisms. Describe how e2e testing of AngularJS applications work."></a>The most popular e2e testing tool for AngularJS is Protractor. There are also others which rely on similar mechanisms. Describe how e2e testing of AngularJS applications work.</h2><p>The e2e tests are executed against a running app, that is a fully initialized system. They most often spawn a browser instance and involve the actual input of commands through the user interface. The written code is evaluated by an automation program, such as a Selenium server (webdriver). That program sends commands to a browser instance, then evaluates the visible results and reports back to the user.</p>
+<p>The assertions are handled by another library, for Protractor (end-to-end) / Karma (unit tests) the default is Jasmine.</p>
+<h2 id="What_are_the_basic_steps_to_unit_test_an_AngularJS_filter_3F"><a href="#What_are_the_basic_steps_to_unit_test_an_AngularJS_filter_3F" class="headerlink" title="What are the basic steps to unit test an AngularJS filter?"></a>What are the basic steps to unit test an AngularJS filter?</h2><ol>
+<li>Inject the module that contains the filter.</li>
+<li>Provide any mocks that the filter relies on.</li>
+<li>Get an instance of the filter using $filter(‘yourFilterName’).</li>
+<li>Assert your expectations.</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'Filter: myFltr'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> myFltr;</span><br><span class="line"></span><br><span class="line">  beforeEach(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Load the filters's module</span></span><br><span class="line">    module(<span class="string">'myApp'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide any mocks needed</span></span><br><span class="line">    module(<span class="function"><span class="keyword">function</span> <span class="params">($provide)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//$provide.value('Name', new MockName());</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Inject in angular constructs otherwise,</span></span><br><span class="line">    <span class="comment">// you would need to inject these into each test</span></span><br><span class="line">    inject(<span class="function"><span class="keyword">function</span> <span class="params">($filter)</span> </span>&#123;</span><br><span class="line">      myFltr = $filter(<span class="string">'myFltr'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'should exist'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    expect(!!myFltr).toBe(<span class="keyword">true</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  describe(<span class="string">'when evaluating an expression'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    it(<span class="string">'should return the expected output'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> text = <span class="string">'AngularJS'</span>;</span><br><span class="line">      expect(myFltr(text)).toBe(<span class="string">'my filter: '</span> + text);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="When_a_scope_is_terminated_2C_two_similar__u201Cdestroy_u201D_events_are_fired-_What_are_they_used_for_2C_and_why_are_there_two_3F"><a href="#When_a_scope_is_terminated_2C_two_similar__u201Cdestroy_u201D_events_are_fired-_What_are_they_used_for_2C_and_why_are_there_two_3F" class="headerlink" title="When a scope is terminated, two similar “destroy” events are fired. What are they used for, and why are there two?"></a>When a scope is terminated, two similar “destroy” events are fired. What are they used for, and why are there two?</h2><p>The first one is an AngularJS event, “$destroy” can be used by AngularJS scopes where they are accessible, such as in controllers or link functions.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scope.$on(‘$destroy’, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// handle the destroy, i.e. clean up.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>The jqLite / jQuery event is called whenever a node is removed, which may just happen without scope teardown:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element.on(‘$destroy’, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// respectful jQuery plugins already have this handler.</span></span><br><span class="line">  <span class="comment">// angular.element(document.body).off(‘someCustomEvent’);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="How_do_you_reset_a__u201C_24timeout_u201D_2C_and_disable_a__u201C_24watch_28_29_u201D_3F"><a href="#How_do_you_reset_a__u201C_24timeout_u201D_2C_and_disable_a__u201C_24watch_28_29_u201D_3F" class="headerlink" title="How do you reset a “$timeout”, and disable a “$watch()”?"></a>How do you reset a “$timeout”, and disable a “$watch()”?</h2><p>The key to both is assigning the result of the function to a variable.</p>
+<p>To cleanup the timeout, just <code>.cancel()</code> it:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> customTimeout = $timeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// arbitrary code</span></span><br><span class="line">&#125;, <span class="number">55</span>);</span><br><span class="line"></span><br><span class="line">$timeout.cancel(customTimeout);</span><br></pre></td></tr></table></figure>
+<p>The same applies to “$interval()”. To disable a watch, just call it:</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var deregisterWatchFn = $rootScope.$watch(‘someGloballyAvailableProperty’, function (newVal) &#123;</span><br><span class="line"> <span class="built_in"> if </span>(newVal) &#123;</span><br><span class="line">    // we<span class="built_in"> invoke </span>that deregistration function, to disable the watch</span><br><span class="line">    deregisterWatchFn();</span><br><span class="line"><span class="keyword">    .</span>..</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Name_and_describe_the_phases_of_a_directive_definition_function_execution_2C_or_describe_how_directives_are_instantiated"><a href="#Name_and_describe_the_phases_of_a_directive_definition_function_execution_2C_or_describe_how_directives_are_instantiated" class="headerlink" title="Name and describe the phases of a directive definition function execution, or describe how directives are instantiated."></a>Name and describe the phases of a directive definition function execution, or describe how directives are instantiated.</h2><p>Each directive undergoes something similar to a life cycle as AngularJS compiles and links the DOM. The directive lifecycle begins and ends within the AngularJS bootstrapping process, before the page is rendered. </p>
+<p>In a directive’s life cycle, there are four distinct functions that can execute if they are defined. Each enables the developer to control and customize the directive at different points of the life cycle.</p>
+<ul>
+<li>The <code>compile</code> function allows the directive to manipulate the DOM before it is compiled and linked thereby allowing it to add/remove/change directives, as well as, add/remove/change other DOM elements.</li>
+<li>The <code>controller</code> function facilitates directive communication. Sibling and child directives can request the controller of their siblings and parents to communicate information.</li>
+<li>The <code>pre-link</code> function allows for private <code>$scope</code> manipulation before the <code>post-link</code> process begins.</li>
+<li>The <code>post-link</code> method is the primary workhorse method of the directive.</li>
+</ul>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.directive(<span class="string">"directiveName"</span>,<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    controller: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// controller code here...</span></span><br><span class="line">    &#125;,</span><br><span class="line">    compile: &#123;</span><br><span class="line">      <span class="comment">// compile code here...</span></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        pre: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="comment">// pre-link code here...</span></span><br><span class="line">        &#125;,</span><br><span class="line">        post: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="comment">// post-link code here...</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Commonly, not all of the functions are needed. In most circumstances, developers will simply create a <code>controller</code> and <code>link</code> (which refers to <code>post-link</code>) function following the pattern below.</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.directive(<span class="string">"directiveName"</span>,<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    controller: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// controller code here...</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    link: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// post-link code here...</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>More <a href="https://www.toptal.com/angular-js/angular-js-demystifying-directives" target="_blank" rel="external">here</a>.</p>
+<h2 id="How_does_interpolation_2C_e-g-__u201C_7B__7B_someModel__7D__7D_u201D_2C_actually_work_3F"><a href="#How_does_interpolation_2C_e-g-__u201C_7B__7B_someModel__7D__7D_u201D_2C_actually_work_3F" class="headerlink" title="How does interpolation, e.g. “{ { someModel } }”, actually work?"></a>How does interpolation, e.g. “{ { someModel } }”, actually work?</h2><p>During the compilation process the <code>compiler</code> uses the <code>$interpolate</code> service to see if text nodes and element attributes contain interpolation markup with embedded expressions.</p>
+<p>If that is the case, the compiler adds watches on the computed interpolation function, which will update the corresponding text nodes or attribute values as part of the normal digest cycle.</p>
+<h2 id="How_does_the_digest_phase_work_3F"><a href="#How_does_the_digest_phase_work_3F" class="headerlink" title="How does the digest phase work?"></a>How does the digest phase work?</h2><p>In a nutshell, on every digest cycle all scope models are compared against their previous values. That is dirty checking. If change is detected, the watches set on that model are fired. Then another digest cycle executes, and so on until all models are stable.</p>
+<p>It is probably important to mention that there is no <code>.$digest()</code> polling. That means that every time it is being called deliberately. As long as core directives are used, we don’t need to worry, but when external code changes models the digest cycle needs to be called manually. Usually to do that, <code>$apply()</code>, <code>$digest()</code>, <code>$timeout()</code>, <code>$evalAsync()</code>.</p>
+<h2 id="List_a_few_ways_to_improve_performance_in_an_AngularJS_app"><a href="#List_a_few_ways_to_improve_performance_in_an_AngularJS_app" class="headerlink" title="List a few ways to improve performance in an AngularJS app"></a>List a few ways to improve performance in an AngularJS app</h2><p>The first one can be enabled through the <code>$compileProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.config(<span class="function"><span class="keyword">function</span> <span class="params">($compileProvider)</span> </span>&#123;</span><br><span class="line">  $compileProvider.debugInfoEnabled(<span class="keyword">false</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Call this method to enable/disable various debug runtime information in the compiler such as adding binding information and a reference to the current scope on to DOM elements. If enabled, the compiler will add the following to DOM elements that have been bound to the scope</p>
+<ul>
+<li><code>ng-binding</code> CSS class</li>
+<li><code>$binding</code> data property containing an array of the binding expressions</li>
+</ul>
+<p>Using one-time binding where possible. Those bindings are set, e.g. in <code>{ { ::someModel } }</code> interpolations by prefixing the model with two colons. In such a case, no watch is set and the model is ignored during digest.</p>
+<p>Making $httpProvider use applyAsync:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myApp.config(<span class="function"><span class="keyword">function</span> <span class="params">($httpProvider)</span> </span>&#123;</span><br><span class="line">  $httpProvider.useApplyAsync(<span class="keyword">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>That’s it! If the application now receives multiple <code>$http</code> responses at around the same time, this is what happens (a bit simplified though):</p>
+<ul>
+<li>The call’s promise is pushed into a queue</li>
+<li>An asynchronous <code>$apply</code> is scheduled in case there’s no one scheduled yet, by telling the browser to execute <code>setTimeout()</code></li>
+<li>Once timed out, the queue is flushed and the actual<code>$apply</code> is triggered</li>
+</ul>
+<p>The <code>setTimeout()</code> is called with a 0 delay which causes an actual delay of around 10 milliseconds depending on the browser. That means, if our three asynchronous calls return at around the same time (somewhere inside that particular timeout delay), they get resolve with a single <code>$digest</code> cycle instead of three which speeds up our application.</p>
+<h2 id="What_is__24rootScope_and_how_does_it_relate_to__24scope_3F"><a href="#What_is__24rootScope_and_how_does_it_relate_to__24scope_3F" class="headerlink" title="What is $rootScope and how does it relate to $scope?"></a>What is $rootScope and how does it relate to $scope?</h2><p><code>$rootScope</code> is the parent object of all <code>$scope</code> Angular objects created in a web page.</p>
+<h2 id="What_is_the_difference_between__u201Cng-show_u201D/_u201Cng-hide_u201D_and__u201Cng-if_u201D_directives_3F"><a href="#What_is_the_difference_between__u201Cng-show_u201D/_u201Cng-hide_u201D_and__u201Cng-if_u201D_directives_3F" class="headerlink" title="What is the difference between “ng-show”/“ng-hide” and “ng-if” directives?"></a>What is the difference between “ng-show”/“ng-hide” and “ng-if” directives?</h2><p><code>ng-show</code>/<code>ng-hide</code> will always insert the DOM element, but will display/hide it based on the condition. </p>
+<p><code>ng-if</code> will not insert the DOM element until the condition is not fulfilled.</p>
+<p><code>ng-if</code> is better when we needed the DOM to be loaded conditionally, as it will help load page bit faster compared to <code>ng-show</code>/<code>ng-hide</code></p>
+<h2 id="Where_should_we_implement_the_DOM_manipulation_in_AngularJS_3F"><a href="#Where_should_we_implement_the_DOM_manipulation_in_AngularJS_3F" class="headerlink" title="Where should we implement the DOM manipulation in AngularJS?"></a>Where should we implement the DOM manipulation in AngularJS?</h2><p>In the directives. DOM Manipulations should not exist in controllers, services or anywhere else but in directives.</p>
+<p>Otherwise it’s:</p>
+<ul>
+<li>It is not reusable</li>
+<li>It is not testable</li>
+<li>It include css hard coded selectors dependencies</li>
+</ul>
+<h2 id="Is_it_a_good_or_bad_practice_to_use_AngularJS_together_with_jQuery_3F"><a href="#Is_it_a_good_or_bad_practice_to_use_AngularJS_together_with_jQuery_3F" class="headerlink" title="Is it a good or bad practice to use AngularJS together with jQuery?"></a>Is it a good or bad practice to use AngularJS together with jQuery?</h2><p>jQuery takes a traditional imperative approach to manipulating the DOM. In an imperative approach, it is up to the programmer to express the individual steps leading up to the desired outcome. What do I mean by this? So if we want an action to occur when a user types say 150 characters into an input, in jQuery we would say, “every time the user hits a key, check how many characters are in the input, if it exceeds 150 characters, do the action.” Every step is addressed along the way.</p>
+<p>AngularJS however takes a declarative approach to DOM manipulation. Here instead of worrying about all of the step by step details regarding how to do the desired outcome, AngularJS abstracts that and allows you to just say what you want done, in this case, “AngularJS, when the state of the input is at 150 characters, do this.” We are just declaring what we want and AngularJS worries about the rest, taking care of everything for us.</p>
+<p>It might seem like I’m just splitting hairs here, but it’s really an important distinction. AngularJS wants you basing your actions around the data models you create. It’s how the entire framework works and how your applications will be structured. </p>
+<p>To simply begin writing side scripts in jQuery where you are plucking out elements and setting up side event listeners just goes against the AngularJS approach in my opinion.</p>
+<h2 id="If_you_were_to_migrate_from_Angular_1-4_to_Angular_1-5_2C_what_is_the_main_thing_that_would_need_refactoring_3F"><a href="#If_you_were_to_migrate_from_Angular_1-4_to_Angular_1-5_2C_what_is_the_main_thing_that_would_need_refactoring_3F" class="headerlink" title="If you were to migrate from Angular 1.4 to Angular 1.5, what is the main thing that would need refactoring?"></a>If you were to migrate from Angular 1.4 to Angular 1.5, what is the main thing that would need refactoring?</h2><p>Changing <code>.directive</code> to <code>.component</code> to adapt to the new Angular 1.5 components. More about <a href="http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">.component approach</a></p>
+<h2 id="Lifecycle_hooks_in_Angular_1-5"><a href="#Lifecycle_hooks_in_Angular_1-5" class="headerlink" title="Lifecycle hooks in Angular 1.5"></a>Lifecycle hooks in Angular 1.5</h2><ul>
+<li><code>$onInit</code></li>
+<li><code>$postLink</code></li>
+<li><code>$onChanges</code></li>
+<li><code>$onDestroy</code></li>
+</ul>
+<p>More in <a href="https://toddmotto.com/angular-1-5-lifecycle-hooks" target="_blank" rel="external">awesome post</a>.</p>
+<h2 id="How_would_you_specify_that_a_scope_variable_should_have_one-time_binding_only_3F"><a href="#How_would_you_specify_that_a_scope_variable_should_have_one-time_binding_only_3F" class="headerlink" title="How would you specify that a scope variable should have one-time binding only?"></a>How would you specify that a scope variable should have one-time binding only?</h2><p>By using <code>::model.property</code> in front of it. This allows the check if the candidate is aware of the available variable bindings in AngularJS.</p>
+<h2 id="What_is_the_difference_between_one-way_binding_and_two-way_binding_3F"><a href="#What_is_the_difference_between_one-way_binding_and_two-way_binding_3F" class="headerlink" title="What is the difference between one-way binding and two-way binding?"></a>What is the difference between one-way binding and two-way binding?</h2><p>One way binding implies that the scope variable in the html will be set to the first value its model is bound to (i.e. assigned to).</p>
+<p>Two way binding implies that the scope variable will change it’s value everytime its model is assigned to a different value</p>
+<h2 id="What_is_the_role_of_services_in_AngularJS_and_name_any_services_made_available_by_default_3F"><a href="#What_is_the_role_of_services_in_AngularJS_and_name_any_services_made_available_by_default_3F" class="headerlink" title="What is the role of services in AngularJS and name any services made available by default?"></a>What is the role of services in AngularJS and name any services made available by default?</h2><ul>
+<li>Services are objects that provide separation of concerns to an AngularJS app.</li>
+<li>Services can be created using a factory method or a service method.</li>
+<li>Services are singleton components. All components of the application (into which the service is injected) will work with single instance of the service.</li>
+<li>Allows developing of business logic without depending on the View logic which will work with it.</li>
+<li>A typical service can be injected into another service or into an Controller.</li>
+</ul>
+<p>Few of the inbuilt services in AngularJS are:<br>– the <code>$http</code> service: The <code>$http</code> service is a core Angular service that facilitates communication with the remote HTTP servers via the browser’s XMLHttpRequest object or via JSONP<br>– the <code>$log</code> service: Simple service for logging. Default implementation safely writes the message into the browser’s console<br>– the <code>$anchorScroll</code>: it scrolls to the element related to the specified hash or (if omitted) to the current value of <code>$location.hash()</code></p>
+<h2 id="What_are_Providers_and_when_to_use_them_3F"><a href="#What_are_Providers_and_when_to_use_them_3F" class="headerlink" title="What are Providers and when to use them?"></a>What are Providers and when to use them?</h2><p>Each web application you build is composed of objects that collaborate to get stuff done. These objects need to be instantiated and wired together for the app to work. In Angular apps most of these objects are instantiated and wired together automatically by the <code>$injector</code> service.</p>
+<p>The <code>$injector</code> creates two types of objects, <em>services</em> and <em>specialized objects</em>.</p>
+<ul>
+<li>Services are objects whose API is defined by the developer writing the service.</li>
+<li>Specialized objects conform to a specific Angular framework API. These objects are one of controllers, directives, filters or animations.</li>
+</ul>
+<p>The injector needs to know how to create these objects. You tell it by registering a “recipe” for creating your object with the injector. There are five recipe types.</p>
+<p>The most verbose, but also the most comprehensive one is a <code>Provider</code> recipe. The remaining four recipe types — <code>Value</code>, <code>Factory</code>, <code>Service</code> and <code>Constant</code> — are just syntactic sugar on top of a provider recipe.</p>
+<p>The <code>Provider</code> recipe is the core recipe type and all the other recipe types are just syntactic sugar on top of it. It is the most verbose recipe with the most abilities, but for most services it’s overkill.</p>
+<p>You should use the Provider recipe only when you want to expose an API for application-wide configuration that must be made before the application starts. This is usually interesting only for reusable services whose behavior might need to vary slightly between applications.</p>
+<p>The Provider recipe is syntactically defined as a custom type that implements a <code>$get</code> method. This method is a factory function just like the one we use in the Factory recipe. In fact, if you define a Factory recipe, an empty Provider type with the $get method set to your factory function is automatically created under the hood.</p>
+<p>More in <a href="https://docs.angularjs.org/guide/providers" target="_blank" rel="external">official docs</a>.</p>
+<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h2 id="Binary_search"><a href="#Binary_search" class="headerlink" title="Binary search"></a>Binary search</h2><p>A binary search tree is a great place to store data in an ordered way to allow for an easy search for specific information.<br>It works by comparing the target value to the midpoint of the array; if they are not equal, the lower or upper half of the array is eliminated depending on the result and the search is repeated until the position of the target value is found.</p>
+<p>The basic algorithm, then, can be described as:</p>
+<ul>
+<li>If currentValue equals value, you’re done.</li>
+<li>If value is less than currentValue, go left. Go to step 1.</li>
+<li>If value is greater than currentValue, go right. Go to step 1.</li>
+</ul>
+<p>Binary search is intuitively recursive; however, it can be done iteratively by keeping track of the bounds of the search with two pointers. Binary search is efficient for sorted arrays that are stored contiguously (close together) in memory, making <code>O(log n)</code> comparisons, where <code>n</code> is the number of elements in the array.</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">binarySearch</span>(<span class="params">items, <span class="keyword">value</span></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> startIndex  = <span class="number">0</span>,</span><br><span class="line">        stopIndex   = items.length - <span class="number">1</span>,</span><br><span class="line">        middle      = Math.floor((stopIndex + startIndex)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(items[middle] != <span class="keyword">value</span> &amp;&amp; startIndex &lt; stopIndex)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//adjust search area</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">value</span> &lt; items[middle])&#123;</span><br><span class="line">            stopIndex = middle - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="function"><span class="keyword">else</span> <span class="title">if</span> (<span class="params"><span class="keyword">value</span> &gt; items[middle]</span>)</span>&#123;</span><br><span class="line">            startIndex = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//recalculate middle</span></span><br><span class="line">        middle = Math.floor((stopIndex + startIndex)/<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//make sure it's the right value</span></span><br><span class="line">    <span class="keyword">return</span> (items[middle] != <span class="keyword">value</span>) ? <span class="number">-1</span> : middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="The_fastest_method_to_create_unique_items_in_array"><a href="#The_fastest_method_to_create_unique_items_in_array" class="headerlink" title="The fastest method to create unique items in array"></a>The fastest method to create unique items in array</h2><p>With primitive values:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>]); <span class="comment">// [1, 2, 5]</span></span><br></pre></td></tr></table></figure>
+<p>With objects: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = &#123;&#125;, i, l = <span class="keyword">this</span>.length, r = [];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;l;i+=<span class="number">1</span>) o[<span class="keyword">this</span>[i]] = <span class="keyword">this</span>[i];</span><br><span class="line">    <span class="keyword">for</span>(i <span class="keyword">in</span> o) r.push(o[i]);</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>This is somewhat classified  as “Hash Sorting Algorithm” where every item in the array is a hash value and a hash function inserts item into a bucket, replacing existing values in case of hash collision. As such, this can be applied to any programming language for faster sieving of very large arrays.</p>
+<p>This algorithm has a linear time complexity of <code>O(2n)</code> in worst case scenario. This is way better than what we will observe for the classic method as described below.</p>
+<p>The classic (worst and most popular) method of finding unique items in an array runs two loops in a nested order to compare each element with rest of the elements. Consequently, the time complexity of the classic method to find the unique items in an array is around quadratic <code>O(n²)</code>.</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [], l = <span class="keyword">this</span>.length;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;l; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>; j&lt;l; j++)</span><br><span class="line">          <span class="keyword">if</span> (<span class="keyword">this</span>[i] === <span class="keyword">this</span>[j]) j = ++i;</span><br><span class="line">    a.push(<span class="keyword">this</span>[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br></pre></td></tr></table></figure>
+<h2 id="The_fastest_method_to_find_items_in_array"><a href="#The_fastest_method_to_find_items_in_array" class="headerlink" title="The fastest method to find items in array"></a>The fastest method to find items in array</h2><p>Create a classical hash table with complexity of <code>O(n)</code>:</p>
+<figure class="highlight golo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = arr.<span class="keyword">reduce</span>(<span class="keyword">function</span>(<span class="keyword">map</span>, obj) &#123;</span><br><span class="line">  <span class="keyword">map</span>[obj.id] = obj;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">map</span>;</span><br><span class="line">&#125;, &#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>And search in the structure is <code>O(1)</code>;</p>
+<h2 id="Big-O_Complexity_Chart"><a href="#Big-O_Complexity_Chart" class="headerlink" title="Big-O Complexity Chart"></a>Big-O Complexity Chart</h2><p><a href="http://bigocheatsheet.com/" target="_blank" rel="external">An awesome cheat sheet</a></p>
+<h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h2 id="When_standard_was_finalized_3F"><a href="#When_standard_was_finalized_3F" class="headerlink" title="When standard was finalized?"></a>When standard was finalized?</h2><p>The ES6 specification was finalized in June 2015, (hence ES2015).</p>
+<p>Future versions of the specification will follow the ES[YYYY] pattern, e.g ES2016 for ES7.</p>
+<h2 id="Tooling"><a href="#Tooling" class="headerlink" title="Tooling"></a>Tooling</h2><p>To get ES6 working today, you need a JavaScript-to-JavaScript transpiler:</p>
+<ul>
+<li>They allow you to compile code in the latest version into older versions of the language</li>
+<li>As browser support gets better, we’ll transpile ES2016 and ES2017 into ES6 and beyond</li>
+<li>We’ll need better source mapping functionality</li>
+<li>They’re the most reliable way to run ES6 source code in production today (although browsers get ES5)</li>
+<li>Use <code>babel</code> to transpile ES6 into ES5 for static build</li>
+</ul>
+<p>Use <code>babelify</code> to incorporate babel into your <code>Gulp</code>, <code>Grunt</code>, or <code>npm</code> run build process</p>
+<p>Use <code>Node.js</code> v4.x.x or greater as they have decent ES6 support baked in, thanks to v8</p>
+<p>Use <code>babel-node</code> with any version of node, as it transpiles modules into ES5</p>
+<h2 id="Assignment_Destructuring_2C_the_Rapid_Table"><a href="#Assignment_Destructuring_2C_the_Rapid_Table" class="headerlink" title="Assignment Destructuring, the Rapid Table"></a>Assignment Destructuring, the Rapid Table</h2><h2 id="Spread_Operator_and_Rest_Parameters"><a href="#Spread_Operator_and_Rest_Parameters" class="headerlink" title="Spread Operator and Rest Parameters"></a>Spread Operator and Rest Parameters</h2><h2 id="Arrow_Functions"><a href="#Arrow_Functions" class="headerlink" title="Arrow Functions"></a>Arrow Functions</h2><h2 id="Template_Literals"><a href="#Template_Literals" class="headerlink" title="Template Literals"></a>Template Literals</h2><h2 id="Object_Literals"><a href="#Object_Literals" class="headerlink" title="Object Literals"></a>Object Literals</h2><h2 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h2><h2 id="Let_and_Const"><a href="#Let_and_Const" class="headerlink" title="Let and Const"></a>Let and Const</h2><h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="Iterators"><a href="#Iterators" class="headerlink" title="Iterators"></a>Iterators</h2><h2 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h2><h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><h2 id="Maps_/_WeakMaps"><a href="#Maps_/_WeakMaps" class="headerlink" title="Maps / WeakMaps"></a>Maps / WeakMaps</h2><h2 id="Sets_/_WeakSets"><a href="#Sets_/_WeakSets" class="headerlink" title="Sets / WeakSets"></a>Sets / WeakSets</h2><h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><p>TODO with <a href="https://ponyfoo.com/articles/es6" target="_blank" rel="external">https://ponyfoo.com/articles/es6</a></p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/06/call-apply-VS-bind-the-simplest-explanation/" data-tooltip="call &amp; apply VS bind, the simplest explanation">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/06/call-apply-VS-bind-the-simplest-explanation/" data-tooltip="call &amp; apply VS bind, the simplest explanation">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
+        
+            <h4 id="about-card-name">Orest Prystayko</h4>
+        
+            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front End Developer @ Eleks</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Ukraine, Lviv
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://qetr1ck-op.github.io/2016/08/14/Front-End-Interview-Questions/';
+                 
+                    this.page.identifier = '2016/08/14/Front-End-Interview-Questions/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'qetr1ck-op';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
+    </script>
+
+
+</html>
