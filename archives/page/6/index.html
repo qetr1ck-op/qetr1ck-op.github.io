@@ -212,6 +212,99 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2014/07/30/NodeList-vs-Array-in-Javascript/">
+                            NodeList vs Array in Javascript
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2014-07-30T22:39:40+03:00">
+	
+		    Jul 30, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>Essentially, a <code>NodeList</code> is what you get when you call any method such as <code>elem.getElemetsByTagName()</code>, <code>elem.querySelectorAll()</code> and so on.</p>
+                    
+                        <a href="/2014/07/30/NodeList-vs-Array-in-Javascript/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+            <a href="/2014/07/30/NodeList-vs-Array-in-Javascript/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/07/30/NodeList-vs-Array-in-Javascript/title.png"/>
+                </div>
+            </a>
+            
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-undefined" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2014/07/29/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/">
+                            Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2014-07-29T22:01:59+03:00">
+	
+		    Jul 29, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>How to properly get instance of object.</p>
+                    
+                        <a href="/2014/07/29/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-undefined" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2014/07/25/Performance-Javascript-adding-text-to-a-node/">
                             Performance: JavaScript adding text to a node
                         </a>
@@ -538,7 +631,7 @@
 <p>But we can do better. At the moment our page is downloading like this:</p>
 <p><img src="http://www.html5rocks.com/en/tutorials/es6/promises/promise1.gif" alt=""></p>
 <p>Browsers aren’t pretty good at downloading <code>multiple</code> things at once, so we’re losing performance by downloading chapters one after the other. What we want to do is download them all at the same time, then process them when they’ve all arrived. Thankfully there’s an API for this:</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Promise.<span class="built_in">all</span>(arrayOfPromises).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(arrayOfResults)</span></span> &#123;</span><br><span class="line">  //...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all(arrayOfPromises).then(<span class="function"><span class="keyword">function</span>(<span class="params">arrayOfResults</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><code>Promise.all</code> takes an array of promises and creates a promise that fulfills when all of them successfully complete. You get an array of results (whatever the promises fulfilled to) in the same order as the promises you passed in.</p>
 <figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">getJSON(<span class="string">'story.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(story)</span> &#123;</span></span><br><span class="line">  addHtmlToPage(story.heading);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Take an array of promises and wait on them all</span></span><br><span class="line">  <span class="keyword">return</span> Promise.all(</span><br><span class="line">    <span class="comment">// Map our array of chapter urls to</span></span><br><span class="line">    <span class="comment">// an array of chapter json promises</span></span><br><span class="line">    story.chapterUrls.map(getJSON)</span><br><span class="line">  );</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(chapters)</span> &#123;</span></span><br><span class="line">  <span class="comment">// Now we have the chapters jsons in order! Loop through…</span></span><br><span class="line">  chapters.forEach(<span class="function"><span class="keyword">function</span><span class="params">(chapter)</span> &#123;</span></span><br><span class="line">    <span class="comment">// …and add to the page</span></span><br><span class="line">    addHtmlToPage(chapter.html);</span><br><span class="line">  &#125;);</span><br><span class="line">  addTextToPage(<span class="string">"All done"</span>);</span><br><span class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span> &#123;</span></span><br><span class="line">  <span class="comment">// catch any error that happened so far</span></span><br><span class="line">  addTextToPage(<span class="string">"Argh, broken: "</span> + err.message);</span><br><span class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></span><br><span class="line">  document.querySelector(<span class="string">'.spinner'</span>).style.display = <span class="string">'none'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Depending on connection, this can be seconds faster than loading one-by-one:</p>
@@ -700,106 +793,6 @@
                 </div>
             
         </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-undefined" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2014/05/31/Difference-of-HTTP-and-HTTPS/">
-                            Difference of HTTP and HTTPS
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2014-05-31T06:00:36+03:00">
-	
-		    May 31, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/HTTP/">HTTP</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Hyper Text Transfer Protocol Secure (HTTPS) is a <code>secure version</code> of the Hyper Text Transfer Protocol (HTTP). HTTPS allows secure e-commerce transactions, such as on-line banking.</p>
-                    
-                        <a href="/2014/05/31/Difference-of-HTTP-and-HTTPS/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2014/05/31/Difference-of-HTTP-and-HTTPS/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/05/31/Difference-of-HTTP-and-HTTPS/title.jpg"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-undefined" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/">
-                            Function Invocation Patterns in JavaScript
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2014-05-29T05:47:57+03:00">
-	
-		    May 29, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Pattern/">Pattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Describe different approaches to define and call functions</p>
-                    
-                        <a href="/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2014/05/29/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/title.png"/>
-                </div>
-            </a>
-            
         
     </article>
     

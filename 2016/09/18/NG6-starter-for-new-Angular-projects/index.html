@@ -6,23 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
-    <title>Kata: All, None &amp; Any - Blog | qetr1ck-op</title>
+    <title>NG6 starter for new Angular projects - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
     
         <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:">
+    <meta name="description" content="The de-facto starter repo for building scalable apps with Angular ^1.5, ES6, Gulp and Webpack">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Kata: All, None & Any">
-<meta property="og:url" content="http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/index.html">
+<meta property="og:title" content="NG6 starter for new Angular projects">
+<meta property="og:url" content="http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:">
-<meta property="og:updated_time" content="2016-07-08T18:21:19.726Z">
+<meta property="og:description" content="The de-facto starter repo for building scalable apps with Angular ^1.5, ES6, Gulp and Webpack">
+<meta property="og:updated_time" content="2016-09-18T16:09:32.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kata: All, None & Any">
-<meta name="twitter:description" content="As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:">
+<meta name="twitter:title" content="NG6 starter for new Angular projects">
+<meta name="twitter:description" content="The de-facto starter repo for building scalable apps with Angular ^1.5, ES6, Gulp and Webpack">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -31,6 +31,9 @@
     
         <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
     
+    
+        <meta property="og:image" content="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" />
     
     
     
@@ -208,19 +211,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Kata: All, None &amp; Any
+            NG6 starter for new Angular projects
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-02-10T20:58:59+02:00">
+    <time itemprop="datePublished" datetime="2016-09-18T19:03:17+03:00">
 	
-		    Feb 10, 2016
+		    Sep 18, 2016
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Kata/">Kata</a>
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Angular-1-5/">Angular ^1.5</a>
 
 
     
@@ -230,26 +233,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:</p>
+            <p>The de-facto starter repo for building scalable apps with Angular ^1.5, ES6, Gulp and Webpack</p>
 <a id="more"></a>
-<ul>
-<li>all</li>
-</ul>
-<p>This function returns true only if the predicate supplied returns true for all the items in the array</p>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="name">1</span>, <span class="number">2</span>, <span class="number">3</span>].all(<span class="name">isGreaterThanZero</span>) =&gt; true</span><br><span class="line">[<span class="name">-1</span>, <span class="number">0</span>, <span class="number">2</span>].all(<span class="name">isGreaterThanZero</span>) =&gt; false</span><br></pre></td></tr></table></figure>
-<ul>
-<li>none</li>
-</ul>
-<p>This function returns true only if the predicate supplied returns false for all the items in the array</p>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="name">-1</span>, <span class="number">2</span>, <span class="number">3</span>].none(<span class="name">isLessThanZero</span>) =&gt; false</span><br><span class="line">[<span class="name">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>].none(<span class="name">isGreaterThanZero</span>) =&gt; true</span><br></pre></td></tr></table></figure>
-<ul>
-<li>any</li>
-</ul>
-<p>This function returns true if at least one of the items in the array returns true for the predicate supplied</p>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="name">-1</span>, <span class="number">2</span>, <span class="number">3</span>].any(<span class="name">isGreaterThanZero</span>) =&gt; true</span><br><span class="line">[<span class="name">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>].any(<span class="name">isGreaterThanZero</span>) =&gt; false</span><br></pre></td></tr></table></figure>
-<p>You do not need to worry about the data supplied, it will be an array at all times.</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">isGreaterThanZero</span> (num) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">num</span> &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title">isLessThanZero</span> (num) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">num</span> &lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Test.expect([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="keyword">all</span>(isGreaterThanZero), <span class="symbol">'All</span> are greater than zero');</span><br><span class="line">Test.expect(![-<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>].<span class="keyword">all</span>(isLessThanZero), <span class="symbol">'All</span> <span class="keyword">is</span> less than zero');</span><br><span class="line"></span><br><span class="line">Test.expect(![<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].none(isGreaterThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> greater than zero');</span><br><span class="line">Test.expect([<span class="number">3</span>, <span class="number">0</span>, <span class="number">2</span>].none(isLessThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> less than zero');</span><br><span class="line"></span><br><span class="line">Test.expect([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].any(isGreaterThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> greater than zero');</span><br><span class="line">Test.expect([-<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>].any(isLessThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> less than zero');</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.all = <span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.filter(p).length === <span class="keyword">this</span>.length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.none = <span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.filter(p).length === <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.any = <span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.filter(p).length &gt; <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/gebidesign/NG6-starter-sass#ng6--" target="_blank" rel="external">Table of contents</a></p>
+
             
         </div>
     </div>
@@ -258,7 +245,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Array/">Array</a> <a class="tag tag--primary tag--small t-link" href="/tags/Kata/">Kata</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Angular-1-5/">Angular ^1.5</a> <a class="tag tag--primary tag--small t-link" href="/tags/Javascript/">Javascript</a>
 
             </div>
         
@@ -267,7 +254,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Development-with-Webpack-and-React-part-4/"  data-tooltip="Development with Webpack and React part 4">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -275,7 +262,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/09/Kata-Arrays-Are-they-square/" data-tooltip="Kata: Are they square?">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/18/Start-new-project-on-Angular-1-5/" data-tooltip="Start new project on Angular 1.5">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -290,17 +277,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -348,7 +335,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/10/Development-with-Webpack-and-React-part-4/"  data-tooltip="Development with Webpack and React part 4">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -356,7 +343,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/09/Kata-Arrays-Are-they-square/" data-tooltip="Kata: Are they square?">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/18/Start-new-project-on-Angular-1-5/" data-tooltip="Start new project on Angular 1.5">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -371,17 +358,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -407,17 +394,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
@@ -472,9 +459,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/';
+                 this.page.url = 'http://qetr1ck-op.github.io/2016/09/18/NG6-starter-for-new-Angular-projects/';
                  
-                    this.page.identifier = '2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/';
+                    this.page.identifier = '2016/09/18/NG6-starter-for-new-Angular-projects/';
                                   
              };
             (function() {
