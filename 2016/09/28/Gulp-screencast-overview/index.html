@@ -13,16 +13,16 @@
         <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="In depth, table of contents of one of the most popular screencast about utility for managing tasks.">
+    <meta name="description" content="Depth table of contents of one of the most popular screencast about utility for managing tasks.">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Gulp screencast overview">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/09/28/Gulp-screencast-overview/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="In depth, table of contents of one of the most popular screencast about utility for managing tasks.">
-<meta property="og:updated_time" content="2016-10-02T06:10:35.876Z">
+<meta property="og:description" content="Depth table of contents of one of the most popular screencast about utility for managing tasks.">
+<meta property="og:updated_time" content="2016-10-02T18:48:33.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gulp screencast overview">
-<meta name="twitter:description" content="In depth, table of contents of one of the most popular screencast about utility for managing tasks.">
+<meta name="twitter:description" content="Depth table of contents of one of the most popular screencast about utility for managing tasks.">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -227,10 +227,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>In depth, table of contents of one of the most popular screencast about utility for managing tasks.</p>
+            <p>Depth table of contents of one of the most popular screencast about utility for managing tasks.</p>
 <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#What_is_Gulp_3F_Compare_with_Webpack_2C_etc"><span class="toc-text">What is Gulp? Compare with Webpack, etc.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install_and_task_running"><span class="toc-text">Install and task running</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Streams_Vinyl-FS"><span class="toc-text">Streams Vinyl-FS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic_build_for_styles"><span class="toc-text">Basic build for styles</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Incremental_build_2C_watch"><span class="toc-text">Incremental build, watch</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Incremental_and_performance"><span class="toc-text">Incremental and performance</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Browser_auto-reloading_2C_browser-sync"><span class="toc-text">Browser auto-reloading, browser-sync</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Error_handling"><span class="toc-text">Error handling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Creating_plugins_with__u201Cthrough2_u201D"><span class="toc-text">Creating plugins with “through2”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#More_complex_stream_with__u201Ceslint_u201D_2C__u201Cgulp-if_u201D_2C__u201Cstream-combiner2_u201D"><span class="toc-text">More complex stream with “eslint”, “gulp-if”, “stream-combiner2”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#How_we_know_Node-JS_streams_3F"><span class="toc-text">How we know Node.JS streams?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Structure_of__u201Cgulpfile-js_u201D"><span class="toc-text">Structure of “gulpfile.js”</span></a></li></ol>
-<h1 id="What_is_Gulp_3F_Compare_with_Webpack_2C_etc"><a href="#What_is_Gulp_3F_Compare_with_Webpack_2C_etc" class="headerlink" title="What is Gulp? Compare with Webpack, etc."></a>What is Gulp? Compare with Webpack, etc.</h1><p>What is Gulp?</p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#What_is_Gulp_3F_Compare_with_Webpack"><span class="toc-text">What is Gulp? Compare with Webpack.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install_and_task_running"><span class="toc-text">Install and task running</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Streams_Vinyl-FS"><span class="toc-text">Streams Vinyl-FS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic_build_for_styles"><span class="toc-text">Basic build for styles</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Incremental_build_2C_watch"><span class="toc-text">Incremental build, watch</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Incremental_and_performance"><span class="toc-text">Incremental and performance</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Browser_auto-reloading_2C_browser-sync"><span class="toc-text">Browser auto-reloading, browser-sync</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Error_handling"><span class="toc-text">Error handling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Creating_plugins_with__u201Cthrough2_u201D"><span class="toc-text">Creating plugins with “through2”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#More_complex_stream_with__u201Ceslint_u201D_2C__u201Cgulp-if_u201D_2C__u201Cstream-combiner2_u201D"><span class="toc-text">More complex stream with “eslint”, “gulp-if”, “stream-combiner2”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#How_we_know_Node-JS_streams_3F"><span class="toc-text">How we know Node.JS streams?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Structure_of__u201Cgulpfile-js_u201D"><span class="toc-text">Structure of “gulpfile.js”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A_real_example_3A_styles_2C_assets_2C_sprites_2C_production"><span class="toc-text">A real example: styles, assets, sprites, production</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Integration_with_Webpack"><span class="toc-text">Integration with Webpack</span></a></li></ol>
+<h1 id="What_is_Gulp_3F_Compare_with_Webpack"><a href="#What_is_Gulp_3F_Compare_with_Webpack" class="headerlink" title="What is Gulp? Compare with Webpack."></a>What is Gulp? Compare with Webpack.</h1><p>What is Gulp?</p>
 <ol>
 <li>Gulp as a “streaming build system”, and moreover, it’s a utility for declaring tasks <a href="https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=10" target="_blank" rel="external">0:10</a></li>
 <li>Example <code>gruntfile.js</code><a href="https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=53" target="_blank" rel="external">0:53</a></li>
@@ -371,7 +371,26 @@
 <li>Result after refactoring <a href="https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=410" target="_blank" rel="external">6:50</a></li>
 </ol>
 <ul>
-<li><a href="https://github.com/iliakan/gulp-screencast/tree/master/11-plugins-streams" target="_blank" rel="external">Code examples</a></li>
+<li><a href="https://github.com/iliakan/gulp-screencast/tree/master/12-organize-final" target="_blank" rel="external">Code examples</a></li>
+</ul>
+<h1 id="A_real_example_3A_styles_2C_assets_2C_sprites_2C_production"><a href="#A_real_example_3A_styles_2C_assets_2C_sprites_2C_production" class="headerlink" title="A real example: styles, assets, sprites, production"></a>A real example: styles, assets, sprites, production</h1><ol>
+<li>Goal and app structure <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=15" target="_blank" rel="external">0:15</a></li>
+<li>Improving build of styles and assets <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=115" target="_blank" rel="external">1:55</a></li>
+<li>A typical problem with preprocessors with <code>src</code> and fixing with <code>resolver</code> <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=242" target="_blank" rel="external">4:03</a></li>
+<li>Working with sprites using <code>gulp-svg-sprites</code> <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=380" target="_blank" rel="external">6:20</a></li>
+<li>Add production mode: minify with <code>gulp-cssnano</code>, resource hash with <code>gulp-rev</code> and <code>gulp-rev-replace</code>  <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=914" target="_blank" rel="external">15:13</a></li>
+<li>Do we need to use long-term hashing for images?  <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=1337" target="_blank" rel="external">22:17</a></li>
+<li>Summary <a href="https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=1536" target="_blank" rel="external">25:35</a></li>
+</ol>
+<ul>
+<li><a href="https://github.com/iliakan/gulp-screencast/tree/master/12-organize-final" target="_blank" rel="external">Code examples</a></li>
+</ul>
+<h1 id="Integration_with_Webpack"><a href="#Integration_with_Webpack" class="headerlink" title="Integration with Webpack"></a>Integration with Webpack</h1><ol>
+<li>Summary <a href="https://youtu.be/ohWOWqskHWU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;t=1636" target="_blank" rel="external">27:16</a></li>
+</ol>
+<ul>
+<li><a href="https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-stream" target="_blank" rel="external">Code examples 1</a></li>
+<li><a href="https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-final-direct" target="_blank" rel="external">Code examples 2</a></li>
 </ul>
 
             
