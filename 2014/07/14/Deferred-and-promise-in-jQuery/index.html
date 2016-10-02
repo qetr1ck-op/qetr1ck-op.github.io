@@ -46,7 +46,7 @@
             <!-- Define author's picture -->
 
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
@@ -68,7 +68,7 @@
 
     
 
-<nav id="sidebar" data-behavior="3">
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -197,7 +197,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -244,7 +244,7 @@
 <p>The way of assigning callbacks with Promises: </p>
 <figure class="highlight mercury"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">promise</span> <span class="built_in">=</span> $.ajax(&#123;</span><br><span class="line">  url: <span class="string">"/myServerScript"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">promise</span>.done(mySuccessFunction);</span><br><span class="line"><span class="keyword">promise</span>.<span class="built_in">fail</span>(myErrorFunction);</span><br></pre></td></tr></table></figure>
 <p>You can combine the <code>done()</code> and <code>fail()</code> functions in one <code>then()</code> function:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = $.ajax(&#123;</span><br><span class="line">  url: <span class="string">"/myServerScript"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.then(mySuccessFunction, myErrorFunction);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = $.ajax(&#123;</span><br><span class="line">  url: <span class="string">"/myServerScript"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.<span class="keyword">then</span>(mySuccessFunction, myErrorFunction);</span><br></pre></td></tr></table></figure>
 <p>The advantages of promises are:</p>
 <ul>
 <li>You can call the <code>done()</code> and <code>fail()</code> functions more times, with different callbacks. Maybe you have a callback function that stops an animation, one that does a new Ajax call and another function that shows the received data to the visitor:</li>
@@ -357,7 +357,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -419,7 +419,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2014/07/14/Deferred-and-promise-in-jQuery/">
