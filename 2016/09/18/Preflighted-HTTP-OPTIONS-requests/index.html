@@ -13,16 +13,16 @@
         <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="TODO: Header">
+    <meta name="description" content="What is not-so-simple request?">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Preflighted HTTP OPTIONS requests">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2016/09/18/Preflighted-HTTP-OPTIONS-requests/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="TODO: Header">
-<meta property="og:updated_time" content="2016-09-18T18:02:27.510Z">
+<meta property="og:description" content="What is not-so-simple request?">
+<meta property="og:updated_time" content="2016-10-04T19:09:37.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Preflighted HTTP OPTIONS requests">
-<meta name="twitter:description" content="TODO: Header">
+<meta name="twitter:description" content="What is not-so-simple request?">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
     
@@ -224,9 +224,35 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>TODO: Header</p>
+            <p>What is not-so-simple request?</p>
 <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The_Cross-Origin_Resource_sharing_short_overview"><span class="toc-text">The Cross-Origin Resource sharing short overview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The__u201Csimple_request_u201D"><span class="toc-text">The “simple request”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Preflighted_requests"><span class="toc-text">Preflighted requests</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CORS_flow"><span class="toc-text">CORS flow</span></a></li></ol>
+<h1 id="The_Cross-Origin_Resource_sharing_short_overview"><a href="#The_Cross-Origin_Resource_sharing_short_overview" class="headerlink" title="The Cross-Origin Resource sharing short overview"></a>The Cross-Origin Resource sharing short overview</h1><p>The CORS standard works by adding new HTTP headers that allows servers to describe the sets of origins that are permitted to read that information.</p>
+<p>If browser performs request with “side-effects” aka not a “simple request”, the specification says that that browser need to “preflight” an HTTP OPTIONS request. And then, upon “approval” from the server, sends the actual request.</p>
+<h1 id="The__u201Csimple_request_u201D"><a href="#The__u201Csimple_request_u201D" class="headerlink" title="The “simple request”"></a>The “simple request”</h1><p>A simple cross-site request is one that meets all the following conditions:</p>
+<p>The only allowed methods are:</p>
+<ul>
+<li><code>GET</code></li>
+<li><code>HEAD</code></li>
+<li><code>POST</code></li>
+</ul>
+<p>Apart the headers which are set automatically by the browser (<code>Connection</code>, <code>User-Agent</code>, etc.), the only headers which are allowed to be manually set are:</p>
+<ul>
+<li><code>Accept</code></li>
+<li><code>Accept-Language</code></li>
+<li><code>Content-Language</code></li>
+<li><code>Content-Type</code></li>
+</ul>
+<p>The only allowed values for the <code>Content-Type</code> header are:</p>
+<ul>
+<li><code>application/x-www-form-urlencoded</code></li>
+<li><code>multipart/form-data</code></li>
+<li><code>text/plain</code></li>
+</ul>
+<h1 id="Preflighted_requests"><a href="#Preflighted_requests" class="headerlink" title="Preflighted requests"></a>Preflighted requests</h1><p>Unlike simple requests, “preflighted” first send an HTTP request by the OPTIONS method to the resource on the server, in order to determine whether the actual request is safe to send.</p>
+<p>An <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank" rel="external">example</a> which creates <code>XHR</code> and an HTTP transaction log.</p>
+<h1 id="CORS_flow"><a href="#CORS_flow" class="headerlink" title="CORS flow"></a>CORS flow</h1><p>An awesome <a href="https://www.html5rocks.com/static/images/cors_server_flowchart.png" target="_blank" rel="external">diagram</a> of processing HTTP CORS transaction</p>
+
             
         </div>
     </div>
