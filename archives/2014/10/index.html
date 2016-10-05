@@ -248,65 +248,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2014/10/16/git-pull-versus-git-pull-rebase/">
-                            git pull versus git pull --rebase
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2014-10-16T22:05:58+03:00">
-	
-		    Oct 16, 2014
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Short_answer"><span class="toc-text">Short answer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Long_answer_3A_git_merge_and_git_rebase"><span class="toc-text">Long answer: git merge and git rebase</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git_merge"><span class="toc-text">git merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_rebase"><span class="toc-text">git rebase</span></a></li></ol></li></ol>
-<h1 id="Short_answer"><a href="#Short_answer" class="headerlink" title="Short answer"></a>Short answer</h1><p><code>git pull</code> = <code>git fetch</code> + <code>git merge</code></p>
-<p><code>git pull --rebase</code> = <code>git fetch</code> + <code>git rebase</code><br>For more detail info how <code>git pull</code> and <code>git rabase</code> differs continue reading.</p>
-<h1 id="Long_answer_3A_git_merge_and_git_rebase"><a href="#Long_answer_3A_git_merge_and_git_rebase" class="headerlink" title="Long answer: git merge and git rebase"></a>Long answer: <code>git merge</code> and <code>git rebase</code></h1><p>Suppose originally there were a 3 commits, <code>A</code>, <code>B</code>, <code>C</code>:</p>
-<p><img src="http://i.stack.imgur.com/lJRq7.png" alt=""></p>
-<p>Then developer Dan create commit <code>D</code>, and developer Ed created commit <code>E</code>:</p>
-<p><img src="http://i.stack.imgur.com/pK7Zb.png" alt=""></p>
-<p>Obviously, this conflict should be resolve somehow. For this are 2 ways:</p>
-<h2 id="git_merge"><a href="#git_merge" class="headerlink" title="git merge"></a><code>git merge</code></h2><p><img src="http://i.stack.imgur.com/9Ul5w.png" alt=""></p>
-<p>Both commits <code>D</code> and <code>E</code> are still here, but git create merge commit <code>M</code> that inherits changes from both <code>D</code> and <code>E</code>. However, this create <code>diamond</code> shape, which many people find confusing.</p>
-<h2 id="git_rebase"><a href="#git_rebase" class="headerlink" title="git rebase"></a><code>git rebase</code></h2><p><img src="http://i.stack.imgur.com/TvXuJ.png" alt=""></p>
-<p>Git create commit <code>R</code> which is identical to merge commit <code>M</code>. But, we get rid of commit <code>E</code>, like it have never existed (shown by dots). Because of this, <code>E</code> should be local to developer Ed and should have never pushed to any repository.</p>
-<p>Advantage of <code>rebase</code> is that it’s avoided, and history stays nice straight line - most developers love that!</p>
-<p>Make my day:</p>
-<ul>
-<li><a href="http://stackoverflow.com/questions/871/why-is-git-better-than-subversion" target="_blank" rel="external">Discussion on StackOverflow</a></li>
-</ul>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2014/10/16/git-pull-versus-git-pull-rebase/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         

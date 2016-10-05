@@ -13,21 +13,18 @@
         <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Promises arrive in JavaScript!Here’s how you create a promise:
-12345678910var promise = new Promise(function(resolve, reject) &amp;#123;  // do a thing, possibly async, then…  if (/* everything turned ou">
+    <meta name="description">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="JavaScript Promises">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2014/07/13/JavaScript-Promises/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Promises arrive in JavaScript!Here’s how you create a promise:
-12345678910var promise = new Promise(function(resolve, reject) &amp;#123;  // do a thing, possibly async, then…  if (/* everything turned ou">
+<meta property="og:description">
 <meta property="og:image" content="http://www.html5rocks.com/en/tutorials/es6/promises/promise1.gif">
 <meta property="og:image" content="http://www.html5rocks.com/en/tutorials/es6/promises/promise2.gif">
-<meta property="og:updated_time" content="2016-01-31T22:55:40.409Z">
+<meta property="og:updated_time" content="2016-10-05T20:57:11.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Promises">
-<meta name="twitter:description" content="Promises arrive in JavaScript!Here’s how you create a promise:
-12345678910var promise = new Promise(function(resolve, reject) &amp;#123;  // do a thing, possibly async, then…  if (/* everything turned ou">
+<meta name="twitter:description">
 <meta name="twitter:image" content="http://www.html5rocks.com/en/tutorials/es6/promises/promise1.gif">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
@@ -237,6 +234,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Promises_arrive_in_JavaScript_21"><span class="toc-text">Promises arrive in JavaScript!</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promisifying_XMLHttpRequest"><span class="toc-text">Promisifying XMLHttpRequest</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chaining"><span class="toc-text">Chaining</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Error_handling"><span class="toc-text">Error handling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Creating_a_sequence"><span class="toc-text">Creating a sequence</span></a></li></ol>
+<a id="more"></a>
 <h1 id="Promises_arrive_in_JavaScript_21"><a href="#Promises_arrive_in_JavaScript_21" class="headerlink" title="Promises arrive in JavaScript!"></a>Promises arrive in JavaScript!</h1><p>Here’s how you create a promise:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// do a thing, possibly async, then…</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* everything turned out fine */</span>) &#123;</span><br><span class="line">    resolve(<span class="string">"Stuff worked!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    reject(<span class="built_in">Error</span>(<span class="string">"It broke"</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>The <code>promise constructor</code> takes one argument, a callback with two parameters, <code>resolve</code> and <code>reject</code>. Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.</p>
