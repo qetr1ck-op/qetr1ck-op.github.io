@@ -6,33 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Blog | qetr1ck-op">
-    <title>git pull versus git pull --rebase - Blog | qetr1ck-op</title>
+    <title>git pull VS git pull --rebase - Blog | qetr1ck-op</title>
     <meta name="author" content="Orest Prystayko">
     
     
         <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
     
     
-    <meta name="description" content="Short answergit pull = git fetch + git merge
-git pull --rebase = git fetch + git rebaseFor more detail info how git pull and git rabase differs continue reading.
-Long answer: git merge and git rebas">
+    <meta name="description">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="git pull versus git pull --rebase">
+<meta property="og:title" content="git pull VS git pull --rebase">
 <meta property="og:url" content="http://qetr1ck-op.github.io/2014/10/16/git-pull-versus-git-pull-rebase/index.html">
 <meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description" content="Short answergit pull = git fetch + git merge
-git pull --rebase = git fetch + git rebaseFor more detail info how git pull and git rabase differs continue reading.
-Long answer: git merge and git rebas">
+<meta property="og:description">
 <meta property="og:image" content="http://i.stack.imgur.com/lJRq7.png">
 <meta property="og:image" content="http://i.stack.imgur.com/pK7Zb.png">
 <meta property="og:image" content="http://i.stack.imgur.com/9Ul5w.png">
 <meta property="og:image" content="http://i.stack.imgur.com/TvXuJ.png">
-<meta property="og:updated_time" content="2016-01-31T21:47:12.352Z">
+<meta property="og:updated_time" content="2016-10-16T20:44:42.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git pull versus git pull --rebase">
-<meta name="twitter:description" content="Short answergit pull = git fetch + git merge
-git pull --rebase = git fetch + git rebaseFor more detail info how git pull and git rabase differs continue reading.
-Long answer: git merge and git rebas">
+<meta name="twitter:title" content="git pull VS git pull --rebase">
+<meta name="twitter:description">
 <meta name="twitter:image" content="http://i.stack.imgur.com/lJRq7.png">
 <meta name="twitter:creator" content="@https://twitter.com/oprystayko">
     
@@ -46,7 +40,7 @@ Long answer: git merge and git rebas">
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-zt64rpzgonl90x6pvjtibnquaykj0gt1cjfemxes346obii79yds6tu9yyss.min.css">
+    <link rel="stylesheet" href="/assets/css/style-7wogkojxptddmu9j7rnfepcopyzxvqlggl6wahgu3asfris9wednofoeicxu.min.css">
     <!--STYLES END-->
     
     
@@ -219,7 +213,7 @@ Long answer: git merge and git rebas">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            git pull versus git pull --rebase
+            git pull VS git pull --rebase
         </h1>
     
     <div class="post-meta">
@@ -235,11 +229,11 @@ Long answer: git merge and git rebas">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Short_answer"><span class="toc-text">Short answer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Long_answer_3A_git_merge_and_git_rebase"><span class="toc-text">Long answer: git merge and git rebase</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git_merge"><span class="toc-text">git merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_rebase"><span class="toc-text">git rebase</span></a></li></ol></li></ol>
+            <h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Short_answer"><span class="toc-text">Short answer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Long_answer_3A__u201Cgit_merge_u201D_and__u201Cgit_rebase_u201D"><span class="toc-text">Long answer: “git merge” and “git rebase”</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git_merge"><span class="toc-text">git merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_rebase"><span class="toc-text">git rebase</span></a></li></ol></li></ol>
+<a id="more"></a>
 <h1 id="Short_answer"><a href="#Short_answer" class="headerlink" title="Short answer"></a>Short answer</h1><p><code>git pull</code> = <code>git fetch</code> + <code>git merge</code></p>
 <p><code>git pull --rebase</code> = <code>git fetch</code> + <code>git rebase</code><br>For more detail info how <code>git pull</code> and <code>git rabase</code> differs continue reading.</p>
-<h1 id="Long_answer_3A_git_merge_and_git_rebase"><a href="#Long_answer_3A_git_merge_and_git_rebase" class="headerlink" title="Long answer: git merge and git rebase"></a>Long answer: <code>git merge</code> and <code>git rebase</code></h1><p>Suppose originally there were a 3 commits, <code>A</code>, <code>B</code>, <code>C</code>:</p>
+<h1 id="Long_answer_3A__u201Cgit_merge_u201D_and__u201Cgit_rebase_u201D"><a href="#Long_answer_3A__u201Cgit_merge_u201D_and__u201Cgit_rebase_u201D" class="headerlink" title="Long answer: “git merge” and “git rebase”"></a>Long answer: “git merge” and “git rebase”</h1><p>Suppose originally there were a 3 commits, <code>A</code>, <code>B</code>, <code>C</code>:</p>
 <p><img src="http://i.stack.imgur.com/lJRq7.png" alt=""></p>
 <p>Then developer Dan create commit <code>D</code>, and developer Ed created commit <code>E</code>:</p>
 <p><img src="http://i.stack.imgur.com/pK7Zb.png" alt=""></p>
@@ -470,7 +464,7 @@ Long answer: git merge and git rebas">
 <div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script-5tb3wzzqgfyhmijvbhbaorsao4xudh8wledlmpvmhtlkuxwc8qdk5klneukz.min.js"></script>
+<script src="/assets/js/script-ppchwyfgucduw3ojfh1i853ih960qxole5o4s9sa9frxvrvotx4v6idldx5r.min.js"></script>
 <!--SCRIPTS END-->
 
     
