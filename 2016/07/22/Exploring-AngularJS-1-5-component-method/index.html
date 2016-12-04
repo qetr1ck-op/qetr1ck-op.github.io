@@ -41,7 +41,7 @@ Using .component() will allow to wr">
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-7wogkojxptddmu9j7rnfepcopyzxvqlggl6wahgu3asfris9wednofoeicxu.min.css">
+    <link rel="stylesheet" href="/assets/css/style-8ivtqwvzxneiv2vhmowufzsrunfp6lztfcrvskeegwwzhpsxej6bklllqxp8.min.css">
     <!--STYLES END-->
     
     
@@ -52,20 +52,19 @@ Using .component() will allow to wr">
             <!-- Define author's picture -->
 
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
     </h1>
     
-        
-            <a  class="header-right-icon st-search-show-outputs"
-                href="#search">
-        
-        
-            <i class="fa fa-lg fa-search"></i>
-        
-        </a>
+        <div id="search-custom">
+            <div class="search-custom__form-group">
+                <i class="fa fa-search search-custom__search-button" aria-hidden="true"></i>
+                <input type="text" class="search-custom__form-control hidden" placeholder="Search">
+            </div>
+            <div class="search-custom__result"></div>
+        </div>
     
 </header>
 
@@ -74,7 +73,7 @@ Using .component() will allow to wr">
 
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -136,7 +135,7 @@ Using .component() will allow to wr">
         
             <li class="sidebar-button">
                 
-                    <a  class="sidebar-button-link st-search-show-outputs"
+                    <a  class="sidebar-button-link foo"
                          href="#search"
                         
                     >
@@ -203,7 +202,7 @@ Using .component() will allow to wr">
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
@@ -255,7 +254,7 @@ Using .component() will allow to wr">
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// before</span></span><br><span class="line"><span class="selector-tag">module</span></span><br><span class="line">  <span class="selector-class">.directive</span>(<span class="string">'counter'</span>, function counter() &#123;</span><br><span class="line">    <span class="selector-tag">return</span> &#123;</span><br><span class="line">      <span class="attribute">scope</span>: &#123;</span><br><span class="line">        <span class="attribute">count</span>: <span class="string">'='</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attribute">bindToController</span>: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// after</span></span><br><span class="line"><span class="selector-tag">module</span></span><br><span class="line">  <span class="selector-class">.component</span>(<span class="string">'counter'</span>, &#123;</span><br><span class="line">    <span class="attribute">binding</span>: &#123;</span><br><span class="line">      <span class="attribute">count</span>: <span class="string">'='</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <h1 id="Controller_and__u201CcontorllerAs_u201D_changes"><a href="#Controller_and__u201CcontorllerAs_u201D_changes" class="headerlink" title="Controller and “contorllerAs” changes"></a>Controller and “contorllerAs” changes</h1><p>Nothing has changed in the way we declare <code>controller</code>, however it’s now smarter and has a default <code>contorllerAs</code> value of <code>$ctrl</code>.</p>
 <p>Under the hood it looks like:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inside angular.js</span></span><br><span class="line">controllerAs: identifierForController(options.controller) || options.controllerAs || <span class="string">'$ctrl'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> CNTRL_REG = /^(\S+)(\s+<span class="keyword">as</span>\s+(\w+))?$/;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identifierForController</span><span class="params">(controller, ident)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (ident &amp;&amp; isString(ident)) <span class="keyword">return</span> ident;</span><br><span class="line">  <span class="keyword">if</span> (isString(controller)) &#123;</span><br><span class="line">    <span class="keyword">var</span> match = CNTRL_REG.exec(controller);</span><br><span class="line">    <span class="keyword">if</span> (match) <span class="keyword">return</span> match[<span class="number">3</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inside angular.js</span></span><br><span class="line">controllerAs: identifierForController(options.controller) || options.controllerAs || <span class="string">'$ctrl'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> CNTRL_REG = <span class="regexp">/^(\S+)(\s+as\s+(\w+))?$/</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identifierForController</span>(<span class="params">controller, ident</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (ident &amp;&amp; isString(ident)) <span class="keyword">return</span> ident;</span><br><span class="line">  <span class="keyword">if</span> (isString(controller)) &#123;</span><br><span class="line">    <span class="keyword">var</span> match = CNTRL_REG.exec(controller);</span><br><span class="line">    <span class="keyword">if</span> (match) <span class="keyword">return</span> match[<span class="number">3</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>This allows us to do the following inside <code>.component()</code>:</p>
 <figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  controller: <span class="symbol">'FooController</span> <span class="keyword">as</span> foo'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Based on the information we refactor our <code>Directive</code> to <code>Component</code> by dropping controllerAs property:</p>
@@ -370,7 +369,7 @@ Using .component() will allow to wr">
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -432,7 +431,7 @@ Using .component() will allow to wr">
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">
@@ -494,7 +493,7 @@ Using .component() will allow to wr">
 <div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script-ppchwyfgucduw3ojfh1i853ih960qxole5o4s9sa9frxvrvotx4v6idldx5r.min.js"></script>
+<script src="/assets/js/script-giaxk04lc049zihs0lghcp1elymrvwhqovt120wnd6lteggn6m4lwwybfgaa.min.js"></script>
 <!--SCRIPTS END-->
 
     
@@ -516,15 +515,6 @@ Using .component() will allow to wr">
         </script>
     
 
-
-    <script type="text/javascript">
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
-    </script>
 
 
 </html>

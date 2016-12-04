@@ -38,7 +38,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-7wogkojxptddmu9j7rnfepcopyzxvqlggl6wahgu3asfris9wednofoeicxu.min.css">
+    <link rel="stylesheet" href="/assets/css/style-8ivtqwvzxneiv2vhmowufzsrunfp6lztfcrvskeegwwzhpsxej6bklllqxp8.min.css">
     <!--STYLES END-->
     
     
@@ -49,20 +49,19 @@
             <!-- Define author's picture -->
 
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
     </h1>
     
-        
-            <a  class="header-right-icon st-search-show-outputs"
-                href="#search">
-        
-        
-            <i class="fa fa-lg fa-search"></i>
-        
-        </a>
+        <div id="search-custom">
+            <div class="search-custom__form-group">
+                <i class="fa fa-search search-custom__search-button" aria-hidden="true"></i>
+                <input type="text" class="search-custom__form-control hidden" placeholder="Search">
+            </div>
+            <div class="search-custom__result"></div>
+        </div>
     
 </header>
 
@@ -71,7 +70,7 @@
 
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -133,7 +132,7 @@
         
             <li class="sidebar-button">
                 
-                    <a  class="sidebar-button-link st-search-show-outputs"
+                    <a  class="sidebar-button-link foo"
                          href="#search"
                         
                     >
@@ -200,7 +199,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
@@ -257,7 +256,7 @@
 <p>In order to make it easier to set up the features we will use:</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> -D babel-preset-survivejs-kanban</span><br></pre></td></tr></table></figure>
 <p>Next we need to set up a .babelrc file to make this all work:</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .babelrc</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    <span class="string">"es2015"</span>,</span><br><span class="line">    <span class="string">"react"</span>,</span><br><span class="line">    <span class="string">"survivejs-kanban"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .babelrc</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    <span class="string">"es2015"</span>,</span><br><span class="line">    <span class="string">"react"</span>,</span><br><span class="line">    <span class="string">"survivejs-kanban"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Using_Babel_for_Webpack_Configuration"><a href="#Using_Babel_for_Webpack_Configuration" class="headerlink" title="Using Babel for Webpack Configuration"></a>Using Babel for Webpack Configuration</h2><p>Simply rename <code>webpack.config.js</code> to<code>webpack.config.babel.js</code> and Webpack will pick it up provided Babel has been set up in your project.</p>
 <p>For this to work, you will need to have <code>babel-register</code> installed to your project. </p>
 <h2 id="Alternative_Loader_Declarations"><a href="#Alternative_Loader_Declarations" class="headerlink" title="Alternative Loader Declarations"></a>Alternative Loader Declarations</h2><p>The first one shows how to pass parameters to a loader through a query string:</p>
@@ -378,7 +377,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -440,7 +439,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/07/Development-with-Webpack-and-React-p-2/">
@@ -502,7 +501,7 @@
 <div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script-ppchwyfgucduw3ojfh1i853ih960qxole5o4s9sa9frxvrvotx4v6idldx5r.min.js"></script>
+<script src="/assets/js/script-giaxk04lc049zihs0lghcp1elymrvwhqovt120wnd6lteggn6m4lwwybfgaa.min.js"></script>
 <!--SCRIPTS END-->
 
     
@@ -524,15 +523,6 @@
         </script>
     
 
-
-    <script type="text/javascript">
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
-    </script>
 
 
 </html>

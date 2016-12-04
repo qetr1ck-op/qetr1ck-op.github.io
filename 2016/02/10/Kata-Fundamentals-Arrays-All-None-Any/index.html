@@ -35,7 +35,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-7wogkojxptddmu9j7rnfepcopyzxvqlggl6wahgu3asfris9wednofoeicxu.min.css">
+    <link rel="stylesheet" href="/assets/css/style-8ivtqwvzxneiv2vhmowufzsrunfp6lztfcrvskeegwwzhpsxej6bklllqxp8.min.css">
     <!--STYLES END-->
     
     
@@ -46,20 +46,19 @@
             <!-- Define author's picture -->
 
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
     </h1>
     
-        
-            <a  class="header-right-icon st-search-show-outputs"
-                href="#search">
-        
-        
-            <i class="fa fa-lg fa-search"></i>
-        
-        </a>
+        <div id="search-custom">
+            <div class="search-custom__form-group">
+                <i class="fa fa-search search-custom__search-button" aria-hidden="true"></i>
+                <input type="text" class="search-custom__form-control hidden" placeholder="Search">
+            </div>
+            <div class="search-custom__result"></div>
+        </div>
     
 </header>
 
@@ -68,7 +67,7 @@
 
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -130,7 +129,7 @@
         
             <li class="sidebar-button">
                 
-                    <a  class="sidebar-button-link st-search-show-outputs"
+                    <a  class="sidebar-button-link foo"
                          href="#search"
                         
                     >
@@ -197,7 +196,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
@@ -249,7 +248,7 @@
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="name">-1</span>, <span class="number">2</span>, <span class="number">3</span>].any(<span class="name">isGreaterThanZero</span>) =&gt; true</span><br><span class="line">[<span class="name">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>].any(<span class="name">isGreaterThanZero</span>) =&gt; false</span><br></pre></td></tr></table></figure>
 <p>You do not need to worry about the data supplied, it will be an array at all times.</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">isGreaterThanZero</span> (num) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">num</span> &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title">isLessThanZero</span> (num) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">num</span> &lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Test.expect([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="keyword">all</span>(isGreaterThanZero), <span class="symbol">'All</span> are greater than zero');</span><br><span class="line">Test.expect(![-<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>].<span class="keyword">all</span>(isLessThanZero), <span class="symbol">'All</span> <span class="keyword">is</span> less than zero');</span><br><span class="line"></span><br><span class="line">Test.expect(![<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].none(isGreaterThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> greater than zero');</span><br><span class="line">Test.expect([<span class="number">3</span>, <span class="number">0</span>, <span class="number">2</span>].none(isLessThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> less than zero');</span><br><span class="line"></span><br><span class="line">Test.expect([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].any(isGreaterThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> greater than zero');</span><br><span class="line">Test.expect([-<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>].any(isLessThanZero), <span class="symbol">'None</span> <span class="keyword">is</span> less than zero');</span><br></pre></td></tr></table></figure>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Array</span>.prototype.<span class="keyword">all</span> = <span class="keyword">function</span> <span class="title"></span>(p) &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="type">this.filter(p).length</span> === this.length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Array</span>.prototype.none = <span class="keyword">function</span> <span class="title"></span>(p) &#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="type">this.filter(p).length</span> === <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Array</span>.prototype.any = <span class="keyword">function</span> <span class="title"></span>(p) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">this.filter(p).length</span> &gt; <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.all = <span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.filter(p).length === <span class="keyword">this</span>.length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.none = <span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.filter(p).length === <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.any = <span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.filter(p).length &gt; <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
             
         </div>
     </div>
@@ -342,7 +341,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -404,7 +403,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qetr1ck-op.github.io/2016/02/10/Kata-Fundamentals-Arrays-All-None-Any/">
@@ -466,7 +465,7 @@
 <div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script-ppchwyfgucduw3ojfh1i853ih960qxole5o4s9sa9frxvrvotx4v6idldx5r.min.js"></script>
+<script src="/assets/js/script-giaxk04lc049zihs0lghcp1elymrvwhqovt120wnd6lteggn6m4lwwybfgaa.min.js"></script>
 <!--SCRIPTS END-->
 
     
@@ -488,15 +487,6 @@
         </script>
     
 
-
-    <script type="text/javascript">
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','yjp7PCgxKmcfHTQ63jfa','2.0.0');
-    </script>
 
 
 </html>
