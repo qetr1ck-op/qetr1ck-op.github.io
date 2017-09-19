@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/</link>
+    <description>Recent content on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React app with Express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 2</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</link>
+      <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</guid>
+      <description>&lt;p&gt;Part two of original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is Load Balancing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</link>
+      <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</guid>
+      <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 1</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</link>
+      <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</guid>
+      <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Asynchronous Javascript with async/await</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</link>
+      <pubDate>Tue, 09 May 2017 21:57:55 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</guid>
+      <description>&lt;p&gt;ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Advanced NodeJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</link>
+      <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</guid>
+      <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mastering Flux and Redux</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</link>
+      <pubDate>Tue, 02 May 2017 19:38:57 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</guid>
+      <description>At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&amp;rsquo;ll learn the skills and technologies necessary to manage your application&amp;rsquo;s data model in extremely efficient and standards-compliant ways.
+Topics  First, you&amp;rsquo;ll learn all about the popular data-modeling libraries Flux and Redux; their differences and similarities, how they relate to one another, and which is appropriate for what kind of projects.</description>
+    </item>
+    
+    <item>
+      <title>Kata: Salesman&#39;s Travel</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</link>
+      <pubDate>Sat, 29 Apr 2017 23:56:58 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</guid>
+      <description>&lt;p&gt;A traveling salesman has to visit clients. He got each client&amp;rsquo;s address e.g. &amp;ldquo;432 Main Long Road St. Louisville OH 43071&amp;rdquo; as a list.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>npm scrips as your build tool</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</link>
+      <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</guid>
+      <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
+
+&lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prettier as a formating tool for JS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-js/</link>
+      <pubDate>Wed, 26 Apr 2017 22:23:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-js/</guid>
+      <description>Prettier is an opinionated JavaScript formatter with advanced support for language features from ES2017, JSX, and Flow. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.
+This goes way beyond ESLint and other projects built on it. Unlike ESLint, there aren&amp;rsquo;t a million configuration options and rules. But more importantly: everything is fixable. This works because Prettier never &amp;ldquo;checks&amp;rdquo; anything; it takes JavaScript as input and delivers the formatted JavaScript as output.</description>
+    </item>
+    
+    <item>
+      <title>Essential Programming Books</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</link>
+      <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</guid>
+      <description>&lt;p&gt;The list of 129 books deemed fundamental to the art of programming and includes books for various languages.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Favicon generator</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</link>
+      <pubDate>Sun, 09 Apr 2017 20:23:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</guid>
+      <description>&lt;p&gt;With so many platforms and icons, it&amp;rsquo;s hard to know exactly what you should do. What are the dimensions of favicon.ico? How many Touch icons do I need? RealFaviconGenerator did the research and testing for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Improve web performance using Google PageSpeed</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/improve-web-performance-using-google-pagespeed/</link>
+      <pubDate>Sun, 02 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/improve-web-performance-using-google-pagespeed/</guid>
+      <description>&lt;p&gt;This course covers how to analyze your web pages to make sure they are following known performance best practices.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building a JavaScript development environment</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/building-a-javascript-development-environment/</link>
+      <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/building-a-javascript-development-environment/</guid>
+      <description>&lt;p&gt;Starting a new JavaScript project from scratch is overwhelming. This course provides a playbook outlining the key decisions you need to make. Build a robust development environment that handles bundling, linting, transpiling, testing, and much more.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PatternCraft</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</link>
+      <pubDate>Sun, 05 Mar 2017 01:35:33 +0200</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</guid>
+      <description>&lt;p&gt;An awesome explanation of GOF design patterns. The only way to learn pattern is to know what problem it solves.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RESTful Web Services with Node.js and Express</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/12/restful-web-services-with-node-js-and-express/</link>
+      <pubDate>Sun, 18 Dec 2016 12:01:04 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/12/restful-web-services-with-node-js-and-express/</guid>
+      <description>&lt;p&gt;Node.js is a simple and powerful tool for backend development. When combined with express, you can create lightweight, fast, scalable APIs quickly and simply.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git reset, checkout and revert</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/11/reset-checkout-and-revert/</link>
+      <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/11/reset-checkout-and-revert/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;git reset&lt;/code&gt;, &lt;code&gt;git checkout&lt;/code&gt; and &lt;code&gt;git revert&lt;/code&gt; let you to undo changes in repository, and the first two can be use to manipulate either commits or individual files.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Book: &#39;Node.js design pattern&#39;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</link>
+      <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</guid>
+      <description>&lt;p&gt;&amp;ldquo;How could I organize my code?&amp;rdquo;, &amp;ldquo;What is the best way to design this?&amp;rdquo;, &amp;ldquo;How can I make my application more modular?&amp;rdquo;, &amp;ldquo;How do I handle a set of asynchronous call effectively?&amp;rdquo;, &amp;ldquo;How can I make sure that my application will not collapse while it grows?&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;If you have such questions without answers, that book is definitely for you!&lt;/p&gt;
+
+&lt;p&gt;The aim of this book is to guide you through this emerging world of patterns, techniques and practices, showing proven solution to the common problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gulp screencast overview</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/gulp-screencast-overview/</link>
+      <pubDate>Wed, 28 Sep 2016 20:43:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/gulp-screencast-overview/</guid>
+      <description>&lt;p&gt;Depth table of contents of one of the most popular screencast about utility for managing tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Preflighted HTTP OPTIONS requests</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/preflighted-http-options-requests/</link>
+      <pubDate>Sun, 18 Sep 2016 21:02:27 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/preflighted-http-options-requests/</guid>
+      <description>&lt;p&gt;What is not-so-simple HTTP request?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NG6 starter for new Angular projects</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/ng6-starter-for-new-angular-projects/</link>
+      <pubDate>Sun, 18 Sep 2016 19:03:17 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/ng6-starter-for-new-angular-projects/</guid>
+      <description>&lt;p&gt;The de-facto starter repo for building scalable apps with AngularJS ^1.5, ES6, Gulp and Webpack&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Start new project on Angular ^1.5</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/start-new-project-on-angular-1-5/</link>
+      <pubDate>Sun, 18 Sep 2016 18:42:49 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/start-new-project-on-angular-1-5/</guid>
+      <description>&lt;p&gt;Great series of recommendation how/why to start new &amp;ldquo;NG2 ready&amp;rdquo; Angular 1.5 app with architecture of component-oriented approach.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lifecycle hooks in AngularJS 1.5</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/lifecycle-hooks-in-angularjs-1-5/</link>
+      <pubDate>Sun, 04 Sep 2016 10:48:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/lifecycle-hooks-in-angularjs-1-5/</guid>
+      <description>&lt;p&gt;Lifecycle hooks are simple functions that are called at specific points of a component&amp;rsquo;s life in Angular apps. They landed in AngularJS 1.5 and are used with &lt;code&gt;.component()&lt;/code&gt; method and they were inspired of Angular 2 hooks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Moving from &#34;ngModel.$parsers&#34;/&#34;ng-if&#34; to &#34;ngModel.$validators&#34;/&#34;ngMessages&#34;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/moving-from-ngmodel-parsers-ng-if-to-ngmodel-validators-ngmessages/</link>
+      <pubDate>Sat, 03 Sep 2016 22:24:46 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/moving-from-ngmodel-parsers-ng-if-to-ngmodel-validators-ngmessages/</guid>
+      <description>&lt;p&gt;Implementation custom Model validation is typically done by extending the built-in &lt;code&gt;$error&lt;/code&gt; object to &lt;code&gt;ngForm&lt;/code&gt; models.&lt;/p&gt;
+
+&lt;p&gt;Prior to AngularJS 1.3 custom validation was done by injecting a function into the &lt;code&gt;ngModel.$parsers&lt;/code&gt; array pipeline and manually setting validation states using &lt;code&gt;$setValidity(&#39;visa&#39;, true)&lt;/code&gt; if the Model value matched a Visa credit card expression format, for example.&lt;/p&gt;
+
+&lt;p&gt;AngularJS 1.3+ has the &lt;code&gt;$validators&lt;/code&gt; pipeline object, which requires no manual setting of validation states.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s take a look of old school way then we can shift to &lt;code&gt;ngModel.$validators&lt;/code&gt; technique.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kangax ES2015 quiz, expained</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/kangax-es6-quiz-expained/</link>
+      <pubDate>Tue, 26 Jul 2016 23:01:02 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/kangax-es6-quiz-expained/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://twitter.com/kangax&#34;&gt;@kangax&lt;/a&gt;&amp;rsquo;ve created a &lt;a href=&#34;http://perfectionkills.com/javascript-quiz-es6/&#34;&gt;quiz&lt;/a&gt;, it&amp;rsquo;s very interesting, the solution explains a tricky moment of spec.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Exploring AngularJS 1.5 .component() method</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/exploring-angularjs-1-5-component-method/</link>
+      <pubDate>Fri, 22 Jul 2016 22:20:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/exploring-angularjs-1-5-component-method/</guid>
+      <description>&lt;p&gt;AngularJS 1.5 introduce &lt;code&gt;.component()&lt;/code&gt; helper method which is much simpler than the &lt;code&gt;.directive()&lt;/code&gt; definitions and advocates best practices and common default behavior.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;.component()&lt;/code&gt; will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s compare the difference in syntax and the possibility of new abstraction.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>5 principles that will make a more SOLID Javascript Engineer</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</link>
+      <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</guid>
+      <description>&lt;p&gt;Being a SOLID developer in JS isn&amp;rsquo;t so as straight forward as in other languages. Some developers consider functional approach. Others chose OOP style. Some stand in both line. And other think that having class is wrong and redundant and prefer factories. But still, SOLID principles are the basic pillars of object oriented programming.&lt;/p&gt;
+
+&lt;p&gt;But what are they?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to copy object in Javascript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/how-to-copy-object-in-javascript/</link>
+      <pubDate>Fri, 08 Jul 2016 21:55:05 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/how-to-copy-object-in-javascript/</guid>
+      <description>&lt;p&gt;There are many ways to copy object in Javascript but most of the time such operation doesn&amp;rsquo;t do what we expected.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Are all properties copied by reference?&lt;/li&gt;
+&lt;li&gt;Are sub-properties merged or replaced?&lt;/li&gt;
+&lt;li&gt;Are accessor, like getter and setters, preserved?&lt;/li&gt;
+&lt;li&gt;And what about Sumbols and other non-enumerable properties?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/kata-string-format-a-string-of-names-like-bart-lisa-maggie/</link>
+      <pubDate>Fri, 19 Feb 2016 00:05:14 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/kata-string-format-a-string-of-names-like-bart-lisa-maggie/</guid>
+      <description>&lt;p&gt;Given: an array containing hashes of names&lt;/p&gt;
+
+&lt;p&gt;Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata: Filter through name/email</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/kata-array-regexp-filter-through-name-email/</link>
+      <pubDate>Mon, 15 Feb 2016 22:34:45 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/kata-array-regexp-filter-through-name-email/</guid>
+      <description>&lt;p&gt;He has troubles with users ending or starting in a &lt;code&gt;.&lt;/code&gt;, and his user-array is a flat array of user-email-pairs, like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Misconceptions About Inheritance in JS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/misconceptions-about-inheritance-in-javascript/</link>
+      <pubDate>Sun, 14 Feb 2016 22:54:55 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/misconceptions-about-inheritance-in-javascript/</guid>
+      <description>&lt;p&gt;What’s the Difference Between Class &amp;amp; Prototype Inheritance?&lt;/p&gt;
+
+&lt;p&gt;This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to learning the differences, and how to apply the knowledge to write better code.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata: Function cache</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/kata-functions-function-cache/</link>
+      <pubDate>Sun, 14 Feb 2016 21:17:45 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/kata-functions-function-cache/</guid>
+      <description>&lt;p&gt;If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata: All, None &amp; Any</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/kata-fundamentals-arrays-all-none-any/</link>
+      <pubDate>Wed, 10 Feb 2016 20:58:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/kata-fundamentals-arrays-all-none-any/</guid>
+      <description>&lt;p&gt;As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Development with Webpack</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</link>
+      <pubDate>Sun, 07 Feb 2016 12:11:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</guid>
+      <description>&lt;p&gt;Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&amp;rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding components approach and thinking in React</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</link>
+      <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</guid>
+      <description>&lt;p&gt;The parts of a web user interface building blocks for both simple websites and modern front-end applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>First reaction about React.js</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/first-look-at-react-js/</link>
+      <pubDate>Thu, 04 Feb 2016 17:20:14 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/first-look-at-react-js/</guid>
+      <description>&lt;p&gt;Building a dead simple application with following component structure:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Practical design patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</link>
+      <pubDate>Wed, 03 Feb 2016 12:43:26 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</guid>
+      <description>&lt;p&gt;One of the most important aspects of writing maintainable code is being able to notice the repeating themes in that code and optimize them. This is an area where knowledge of design patterns can prove invaluable.&lt;/p&gt;
+
+&lt;p&gt;I take a look at a number of popular JavaScript design patterns and explore why certain patterns may be suitable for your projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>сусle.js fundamentals</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/cycle-js-fundamentals/</link>
+      <pubDate>Tue, 02 Feb 2016 16:32:47 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/cycle-js-fundamentals/</guid>
+      <description>&lt;p&gt;Cycle.js is a framework where your app is described as a simple function taking an event stream as input and outputting an event stream.&lt;/p&gt;
+
+&lt;p&gt;Cycle.js builds on RxJS and is as a reactive and functional JavaScript framework. What does that mean?
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The difference between throttling and debouncing</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/01/the-difference-between-throttling-and-debouncing/</link>
+      <pubDate>Mon, 11 Jan 2016 13:14:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/01/the-difference-between-throttling-and-debouncing/</guid>
+      <description>&lt;p&gt;One of the biggest mistakes I see when looking to optimize existing code is the absence of the debounce/throttle function. Both of them are ways to limit the amount of JavaScript you are executing based on DOM events for performance reasons. But they are, you guessed it, different.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata: Are they square?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/01/kata-arrays-are-they-square/</link>
+      <pubDate>Sat, 09 Jan 2016 23:54:01 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/01/kata-arrays-are-they-square/</guid>
+      <description>&lt;p&gt;Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Browsers Layout engines</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/12/browsers-layout-engines/</link>
+      <pubDate>Wed, 02 Dec 2015 21:01:39 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/12/browsers-layout-engines/</guid>
+      <description>&lt;p&gt;The list of popular layout engines.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Units of measurement: &#34;px&#34;, &#34;em&#34;, &#34;rem&#34; and other</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/11/units-of-measurement-px-em-rem-and-other/</link>
+      <pubDate>Wed, 11 Nov 2015 20:17:58 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/11/units-of-measurement-px-em-rem-and-other/</guid>
+      <description>&lt;p&gt;I will try not only to write about variety of units, but also build a full picture - what and when better to choose.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TOP 10 mistakes when you develop on AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</link>
+      <pubDate>Wed, 23 Sep 2015 18:40:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</guid>
+      <description>&lt;p&gt;The top 10 mistakes when beginners start to develop on AngularJS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata: Reverse words</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/09/kata-string-reverse-words/</link>
+      <pubDate>Sun, 13 Sep 2015 11:50:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/09/kata-string-reverse-words/</guid>
+      <description>&lt;p&gt;Write a &lt;code&gt;reverseWords&lt;/code&gt; function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>call &amp; apply VS bind, the simplest explanation</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/08/call-apply-vs-bind-the-simplest-explanation/</link>
+      <pubDate>Thu, 06 Aug 2015 12:03:54 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/08/call-apply-vs-bind-the-simplest-explanation/</guid>
+      <description>&lt;p&gt;Every one know that apply() and call() are similar function, which set &lt;code&gt;this&lt;/code&gt; (change context of function).&lt;/p&gt;
+
+&lt;p&gt;But when should be used the bind() method?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Huston, do we have a problem with promises?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/02/huston-do-we-have-a-problem-with-promises/</link>
+      <pubDate>Mon, 02 Feb 2015 20:13:01 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/02/huston-do-we-have-a-problem-with-promises/</guid>
+      <description>&lt;p&gt;Many of us are using promises without really understanding them.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Full-screen scrolling page effects with fullPage.js</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/full-screen-scrolling-page-effects-with-fullpage-js/</link>
+      <pubDate>Sun, 21 Dec 2014 11:34:48 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/full-screen-scrolling-page-effects-with-fullpage-js/</guid>
+      <description>&lt;p&gt;A simple and easy to use jQuery plugin to create full-screen effects.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Organizing an application using AMD with require.js</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/organizing-an-application-using-amd-with-require-js/</link>
+      <pubDate>Sat, 20 Dec 2014 12:39:53 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/organizing-an-application-using-amd-with-require-js/</guid>
+      <description>&lt;p&gt;RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Firebase and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/firebase-and-angularjs/</link>
+      <pubDate>Wed, 10 Dec 2014 23:45:45 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/firebase-and-angularjs/</guid>
+      <description>&lt;p&gt;AngularFire is the officially supported AngularJS binding for Firebase. The combination of Angular and Firebase provides a three-way data binding between your HTML, your, JavaScript, and the Firebase database.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Awesome terminal emulator for Windows</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/awesome-terminal-emulator-for-windows/</link>
+      <pubDate>Tue, 02 Dec 2014 21:15:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/awesome-terminal-emulator-for-windows/</guid>
+      <description>&lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout. Looking sexy from the start.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git pull VS git pull --rebase</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-versus-git-pull-rebase/</link>
+      <pubDate>Mon, 24 Nov 2014 23:46:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-versus-git-pull-rebase/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git pull vs git fetch</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-vs-git-fetch/</link>
+      <pubDate>Mon, 24 Nov 2014 23:46:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-vs-git-fetch/</guid>
+      <description>&lt;p&gt;What is the differences between &amp;ldquo;git pull&amp;rdquo; and &amp;ldquo;git fetch&amp;rdquo;?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JSONP</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/10/jsonp/</link>
+      <pubDate>Wed, 29 Oct 2014 21:44:50 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/10/jsonp/</guid>
+      <description>&lt;p&gt;JSONP is really simple trick to overcome XMLHttpRequest same origin domain policy - you can&amp;rsquo;t send AJAX (XMLHttpRequest) request (not a simple) to different domain.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OOP in prototype style</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</link>
+      <pubDate>Mon, 15 Sep 2014 22:40:38 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</guid>
+      <description>&lt;p&gt;The main point is that one object can be &lt;code&gt;prototype&lt;/code&gt; of another object. That means if property isn&amp;rsquo;t found in the object - than it takes from &lt;code&gt;prototype&lt;/code&gt; object. In JavaScript this implementation is at the language level.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Centering in CSS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/centering-in-css/</link>
+      <pubDate>Mon, 08 Sep 2014 22:54:09 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/centering-in-css/</guid>
+      <description>&lt;p&gt;A fast guide to help centering everything with CSS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Medium-Style Page Transition</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/medium-style-page-transition/</link>
+      <pubDate>Mon, 01 Sep 2014 22:50:51 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/medium-style-page-transition/</guid>
+      <description>&lt;p&gt;An article on how to achieve &lt;a href=&#34;https://medium.com/&#34;&gt;Medium’s&lt;/a&gt; next page transition effect—an effect that can be seen by clicking anywhere on the “Read Next” footer at the bottom of the page. This effect is characterized by the lower article easing upward as the current article fades up and out.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Article Intro Effects Examples</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/article-intro-effects-examples/</link>
+      <pubDate>Tue, 19 Aug 2014 12:46:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/article-intro-effects-examples/</guid>
+      <description>&lt;p&gt;Most of the effects we tried are highly experimental; animating large images can become a bit sluggish, also because a couple of transitions happening at the same time. The effect gets triggered when &lt;code&gt;scrolling begins&lt;/code&gt;  or when the &lt;code&gt;button is clicked&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Canvas-off icon navigation with an animated border effect</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/canvas-off-icon-navigation-with-an-animated-border-effect/</link>
+      <pubDate>Mon, 11 Aug 2014 21:11:48 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/canvas-off-icon-navigation-with-an-animated-border-effect/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Maybe, you don&#39;t need jQuery?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/maybe-you-don-t-need-jquery/</link>
+      <pubDate>Sun, 10 Aug 2014 18:08:20 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/maybe-you-don-t-need-jquery/</guid>
+      <description>&lt;p&gt;Do you really need to use jQuery methods instead of vanilla Javascript?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Performance: JavaScript loops</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/performance-javascript-loops/</link>
+      <pubDate>Wed, 06 Aug 2014 20:38:48 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/performance-javascript-loops/</guid>
+      <description>&lt;p&gt;Is it faster to use the native forEach or just loop with for?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS Transforms</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/css-transforms/</link>
+      <pubDate>Sun, 03 Aug 2014 22:13:20 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/css-transforms/</guid>
+      <description>&lt;p&gt;So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one state to another.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 3: Components</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/bootstrap3-components/</link>
+      <pubDate>Sat, 02 Aug 2014 16:59:51 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/bootstrap3-components/</guid>
+      <description>&lt;p&gt;Set of standard components from popular library.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reading files in JavaScript with File API</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/reading-files-in-javascript-with-file-api/</link>
+      <pubDate>Sat, 02 Aug 2014 15:39:09 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/reading-files-in-javascript-with-file-api/</guid>
+      <description>&lt;p&gt;Reading files in Javascript with File API&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NodeList vs Array in Javascript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/nodelist-vs-array-in-javascript/</link>
+      <pubDate>Wed, 30 Jul 2014 22:39:40 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/nodelist-vs-array-in-javascript/</guid>
+      <description>&lt;p&gt;Essentially, a &lt;code&gt;NodeList&lt;/code&gt; is what you get when you call any method such as &lt;code&gt;elem.getElemetsByTagName()&lt;/code&gt;, &lt;code&gt;elem.querySelectorAll()&lt;/code&gt; and so on.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</link>
+      <pubDate>Tue, 29 Jul 2014 22:01:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</guid>
+      <description>&lt;p&gt;Funny to hear when developer says that JS does not have types =) Let&amp;rsquo;s see how to distinguish them right.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Performance: JavaScript adding text to a node</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/performance-javascript-adding-text-to-a-node/</link>
+      <pubDate>Fri, 25 Jul 2014 23:10:14 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/performance-javascript-adding-text-to-a-node/</guid>
+      <description>&lt;p&gt;What is the most reasonable approach?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Got 15 minutes and want to learn Git?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/got-15-minutes-and-want-to-learn-git/</link>
+      <pubDate>Sat, 19 Jul 2014 09:56:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/got-15-minutes-and-want-to-learn-git/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 3: CSS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/bootstrap3-css/</link>
+      <pubDate>Thu, 17 Jul 2014 20:10:04 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/bootstrap3-css/</guid>
+      <description>&lt;p&gt;A detailed look for implementation of UI popular library.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Deferred and promise in jQuery</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/deferred-and-promise-in-jquery/</link>
+      <pubDate>Mon, 14 Jul 2014 21:17:26 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/deferred-and-promise-in-jquery/</guid>
+      <description>&lt;p&gt;How handle async code with jQuery via promises and creating own promise via deffered.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Promises</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/javascript-promises/</link>
+      <pubDate>Sun, 13 Jul 2014 13:43:08 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/javascript-promises/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Class manipulation in Javascript, jQuery and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</link>
+      <pubDate>Wed, 02 Jul 2014 23:24:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</guid>
+      <description>&lt;p&gt;In this article, I would like to create short reference for how &lt;code&gt;add/remove/toogle&lt;/code&gt; class in pure Javascript and with framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CLI in Windows, useful commands</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/06/cli-in-windows-useful-commands/</link>
+      <pubDate>Sat, 14 Jun 2014 10:22:15 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/06/cli-in-windows-useful-commands/</guid>
+      <description>&lt;p&gt;The command line lets you communicate directly with your computer and instruct it to perform various tasks. For this you have to use specific commands&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Difference of HTTP and HTTPS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/05/difference-of-http-and-https/</link>
+      <pubDate>Sat, 31 May 2014 06:00:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/05/difference-of-http-and-https/</guid>
+      <description>&lt;p&gt;Hyper Text Transfer Protocol Secure (HTTPS) is a &lt;code&gt;secure version&lt;/code&gt; of the Hyper Text Transfer Protocol (HTTP). HTTPS allows secure e-commerce transactions, such as on-line banking.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Function Invocation Patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</link>
+      <pubDate>Thu, 29 May 2014 05:47:57 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</guid>
+      <description>&lt;p&gt;Describe different approaches to define and call functions&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fluid three column layout with positioning, floats, tables and flexbox</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/04/fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</link>
+      <pubDate>Fri, 18 Apr 2014 11:09:46 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/04/fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</guid>
+      <description>&lt;p&gt;In Web world, fluid layout with 3 column is the most flexible and customizable layout. Mixing percentages and pixels for specify width of column allows create different layouts, for different task.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Original effects with CSS transition</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/04/original-effects-with-css3-transition/</link>
+      <pubDate>Tue, 01 Apr 2014 14:48:05 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/04/original-effects-with-css3-transition/</guid>
+      <description>&lt;p&gt;The power of CSS3 is enormous and in this post I create appearing effect of &amp;ldquo;Sign In Form&amp;rdquo; using differn style in each example.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fluid two-column layout with float and flexbox</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/03/fluid-two-column-layout-with-float-and-flexbox/</link>
+      <pubDate>Mon, 31 Mar 2014 20:49:09 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/03/fluid-two-column-layout-with-float-and-flexbox/</guid>
+      <description>&lt;p&gt;Two-column layout allows effective use browser space. Layout doesn&amp;rsquo;t require hard work and it can used with combining column in pixels or percentage.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Form pop-up with inputs navigation</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/03/form-pop-up-with-inputs-navigation/</link>
+      <pubDate>Sun, 30 Mar 2014 21:41:30 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/03/form-pop-up-with-inputs-navigation/</guid>
+      <description>&lt;p&gt;Modal pop-up confirm with &amp;ldquo;correct&amp;rdquo; navigation through inputs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git and GitHub, Git versus Subversion</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/03/git-vs-github/</link>
+      <pubDate>Sat, 29 Mar 2014 17:24:17 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/03/git-vs-github/</guid>
+      <description>&lt;p&gt;How GitHub is connected to Git and basic difference Git and Svn.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Data URIs</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/02/data-uris/</link>
+      <pubDate>Tue, 11 Feb 2014 12:48:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/02/data-uris/</guid>
+      <description>&lt;p&gt;Did you know that you don&amp;rsquo;t have to link to an external image file when using an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; element in HTML, or declaring a &lt;code&gt;background-image&lt;/code&gt; in CSS? You can embed the image data directly into the document with data URIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Web Services, WSDL, SOAP envelope with JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/02/web-services-wsdl-soap-envelope-with-javascript/</link>
+      <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/02/web-services-wsdl-soap-envelope-with-javascript/</guid>
+      <description>&lt;p&gt;The main concept of Web Services is to exchange data between two devices using standardized protocols and messages.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is event bubbling and capturing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/02/what-is-event-bubbling-and-capturing/</link>
+      <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/02/what-is-event-bubbling-and-capturing/</guid>
+      <description>&lt;p&gt;Event bubbling and capturing are two ways of event propagation in the HTML DOM API.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prevent CSS Caching in Wordpress</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/01/prevent-css-caching/</link>
+      <pubDate>Thu, 02 Jan 2014 19:50:42 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/01/prevent-css-caching/</guid>
+      <description>&lt;p&gt;If you update your WordPress theme’s style.css, you may have noticed that you have to “force-reload” your site in your browser to see the changes. This is because your browser keeps a copy of the CSS cached on your hard drive.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://qetr1ck-op.github.io/blog/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Orest Prystayko</title>
+      <link>https://qetr1ck-op.github.io/blog/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/about/</guid>
+      <description>Front End Developer @ Eleks
+I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I believe that every time when I achieve new knowledge, I typically observe how increase my quality of live.
+ linkedin github twitter facebook  </description>
+    </item>
+    
+  </channel>
+</rss>

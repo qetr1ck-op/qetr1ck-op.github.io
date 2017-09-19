@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>How to copy object in Javascript</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>How to copy object in Javascript</h1>
+<h4>Published 2016-07-08</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#shallow-vs-deep-copy">Shallow VS Deep copy</a></li>
+<li><a href="#object-assign-target-sourcen">Object.assign(target, [, sourceN])</a></li>
+<li><a href="#object-assign-side-effects">Object.assign side effects</a></li>
+<li><a href="#use-one-of-the-simple-npm-package-or-lodash-underscore-rambda">Use one of the simple npm package or lodash/underscore/rambda</a></li>
+<li><a href="#json-parse-json-stringify-object">JSON.parse(JSON.stringify(object))</a></li>
+</ul>
+</nav>
+    <p>There are many ways to copy object in Javascript but most of the time such operation doesn&rsquo;t do what we expected.</p>
+
+<ul>
+<li>Are all properties copied by reference?</li>
+<li>Are sub-properties merged or replaced?</li>
+<li>Are accessor, like getter and setters, preserved?</li>
+<li>And what about Sumbols and other non-enumerable properties?</li>
+</ul>
+
+<p></p>
+
+<h1 id="shallow-vs-deep-copy">Shallow VS Deep copy</h1>
+
+<p>When we copied reference nor a value, we are doing <strong>shallow</strong> copy.</p>
+
+<p>Whenever we do an operation like <code>a.prop = b.prop</code> we are performing a shallow copy, meaning that modifying the object property <code>a.prop</code> it will reflect changes in <code>b.prop</code> too.</p>
+
+<pre><code class="language-js">const a = { 
+    obj: {
+        test: 'Foo'
+    }
+};
+
+const b = {};
+b.obj = a.obj;
+
+//if we modify it
+b.obj.test = 'Bar';
+
+//it will be reflected in a 
+a.obj.test;
+</code></pre>
+
+<p>In order to perform <strong>deep</strong> copy of <code>a.prop</code>:</p>
+
+<pre><code class="language-js">const a = { 
+    obj: {
+        test: 'Foo'
+    }
+};
+
+const b = {};
+b.obj = {};
+
+//not reflected in a
+b.obj.test = 'Bar';
+a.obj.test;
+</code></pre>
+
+<h1 id="object-assign-target-sourcen">Object.assign(target, [, sourceN])</h1>
+
+<p><code>Object.assign</code> performs a <strong>shallow</strong> copy it merges enumerable properties with priority right to left:</p>
+
+<pre><code class="language-js">const a = {
+    obj: {
+        foo: true
+    },
+    bar: 2
+};
+const b = {
+    obj: {
+        foz: true
+    },
+    baz: 3
+};
+//shallow merge
+const c = Object.assign({}, a, b);
+
+//which 'obj' property was copied?
+//the priority is right to left
+c.obj === b.obj; //true
+c.obj === a.obj; //false
+
+c.bar; // 2
+c.baz; // 3
+
+//change will reflect by reference
+c.obj.foz = false;
+b.obj.foz; // false
+</code></pre>
+
+<h1 id="object-assign-side-effects">Object.assign side effects</h1>
+
+<p>There are at least two main subtle problems most developers are not aware of:</p>
+
+<ul>
+<li>all accessors, those properties with <code>getter</code> or <code>setter</code>, will be copied as a simple data, invoking the getter
+during the copy</li>
+<li>all <code>Symbol</code> keys will be copied too, making <code>Symbol</code> less private or protected than we thing</li>
+</ul>
+
+<pre><code class="language-js">const uid = Symbol('uid');
+const special = {
+    get next() {
+        return ++this.counter;
+    },
+    counter: 0
+};
+special[uid] = Math.random;
+
+//what could be possible wrong here?!
+const notSpecial = Object.assign({}, special);
+
+// if 'next' is declared (and copied) before 'counter'
+notSpecial.counter; // 1
+notSpecial.next; // 1 in any case
+
+notSpecial[uid] === special[uid]; // same as special[uid]
+</code></pre>
+
+<blockquote>
+<p>&ldquo;If you want a advice -  use <code>Object.assign</code> for simple shallow copy or merge with data that you are sure
+doesn&rsquo;t contain accessors.&rdquo;</p>
+</blockquote>
+
+<h1 id="use-one-of-the-simple-npm-package-or-lodash-underscore-rambda">Use one of the simple npm package or lodash/underscore/rambda</h1>
+
+<p><a href="https://www.npmjs.com/package/clone">clone</a> is one a popular package for <strong>deep</strong> copying:</p>
+
+<pre><code class="language-js">const clone = require('clone');
+ 
+let a, b;
+ 
+a = { foo: { bar: 'baz' } };  // initial value of a 
+ 
+b = clone(a);                 // clone a -&gt; b 
+a.foo.bar = 'foo';            // changes not modify 'b'
+</code></pre>
+
+<p>Achieve the same result with <a href="https://lodash.com/docs#cloneDeep">_.deepCopy</a>:</p>
+
+<pre><code class="language-js">const objects = [{ 'a': 1 }, { 'b': 2 }];
+
+const deep = _.cloneDeep(objects);
+console.log(deep[0] === objects[0]);
+// → false
+</code></pre>
+
+<h1 id="json-parse-json-stringify-object">JSON.parse(JSON.stringify(object))</h1>
+
+<p>If you don&rsquo;t have function within your object, a very simple:</p>
+
+<pre><code class="language-js">const cloneOfA = JSON.parse(JSON.stringify(a));
+</code></pre>
+
+<p>This works with for all kinds of objects contain: <code>object</code>, <code>array</code>, <code>string</code>, <code>boolean</code>, <code>numbers</code>;</p>
+
+<p>Save my day:</p>
+
+<ul>
+<li><a href="https://www.webreflection.co.uk/blog/2015/10/06/how-to-copy-objects-in-javascript#shallow-vs-deep-copy">www.webreflection.co.uk</a></li>
+<li><a href="http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object">stackoverflow.com</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

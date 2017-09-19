@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Deferred and promise in jQuery</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Deferred and promise in jQuery</h1>
+<h4>Published 2014-07-14</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#so-in-which-cases-are-promises-useful">So in which cases are Promises useful?</a></li>
+<li><a href="#why-we-need-deferred-and-promises">Why we need Deferred and Promises?</a></li>
+<li><a href="#so-what-is-a-deferred-and-what-is-the-difference-with-a-promise">So what is a deferred and what is the difference with a promise?</a></li>
+</ul>
+</nav>
+    <p>How handle async code with jQuery via promises and creating own promise via deffered.</p>
+
+<p></p>
+
+<h1 id="so-in-which-cases-are-promises-useful">So in which cases are Promises useful?</h1>
+
+<p>AJAX request handler spaghetti?</p>
+
+<pre><code class="language-js">$.ajax({
+  type: 'GET',
+  url: 'http://www.html5rocks.com/en/tutorials/file/xhr2/',
+  success: function(response) {
+    var insertDiv1 = $('&lt;div&gt;&lt;/div&gt;');
+    insertDiv1.html($(response).find('section').html());
+    $.ajax({
+      type: 'GET',
+      url: 'http://www.html5rocks.com/en/tutorials/audio/scheduling/',
+      success: function(response) {
+        var insertDiv2 = $('&lt;div&gt;&lt;/div&gt;');
+        insertDiv2.html($(response).find('section').html());
+        $('body').append(insertDiv1, insertDiv2);
+      }
+    });
+  }
+});
+</code></pre>
+
+<h1 id="why-we-need-deferred-and-promises">Why we need Deferred and Promises?</h1>
+
+<p>Let&rsquo;s do a step back in time. A time without iPod or Xbox or Facebook. If you wanted to catch a <code>mouseclick</code>, you did it with <code>element.onclick = someFunction;</code> This became a problem when another part of the code also wanted to listen to this click. This was not possible, because you could only assign one function. This was solved at the time with the <code>addEventListener</code> function. With this, you can add as many listener functions as you want.</p>
+
+<p>Now we have a similar problem with <code>Ajax</code> calls. This time it’s not the events, but the fact that <code>Ajax</code> supports only one callback function. Not only the jQuery <code>$.ajax()</code> call, but also the underlying <code>XMLHttpRequest</code> object.</p>
+
+<p><code>Deferred</code> and <code>promise</code> are part of jQuery since version 1.5 and they help in handling asynchronous functions like Ajax.</p>
+
+<p>A typical <code>$.ajax()</code> call looked like this:</p>
+
+<pre><code class="language-js">$.ajax({
+  url: &quot;/myServerScript&quot;,
+  success: mySuccessFunction,
+  error: myErrorFunction
+});
+</code></pre>
+
+<p>Since version 1.5, the returned object implements the <a href="http://wiki.commonjs.org/wiki/Promises/A">CommonJS Promises/A interface</a>. CommonJS is a initiative to define common and independent interfaces <code>API’s</code>. <code>Promises/A</code> is one such interface. The advantage is that these are not jQuery specific. For example, if you work with Node.js, there is a good chance you’ll program with this same interface.</p>
+
+<p>The way of assigning callbacks with Promises:</p>
+
+<pre><code class="language-js">var promise = $.ajax({
+  url: &quot;/myServerScript&quot;
+});
+
+promise.done(mySuccessFunction);
+promise.fail(myErrorFunction);
+</code></pre>
+
+<p>You can combine the <code>done()</code> and <code>fail()</code> functions in one <code>then()</code> function:</p>
+
+<pre><code class="language-js">var promise = $.ajax({
+  url: &quot;/myServerScript&quot;
+});
+
+promise.then(mySuccessFunction, myErrorFunction);
+</code></pre>
+
+<p>The advantages of promises are:</p>
+
+<ul>
+<li>You can call the <code>done()</code> and <code>fail()</code> functions more times, with different callbacks. Maybe you have a callback function that stops an animation, one that does a new Ajax call and another function that shows the received data to the visitor:</li>
+</ul>
+
+<pre><code class="language-js">var promise = $.ajax({
+  url: &quot;/myServerScript&quot;
+});
+
+promise.done(myStopAnimationFunction);
+promise.done(myOtherAjaxFunction);
+promise.done(myShowInfoFunction);
+promise.fail(myErrorFunction);
+</code></pre>
+
+<ul>
+<li>You can combine promises. Sometimes you need to do two simultaneous Ajax calls and you want to execute a function when both are successfully finished. To do this, you use the new <code>$.when()</code> function:</li>
+</ul>
+
+<pre><code class="language-js">var promise1 = $.ajax(&quot;/myServerScript1&quot;);
+var promise2 = $.ajax(&quot;/myServerScript2&quot;);
+
+$.when(promise1, promise2).done(function(xhrObject1, xhrObject2) {
+  // Handle both XHR objects
+});
+</code></pre>
+
+<ul>
+<li>Since jQuery 1.8, you can chain the <code>then()</code> function sequentially. In the code below, first promise1 is run and when resolved successfully, getStuff is run, returning a promise and when this is resolved successfully, the anonymous function is executed:</li>
+</ul>
+
+<pre><code class="language-js">var promise1 = $.ajax(&quot;/myServerScript1&quot;);
+
+function getStuff() {
+    return $.ajax(&quot;/myServerScript2&quot;);
+}
+
+promise1.then(getStuff).then(function(myServerScript2Data){
+  // Both promises are resolved
+});
+</code></pre>
+
+<p>Every callback function receives the result of the previous asynchronous function, in the case of Ajax, that would be the returned data.</p>
+
+<h1 id="so-what-is-a-deferred-and-what-is-the-difference-with-a-promise">So what is a deferred and what is the difference with a promise?</h1>
+
+<p>As you have seen above, a <code>promise</code> is an object that is returned from an asynchronous function. You need a <code>deferred</code> when you write such a function yourself.</p>
+
+<p>A <code>deferred object</code> has a <code>resolve()</code> functions for a successful result and to execute the functions assigned with <code>done()</code>. The <code>reject()</code> function is for a failed result and executes the functions assigned with <code>fail()</code>.</p>
+
+<p>You can give <code>parameters</code> to both the <code>resolve()</code> and <code>reject()</code> functions and they will be passed on to the functions registered with <code>done()</code> and <code>fail()</code>.</p>
+
+<p>The <code>promise object</code> does not have resolve() or reject() functions. This is because you give the promise away to other scripts and you don’t want them to resolve or reject the promise.</p>
+
+<p>Below is a simple script that illustrates how it works:</p>
+
+<pre><code class="language-js">$('#result').html('waiting...');
+
+var promise = wait();
+promise.done(result);
+
+function result() {
+  $('#result').html('done');
+}
+
+function wait() {
+  var deferred = $.Deferred(); // (!)
+
+  setTimeout(function() {
+    deferred.resolve();
+  }, 2000);
+
+  return deferred.promise();
+}
+</code></pre>
+
+<p>The <code>wait()</code> function is the function returning a promise. This will be resolved with a setTimeout of two seconds. Instead of setTimeout, everything can be used that is asynchronous, like animations, Web workers etcetera. It should be clear that inside the <code>wait()</code> function, we use the deferred object, but we return the limited promise object.</p>
+
+<p>Save My Day:
+*   <a href="http://www.bitstorm.org/weblog/2012-1/Deferred_and_promise_in_jQuery.html">Deferred and promise in jQuery</a>
+*   <a href="http://www.danieldemmel.me/blog/2013/03/22/an-introduction-to-jquery-deferred-slash-promise/">An introduction to jQuery Deferred / Promise and the design pattern in general</a></p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flux/Redux on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/flux/redux/</link>
+    <description>Recent content in Flux/Redux on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 02 May 2017 19:38:57 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/flux/redux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mastering Flux and Redux</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</link>
+      <pubDate>Tue, 02 May 2017 19:38:57 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</guid>
+      <description>At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&amp;rsquo;ll learn the skills and technologies necessary to manage your application&amp;rsquo;s data model in extremely efficient and standards-compliant ways.
+Topics  First, you&amp;rsquo;ll learn all about the popular data-modeling libraries Flux and Redux; their differences and similarities, how they relate to one another, and which is appropriate for what kind of projects.</description>
+    </item>
+    
+  </channel>
+</rss>

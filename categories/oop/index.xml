@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oop on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/oop/</link>
+    <description>Recent content in Oop on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 28 May 2017 17:43:40 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interview question: NodeJS, part 2</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</link>
+      <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</guid>
+      <description>&lt;p&gt;Part two of original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 1</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</link>
+      <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</guid>
+      <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Advanced NodeJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</link>
+      <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</guid>
+      <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Essential Programming Books</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</link>
+      <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</guid>
+      <description>&lt;p&gt;The list of 129 books deemed fundamental to the art of programming and includes books for various languages.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PatternCraft</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</link>
+      <pubDate>Sun, 05 Mar 2017 01:35:33 +0200</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</guid>
+      <description>&lt;p&gt;An awesome explanation of GOF design patterns. The only way to learn pattern is to know what problem it solves.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Book: &#39;Node.js design pattern&#39;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</link>
+      <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</guid>
+      <description>&lt;p&gt;&amp;ldquo;How could I organize my code?&amp;rdquo;, &amp;ldquo;What is the best way to design this?&amp;rdquo;, &amp;ldquo;How can I make my application more modular?&amp;rdquo;, &amp;ldquo;How do I handle a set of asynchronous call effectively?&amp;rdquo;, &amp;ldquo;How can I make sure that my application will not collapse while it grows?&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;If you have such questions without answers, that book is definitely for you!&lt;/p&gt;
+
+&lt;p&gt;The aim of this book is to guide you through this emerging world of patterns, techniques and practices, showing proven solution to the common problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>5 principles that will make a more SOLID Javascript Engineer</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</link>
+      <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</guid>
+      <description>&lt;p&gt;Being a SOLID developer in JS isn&amp;rsquo;t so as straight forward as in other languages. Some developers consider functional approach. Others chose OOP style. Some stand in both line. And other think that having class is wrong and redundant and prefer factories. But still, SOLID principles are the basic pillars of object oriented programming.&lt;/p&gt;
+
+&lt;p&gt;But what are they?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Misconceptions About Inheritance in JS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/misconceptions-about-inheritance-in-javascript/</link>
+      <pubDate>Sun, 14 Feb 2016 22:54:55 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/misconceptions-about-inheritance-in-javascript/</guid>
+      <description>&lt;p&gt;What’s the Difference Between Class &amp;amp; Prototype Inheritance?&lt;/p&gt;
+
+&lt;p&gt;This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;amp;A, so pay special attention to learning the differences, and how to apply the knowledge to write better code.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Practical design patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</link>
+      <pubDate>Wed, 03 Feb 2016 12:43:26 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</guid>
+      <description>&lt;p&gt;One of the most important aspects of writing maintainable code is being able to notice the repeating themes in that code and optimize them. This is an area where knowledge of design patterns can prove invaluable.&lt;/p&gt;
+
+&lt;p&gt;I take a look at a number of popular JavaScript design patterns and explore why certain patterns may be suitable for your projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OOP in prototype style</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</link>
+      <pubDate>Mon, 15 Sep 2014 22:40:38 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</guid>
+      <description>&lt;p&gt;The main point is that one object can be &lt;code&gt;prototype&lt;/code&gt; of another object. That means if property isn&amp;rsquo;t found in the object - than it takes from &lt;code&gt;prototype&lt;/code&gt; object. In JavaScript this implementation is at the language level.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</link>
+      <pubDate>Tue, 29 Jul 2014 22:01:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</guid>
+      <description>&lt;p&gt;Funny to hear when developer says that JS does not have types =) Let&amp;rsquo;s see how to distinguish them right.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Function Invocation Patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</link>
+      <pubDate>Thu, 29 May 2014 05:47:57 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</guid>
+      <description>&lt;p&gt;Describe different approaches to define and call functions&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

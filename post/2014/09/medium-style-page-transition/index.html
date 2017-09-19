@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Medium-Style Page Transition</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Medium-Style Page Transition</h1>
+<h4>Published 2014-09-01</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#html">HTML</a></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+<li><a href="#animation-code">Animation Code</a></li>
+</ul>
+</nav>
+    <p>An article on how to achieve <a href="https://medium.com/">Medium’s</a> next page transition effect—an effect that can be seen by clicking anywhere on the “Read Next” footer at the bottom of the page. This effect is characterized by the lower article easing upward as the current article fades up and out.</p>
+
+<p></p>
+
+<p>The page makes Ajax request to static <code>json</code> files. Page state is managed by using the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history">PushState API</a> and <code>location.hash</code>. All photos are from <a href="http://unsplash.com/">Unsplash</a>.</p>
+
+<p>In this article, I will outline how to achieve Medium’s page transition effect—an effect that can be seen by clicking anywhere on the “Read Next” footer at the bottom of the page. This effect is characterized by the lower article easing upward as the current article fades up and out. See the animation below for an illustration of this effect.</p>
+
+<h1 id="html">HTML</h1>
+
+<p>In this demo, the page first loads with barebones HTML, which we’ll use as a template that will be filled in later with Ajax’d-in data. Below is what our <code>&lt;body&gt;</code> looks like on initial page load. One main <code>&lt;article&gt;</code> tag. Pretty simple, eh?</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;article class='page hidden'&gt;
+    &lt;div class='big-image'&gt;&lt;/div&gt;
+    &lt;div class='content'&gt;&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Once the content is Ajax’d-in, the <body> looks something like so:</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;article class='page current'&gt;&lt;!--other HTML --&gt;&lt;/article&gt;
+  &lt;article class='page next '&gt;&lt;!--other HTML --&gt;&lt;/article&gt;
+&lt;body&gt;
+</code></pre>
+
+<p>The page currently being viewed has a class of <code>current</code>, and the next article has a class of <code>next</code>. The next article only has its large image being shown at the bottom of the page, which, when <code>clicked</code> on, brings it into focus.</p>
+
+<h1 id="css">CSS</h1>
+
+<p>The styles in this demo which control the article transitions are both applied dynamically via jQuery’s <code>css()</code> method, as well as by applying classes to the <code>&lt;article&gt;</code> elements using jQuery’s <code>addClass()</code> method:</p>
+
+<pre><code class="language-css">article.page.hidden { 
+    display: none
+}
+
+article.page.content-hidden .content { 
+    display: none
+}
+
+article.fade-up-out {
+    opacity: 0;
+    transform: scale(0.8) translate3d(0, -10%, 0);
+    transition: all 450ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+article.easing-upward {
+    transition: all 450ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+</code></pre>
+
+<h1 id="javascript">JavaScript</h1>
+
+<p>Before getting into the Javascript code, I want to first outline the algorithm used to transition the <code>next</code> article upward, and transition the <code>current</code> article up and away.</p>
+
+<p>So, when user click on <code>next</code> article:</p>
+
+<ol>
+<li>Disable scroll on the page</li>
+<li>Fade <code>current</code> article to <code>opacity</code> of 0, a <code>scale</code> of .8 and move it upward by 10%</li>
+<li>Show the <code>article</code> content, give it smooth transition, then move it upward to the top of the window</li>
+<li>After 500ms:</li>
+</ol>
+
+<p>Non-Closure Example:</p>
+
+<pre><code class="language-js">function nonClosure() {
+    //encapsulation
+    var date = new Date(); //Varible lost after function returns
+
+    return date.getMilliseconds();
+}
+</code></pre>
+
+<p>Closure function:</p>
+
+<pre><code class="language-js">function trueClosure() {
+    //encapsulation
+    var date = new Date(); //Varible stays around even after function returns
+
+    //nested function (!)
+    return function() {
+        return date.getMilliseconds();
+    }
+}
+</code></pre>
+
+<p>Closure function example2:</p>
+
+<pre><code class="language-js">function trueClosure() {
+    //encapsulation
+    var date = new Date(); //Varible stays around even after function returns
+    //nested function (!)
+    function getTime() {
+        return date.getMilliseconds();
+    }
+
+    return {
+        getTime: getTime
+    }
+}
+</code></pre>
+
+<h1 id="animation-code">Animation Code</h1>
+
+<pre><code class="language-js"> ArticleAnimator.animatePage = function(callback){
+  var self              = this;
+  var translationValue  = this.$next.get(0).getBoundingClientRect().top;
+  this.canScroll        = false;
+
+  this.$current.addClass('fade-up-out');
+
+  this.$next.removeClass('content-hidden next')
+       .addClass('easing-upward')
+       .css({ &quot;transform&quot;: &quot;translate3d(0, -&quot;+ translationValue +&quot;px, 0)&quot; });
+
+  setTimeout(function(){
+      self.scrollTop();
+      self.$next.removeClass('easing-upward')
+          self.$current.remove();
+
+      self.$next.css({ &quot;transform&quot;: &quot;&quot; });
+          self.$current = self.$next.addClass('current');
+
+      self.canScroll = true;
+      self.currentPostIndex = self.nextPostIndex( self.currentPostIndex );
+
+      callback();
+  }, self.animationDuration + 300 );
+}
+</code></pre>
+
+<p>Throughout the CSS and JavaScript code in order to achieve fluid animation I&rsquo;m using <code>transform: translate3d(x, y, z)</code> to move DOM elements. By doing this, we <code>hardware accelarate</code> the DOM elements movement. This method is preferred over animating an element using <code>top / left</code> or <code>transform: translateX(x) / translateY(y)</code>, which are not <code>hardware</code> accelarated by default.</p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

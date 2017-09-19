@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Asynchronous Javascript with async/await</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Asynchronous Javascript with async/await</h1>
+<h4>Published 2017-05-09</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#write-an-asynchronous-function-with-async-await">Write an Asynchronous Function with async/await</a></li>
+<li><a href="#call-an-asynchronous-function-in-a-promise-chain">Call an Asynchronous function in a Promise chain</a></li>
+<li><a href="#convert-any-function-into-asynchronous-function">Convert any function into Asynchronous Function</a></li>
+<li><a href="#handle-errors-in-asynchronous-function">Handle Errors in Asynchronous Function</a></li>
+<li><a href="#await-multiple-promises-sequentially-or-concurrently">Await multiple promises sequentially or concurrently</a></li>
+<li><a href="#use-the-await-operator-with-any-thenable">Use the <code>await</code> Operator with Any Thenable</a></li>
+<li><a href="#iterate-asynchronously-with-the-for-await-of-loop">Iterate Asynchronously with the <code>for-await-of</code> Loop</a></li>
+<li><a href="#save-my-day">Save my day</a></li>
+</ul>
+</nav>
+    <p>ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.</p>
+
+<p></p>
+
+<p>The await operator takes a promise and then pauses the function execution until that promise is settled which allows for an async function to read like sequential synchronous code.</p>
+
+<h1 id="write-an-asynchronous-function-with-async-await">Write an Asynchronous Function with async/await</h1>
+
+<p>With traditional chain of promises:</p>
+
+<pre><code class="language-js">const fetch = require('node-fetch')
+
+function showGitHubUser(userName) {
+  fetch(`http://api.github.com/users/${userName}`)
+    .then(data =&gt; data.json())
+    .then(user =&gt; {
+      const { name, location } = user
+
+      console.log(name, location)
+    })
+}
+
+showGitHubUser('qetr1ck-op')
+</code></pre>
+
+<p>Rewrite to <code>async/await</code>:</p>
+
+<pre><code class="language-js">const fetch = require('node-fetch')
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  const user = await data.json()
+  const { name, location } = user
+
+  console.log(name, location)
+}
+
+showGitHubUser('qetr1ck-op')
+</code></pre>
+
+<h1 id="call-an-asynchronous-function-in-a-promise-chain">Call an Asynchronous function in a Promise chain</h1>
+
+<pre><code class="language-js">const fetch = require('node-fetch')
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  return await data.json()
+}
+
+showGitHubUser('qetr1ck-op').then(user =&gt; {
+  const { name, location } = user
+
+  console.log(name, location)
+})
+</code></pre>
+
+<h1 id="convert-any-function-into-asynchronous-function">Convert any function into Asynchronous Function</h1>
+
+<pre><code class="language-js">const fetch = require('node-fetch')
+
+class GitHubApiClient {
+  // the same syntax with objects
+  async fetchUser(handle) {
+    const url = `https://api.github.com/users/${handle}`
+    const response = await fetch(url)
+    return await response.json()
+  }
+}
+
+// classic iife
+;(async () =&gt; {
+  const client = new GitHubApiClient()
+  const user = await client.fetchUser('qetr1ck-op')
+  console.log(user.name)
+  console.log(user.location)
+})()
+</code></pre>
+
+<h1 id="handle-errors-in-asynchronous-function">Handle Errors in Asynchronous Function</h1>
+
+<pre><code class="language-js">const fetch = require('node-fetch')
+
+async function fetchGitHubUser(userName) {
+  const response = await fetch(`http://api.github.com/users/${userName}`)
+
+  if (!response.ok)
+    throw Error(response.statusText)
+
+  return await response.json()
+}
+
+(async () =&gt; {
+  try {
+    const { name, location } = await fetchGitHubUser('unknownuserstring')
+    console.log(name, location)
+  } catch(e) {
+    console.error(e)
+  }
+})()
+</code></pre>
+
+<h1 id="await-multiple-promises-sequentially-or-concurrently">Await multiple promises sequentially or concurrently</h1>
+
+<p>You can await multiple promises either sequentially or concurrently, depending on where you put the await operators.</p>
+
+<pre><code class="language-js">const fetch = require('node-fetch')
+const measureTime = require('measure-time')
+
+async function fetchGitHubUser(endpoint) {
+  const response = await fetch(`http://api.github.com${endpoint}`)
+
+  if (!response.ok) throw Error(response.statusText)
+
+  return await response.json()
+}
+
+;(async () =&gt; {
+  // concurrent
+  const t1 = measureTime()
+  const user = await fetchGitHubUser('/users/qetr1ck-op')
+  const repos = await fetchGitHubUser('/users/qetr1ck-op/repos')
+
+  console.log(`concurrent: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+;(async () =&gt; {
+  // parallel
+  const t1 = measureTime()
+  const userPromise = fetchGitHubUser('/users/qetr1ck-op')
+  const reposPromise = fetchGitHubUser('/users/qetr1ck-op/repos')
+
+  const user = await userPromise
+  const repos = await reposPromise
+
+  console.log(`parallel: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+
+;(async () =&gt; {
+  // parallel vol.2
+  const t1 = measureTime()
+  const [ user, repos ] = await Promise.all([
+      fetchGitHubUser('/users/qetr1ck-op'),
+      fetchGitHubUser('/users/qetr1ck-op/repos')
+  ])
+
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+</code></pre>
+
+<h1 id="use-the-await-operator-with-any-thenable">Use the <code>await</code> Operator with Any Thenable</h1>
+
+<p>The await operator is not restricted to ES2015 promises. It can be used to await any thenable — that is, any object with a .then() method.</p>
+
+<pre><code class="language-js">const Bluebird = require(&quot;bluebird&quot;);
+
+async function main() {
+    console.log(&quot;Working ...&quot;);
+    await Bluebird.delay(2000);
+    console.log(&quot;Done.&quot;);
+}
+
+main();
+</code></pre>
+
+<h1 id="iterate-asynchronously-with-the-for-await-of-loop">Iterate Asynchronously with the <code>for-await-of</code> Loop</h1>
+
+<p>An <a href="https://github.com/mariusschulz/egghead-async-await/tree/master/lesson-8">example</a> with <code>ts</code> configuration</p>
+
+<h1 id="save-my-day">Save my day</h1>
+
+<ul>
+<li><a href="https://egghead.io/courses/asynchronous-javascript-with-async-await">original videos by Marius Schulz on egghead</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

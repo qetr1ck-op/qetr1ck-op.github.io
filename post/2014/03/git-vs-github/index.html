@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Git and GitHub, Git versus Subversion</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Git and GitHub, Git versus Subversion</h1>
+<h4>Published 2014-03-29</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#git-and-gihub">Git and GiHub</a></li>
+<li><a href="#the-difference">The difference</a></li>
+</ul>
+</nav>
+    <p>How GitHub is connected to Git and basic difference Git and Svn.</p>
+
+<p></p>
+
+<h1 id="git-and-gihub">Git and GiHub</h1>
+
+<p>So <code>Git</code> and <code>GitHub</code> are parts of one complex system, which complement each other:</p>
+
+<ul>
+<li>Git is the name of <code>VCS</code> (version control system) wrote by <a href="http://en.wikipedia.org/wiki/Linus_Torvalds" title="Linus Torvalds">Linus Torvalds</a>. There are always series of <code>commits</code>(snapshots). You see a path of this snapshots, in which order they were created. You create <code>branch</code> for new features and use snapshot for <code>revert</code> changes.</li>
+<li>GitHub is website on which you can publish your Git repositories and collaborate with other people.</li>
+</ul>
+
+<h1 id="the-difference">The difference</h1>
+
+<p>Git is not better than Subversion. But is also not worst. It&rsquo;s different:</p>
+
+<ul>
+<li>The key difference is that <code>Git</code> is a <code>decentralized</code>. With <code>Git</code> you can do practically anything off-line, cause everyone has their own repository. For example: I have a server at home and a Laptop on the road. SVN simply doesn&rsquo;t work well here. With SVN, I can&rsquo;t have local source control if I&rsquo;m not connected to the repository (Yes, I know about SVK or about ways to copy the repo). With Git, that&rsquo;s the default mode anyway. With command <code>git commit</code> you commit locally, whereas <code>git push origin master</code> - you push the master branch to the remote branch named <code>origin</code>.</li>
+<li>Making <code>branches</code> and <code>merging</code> between branches is <code>Git</code> way. Everybody who likes your changes can pull them into their project, including the official maintainers. It&rsquo;s trivial to <code>fork</code> a project, modify it, and still keep merging in the bug-fixes from the <code>HEAD</code> branch.</li>
+<li>Git is perfectly suited for Open Source projects: just fork it, commit your changes to your own Fork, and then ask the original project maintainer to pull your changes.</li>
+<li>On the other hand Git adds <code>complexity</code>. Two modes of creating repositories, checkout vs. clone, commit vs. push&hellip; You have to know which commands work locally and which work with &ldquo;the server&rdquo;.</li>
+</ul>
+
+<p>Make my day:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/11816424/understanding-the-basics-of-git-and-github" title="stackoverflow">understanding-the-basics-of-git-and-github</a></li>
+<li><a href="http://stackoverflow.com/questions/871/why-is-git-better-than-subversion">Discussion on StackOverflow</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

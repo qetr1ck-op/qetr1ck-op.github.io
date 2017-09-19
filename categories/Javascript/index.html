@@ -1,783 +1,294 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Blog | qetr1ck-op">
-    <title>Category: Javascript - Blog | qetr1ck-op</title>
-    <meta name="author" content="Orest Prystayko">
-    
-    
-        <link rel="icon" href="http://qetr1ck-op.github.io/assets/images/favicon.ico">
-    
-    
-    <meta name="description">
-<meta property="og:type" content="blog">
-<meta property="og:title" content="Blog | qetr1ck-op">
-<meta property="og:url" content="http://qetr1ck-op.github.io/categories/Javascript/index.html">
-<meta property="og:site_name" content="Blog | qetr1ck-op">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog | qetr1ck-op">
-<meta name="twitter:description">
-<meta name="twitter:creator" content="@https://twitter.com/oprystayko">
-    
-    
-        
-    
-    
-        <meta property="og:image" content="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=640"/>
-    
-    
-    
-    
-    <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-8ivtqwvzxneiv2vhmowufzsrunfp6lztfcrvskeegwwzhpsxej6bklllqxp8.min.css">
-    <!--STYLES END-->
-    
-    
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../favicon/manifest.json">
+<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Javascript</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
 </head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../">Root</a>
+        <a href="../../about">About</a>
+        <a href="../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
 
-    <body>
-        <div id="blog">
-            <!-- Define author's picture -->
-
-
-<header id="header" data-behavior="3">
-    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">Blog | qetr1ck-op</a>
-    </h1>
-    
-        <div id="search-custom">
-            <div class="search-custom__form-group">
-                <i class="fa fa-search search-custom__search-button" aria-hidden="true"></i>
-                <input type="text" class="search-custom__form-control hidden" placeholder="Search">
-            </div>
-            <div class="search-custom__result"></div>
-        </div>
-    
-</header>
-
-            <!-- Define author's picture -->
-
-
     
 
-<nav id="sidebar" data-behavior="3">
     
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
-            </a>
-            <span class="sidebar-profile-name">Orest Prystayko</span>
-        </div>
-    
-    
-        <ul class="sidebar-buttons">
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/ "
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-categories"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">Categories</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-tags"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">Tags</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-archives"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link foo"
-                         href="#search"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="#about"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
-                </a>
-        </li>
-        
-    </ul>
-    
-        <ul class="sidebar-buttons">
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://github.com/qetr1ck-op" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
-                    <span class="sidebar-button-desc">GitHub</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/preview?locale=ru_RU&trk=prof-0-sb-preview-primary-button" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                    <span class="sidebar-button-desc">LinkedIn</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://twitter.com/oprystayko" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
-                    <span class="sidebar-button-desc">Twitter</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://www.facebook.com/orest.prustayko" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
-                    <span class="sidebar-button-desc">Facebook</span>
-                </a>
-        </li>
-        
-    </ul>
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../categories/books">books</a></li>
+            
+            <li><a href="../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../categories/cli">cli</a></li>
+            
+            <li><a href="../../categories/css">css</a></li>
+            
+            <li><a href="../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../categories/git">git</a></li>
+            
+            <li><a href="../../categories/http">http</a></li>
+            
+            <li><a href="../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../categories/katas">katas</a></li>
+            
+            <li><a href="../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../categories/oop">oop</a></li>
+            
+            <li><a href="../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../categories/performance">performance</a></li>
+            
+            <li><a href="../../categories/react">react</a></li>
+            
+            <li><a href="../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
     
 </nav>
 
-            
-            <div id="main" data-behavior="3"
-                 class="
-                        hasCoverMetaIn
-                        ">
-                
-    
-
-<section class="postShorten-group main-content-wrap">
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/10/06/Node-js-design-pattern-book-review/">
-                            Node.js design pattern book review
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-10-06T21:11:33+03:00">
-	
-		    Oct 06, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Node-js/">Node.js</a>
-
-
-    
 </div>
+<div class="col-md-9 content">
 
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>“How could I organize my code?”, “What is the best way to design this?”, “How can I make my application more modular?”, “How do I handle a set of asynchronous call effectively?”, “How can I make sure that my application will not collapse while it grows?”.</p>
-<p>If you have such questions without answers, that book is definitely for you!</p>
-<p>The aim of this book is to guide you through this emerging world of patterns, techniques and practices, showing proven solution to the common problem.</p>
-                    
-                        <a href="/2016/10/06/Node-js-design-pattern-book-review/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/10/06/Node-js-design-pattern-book-review/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="https://www.packtpub.com/sites/default/files/5587OS_5259_Node.js%20Design%20Platforms.jpg"/>
-                </div>
-            </a>
-            
-        
+
+
+
+<div class="articles-list">
+    
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a> - 2017-06-24</h3>
+        <p>Password randomizer app which was done with: REST API on <code>Express.js</code>, Client app on <code>React.js</code>, Build with <code>npm</code>, Deploy on <code>Heroku</code>.</p>
+
+<p></p>
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/09/18/NG6-starter-for-new-Angular-projects/">
-                            NG6 starter for new Angular projects
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-09-18T19:03:17+03:00">
-	
-		    Sep 18, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Angular-1-5/">Angular ^1.5</a>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a> - 2017-05-09</h3>
+        <p>ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.</p>
 
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>The de-facto starter repo for building scalable apps with Angular ^1.5, ES6, Gulp and Webpack</p>
-                    
-                        <a href="/2016/09/18/NG6-starter-for-new-Angular-projects/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/09/18/NG6-starter-for-new-Angular-projects/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png"/>
-                </div>
-            </a>
-            
-        
+<p></p>
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-undefined" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/09/18/Start-new-project-on-Angular-1-5/">
-                            Start new project on Angular 1.5
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-09-18T18:42:49+03:00">
-	
-		    Sep 18, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Angular-1-5/">Angular 1.5</a>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/">Advanced NodeJS</a> - 2017-05-02</h3>
+        <p>This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.</p>
 
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Great series of recommendation how/why to start new “NG2 ready” Angular 1.5 app with architecture of component-oriented approach.</p>
-                    
-                        <a href="/2016/09/18/Start-new-project-on-Angular-1-5/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
+<p></p>
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/09/04/Lifecycle-hooks-in-AngularJS-1-5/">
-                            Lifecycle hooks in AngularJS 1.5
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-09-04T10:48:03+03:00">
-	
-		    Sep 04, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/AngularJS-1-5/">AngularJS 1.5</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Lifecycle hooks are simple functions that are called at specific points of a component’s life in Angular apps. They landed in AngularJS 1.5 and are used with <code>.component()</code> method and they were inspired of Angular 2 hooks.</p>
-                    
-                        <a href="/2016/09/04/Lifecycle-hooks-in-AngularJS-1-5/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/09/04/Lifecycle-hooks-in-AngularJS-1-5/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="https://media.giphy.com/media/3o6Ztn5Du98sxh2h7G/giphy.gif"/>
-                </div>
-            </a>
-            
-        
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/">Mastering Flux and Redux</a> - 2017-05-02</h3>
+        At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&rsquo;ll learn the skills and technologies necessary to manage your application&rsquo;s data model in extremely efficient and standards-compliant ways.
+Topics  First, you&rsquo;ll learn all about the popular data-modeling libraries Flux and Redux; their differences and similarities, how they relate to one another, and which is appropriate for what kind of projects.
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/09/03/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/">
-                            Moving from &quot;ngModel.$parsers&quot;/&quot;ng-if&quot; to &quot;ngModel.$validators&quot;/&quot;ngMessages&quot;
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-09-03T22:24:46+03:00">
-	
-		    Sep 03, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/AngularJS/">AngularJS</a>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/">Kata: Salesman&#39;s Travel</a> - 2017-04-29</h3>
+        <p>A traveling salesman has to visit clients. He got each client&rsquo;s address e.g. &ldquo;432 Main Long Road St. Louisville OH 43071&rdquo; as a list.</p>
 
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Implementation custom Model validation is typically done by extending the built-in <code>$error</code> object to <code>ngForm</code> models, such as a simple <code>&lt;input</code>.</p>
-<p>Prior to AngularJS 1.3 custom validation was done by injecting a function into the <code>ngModel.$parsers</code> array pipeline and manually setting validation states using <code>$setValidity(&#39;visa&#39;, true)</code> if the Model value matched a Visa credit card expression format.</p>
-<p>AngularJS 1.3+ has the <code>$validators</code> pipeline object, which requires no manual setting of validation states.</p>
-<p>Let’s take a look of old school way then we can shift to <code>ngModel.$validators</code> technique.</p>
-                    
-                        <a href="/2016/09/03/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/09/03/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://i.giphy.com/P7SYySPcTnQC4.gif"/>
-                </div>
-            </a>
-            
-        
+<p></p>
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
-                            call &amp; apply VS bind, the simplest explanation
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-08-06T12:03:54+03:00">
-	
-		    Aug 06, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/">npm scrips as your build tool</a> - 2017-04-29</h3>
+        <p>The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.</p>
 
+<p>By the end of the course, you&rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.</p>
 
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Every one know that apply() and call() are similar function, which set this (change context of function).</p>
-<p>But when should be used the bind() method?</p>
-                    
-                        <a href="/2016/08/06/call-apply-VS-bind-the-simplest-explanation/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/title.gif"/>
-                </div>
-            </a>
-            
-        
+<p></p>
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/07/22/Exploring-AngularJS-1-5-component-method/">
-                            Exploring AngularJS 1.5 .component() method
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-07-22T22:20:03+03:00">
-	
-		    Jul 22, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/AngularJS/">AngularJS</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>AngularJS 1.5 introduce <code>.component()</code> helper method which is much simpler than the <code>.directive()</code> definitions and advocates best practices and common default behavior.</p>
-<p>Using <code>.component()</code> will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.</p>
-<p>Let’s compare the difference in syntax and the possibility of new abstraction.</p>
-<!--toc-->
-                    
-                        <a href="/2016/07/22/Exploring-AngularJS-1-5-component-method/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/07/22/Exploring-AngularJS-1-5-component-method/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://html5-demos.appspot.com/static/webcomponents/images/logos/webcomponents.png"/>
-                </div>
-            </a>
-            
-        
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-js/">Prettier as a formating tool for JS</a> - 2017-04-26</h3>
+        Prettier is an opinionated JavaScript formatter with advanced support for language features from ES2017, JSX, and Flow. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.
+This goes way beyond ESLint and other projects built on it. Unlike ESLint, there aren&rsquo;t a million configuration options and rules. But more importantly: everything is fixable. This works because Prettier never &ldquo;checks&rdquo; anything; it takes JavaScript as input and delivers the formatted JavaScript as output.
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-undefined" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/07/11/5-principles-that-will-make-a-more-SOLID-Javascript-Engineer/">
-                            5 principles that will make a more SOLID Javascript Engineer
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-07-11T23:13:43+03:00">
-	
-		    Jul 11, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/OOP/">OOP</a>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/">Front End Handbook 2017</a> - 2017-04-23</h3>
+        <p>This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017</p>
 
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Being a SOLID developer in JS isn’t so as straight forward as in other languages. Some developers consider functional approach. Others chose OOP style. Some stand in both line. And other think that having class is wrong and redundant and prefer factories. But still, SOLID principles are the basic pillars of object oriented programming.</p>
-<p>But what are they?</p>
-                    
-                        <a href="/2016/07/11/5-principles-that-will-make-a-more-SOLID-Javascript-Engineer/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
+<p></p>
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/07/08/How-to-copy-object-in-Javascript/">
-                            How to copy object in Javascript
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-07-08T21:55:05+03:00">
-	
-		    Jul 08, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/">A static site with a dynamic search function</a> - 2017-04-09</h3>
+        <p>A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.</p>
 
+<p></p>
+    </article>
+    
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/2017/04/js-30/">JS 30</a> - 2017-04-04</h3>
+        <p>To fresh memory with <a href="https://javascript30.com/">30 day vanilla js coding challenge</a>. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!</p>
 
+<p></p>
+    </article>
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>There are many ways to copy object in Javascript but most of the time such operation doesn’t do what we expected.</p>
-<ul>
-<li>Are all properties copied by reference? </li>
-<li>Are sub-properties merged or replaced? </li>
-<li>Are accessor, like getter and setters, preserved? </li>
-<li>And what about Sumbols and other non-enumerable properties?</li>
+
+
+<ul class="pagination">
+    
+    <li>
+        <a href="../../categories/javascript/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    class="disabled">
+    <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    class="active"><a href="../../categories/javascript/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="../../categories/javascript/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="../../categories/javascript/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="disabled"><span aria-hidden="true">&hellip;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="../../categories/javascript/page/6/">6</a></li>
+    
+    
+    <li
+    >
+    <a href="../../categories/javascript/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="../../categories/javascript/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
 </ul>
-                    
-                        <a href="/2016/07/08/How-to-copy-object-in-Javascript/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/07/08/How-to-copy-object-in-Javascript/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://previews.123rf.com/images/blankstock/blankstock1501/blankstock150104323/35743522-Copy-file-sign-icon-Duplicate-document-symbol-Colored-round-buttons-Flat-design-circle-icons-set-Vec-Stock-Vector.jpg"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
-                            Development with Webpack and React part 5
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-02-21T12:02:24+02:00">
-	
-		    Feb 21, 2016
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>
 
 
-    
 </div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>We still have work to do to turn this into a real Kanban as pictured above. Most importantly our system is missing the concept of Lane.</p>
-<!--toc-->
-                    
-                        <a href="/2016/02/21/Development-with-Webpack-and-React-part-5/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2016/02/21/Development-with-Webpack-and-React-part-5/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://qetr1ck-op.github.io/2016/02/21/Development-with-Webpack-and-React-part-5/img.png"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
-        
-        
-        <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="/categories/Javascript/page/2/">
-                    <span>OLDER POSTS</span>
-                <i class="fa fa-angle-right text-base icon-ml"></i>
-            </a>
-        </li>
-        
-        <li class="pagination-number">page 1 of 5</li>
-    </ul>
 </div>
-
-</section>
-
+<script src="../../js/theme.min.js" type="text/javascript"></script>
 
 
-                <footer id="footer" class="main-content-wrap">
-    <span class="copyrights">
-        Copyrights &copy; 2016 Orest Prystayko. All Rights Reserved.
-    </span>
-</footer>
-
-            </div>
-            
-        </div>
-        
-
-
-    
-
-<div id="about">
-    <div id="about-card">
-        <div id="about-btn-close">
-            <i class="fa fa-remove"></i>
-        </div>
-        
-            <img id="about-card-picture" src="https://www.gravatar.com/avatar/35948c039f71fe48d765768c07bfee67?s=110"/>
-        
-            <h4 id="about-card-name">Orest Prystayko</h4>
-        
-            <h5 id="about-card-bio"><p>I try to learn something new every day. It may relate to personal finances, physical health, algorithms, computer programming. And the learning process might take place for a few minutes or from sunrise to sunset. I bealive that every time when I achieve new knowledge, I tipically observe how increase my quality of live.</p>
-</h5>
-        
-        
-            <h5 id="about-card-job">
-                <i class="fa fa-briefcase"></i>
-                <br/>
-                <p>Front End Developer @ Eleks</p>
-
-            </h5>
-        
-        
-            <h5 id="about-card-location">
-                <i class="fa fa-map-marker"></i>
-                <br/>
-                Ukraine, Lviv
-            </h5>
-        
-    </div>
-</div>
-
-        
-<div id="cover" style="background-image:url('/assets/images/cover-v2.jpg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/script-giaxk04lc049zihs0lghcp1elymrvwhqovt120wnd6lteggn6m4lwwybfgaa.min.js"></script>
-<!--SCRIPTS END-->
-
-
-
+</body>
 </html>
+

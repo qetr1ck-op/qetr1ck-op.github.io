@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</loc>
+    <lastmod>2017-05-28T17:43:40+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</loc>
+    <lastmod>2017-05-14T23:49:01+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</loc>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</loc>
+    <lastmod>2017-05-09T21:57:55+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</loc>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</loc>
+    <lastmod>2017-05-02T19:38:57+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</loc>
+    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</loc>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-js/</loc>
+    <lastmod>2017-04-26T22:23:01+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</loc>
+    <lastmod>2017-04-23T22:35:48+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</loc>
+    <lastmod>2017-04-23T19:11:25+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</loc>
+    <lastmod>2017-04-09T20:23:14+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</loc>
+    <lastmod>2017-04-09T12:09:08+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</loc>
+    <lastmod>2017-04-04T14:51:54+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/improve-web-performance-using-google-pagespeed/</loc>
+    <lastmod>2017-04-02T14:51:54+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/04/building-a-javascript-development-environment/</loc>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</loc>
+    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/12/restful-web-services-with-node-js-and-express/</loc>
+    <lastmod>2016-12-18T12:01:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/11/reset-checkout-and-revert/</loc>
+    <lastmod>2016-11-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</loc>
+    <lastmod>2016-10-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/09/gulp-screencast-overview/</loc>
+    <lastmod>2016-09-28T20:43:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/09/preflighted-http-options-requests/</loc>
+    <lastmod>2016-09-18T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/09/ng6-starter-for-new-angular-projects/</loc>
+    <lastmod>2016-09-18T19:03:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/09/start-new-project-on-angular-1-5/</loc>
+    <lastmod>2016-09-18T18:42:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/09/lifecycle-hooks-in-angularjs-1-5/</loc>
+    <lastmod>2016-09-04T10:48:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/09/moving-from-ngmodel-parsers-ng-if-to-ngmodel-validators-ngmessages/</loc>
+    <lastmod>2016-09-03T22:24:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</loc>
+    <lastmod>2016-08-14T11:39:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/07/kangax-es6-quiz-expained/</loc>
+    <lastmod>2016-07-26T23:01:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/07/exploring-angularjs-1-5-component-method/</loc>
+    <lastmod>2016-07-22T22:20:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</loc>
+    <lastmod>2016-07-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/07/how-to-copy-object-in-javascript/</loc>
+    <lastmod>2016-07-08T21:55:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/kata-string-format-a-string-of-names-like-bart-lisa-maggie/</loc>
+    <lastmod>2016-02-19T00:05:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/kata-array-regexp-filter-through-name-email/</loc>
+    <lastmod>2016-02-15T22:34:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/misconceptions-about-inheritance-in-javascript/</loc>
+    <lastmod>2016-02-14T22:54:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/kata-functions-function-cache/</loc>
+    <lastmod>2016-02-14T21:17:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/kata-fundamentals-arrays-all-none-any/</loc>
+    <lastmod>2016-02-10T20:58:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</loc>
+    <lastmod>2016-02-07T12:11:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</loc>
+    <lastmod>2016-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/first-look-at-react-js/</loc>
+    <lastmod>2016-02-04T17:20:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</loc>
+    <lastmod>2016-02-03T12:43:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/02/cycle-js-fundamentals/</loc>
+    <lastmod>2016-02-02T16:32:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/01/the-difference-between-throttling-and-debouncing/</loc>
+    <lastmod>2016-01-11T13:14:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2016/01/kata-arrays-are-they-square/</loc>
+    <lastmod>2016-01-09T23:54:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2015/12/browsers-layout-engines/</loc>
+    <lastmod>2015-12-02T21:01:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2015/11/units-of-measurement-px-em-rem-and-other/</loc>
+    <lastmod>2015-11-11T20:17:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</loc>
+    <lastmod>2015-09-23T18:40:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2015/09/kata-string-reverse-words/</loc>
+    <lastmod>2015-09-13T11:50:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2015/08/call-apply-vs-bind-the-simplest-explanation/</loc>
+    <lastmod>2015-08-06T12:03:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2015/02/huston-do-we-have-a-problem-with-promises/</loc>
+    <lastmod>2015-02-02T20:13:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/12/full-screen-scrolling-page-effects-with-fullpage-js/</loc>
+    <lastmod>2014-12-21T11:34:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/12/organizing-an-application-using-amd-with-require-js/</loc>
+    <lastmod>2014-12-20T12:39:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/12/firebase-and-angularjs/</loc>
+    <lastmod>2014-12-10T23:45:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/12/awesome-terminal-emulator-for-windows/</loc>
+    <lastmod>2014-12-02T21:15:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-versus-git-pull-rebase/</loc>
+    <lastmod>2014-11-24T23:46:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-vs-git-fetch/</loc>
+    <lastmod>2014-11-24T23:46:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/10/jsonp/</loc>
+    <lastmod>2014-10-29T21:44:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</loc>
+    <lastmod>2014-09-15T22:40:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/09/centering-in-css/</loc>
+    <lastmod>2014-09-08T22:54:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/09/medium-style-page-transition/</loc>
+    <lastmod>2014-09-01T22:50:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/article-intro-effects-examples/</loc>
+    <lastmod>2014-08-19T12:46:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/canvas-off-icon-navigation-with-an-animated-border-effect/</loc>
+    <lastmod>2014-08-11T21:11:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/maybe-you-don-t-need-jquery/</loc>
+    <lastmod>2014-08-10T18:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/performance-javascript-loops/</loc>
+    <lastmod>2014-08-06T20:38:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/css-transforms/</loc>
+    <lastmod>2014-08-03T22:13:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/bootstrap3-components/</loc>
+    <lastmod>2014-08-02T16:59:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/08/reading-files-in-javascript-with-file-api/</loc>
+    <lastmod>2014-08-02T15:39:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/nodelist-vs-array-in-javascript/</loc>
+    <lastmod>2014-07-30T22:39:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</loc>
+    <lastmod>2014-07-29T22:01:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/performance-javascript-adding-text-to-a-node/</loc>
+    <lastmod>2014-07-25T23:10:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/got-15-minutes-and-want-to-learn-git/</loc>
+    <lastmod>2014-07-19T09:56:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/bootstrap3-css/</loc>
+    <lastmod>2014-07-17T20:10:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/deferred-and-promise-in-jquery/</loc>
+    <lastmod>2014-07-14T21:17:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/javascript-promises/</loc>
+    <lastmod>2014-07-13T13:43:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</loc>
+    <lastmod>2014-07-02T23:24:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/06/cli-in-windows-useful-commands/</loc>
+    <lastmod>2014-06-14T10:22:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/05/difference-of-http-and-https/</loc>
+    <lastmod>2014-05-31T06:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</loc>
+    <lastmod>2014-05-29T05:47:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/04/fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</loc>
+    <lastmod>2014-04-18T11:09:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/04/original-effects-with-css3-transition/</loc>
+    <lastmod>2014-04-01T14:48:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/03/fluid-two-column-layout-with-float-and-flexbox/</loc>
+    <lastmod>2014-03-31T20:49:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/03/form-pop-up-with-inputs-navigation/</loc>
+    <lastmod>2014-03-30T21:41:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/03/git-vs-github/</loc>
+    <lastmod>2014-03-29T17:24:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/02/data-uris/</loc>
+    <lastmod>2014-02-11T12:48:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/02/web-services-wsdl-soap-envelope-with-javascript/</loc>
+    <lastmod>2014-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/02/what-is-event-bubbling-and-capturing/</loc>
+    <lastmod>2014-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/2014/01/prevent-css-caching/</loc>
+    <lastmod>2014-01-02T19:50:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/angularjs/</loc>
+    <lastmod>2016-09-18T19:03:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/architecture/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/books/</loc>
+    <lastmod>2017-04-23T22:35:48+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/build-tools/</loc>
+    <lastmod>2017-05-28T17:43:40+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/</loc>
+    <lastmod>2016-09-18T19:03:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/cli/</loc>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/css/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/deploy/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/dom-api/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/es2015&#43;/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/flux/redux/</loc>
+    <lastmod>2017-05-02T19:38:57+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/git/</loc>
+    <lastmod>2017-04-23T19:11:25+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/http/</loc>
+    <lastmod>2017-05-14T23:49:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/javascript/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/katas/</loc>
+    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/oop/</loc>
+    <lastmod>2017-05-28T17:43:40+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/patterns/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/performance/</loc>
+    <lastmod>2017-05-14T23:49:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/react/</loc>
+    <lastmod>2017-06-24T20:46:01+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/regexp/</loc>
+    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/web-api/</loc>
+    <lastmod>2017-04-23T19:11:25+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

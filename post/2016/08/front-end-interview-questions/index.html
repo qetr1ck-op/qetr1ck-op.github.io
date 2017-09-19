@@ -1,0 +1,3641 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Front End Interview Questions</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Front End Interview Questions</h1>
+<h4>Published 2016-08-14</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#web-core">Web Core</a>
+<ul>
+<li><a href="#javascript-basics">JavaScript: basics</a>
+<ul>
+<li><a href="#types">Types</a></li>
+<li><a href="#scope-and-hoisting-closure-and-functions">Scope and hoisting, closure and functions</a></li>
+<li><a href="#objects">Objects</a></li>
+<li><a href="#oop">OOP</a></li>
+<li><a href="#dom">DOM</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#ajax">AJAX</a></li>
+</ul></li>
+<li><a href="#es6">ES6</a></li>
+<li><a href="#javascript-advance">JavaScript: advance</a></li>
+<li><a href="#markup">Markup</a>
+<ul>
+<li><a href="#html">HTML</a></li>
+<li><a href="#css">CSS</a></li>
+</ul></li>
+<li><a href="#general-website-optimization-questions">General Website Optimization Questions</a></li>
+</ul></li>
+<li><a href="#technologies">Technologies</a>
+<ul>
+<li><a href="#js-framework">JS Framework</a>
+<ul>
+<li><a href="#angularjs">AngularJS</a></li>
+<li><a href="#angular">Angular</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#fundamentals">Fundamentals</a>
+<ul>
+<li><a href="#data-structure-and-algorithm">Data Structure and algorithm</a></li>
+</ul></li>
+</ul>
+</nav>
+    <p>To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&rsquo;s a one stop solution for front end interview process.</p>
+
+<p></p>
+
+<h1 id="web-core">Web Core</h1>
+
+<h2 id="javascript-basics">JavaScript: basics</h2>
+
+<h3 id="types">Types</h3>
+
+<blockquote>
+<p>What are the differences between <code>undeclared</code>, <code>undefined</code>, and <code>null</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> JavaScript has two distinct values for nothing, <code>null</code> and <code>undefined</code>. Also there are <code>undeclared</code> variables which don’t even exist.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<pre><code class="language-js">var declaredVariable = 1;
+
+(function scoppedVariables() {
+  undeclaredVariable = 1;
+  var declaredVariable = 2;
+})();
+
+undeclaredVariable;
+declaredVariable;
+</code></pre>
+
+<ul>
+<li><code>undeclared</code> when it does not use the var keyword. It gets created on the global object, thus it operates in a different space as the declared variables.</li>
+<li><code>undefined</code> means, value of the variable is not defined. JavaScript has a global variable <code>undefined</code> whose value is &ldquo;undefined&rdquo; and <code>typeof undefined</code> is also &ldquo;undefined&rdquo;</li>
+<li><code>null</code> means empty or non-existent value which is used by programmers to indicate “no value”. <code>null</code> is a primitive value and you can assign <code>null</code> to any variable. You cannot add properties to it. Sometimes people wrongly assume that it is an object, because <code>typeof null</code> returns &ldquo;object&rdquo;.</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>What are the differences between <code>==</code> and <code>===</code>? To what type <code>==</code> operands will be converted to if they have different types?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> The simplest way of saying that, <code>==</code> will not check types and <code>===</code> will check whether both sides are of same type. So, <code>==</code> under the hood converts to number type if they have not the same type and then do the comparison.</p>
+
+</div>
+
+<blockquote>
+<p>As <code>[]</code> is <code>true</code>, <code>[] == true</code> should also be <code>true</code>, right? Explain comparison algorithm.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Not.</p>
+
+<p>You are right about first part, <code>[]</code>, empty array is an object and object is always truths.</p>
+
+<p>However, special case about <code>==</code> (not-strict equal) is that it will do some implicit coercion.</p>
+
+<ol>
+<li>Since left and right side of the equality are two different types, JavaScript can&rsquo;t compare them directly.</li>
+<li>JavaScript implementation will try to convert <code>[]</code> by using <code>toPrimitive</code> (of JavaScript implementation). since <code>[].valueOf</code> is not primitive will use <code>toString</code> and will get <code>&quot;&quot;</code>.</li>
+<li>Now you are comparing <code>&quot;&quot; == 1</code> and still left and right is not same type. Hence left side will be converted again to a number and empty string will be <code>0</code>.</li>
+<li>Finally, they are of same type, you are comparing <code>0 === 1</code> which will be <code>false</code>.</li>
+</ol>
+
+</div>
+
+<blockquote>
+<p>Why <code>typeof bar === object</code> isn&rsquo;t right? How can this pitfall be avoided?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Use <code>Object.prototype.toString.call(&lt;object&gt;)</code> or use Duck Typing.</p>
+
+<p><strong>Explanation:</strong> The surprising gotcha in JavaScript is that <code>null</code> is also considered an object!</p>
+
+</div>
+
+<blockquote>
+<p>What is <code>NaN</code>? What is its type? How can you reliably test if a value is equal to <code>NaN</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> &ldquo;not a number&rdquo;, &ldquo;number&rdquo;, <code>NaN</code> compared to anything – even itself! to <code>false</code>. Use <code>Number.isNaN</code></p>
+
+<p><strong>Explanation:</strong> The NaN property represents a value that is “not a number”. This special value results from an operation that could not be performed either because one of the operands was non-numeric (e.g., &ldquo;abc&rdquo; / 4), or because the result of the operation is non-numeric (e.g., an attempt to divide by zero).</p>
+
+<p>ES6 offers a new <code>Number.isNaN()</code> function, which is a different and more reliable than the old global <code>isNaN()</code> function.</p>
+
+</div>
+
+<blockquote>
+<p>What is the significance, and what are the benefits, of including <code>'use strict'</code> at the beginning of a JavaScript source file?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>'use strict'</code> is a way to enforce stricter parsing and error handling on your code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions.</p>
+
+<p><strong>Explanation:</strong> Some of the key benefits of strict mode include:</p>
+
+<ul>
+<li>Makes debugging easier. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions, alerting you sooner to problems in your code and directing you more quickly to their source.</li>
+<li>Prevents accidental globals. Without strict mode, assigning a value to an undeclared variable automatically creates a global variable with that name. This is one of the most common errors in JavaScript. In strict mode, attempting to do so throws an error.</li>
+<li>Eliminates <code>this</code> coercion. Without <code>strict mode</code>, a reference to a this value of <code>undefined</code> is automatically coerced to the global. This can cause many headfakes and pull-out-your-hair kind of bugs.</li>
+<li>Disallows duplicate property names or parameter values. Strict mode throws an error when it detects a duplicate named property in an object (e.g.,<code>var object = {foo: &quot;bar&quot;, foo: &quot;baz&quot;};</code>) or a duplicate named argument for a function (e.g., <code>function foo(val1, val2, val1){}</code>), thereby catching what is almost certainly a bug in your code that you might otherwise have wasted lots of time tracking down.</li>
+<li>Throws error on invalid usage of delete. The delete operator (used to remove properties from objects) cannot be used on non-configurable properties of the object. Non-strict code will fail silently when an attempt is made to delete a non-configurable property, whereas strict mode will throw an error in such a case.</li>
+</ul>
+
+</div>
+
+<h3 id="scope-and-hoisting-closure-and-functions">Scope and hoisting, closure and functions</h3>
+
+<blockquote>
+<p>Example. What is the result will be an error?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">say('World');
+
+const salutation = 'Hello';
+
+function say(name) {
+  console.log(`${salutation}, ${name}!`);
+}
+</code></pre>
+
+<p><strong>Answer:</strong> &lsquo;undefined, World!&rsquo;</p>
+
+</div>
+
+<blockquote>
+<p>Example. What is the result? What if to remove <code>var value = false</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">var value = 0;
+
+function f() {
+  if (1) {
+    value = true;
+  } else {
+    var value = false;
+  }
+}
+
+f();
+
+console.log(value);
+</code></pre>
+
+<p><strong>Answer:</strong> <code>0</code>, after remove line of code, will be changed global variable and the result will be <code>true</code>.</p>
+
+</div>
+
+<blockquote>
+<p>Example. What is the result?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-javascript">fn1();
+fn2();
+fn3();
+fn4();
+
+function fn1() {
+  setTimeout(() =&gt; {
+    console.log('fn1')
+  })
+}
+
+function fn2() {
+  console.log('fn2');
+}
+
+function fn3() {
+  Promise.resolve().then(() =&gt; {
+    console.log('fn3');
+  })
+}
+
+const fn4 = function () {
+  console.log('fn4');
+}
+</code></pre>
+
+<p><strong>Answer:</strong> <code>fn4</code> function expression isn&rsquo;t hoisted. Change to function declaration. The result should be <code>fn2, fn4, fn3, fn1</code></p>
+
+</div>
+
+<blockquote>
+<p>What is a closure? What is a practical use for a closure? Provide an example.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Closure is a function with all accessible variables in lexical environment. Main usage is encapsulating data from outer usage.</p>
+
+</div>
+
+<blockquote>
+<p>Example. What is the result? How to make them independent?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">let initCount = 1;
+
+function makeCounter() {
+  return () =&gt; initCount++
+}
+
+let counter = makeCounter();
+let counter2 = makeCounter();
+
+console.log( counter() ); // ?
+console.log( counter() ); // ?
+
+console.log( counter2() ); // ?
+console.log( counter2() ); // ?
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Closures Inside in loop with <code>setTimeout</code>.</p>
+</blockquote>
+
+<div class="hidden">
+<p>If log the loop counter inside <code>setTimeout</code>, what will be logged?</p>
+
+<pre><code class="language-js">for(var i = 0; i &lt; 10; i++) {
+  setTimeout(function() {
+    console.log(i);  
+  }, 0);
+}
+</code></pre>
+
+<p><strong>Answer</strong>: The above will not output the numbers 0 through 9, but will simply print the number 10 ten times.</p>
+
+<p><strong>Explanation</strong>:</p>
+
+<ol>
+<li>The console log is inside the anonymous function of <code>setTimeout</code> and <code>setTimeout</code> is executed when current call stack is over.</li>
+<li>So, the loop finishes and before setTimeout get the chance to execute. However, anonymous functions keep a reference to <code>i</code> by creating a closure.</li>
+<li>Since, the loop is already finished, the value <code>i</code> has been set to <code>10</code>.</li>
+</ol>
+
+<p>You can fix it by avoiding closure. Just create a <code>IIFE</code> (Immediately Invoked Function Expression), it will create its own scope and you can pass i to the function. In that case i will be a local variable (will not refer to i in the closure) and value of the i in every loop will be preserved.</p>
+
+<pre><code class="language-js">// ES5
+for(var i = 0; i &lt; 10; i++) {
+    setTimeout((function(i) {
+      console.log(i);
+    })(i), 10)
+}
+
+//or
+for(var i = 0; i &lt; 10; i++) {
+  setTimeout(console.log.bind(console, i), 10);
+}
+
+// ES6
+for(let i = 0; i &lt; 10; i++) {
+  setTimeout(() =&gt; {
+    console.log(i);  
+  }, 10);
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Write a simple function to tell whether <code>'foo'</code> is passed as parameter or not?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> First convert <code>arguments</code> to an array with <code>rest</code> operator, after that simply use <code>Array.prototype.includes</code>.</p>
+
+<pre><code class="language-js">// ES5
+function isFooPassed(){
+  return Array.prototype.indexOf.call(arguments, 'foo') &gt; 0;
+}
+
+// ES6
+function isFooPassed(...params) {
+  return params.includes('foo');
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>How could you use &ldquo;Math.max&rdquo; to find the max value in an array?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">Math.max(...arr);  
+
+//ES5 way
+//Math.max.apply(Math, arr);  
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>How could you set a prefix before everything you log? for example, if you <code>log('my message')</code> it will log: <code>(app) my message</code></p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Just get the arguments, convert it to an array and <code>unshift</code> whatever prefix you want to set. Finally, use apply to pass all the arguments to console.</p>
+
+<pre><code class="language-js">// ES5
+function log(){
+  var args = Array.prototype.slice.call(arguments);
+  args.unshift('(app)');
+  console.log.apply(console, args);
+}
+
+// ES6 
+function log(...params){
+  console.log(['(app)', ...params]);
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Cashing / Memoization. How could you implement cache to save calculation time for a recursive fibonacci function?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">const fibonacci = (() =&gt; {
+  const memo = {};
+
+  function f(n) {
+    let value;
+
+    if (memo[n]) {
+      value = memo[n];
+    } else {
+      if (n === 0 || n === 1)
+        value = n;
+      else
+        value = f(n - 1) + f(n - 2);
+
+      memo[n] = value;
+    }
+
+    return value;
+  }
+
+  return f;
+})();
+</code></pre>
+
+<p><strong>Explanation:</strong></p>
+
+<p>Memoization is a programming technique which attempts to increase a function’s performance by caching its previously computed results. Because JavaScript objects behave like associative arrays, they are ideal candidates to act as caches. Each time a memoized function is called, its parameters are used to index the cache. If the data is present, then it can be returned, without executing the entire function.  However, if the data is not cached, then the function is executed, and the result is added to the cache.</p>
+
+<p>In the following example, the original Fibonacci function is rewritten to include memoization. In the example, a self-executing anonymous function returns an inner function, f(), which is used as the Fibonacci function. When f() is returned, its closure allows it to continue to access the “memo” object, which stores all of its previous results. Each time f() is executed, it first checks to see if a result exists for the current value of “n”. If it does, then the cached value is returned. Otherwise, the original Fibonacci code is executed. Note that “memo” is defined outside of f() so that it can retain its value over multiple function calls. Recall that the original recursive function was called over 40 billion times to compute the 50th Fibonacci number. By implementing memoization, this number drops to 99.</p>
+
+</div>
+
+<blockquote>
+<p>Why wrapping the entire content of a JavaScript source file in IIFE?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">(function($) { /*...*/ } )(jQuery);
+</code></pre>
+
+<p><strong>Answer:</strong> This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.</p>
+
+<p><strong>Explanation:</strong> Another feature of this technique is to allow for an easily referenceable (presumably shorter) alias for a global variable.</p>
+
+</div>
+
+<blockquote>
+<p>Explain why the following doesn&rsquo;t work as an IIFE: <code>function foo(){ }();</code></p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Because <code>foo</code> isn’t being called! This is a function definition, it defines <code>foo</code>. But it’s not a function expression - that is, it’s not understood by the JS parser to actually call a function.</p>
+
+<p>For the parser, things look like this:</p>
+
+<pre><code class="language-javascript">function foo(){
+} // ok, done with that function definition
+  // (silly human left off the semicolon, how embarrassing!)
+
+(); // Are they trying to call something? What’s the function’s name?
+    // PARSE ERROR
+</code></pre>
+
+<p>In order to prep the parser that we&rsquo;re actually dealing with a function expression we have to wrap things up in <code>()</code> like so:</p>
+
+<pre><code class="language-javascript">(
+  function foo(){
+  }()
+);
+</code></pre>
+
+<p>Also will work with <code>!</code> and <code>+</code> operators:</p>
+
+<pre><code class="language-javascript">+function() {
+  
+}();
+
+!function() {
+
+}();
+</code></pre>
+
+</div>
+
+<h3 id="objects">Objects</h3>
+
+<blockquote>
+<p>What the heck is <code>this</code> in JavaScript?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> At the time of execution of every function, JavaScript engine sets a property to the function called <code>this</code> which refer to the current execution context. <code>this</code> is always refer to an object and depends on how function is called:</p>
+
+<ol>
+<li>In the global context or inside a function this refers to the <code>window</code>/<code>global</code> object. In ES6 module or with <code>use strict</code> directive it&rsquo;s <code>undefined</code></li>
+<li>While executing a method in the context of an object, the object becomes the value of <code>this</code></li>
+<li>If you use a constructor (by using <code>new</code> keyword) to create an object, the value of <code>this</code> will refer to the newly created object.</li>
+<li>Set the value of <code>this</code> to any arbitrary object by passing the object as the first parameter of <code>bind</code>, <code>call</code> or <code>apply</code></li>
+<li>Use <code>arrow function</code> for use parent LexicalEnvironment.</li>
+</ol>
+
+</div>
+
+<blockquote>
+<p>Why we need <code>call</code> or <code>apply</code> or <code>bind</code>. If you want to use an arbitrary object as value of this, how will you do that?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> To use an arbitrary object as value of this.</p>
+
+<p>There are at least four different ways to doing this by using <code>bind</code>, <code>call</code>, <code>apply</code> and <code>arrow function</code>.</p>
+
+<p><a href="http://qetr1ck-op.github.io/2016/08/06/call-apply-VS-bind-the-simplest-explanation/">call &amp; apply VS bind, the simplest explanation</a></p>
+
+</div>
+
+<blockquote>
+<p>How would you compare two objects?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> JavaScript has two different approaches for testing equality. Primitives like strings and numbers are compared by their value, while objects like arrays, dates, and user defined objects are compared by their reference. This means it compares whether two objects are referring to the same location in memory.</p>
+
+<p>Equality check will check whether two objects have same value for same property. To check that, you can get the keys for both the objects.</p>
+
+<p>Use <a href="https://www.npmjs.com/package/lodash.isequal">lodash</a> or any npm equivalent.</p>
+
+<p>Or implement by own:</p>
+
+<pre><code class="language-javascript">function isEqual(a, b) {
+    var aProps = Object.getOwnPropertyNames(a),
+        bProps = Object.getOwnPropertyNames(b);
+
+    if (aProps.length !== bProps.length) {
+        return false;
+    }
+
+    for (var i = 0; i &lt; aProps.length; i++) {
+        var propName = aProps[i];
+        
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+    return true;
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>In what order are logging properties in the object?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">var codes = {
+  // keys of country: name of country
+  '7': 'Russian Federation',
+  '38': 'Ukraine',
+  '1': 'USA',
+  '57': 'Norway'
+};
+
+for (var code in codes) console.log(code); // ?
+</code></pre>
+
+<p><strong>Answer:</strong> <code>1, 7, 38, 57</code></p>
+
+<p><strong>Explanation:</strong>
+If name of property is non-numeric string, such keys always moving in the order in which they assigned. On the other hand, if the name of the property - a number or a numeric string, then all modern browsers such properties are sorted for internal optimization.</p>
+
+</div>
+
+<blockquote>
+<p>Why using <code>for...in</code> for Array iteration is wrong?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Array indexes are just enumerable properties with integer names and are otherwise identical to general <code>Object</code> properties. There is no guarantee that <code>for...in</code> will return the indexes in any particular order. The <code>for...in</code> loop statement will return all enumerable properties, including those with non–integer names and those that are inherited.</p>
+
+<pre><code class="language-js">var arr = [3, 5, 7];
+arr.foo = &quot;hello&quot;;
+
+for (var i in arr) {
+   console.log(i); // logs &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;foo&quot;
+}
+</code></pre>
+
+<p>Another point is that <code>for (var i = 0; i &lt; arr.length; i++)</code> is up to 10-100x time faster.</p>
+
+</div>
+
+<blockquote>
+<p>What’s the difference between <code>for..in</code> and <code>for..of</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li><code>for..in</code> loops over enumerable property names of an object</li>
+</ul>
+
+<pre><code class="language-js">var arr = [3, 5, 7];
+arr.foo = &quot;hello&quot;;
+
+for (var i in arr) {
+   console.log(i); // logs &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;foo&quot;
+}
+</code></pre>
+
+<ul>
+<li><code>for..of</code> (new in ES6) does use an object-specific iterator <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator">Symbol.iterator</a> and loop over the values generated by that</li>
+</ul>
+
+<pre><code class="language-js">for (var i of arr) {
+   console.log(i); // logs &quot;3&quot;, &quot;5&quot;, &quot;7&quot;
+    //it is does not log &quot;3&quot;, &quot;5&quot;, &quot;7&quot;,&quot;hello&quot;
+}
+</code></pre>
+
+<p>In your example, the array iterator does yield all the values in the array (ignoring non-index properties).</p>
+
+</div>
+
+<h3 id="oop">OOP</h3>
+
+<blockquote>
+<p>How prototype inheritance works? Are you aware of classical approach and with OOLO.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> In most languages, there are classes and objects. Classes inherit from other classes. In JavaScript, the inheritance is prototype-based. That means that there are no classes. Instead, an object inherits from another object. The main point is that one object can be <code>prototype</code> of another object. That means if property isn’t found in the object - than it takes from <code>prototype</code> object. In JavaScript this implementation is at the language level.</p>
+
+<p><strong>Explanation:</strong> <a href="http://qetr1ck-op.github.io/2014/09/15/OOP-in-prototype-style/">OOP in prototype style</a></p>
+
+</div>
+
+<blockquote>
+<p>Example. Create inheritance and/or composition. When properties is not reached in <code>child</code>, it should be available through <code>parent</code></p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">const parent = {
+  surname: 'Winchester',
+  name: 'John'
+};
+
+const child = {
+  name: 'Sam'
+}
+
+console.log(child.surname) // 'Winchester'
+</code></pre>
+
+<p><strong>Answer</strong></p>
+
+<pre><code class="language-js">// 1. 
+Object.setPrototypeOf(child, parent);
+
+// 2.
+const child = Object.create(parent, {
+  name: {
+    value: 'Sam'
+  }
+});
+
+//1. Composition
+const child = Object.assign({}, parent, child);
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Extend Core Object through prototype. How could you write a method on instance of a date which will give you next day?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> You need to declare a method on the prototype of Date object. To get access to the current value of the instance of the date use <code>this</code></p>
+
+<pre><code class="language-js">Date.prototype.nextDay = function () {
+  return new Date(this.setDate(this.getDate() + 1));
+} 
+
+const date = new Date(); 
+date; //Fri May 16 2014 20:47:14 GMT-0500 (Central Daylight Time)
+date.nextDay();//Sat May 17 2014 20:47:14 GMT-0500 (Central Daylight Time)
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Extend Core Object through prototype. Example 2. How could you make this work <code>[1,2,3,4,5].duplicator()</code> to return <code>[1,2,3,4,5,1,2,3,4,5]</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> We need to add a method in the prototype of Array object.</p>
+
+<pre><code class="language-js">// ES5
+Array.prototype.duplicator = function(){
+  return this.concat(this);
+}
+
+Array.prototype.duplicator = function() {
+  return [...this, ...this];
+} 
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Example. Make a subclass from parent class <code>Animal</code></p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">// parent class or abstract class
+function Animal(name) {
+  this.name = name;
+  this.speed = 0;
+}
+
+Animal.prototype.run = function() {
+  console.log(`${this.name} run!`);
+}
+
+function Rabbit() {
+  /*...*/
+}
+
+/*...*/
+</code></pre>
+
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-js">function Animal(name) {
+  this.name = name;
+  this.speed = 0;
+}
+
+Animal.prototype.run = function() {
+  console.log(`${this.name} run!`);
+}
+
+function Rabbit() {
+  Animal.apply(this, arguments)
+}
+
+Rabbit.prototype = Object.create(Animal.prototype);
+
+// optionally
+Rabbit.prototype.constructor = Rabbit;
+
+Rabbit.prototype.run = function() {
+  // optionally
+  Animal.prototype.run.apply(this);
+  console.log(`${this.name} jumps!`);
+};
+
+var rabbit = new Rabbit('white rabbit');
+rabbit.run();
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Rewrite previous example to ES6 classes.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-js">class Animal {
+  constructor(name) {
+    this.name = name;
+    this.speed = 0;
+  }
+  run() {
+    console.log(`${this.name} run!`);
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name) {
+    super(name)
+  }
+  run() {
+    super.run();
+    console.log(`${this.name} jumps`);
+  };
+}
+
+var rabbit = new Rabbit('white rabbit');
+rabbit.run();
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Difference between: <code>function Person(){}</code>, <code>var person = Person()</code>, and <code>var person = new Person()</code>? What <code>new</code> operator do?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> In the example below we define a new &ldquo;class&rdquo; called Person with an empty constructor. Invoke function <code>Person()</code> will return <code>undefined</code>. On the other hand invoking <code>new Person</code> will return an empty object <code>{}</code>.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>JavaScript is a prototype-based language and contains no class statement, such as is found in C++ or Java. This is sometimes confusing for programmers accustomed to languages with a class statement. Instead, JavaScript uses functions as constructors for classes. Defining a class is as easy as defining a function. In the example below we define a new class called <code>Person</code> with an empty constructor.</p>
+
+<p>And the spec says, the <code>new</code> operator uses the internal <code>[[Construct]]</code> method, and it basically does the following:</p>
+
+<ol>
+<li>Initializes a new empty object (no properties)</li>
+<li>Sets the prototype of the new object to the value of the <code>prototype</code> property of Person.
+
+<ul>
+<li>Note: The default value of <code>prototype</code> for a function is an object (automatically created when the function is declared) with its prototype set to <code>Object.prototype</code> and a <code>constructor</code> property pointing back to the function Person.</li>
+<li>Note: The terminology can be confusing. The property named <code>prototype</code> is not the same as the prototype of the object. Only functions have the property named &ldquo;prototype&rdquo;, but all objects have a prototype.</li>
+</ul></li>
+<li>Calls the function <code>Person</code> with <code>this</code> set to the new object, and with the supplied <code>arguments</code>.</li>
+<li>If calling the function <code>Person</code> returns an object, this object is the result of the expression. Otherwise the newly created object is the result of the expression.</li>
+</ol>
+
+</div>
+
+<blockquote>
+<p><code>new F</code> vs <code>Object.create</code></p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>new F</code> is <code>Object.create(F.prototype)</code> with additionally running the constructor function. And giving the constructor the chance to return the actual object that should be the result of the expression instead of this. So basically <code>Object.create</code> doesn&rsquo;t execute the constructor.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><code>Object.create</code> methods allows you to easily implement differential inheritance, where objects can directly inherit from other objects.</p>
+
+<pre><code class="language-javascript">var userB = {
+  sayHello: function() {
+    console.log('Hello '+ this.name);
+  }
+};
+
+var bob = Object.create(userB, { // object descriptor
+  'id' : {
+    value: MY_GLOBAL.nextId(),
+    enumerable:true // writable:false, configurable(deletable):false by default
+  },
+  'name': {
+    value: 'Bob',
+    enumerable: true
+  }
+});
+</code></pre>
+
+</div>
+
+<h3 id="dom">DOM</h3>
+
+<blockquote>
+<p>Is there are a difference <code>window</code> VS <code>document</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong>  Yes. JavaScript has a global <code>window</code> object and everything runs under it. <code>document</code> is a property of <code>window</code> object.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><code>window</code> is global object that holds global variables, global functions, location, history everything is under it. Besides, <code>setTimeout</code>, ajax call (<code>XMLHttpRequest</code>), <code>console</code> or <code>localStorage</code> are part of window.</p>
+
+<p><code>document</code> is also under <code>window</code>. <code>document</code> represents the <code>DOM</code>,  the object oriented representation of the html markup. All the nodes are part of document. Hence you can use <code>getElementById</code> or <code>addEventListener</code> on document. These methods are not present in the <code>window</code> object.</p>
+
+</div>
+
+<blockquote>
+<p>How could you make sure to run some javaScript when DOM is ready like <code>$(document).ready?</code></p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> There are four different ways:</p>
+
+<ol>
+<li>Put your script in the last tag of html body element. DOM would be ready by the time browser hits the script tag.</li>
+<li>Place your code inside a <code>DOMContentLoaded</code> handler. This event will be fired when DOM is completely loaded.</li>
+<li>Watch changes in the <code>readyState</code> of the <code>document</code>. And the last state is <code>&quot;complete&quot;</code> state, you can put your code there.</li>
+<li>Use jQuery <code>$(document).ready</code>.</li>
+</ol>
+
+</div>
+
+<blockquote>
+<p><code>window.onload</code> VS <code>document.onload</code> VS <code>document.addEventListener('DOMContentLoaded')</code>. Do they fire at the same time?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong>
+* <code>window.onload</code> is fired when all page is loaded, including all resources (images, styles, iframes)
+* <code>document.onload</code> is fired when DOM (DOM tree built from markup code within the document) is ready which without external content.
+* <code>DOMContentLoaded</code> means that DOM has already been built, we can use handlers or search through the nodes, but resources such as images, styles don&rsquo;t be loaded yet</p>
+
+</div>
+
+<blockquote>
+<p>Is <code>attribute</code> similar to <code>property</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> We operate with DOM-properties via JS. Attributes are part of HTML markup.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>What is a property?</p>
+
+<p>JS objects have DOM-properties. These properties are kind of like instance variables for the particular element. As such, a property can be different types (boolean, string, etc.). Properties can be accessed as object properties: <code>a.href</code></p>
+
+<p>What is an attribute?</p>
+
+<p>Attributes are in the HTML itself, rather than in the DOM. They are very similar to properties, but not quite as good. When a property is available it’s recommended that you work with properties rather than attributes.</p>
+
+<ul>
+<li><code>elem.hasAttribute(name)</code></li>
+<li><code>elem.getAttribute(name)</code></li>
+<li><code>elem.setAttribute(name, value)</code></li>
+<li><code>elem.removeAttribute(name)</code></li>
+<li><code>elem.attributes</code></li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>What are the different ways to get an element from DOM?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> You can use the following methods in <code>document</code>:</p>
+
+<ul>
+<li><code>getElementById</code> to get a element that has the provided Id.</li>
+<li><code>getElementsByClassName</code> to get a nodelist (nodelist is not an array, rather it is array-like object) by providing a class name.</li>
+<li><code>getElementsByTagName</code> to get a nodelist by the provided tag name.</li>
+<li><code>getElementsByName</code> to get a nodelist by name property</li>
+<li><code>querySelector</code> you will pass css style selector and this will return first matched element in the DOM.</li>
+<li><code>querySelectorAll</code> will return a non-live nodelist by using depth-first pre order traversal of all the matched elements. Non-live means, any changes after selecting the elements will not be reflected.</li>
+</ul>
+
+<p>There are two more options but don&rsquo;t used frequently:</p>
+
+<ul>
+<li><code>getElementsByName</code> returns the list of elements by the provided name of the html tag</li>
+<li><code>getElementsByTagNameNS</code> returns elements with particular tag name within the provided namespace</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>Fastest way to Query DOM:</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> If you have an ID of an element <code>getElmentById</code> is the fastest way to select an element. However, you should not have so many ID in you document to avoid style repetition. <code>getElementsByClassName</code> is the second quickest way to select an element.</p>
+
+<p>Here is the list. As we go downwards through the list, it takes more time to select elements.</p>
+
+<ul>
+<li>ID (#myID)</li>
+<li>Class (.myClass)</li>
+<li>Tag (div, p)</li>
+<li>Sibling (div+p, div~p)</li>
+<li>child (div&gt;p)</li>
+<li>Descendant (div p)</li>
+<li>Universal (*)</li>
+<li>Attribute (input[type=&ldquo;checkbox&rdquo;])</li>
+<li>Pseudo (p:first-child)</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>Why <code>querySelectorAll('.my-class')</code> is slower than <code>getElementsByClassName('my-class')</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>querySlectorAll</code> is a generic purpose method. It is optimized for different kinds of selectors. Hence it has to check whether you put a <code>&quot;#&quot;</code> or <code>&quot;.&quot;</code> in front of the parameter you are passing. If you are just passing a class name with <code>&quot;.&quot;</code>, under the hood it uses <code>getElementsByClassName</code> (could vary based on browser implements). Whereas if you directly uses <code>getElementsByClassName</code> it directly uses this method and doesn&rsquo;t have to go through all the initial processing of <code>querySelectorAll</code>. Hence to search elements with a particular class name, <code>getElementsByClassName</code> is faster than <code>querySelectorAll</code>.</p>
+
+</div>
+
+<blockquote>
+<p>Why we can&rsquo;t use <code>forEach</code> or similar array methods on a <code>NodeList</code>? How could you solve this problem?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Both <code>array</code> and <code>nodeList</code> have <code>length</code> and you can loop through elements but they are not same object.</p>
+
+<p>Both are inherited from <code>Object</code>. However <code>array</code> has different <code>prototype</code> object than <code>nodeList</code>. <code>forEach</code>, <code>map</code>, etc are on <code>array.prototype</code> which doesn&rsquo;t exist in the <code>NodeList.prototype</code> object:</p>
+
+<pre><code class="language-js">myArray --&gt; Array.prototype --&gt; Object.prototype --&gt; null
+
+myNodeList --&gt; NodeList.prototype --&gt; Object.prototype --&gt; null
+</code></pre>
+
+<p><strong>Answer:</strong> Convert <code>NodeList</code> to an <code>array</code>. After that you will have access to all <code>array.prototype</code> methods.</p>
+
+<pre><code class="language-js">// ES5
+var myNodeList = document.querySelectorAll('.my-class');
+var nodesArray = Array.prototype.slice.call(myNodeList);
+
+//use array method on nodeList
+nodesArray.forEach(function(el, idx){
+  console.log(idx, el);
+});
+
+// ES6
+const myNodeList = document.querySelectorAll('.my-class');
+
+// Spread operator
+[...myNodeList].forEach(cb);
+
+// Array.from()
+Array.from(myNodeList).forEach(cb);
+
+// for...of statement
+for (var el of myNodeList) cb(el);
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>How would you add/remove/toggle a class to an element?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-javascript">el.classList.remove('my-class'); //removing a class
+el.classList.toggle('my-class');  // toggling a class
+el.classList.contains('my-class'); // checking whether class exists
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>How to check if element isn&rsquo;t empty, without children?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-javascript">if (!elem.childNodes.length) { ... }
+
+if (!elem.hasChildNodes()) { ... }
+
+if (!elem.firstChild) { ... }
+
+if (!elem.lastChild) { ... }
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>How you would perform next operation: create element with content, add <code>data-foo</code> attribute, append newly created element to whatever you want, then move it before some element, change text of it, remove it from DOM. How to clone an element?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Use the next methods <code>document.createElement(tag)</code>, <code>el.innerHTML</code>, <code>parent.appendChild(el)</code>, <code>parent.insertBefore(el, someEl)</code>, <code>parent.removeChild(el)</code></p>
+
+<p>For clone an element we can create function or use <code>el.cloneNode(true)</code> where <code>true</code> means deep cloning.</p>
+
+</div>
+
+<blockquote>
+<p>How to delete all children of element?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-javascript">function removeChildren(elem) {
+  try {
+    elem.innerHTML = ''; //dont work with table cells and etc.
+  } catch (e) {
+    while (elem.firstChild) {
+      elem.removeChild(elem.firstChild);
+    }
+  }
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>createTextNode vs innerHTML</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> It depends on content. <code>innerHTML</code> inserts content as HTML, but <code>createTextNode</code> inserts tags as text.</p>
+
+</div>
+
+<blockquote>
+<p>What is the best way to create a DOM element? Set <code>innherHTML</code> or use <code>createElement</code>? Do you know about <code>insertAdjacentHTML</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> According to jsPerf option 1 is approximately 3 times slower than option 2.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><code>appendChild</code> does not cause a complete rebuild of the DOM or even all of the elements/nodes within the target.</p>
+
+<p><code>innerHTML</code> does cause a complete rebuild of the content of the target element, which if you&rsquo;re appending is unnecessary.</p>
+
+<p>Appending via <code>innerHTML += content</code> makes the browser run through all of the nodes in the element building an HTML string to give to the JavaScript layer. Your code then appends text to it and sets innerHTML, causing the browser to drop all of the old nodes in the target, re-parse all of that HTML, and build new nodes. So in that sense, it may not be efficient. (However, parsing HTML is what browsers do and they&rsquo;re really, really fast at it.)</p>
+
+<p>Setting <code>innerHTML</code> does indeed invalidate any references to elements within the target element you may be holding - because those elements don&rsquo;t exist anymore, you removed them and then put in new ones (that look very similar) when you set <code>innerHTML</code>.</p>
+
+<p>In short, if you&rsquo;re appending, I&rsquo;d use <code>appendChild</code> or <code>insertAdjacentHTML</code>. If you&rsquo;re replacing, there are very valid situations where using innerHTML is a better option than creating the tree yourself via the DOM API.</p>
+
+<p>Finally, it&rsquo;s worth mentioning <code>insertAdjacentHTML</code>, which is a function that you can use to insert nodes and elements into or next to an element using an HTML string. You can append to an element with it: <code>theElement.insertAdjacentHTML(&quot;beforeend&quot;, &quot;the HTML goes here&quot;);</code></p>
+
+</div>
+
+<blockquote>
+<p>What is <code>createDocumentFragment</code> and why you might use it?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> If you are changing DOM that cause expensive reflow, you can avoid it by using <code>documentFragment</code> as it is managed in the memory.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><code>documentFragment</code> a very lightweight or minimal part of a DOM or a subtree of a DOM tree. It is very helpful when you are manipulating a part of DOM for multiple times. It becomes expensive to hit a certain portion of DOM for hundreds time. You might cause reflow for hundred times.</p>
+
+<p>A bad practice, you are hitting the DOM every single time:</p>
+
+<pre><code class="language-javascript">//
+var list = ['foo', 'bar', 'baz', ... ],
+    el, text;
+for (var i = 0; i &lt; list.length; i++) {
+    el = document.createElement('li');
+    text = document.createTextNode(list[i]);
+    el.appendChild(text);
+    document.body.appendChild(el);
+}
+</code></pre>
+
+<p>A good practice, you causing reflow one time:</p>
+
+<pre><code class="language-javascript">var fragment = document.createDocumentFragment(),
+    list = ['foo', 'bar', 'baz', ...],
+    el, text;
+for (var i = 0; i &lt; list.length; i++) {
+    el = document.createElement('li');
+    text = document.createTextNode(list[i]);
+    el.appendChild(text);
+    fragment.appendChild(el);
+}
+document.body.appendChild(fragment);
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>When would you use &ldquo;document.write()&rdquo; ?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> In terms of vendors supplying third parties or analytics code (like Google Analytics) it&rsquo;s actually the easiest way for them to distribute such snippets.</p>
+
+<pre><code class="language-html">&lt;script&gt;
+  var url = 'http://ads.com/buyme?screen=' + screen.width + &quot;x&quot; + screen.height;
+
+  document.write('&lt;script src=&quot;' + url + '&quot;&gt;&lt;/scr' + 'ipt&gt;');
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>Explanation:</strong></p>
+
+<ol>
+<li>It keeps the scripts small</li>
+<li>They don&rsquo;t have to worry about overriding already established onload events or including the necessary abstraction to add onload events safely</li>
+<li>It&rsquo;s extremely compatible</li>
+</ol>
+
+<p><code>document.write</code> only works while the page is loading; If you call it after the page is done loading, it will overwrite the whole page.</p>
+
+<p>This effectively means you have to call it from an inline script block - And that will prevent the browser from processing parts of the page that follow. Scripts and Images will not be downloaded until the writing block is finished.</p>
+
+</div>
+
+<blockquote>
+<p>What is reflow? What causes reflow? How could you reduce reflow?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> When you change size or position of an element in the page, all the elements after it has to change their position according to the changes you made. For example, if you change height on an element, all the elements under it has to move down in the page to accomodate a change in height. Hence, flow of the elements in the page is changed and this is called <em>reflow</em>.</p>
+
+<p>Re-flows could be very expensive and it might have a performance hit specially in the smaller devices like phone. As it might causes changes in the portion (or whole) layout of the page.</p>
+
+<p>The following cases causes reflow:</p>
+
+<ul>
+<li>change layout (geometry of the page)</li>
+<li>resize the window</li>
+<li>change height/width of any element</li>
+<li>changing font</li>
+<li>change font size</li>
+<li>move DOM element (animation)</li>
+<li>adding or removing stylesheet</li>
+<li>calculating offset height or offset width</li>
+<li><code>display: none;</code></li>
+</ul>
+
+<p>How to avoid: To avoid reflow, try to avoid doing things in the above list and some more in the below</p>
+
+<ul>
+<li>avoid setting multiple inline style</li>
+<li>apply animation to the elements that are positioned fixed or absolute</li>
+<li>avoid tables for layout</li>
+</ul>
+
+<p>More: <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/#animations">reflow and repaint: css performance makes your JS slow</a></p>
+
+</div>
+
+<blockquote>
+<p>What is repaint and when does this happen?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> repaint happens when you change the look of an element without changing the size and shape. This doesn&rsquo;t cause reflow as geometry of the element didn&rsquo;t changed.</p>
+
+<p>How it happens:</p>
+
+<ul>
+<li>change background color</li>
+<li>change text color</li>
+<li>visibility hidden</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>What is <code>defer</code> and <code>async</code> attribute does in a script tag?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> HTML parser will ignore <code>defer</code> and <code>async</code> keyword for inline script (script that does not have a src attribute).</p>
+
+<ul>
+<li>with <code>&lt;script async src=&quot;...&quot;&gt;</code> browser downloads the file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading</li>
+<li>with <code>&lt;script defer src=&quot;...&quot;&gt;</code> browser downloads the file during HTML parsing and will only execute it after the parser has completed. defer scripts are also guarenteed to execute in the order that they appear in the document.</li>
+</ul>
+
+<pre><code class="language-html">&lt;script src=&quot;1.js&quot; async&gt;&lt;/script&gt;
+&lt;script src=&quot;2.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
+<p><strong>Examples</strong>:</p>
+
+<pre><code class="language-html">//1
+&lt;script src=&quot;big.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;small.js&quot;&gt;&lt;/script&gt;
+
+//2
+&lt;script async src=&quot;big.js&quot;&gt;&lt;/script&gt;
+&lt;script async src=&quot;small.js&quot;&gt;&lt;/script&gt;
+
+//3
+&lt;script defer src=&quot;big.js&quot;&gt;&lt;/script&gt;
+&lt;script defer src=&quot;small.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+</div>
+
+<h3 id="events">Events</h3>
+
+<blockquote>
+<p>What is event bubble? How does event flows (event phases)?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> to understand event bubble, you have to understand what happen when you click on anything on a page.</p>
+
+<p>The event flow model specified by DOM Level 2 Events has three phases to it:</p>
+
+<ul>
+<li>Capture: When you clicked, browser knows a click event occurred. It starts from the <code>window</code> (lowest level/root of your website), then goes to <code>document</code>, then <code>html</code> root tag, then <code>body</code>, then <code>table</code>&hellip; its trying to reach the the as lowest level of element as possible. This is called capture phase (phase -1).</li>
+<li>Target: When browser reach the lowest level of element. In this case, you have clicked on a table cell (table data) hence target would be <code>td</code> tag. Then browser checks whether you have any click handler attached to this element. If there is any, browser executes that click hander. This is called target phase (phase -2).
+<code>Bubbling</code>: After firing click hander attached to <code>td</code>, browser walks toward root. One level upward and check whether there is any click handler attached with table row <code>tr</code> element. If there is any it will execute that. Then it goes to <code>tbody</code>, <code>table</code>, <code>body</code>, <code>html</code>, <code>document</code>, <code>window</code>. In this stage its moving upward and this is called event bubbling or bubbling phase (phase-3).</li>
+</ul>
+
+<p>Event handlers with <code>on&lt;eventName&gt;</code> doesn&rsquo;t know anything about capture phase.</p>
+
+<p>To capture on <code>capture</code> phase need to <code>addEventListener(&lt;eventName&gt;, &lt;cb&gt;, true)</code>, otherwise it will work by bubble phase.</p>
+
+</div>
+
+<blockquote>
+<p>Explain event delegation</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Event delegation allows you to avoid adding event listeners to specific nodes, instead, the event listener is added to one parent. That event listener analyzes bubbled events to find a match on child elements.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>Let&rsquo;s say that we have a parent UL element with several child elements:</p>
+
+<pre><code class="language-html">&lt;ul id=&quot;parent-list&quot;&gt;
+  &lt;li id=&quot;post-1&quot;&gt;Item 1&lt;/li&gt;
+  &lt;li id=&quot;post-2&quot;&gt;Item 2&lt;/li&gt;
+  &lt;li id=&quot;post-3&quot;&gt;Item 3&lt;/li&gt;
+  &lt;li id=&quot;post-4&quot;&gt;Item 4&lt;/li&gt;
+  &lt;li id=&quot;post-...&quot;&gt;...&lt;/li&gt;
+  &lt;li id=&quot;post-1001&quot;&gt;Item 1001&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>Let&rsquo;s also say that something needs to happen when each child element is clicked.  You could add a separate event listener to each individual <code>LI</code> element, but what if <code>LI</code> elements are frequently added and removed from the list?  Adding and removing event listeners would be a nightmare, especially if addition and removal code is in different places within your app. The better solution is to add an event listener to the parent UL element.</p>
+
+<p>When the event bubbles up to the <code>UL</code> element, you check the event object&rsquo;s target property to gain a reference to the actual clicked node:</p>
+
+<pre><code class="language-javascript">// Get the element, add a click listener...
+document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;, function(e) {
+  // e.target is the clicked element!
+  // If it was a list item
+  if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) {
+    // List item found!  Output the ID!
+    console.log(&quot;List item &quot;, e.target.id.replace(&quot;post-&quot;, &quot;&quot;), &quot; was clicked!&quot;);
+  }
+});
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Can you remove an event handler from an element?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>target.removeEventListener('click', &lt;handledName&gt;)</code></p>
+
+</div>
+
+<blockquote>
+<p>How could you prevent a click on an anchor from going to the link? How could you stop further propagation of an event?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>preventDefault()</code> inside event handler. However, this doesn&rsquo;t stop further propagation. To stop it <code>event.stopPropagation();</code></p>
+
+</div>
+
+<blockquote>
+<p>How to capture all click in a page?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> You can leverage event bubble to get all the clicks. As all the clicks will be bubbled up to the body.</p>
+
+<pre><code class="language-javascript">document.querySelector('body').addEventListener('click', function(e){
+  console.log('body clicked', e.target);
+});
+
+//or
+window.onclick = function(e){
+  console.log('someone clicked', e.target)
+}
+</code></pre>
+
+</div>
+
+<h3 id="ajax">AJAX</h3>
+
+<blockquote>
+<p>Explain AJAX in as much detail as possible</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> AJAX is a way to communicate to the server without reloading the page. Once we receive the data from the server, we can then manipulate those data and display unto certain parts of the page, this is why we don’t need to reload the page.</p>
+
+<p><strong>Explanation:</strong> AJAX stands for Asynchronous JavaScript and XML. In a nutshell, it is the use of the <code>XMLHttpRequest</code> object to communicate with server-side scripts. It can send as well as receive information in a variety of formats, including JSON, XML, HTML, and even text files. AJAX’s most appealing characteristic, however, is its &ldquo;asynchronous&rdquo; nature, which means it can do all of this without having to refresh the page</p>
+
+<p>Typical example for GET request with <code>XMLHttpRequest</code>:</p>
+
+<script src="https://gist.github.com/qetr1ck-op/f52380392d7f0afb4835f8257a483ff7.js"></script>
+
+</div>
+
+<blockquote>
+<p>What is COMET? How to achieve this technique?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> he AJAX - is a &ldquo;request sent - get the result,&rdquo; and the COMET - is &ldquo;a continuous channel through which the data come.&rdquo;</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>Comet is a Web application model that enables web servers to send data to the client without having to explicitly request it.</p>
+
+<p>Examples COMET-app:</p>
+
+<ul>
+<li>Chat - man sitting and watching what others write. At the same time new messages arrive &ldquo;on their own&rdquo;, he should not have to press a button to refresh the chat window.</li>
+<li>Auction - a person looks at the screen and sees renewed the current bid for the goods.</li>
+<li>Editing interface - when one editor is beginning to change the document, others see the information about it. Perhaps, and collaborative editing, editors when they see each other&rsquo;s changes.</li>
+</ul>
+
+<p>COMET techniques overview:</p>
+
+<ul>
+<li>Polling: a simple method based on periodically polling the server.</li>
+<li>Long poll: A method by which a client opens a connection and doesn&rsquo;t close it up until the event occurs. In the event occurs, the client receives a notification and then opens a connection again.</li>
+<li>&ldquo;Infinite&rdquo; iframe: The method is based on html document download features. It creates an invisible iframe, which reads &ldquo;infinite&rdquo; file. When an event occurs, a new row is added to the file. The string can be a javascript snippet.</li>
+<li>HTML5 WebSockets: specification defines an API establishing &ldquo;socket&rdquo; connections between a web browser and a server. In plain words: There is an persistent connection between the client and the server and both parties can start sending data at any time.</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>How to work with HTTP headers in AJAX. Do we have a restriction?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> There are three methods <code>setRequestHeader(name, value)</code>, <code>getResponseHeader(name)</code>, <code>getAllResponseHeaders()</code></p>
+
+</div>
+
+<blockquote>
+<p>Send JSON Object with Ajax?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Use <code>xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;)</code> and <code>JSON.stringify(&lt;object&gt;)</code>;</p>
+
+<pre><code class="language-javascript">var jsonRequest = &quot;json_name=&quot; + JSON.stringify({name:&quot;John&quot;, time:&quot;2pm&quot;});
+var xhr = new XMLHttpRequest();
+
+xhr.open(&quot;POST&quot;, &quot;/submit&quot;);
+xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);
+xhr.send(json_upload);
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Sending POST data using an XMLHttpRequest using different encoding patterns.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> With <code>XMLHttpRequest</code> we don&rsquo;t need explicitly set header with <code>Content-type</code>.</p>
+
+<p>In spec are 3 types for submitting body entity:</p>
+
+<ul>
+<li><code>application/x-www-form-urlencoded</code></li>
+<li><code>multipart/form-data</code></li>
+<li><code>text-plain</code></li>
+</ul>
+
+<p>With <code>application/x-www-form-urlencoded</code>:</p>
+
+<pre><code class="language-javascript">var xhr = new XMLHttpRequest();
+
+var body = 'name=' + encodeURIComponent(name) +
+  '&amp;surname=' + encodeURIComponent(surname);
+
+xhr.open(&quot;POST&quot;, '/submit', true)
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+xhr.onreadystatechange = ...;
+
+xhr.send(body);
+</code></pre>
+
+<p>With <code>multipart/form-data</code>:</p>
+
+<pre><code class="language-html">&lt;form name=&quot;person&quot;&gt;
+  &lt;input name=&quot;name&quot; value=&quot;John&quot;&gt;
+  &lt;input name=&quot;surname&quot; value=&quot;Doe&quot;&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  var formData = new FormData(document.forms.person);
+
+  formData.append(&quot;foo&quot;, &quot;bar&quot;);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open(&quot;POST&quot;, &quot;/url&quot;);
+  xhr.setRequestHeader('Content-Type', 'multipart/form-data')
+  xhr.send(formData);
+&lt;/script&gt;
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>What is CORS? What techniques you know to avoid it?</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<h2 id="es6">ES6</h2>
+
+<blockquote>
+<p>When standard was finalized?</p>
+</blockquote>
+
+<div class="hidden">
+<p>The ES6 specification was finalized in June 2015, (hence ES2015).</p>
+
+<p>Future versions of the specification will follow the ES[YYYY] pattern, e.g ES2016 for ES7.</p>
+
+</div>
+
+<blockquote>
+<p>Tooling</p>
+</blockquote>
+
+<div class="hidden">
+<p>To get ES6 working today, you need a JavaScript-to-JavaScript transpiler:</p>
+
+<ul>
+<li>They allow you to compile code in the latest version into older versions of the language</li>
+<li>As browser support gets better, we’ll transpile ES2016 and ES2017 into ES6 and beyond</li>
+<li>We’ll need better source mapping functionality</li>
+<li>They’re the most reliable way to run ES6 source code in production today (although browsers get ES5)</li>
+<li>
+Use <code>babel</code> to transpile ES6 into ES5 for static build</li>
+</ul>
+
+<p>Use <code>babelify</code> to incorporate babel into your <code>Gulp</code>, <code>Grunt</code>, or <code>npm</code> run build process</p>
+
+<p>Use <code>Node.js</code> v4.x.x or greater as they have decent ES6 support baked in, thanks to v8</p>
+
+<p>Use <code>babel-node</code> with any version of node, as it transpiles modules into ES5</p>
+
+</div>
+
+<blockquote>
+<p>Assignment Destructing, the Rapid Table</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Spread Operator and Rest Parameters</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Arrow Functions</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Template Literals</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Object Literals</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Classes</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Let and Const</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Symbols</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Iterators</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Generators</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Promises</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Maps / WeakMaps</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Sets / WeakSets</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Modules</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<blockquote>
+<p>Proxy</p>
+</blockquote>
+
+<div class="hidden">
+
+</div>
+
+<p>TODO with <a href="https://ponyfoo.com/articles/es6">https://ponyfoo.com/articles/es6</a></p>
+
+<h2 id="javascript-advance">JavaScript: advance</h2>
+
+<blockquote>
+<p>What do you think of AMD vs CommonJS and ES6 modules?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<p>For many years JS had a single widely accepted module format, which is to say, there was none. Everything was a global variable petulantly hanging off the window object.</p>
+
+<p>Dark Ages. Long ago an adhoc group formed to solve the global conflict. The fruits of this vigilante justice are known today as CommonJS. Multiple competing formats were proposed and implemented in the wild by these dashing radicals and two bright lights emerged with significant adherents: AMD and CJS.</p>
+
+<p><em>Asynchronous Module Design</em> (AMD) accounts for the async nature of JS but some felt the aesthetics were harder to read with a wrapper function.</p>
+
+<p><em>CommonJS</em> (CJS) is synchronous, thus blocking, but generally understood to be an easier read.</p>
+
+<pre><code class="language-javascript">// this is an AMD module
+define(function () {
+  return something
+})
+
+// and this is CommonJS
+module.exports = something
+</code></pre>
+
+<p>JavaScript vendors and concerned citizens began formally standardizing modules into the language proper. After years of thrashing, a standard module format has finally emerged with ES6.</p>
+
+</div>
+
+<blockquote>
+<p>What is asynchronous programming, and why is it important in JS? Non-blocking I/O in JS.</p>
+</blockquote>
+
+<div class="hidden">
+<p>Synchronous programming means that code is executed sequentially from top-to-bottom, blocking on long-running tasks such as network requests and disk I/O.</p>
+
+<p>Asynchronous programming means that the engine runs in an event loop. When a blocking operation is needed, the request is started, and the code keeps running without blocking for the result. When the response is ready, an interrupt is fired, which causes an event handler to be run, where the control flow continues. In this way, a single program thread can handle many concurrent operations.</p>
+
+<p>Node is asynchronous by default, meaning that the server works in much the same way, waiting in a loop for a network request, and accepting more incoming requests while the first one is being handled.</p>
+
+<p>In JavaScript, almost all I/O is non-blocking. This includes:
+* Networking requests
+* DB operations
+* Disk reads and writes
+* User interfaces are asynchronous by nature, and spend most of their time waiting for user input to interrupt the event loop and trigger event handlers</p>
+
+<p>The single thread of execution asks the runtime to perform an operation, providing a callback function and then moves on to do something else. When the operation has been completed, a message is enqueued along with the provided callback function. At some point in the future, the message is dequeued and the callback fired.</p>
+
+<p>Let’s compare two bits of code that make HTTP requests to <code>www.google.com</code> and output the response to console with <code>Node.js</code> and the <code>Request</code>:</p>
+
+<pre><code class="language-js">request('http://www.google.com', function(error, response, body) {
+  console.log(body);
+});
+
+console.log('Done!');
+</code></pre>
+
+<ol>
+<li>The request function is executed, passing an anonymous function as a callback to execute when a response is available sometime in the future.</li>
+<li>“Done!” is immediately output to the console</li>
+<li>Sometime in the future, the response comes back and our callback is executed, outputting its body to the console</li>
+</ol>
+
+</div>
+
+<blockquote>
+<p>Do request two parallel request to <code>http://httpbin.org/ip</code> and <code>http://httpbin.org/user-agent</code>.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-js">Promise.all([fetch('http://httpbin.org/ip'), fetch('http://httpbin.org/user-agent')])
+  .then(resps =&gt; {
+    return Promise.all([resps[0].json(), resps[1].json()])
+  })
+  .then((jsons) =&gt; console.log(jsons))
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Resolve promises one after another (i.e. in sequence)?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-js">function runSerial() {
+    return Promise.resolve()
+        .then(task1)
+        .then(task2)
+        .then(() =&gt; {
+            console.log(&quot; ---- done ----&quot;);
+        });
+}
+</code></pre>
+
+<p>With dynamic length of tasks&rdquo;</p>
+
+<pre><code class="language-js">let urls = ['guest.json', 'user.json'];
+let results = [];
+let chain = Promise.resolve();
+
+urls.forEach(function(url) {
+  chain = chain
+    .then(() =&gt; httpGet(url))
+    .then((result) =&gt; {
+      results.push(result);
+    });
+});
+
+chain.then(() =&gt; {
+  console.log(results);
+});
+
+// with reduce
+urls
+  .reduce((promise, url) =&gt; {
+    return promise.then(() =&gt; httpGet(url)).then((json) =&gt; results.push(json));
+  }, Promise.resolve())
+  .then(() =&gt; {
+    console.log(results);
+  });
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>The Event Loop</p>
+</blockquote>
+
+<div class="hidden">
+<p>The decoupling of the caller from the response allows for the JavaScript runtime to do other things while waiting for your asynchronous operation to complete and their callbacks to fire. But where in memory do these callbacks live – and in what order are they executed? What causes them to be called?</p>
+
+<p>JavaScript runtimes contain a message queue which stores a list of messages to be processed and their associated callback functions. These messages are queued in response to external events (such as a mouse being clicked or receiving the response to an HTTP request) given a callback function has been provided. If, for example a user were to click a button and no callback function was provided – no message would have been enqueued.</p>
+
+<p>In a loop, the queue is polled for the next message (each poll referred to as a “tick”) and when a message is encountered, the callback for that message is executed.</p>
+
+<p><img src="http://www.appsdev.is.ed.ac.uk/blog/wp-content/uploads/2015/03/Event-loop.png" alt="Event Loop" /></p>
+
+</div>
+
+<blockquote>
+<p>Macrotasks and Microtasks</p>
+</blockquote>
+
+<div class="hidden">
+<p>Take this little bit of JavaScript:</p>
+
+<pre><code class="language-js">console.log('script start')
+
+const interval = setInterval(() =&gt; {  
+  console.log('setInterval')
+}, 0)
+
+setTimeout(() =&gt; {  
+  console.log('setTimeout 1')
+  Promise.resolve().then(() =&gt; {
+    console.log('promise 3')
+  }).then(() =&gt; {
+    console.log('promise 4')
+  }).then(() =&gt; {
+    setTimeout(() =&gt; {
+      console.log('setTimeout 2')
+      Promise.resolve().then(() =&gt; {
+        console.log('promise 5')
+      }).then(() =&gt; {
+        console.log('promise 6')
+      }).then(() =&gt; {
+        clearInterval(interval)
+      })
+    }, 0)
+  })
+}, 0)
+
+Promise.resolve().then(() =&gt; {  
+  console.log('promise 1')
+}).then(() =&gt; {
+  console.log('promise 2')
+})
+console.log('script end')
+</code></pre>
+
+<p><strong>Answer:</strong></p>
+
+<pre><code class="language-js">script start
+script end
+promise 1  
+promise 2  
+setInterval  
+setTimeout 1  
+promise 3  
+promise 4  
+setInterval  
+setTimeout 2  
+setInterval  
+promise 5  
+promise 6  
+</code></pre>
+
+<p>To understand this you need to know how the event loop handles macrotasks and microtasks.</p>
+
+<p>macrotasks: <code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>, I/O, UI rendering
+microtasks: <code>process.nextTick</code>, <code>Promises</code>, <code>Object.observe</code>, <code>MutationObserver</code></p>
+
+<p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/">A great post</a>.</p>
+
+</div>
+
+<blockquote>
+<p>What is the difference between &ldquo;classical inheritance&rdquo; and &ldquo;prototypal inheritance&rdquo;?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Class Inheritance: instances inherit from classes (like a blueprint — a description of the class), and create sub-class relationships: hierarchical class taxonomies. Instances are typically instantiated via constructor functions with the <code>new</code> keyword. Class inheritance may or may not use the <code>class</code> keyword from ES6.</p>
+
+<p>Prototypal Inheritance: instances inherit directly from other objects. Instances are typically instantiated via factory functions or <code>Object.create()</code>. Instances may be composed from many different objects, allowing for easy selective inheritance.</p>
+
+<p>Good to hear:
+* Classes: create tight coupling or hierarchies/taxonomies.
+* Prototypes: mentions of concatenative inheritance, prototype delegation, functional inheritance, object composition.</p>
+
+</div>
+
+<blockquote>
+<p>What are the pros and cons of functional programming vs object-oriented programming?</p>
+</blockquote>
+
+<div class="hidden">
+<p>OOP Pros: It’s easy to understand the basic concept of objects and easy to interpret the meaning of method calls. OOP tends to use an imperative style rather than a declarative style, which reads like a straight-forward set of instructions for the computer to follow.</p>
+
+<p>OOP Cons: OOP Typically depends on shared state. Objects and behaviors are typically tacked together on the same entity, which may be accessed at random by any number of functions with non-deterministic order, which may lead to undesirable behavior such as race conditions.</p>
+
+<p>FP Pros: Using the functional paradigm, programmers avoid any shared state or side-effects, which eliminates bugs caused by multiple functions competing for the same resources. With features such as the availability of point-free style (aka tacit programming), functions tend to be radically simplified and easily recomposed for more generally reusable code compared to OOP.</p>
+
+<p>FP Cons: Over exploitation of FP features such as point-free style and large compositions can potentially reduce readability because the resulting code is often more abstractly specified, more terse, and less concrete.
+More people are familiar with OO and imperative programming than functional programming, so even common idioms in functional programming can be confusing to new team members.</p>
+
+</div>
+
+<blockquote>
+<p>What does &ldquo;favor object composition over class inheritance&rdquo; mean?</p>
+</blockquote>
+
+<div class="hidden">
+<p>This is a quote from &ldquo;Design Patterns: Elements of Reusable Object-Oriented Software&rdquo;.</p>
+
+<p>Object composition is a way to combine simple objects or data types into more complex ones. It means that code reuse should be achieved by assembling smaller units of functionality into new objects instead of inheriting from classes and creating object taxonomies.</p>
+
+<pre><code class="language-javascript">import { a, b, c } from 'components';
+composedObject = Object.assign({}, a, b, c);
+</code></pre>
+
+<p><strong>Good to hear:</strong></p>
+
+<ul>
+<li>Avoid class hierarchies.</li>
+<li>Avoid brittle base class problem.</li>
+<li>Avoid tight coupling.</li>
+<li>Avoid rigid taxonomy (forced is-a relationships that are eventually wrong for new use cases).</li>
+<li>Avoid the gorilla banana problem (“what you wanted was a banana, what you got was a gorilla holding the banana, and the entire jungle”).</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>What are two-way data binding and one-way data flow, and how are they different?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Two way data binding means that UI fields are bound to model data dynamically such that when a UI field changes, the model data changes with it and vice-versa.</p>
+
+<p>One way data flow means that the model is the single source of truth. Changes in the UI trigger messages that signal user intent to the model (or “store” in React). Only the model has the access to change the app’s state. The effect is that data always flows in a single direction, which makes it easier to understand.</p>
+
+<p>One way data flows are deterministic, whereas two-way binding can cause side-effects which are harder to follow and understand.</p>
+
+<p><strong>Good to hear:</strong>
+React is the new canonical example of one-way data flow, so mentions of React are a good signal. Cycle.js is another popular implementation of uni-directional data flow.
+Angular is a popular framework which uses two-way binding.</p>
+
+</div>
+
+<blockquote>
+<p>What are the pros and cons of monolithic vs microservice architectures?</p>
+</blockquote>
+
+<div class="hidden">
+<p>A monolithic architecture means that your app is written as one cohesive unit of code whose components are designed to work together, sharing the same memory space and resources.</p>
+
+<p>A microservice architecture means that your app is made up of lots of smaller, independent applications capable of running in their own memory space and scaling independently from each other across potentially many separate machines.</p>
+
+<p><strong>Good to hear:</strong></p>
+
+<p>Monolithic Pros: The major advantage of the monolithic architecture is that most apps typically have a large number of cross-cutting concerns, such as logging, rate limiting, and security features such audit trails and DOS protection.</p>
+
+<p>When everything is running through the same app, it’s easy to hook up components to those cross-cutting concerns.</p>
+
+<p>Monolithic cons: Monolithic app services tend to get tightly coupled and entangled as the application evolves, making it difficult to isolate services for purposes such as independent scaling or code maintainability.</p>
+
+<p>Monolithic architectures are also much harder to understand, because there may be dependencies, side-effects, and magic which are not obvious when you’re looking at a particular service or controller.</p>
+
+<p>Microservice pros: Microservice architectures are typically better organized, since each microservice has a very specific job, and is not concerned with the jobs of other components. Decoupled services are also easier to recompose and reconfigure to serve the purposes of different apps (for example, serving both the web clients and public API).</p>
+
+<p>They can also have performance advantages depending on how they’re organized because it’s possible to isolate hot services and scale them independent of the rest of the app.</p>
+
+<p>Microservice cons: As you’re building a new microservice architecture, you’re likely to discover lots of cross-cutting concerns that you did not anticipate at design time. A monolithic app could establish shared magic helpers or middleware to handle such cross-cutting concerns without much effort.</p>
+
+</div>
+
+<h2 id="markup">Markup</h2>
+
+<h3 id="html">HTML</h3>
+
+<blockquote>
+<p>What is doctype? Why do u need it?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>doctype</code> is an instruction to the browser to inform about the version of html document and how browser should render it.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>It ensures how element should be displayed on the page by most of the browser. And it also makes browser&rsquo;s life easier. otherwise, browser will guess and will go to quirks mode. Moreover, <code>doctype</code> is required to validate markup.</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Difference between standard/strict mode and quirks mode?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> quirks mode in browser allows u to render page for as old browsers. This is for backward compatibility.</p>
+
+</div>
+
+<blockquote>
+<p>What is the use of <code>data-</code> attribute?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> allow you to store extra information/data in the DOM and allows to write valid html with embedded private data. You can easily access data attribute by using JS.</p>
+
+<pre><code class="language-html">&lt;div id=&quot;myDiv&quot; data-user=&quot;jsDude&quot; data-list-size=&quot;5&quot; data-maxage=&quot;180&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>What is the difference between <code>span</code> and <code>div</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>div</code> is a block element, <code>span</code> is inline.</p>
+
+<p>This means that to use them semantically, divs should be used to wrap sections of a document, while spans should be used to wrap small portions of text, images, etc.</p>
+
+</div>
+
+<blockquote>
+<p>When should you use section, div or article?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> To decide which of these three elements is appropriate, choose the first suitable option:</p>
+
+<ol>
+<li>Would the enclosed content would make sense on it’s own in a feed reader? If so use <code>&lt;article&gt;</code></li>
+<li>Is the enclosed content related? If so use <code>&lt;section&gt;</code></li>
+<li>Finally if there’s no semantic relationship use <code>&lt;div&gt;</code></li>
+</ol>
+
+</div>
+
+<blockquote>
+<p>What is &ldquo;Semantic HTML?&rdquo;</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Semantic HTML is a coding style where the tags embody what the text is meant to convey.</p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>In Semantic HTML, tags like <code>&lt;b&gt;&lt;/b&gt;</code> for bold, and <code>&lt;i&gt;&lt;/i&gt;</code> for italic should not be used, reason being they just represent formatting, and provide no indication of meaning or structure. The semantically correct thing to do is use <code>&lt;strong&gt;&lt;/strong&gt;</code> and <code>&lt;em&gt;&lt;/em&gt;</code>. These tags will have the same bold and italic effects, while demonstrating meaning and structure (emphasis in this case).</p>
+
+</div>
+
+<blockquote>
+<p>What are some new HTML5 markup elements?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<p>There are <a href="https://www.w3.org/TR/html-markup/bdi.html#bdi">several</a>: <code>&lt;article&gt;, &lt;aside&gt;, &lt;bdi&gt;, &lt;command&gt;, &lt;details&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;summary&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;hgroup&gt;, &lt;mark&gt;, &lt;meter&gt;, &lt;nav&gt;, &lt;progress&gt;, &lt;ruby&gt;, &lt;rt&gt;, &lt;section&gt;, &lt;time&gt;, &lt;wpr&gt;</code>.</p>
+
+</div>
+
+<blockquote>
+<p>What are the new media-related elements in HTML5?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<p>HTML5 has strong support for media. There are now special <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags. There are additional A/V support tags as well: <code>&lt;embed&gt;</code> is a container for 3rd party applications.</p>
+
+</div>
+
+<blockquote>
+<p>What is the difference between <code>SVG</code> and <code>Canvas</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong></p>
+
+<ul>
+<li><code>SVG</code> is a document format for scalable vector graphics.</li>
+<li><code>Canvas</code> is a javascript API for drawing vector graphics to a bitmap of a specific size.</li>
+</ul>
+
+<p><strong>Explanation:</strong></p>
+
+<p>SVG is XML based, which means that every element is available within the SVG DOM. You can attach JavaScript event handlers for an element.</p>
+
+<p>With SVG you can view, save and edit the file in many different tools.</p>
+
+<p>In SVG, each drawn shape is remembered as an object. If attributes of an SVG object are changed, the browser can automatically re-render the shape.</p>
+
+<p>Canvas is rendered pixel by pixel. In canvas, once the graphic is drawn, it is forgotten by the browser. If its position should be changed, the entire scene needs to be redrawn, including any objects that might have been covered by the graphic.</p>
+
+<p>SVG:</p>
+
+<ul>
+<li>Shape based</li>
+<li>Multiple graphical elements, which become part of the SVG DOM</li>
+<li>Modified through script and CSS</li>
+<li>Event model/user interaction is abstracted (rect, path)</li>
+<li>Performance is better with smaller number of objects (&lt;10k), a larger surface, or both</li>
+</ul>
+
+<p>Canvas:</p>
+
+<ul>
+<li>Pixel based</li>
+<li>Single HTML element.(Inspect element in Developer tool. You can see only canvas tag)</li>
+<li>Modified through script only</li>
+<li>Event model/user interaction is granular (x,y)</li>
+<li>Performance is better with smaller surface, a larger number of objects (&gt;10k), or both</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>Describe the difference between <code>cookies</code>, <code>sessionStorage</code>, and <code>localStorage</code></p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> <code>localStorage</code>, <code>sessionStorage</code> and <code>cookies</code> are all client storage solutions.</p>
+
+<p>Cookies are small text files that websites place in a browser for tracking or login purposes. Meanwhile, <code>localStorage</code> and <code>sessionStorage</code> are new objects, both of which are storage specifications but vary in scope and duration. Of the two, <code>localStorage</code> is permanent and website-specific whereas <code>sessionStorage</code> only lasts as long as the duration of the longest open tab.</p>
+
+<p>You can save to <code>localStorage</code> and <code>sessionStorage</code> only primitives, for object you need you use <code>JSON.stringify</code></p>
+
+</div>
+
+<h3 id="css">CSS</h3>
+
+<h2 id="general-website-optimization-questions">General Website Optimization Questions</h2>
+
+<blockquote>
+<p>How do you optimize a website’s assets?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> There are a <a href="https://www.sitepoint.com/web-site-optimization-steps/">number of answers</a> to this question: File concatenation, file compression, CDN Hosting, offloading assets, re-organizing and refining code, etc.</p>
+
+</div>
+
+<blockquote>
+<p>What are ways to reduce page load time?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Again there are <a href="https://blog.crazyegg.com/2013/12/11/speed-up-your-website/">many answers</a> here: Reduce image sizes, remove unnecessary widgets, HTTP compression, put CSS at the top and script references at the bottom or in external files, reduce lookups, minimize redirects, caching, etc.</p>
+
+</div>
+
+<blockquote>
+<p>What kind of things must you be wary of when design or developing for multilingual sites?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> Another problem with <a href="https://www.nomensa.com/blog/2010/7-tips-for-multi-lingual-website-accessibility">many solutions</a>: setting the default language, using Unicode encoding, using the <code>lang</code> attribute, being aware of standard font sizes and text direction, and language word length (may affect layout).</p>
+
+</div>
+
+<h1 id="technologies">Technologies</h1>
+
+<h2 id="js-framework">JS Framework</h2>
+
+<h3 id="angularjs">AngularJS</h3>
+
+<blockquote>
+<p>List at least three ways to communicate between modules of your application using core AngularJS functionality.</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> There are at least three idiomatic way to achieve this:</p>
+
+<ul>
+<li>Using services</li>
+<li>Using events</li>
+<li>Directly between controllers, using <code>ControllerAs</code>, or other forms of inheritance</li>
+<li>By assigning models on <code>$rootScope</code></li>
+<li>Directly between controllers, using <code>$parent</code>, <code>$$childHead</code>, <code>$$nextSibling</code>, etc.</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>Which means of communication between modules of your application are easily testable?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> The big deal is in DI pattern.</p>
+
+<p>Using a <code>service</code> is definitely easy to test. Services are injected, and in a test either a real <code>service</code> can be used or it can be mocked.</p>
+
+<p>Events can be tested. In unit testing controllers, they usually are instantiated. For testing events on <code>$rootScope</code>, it must be injected into the test.</p>
+
+<p>For testing direct <code>communication</code> between <code>controller</code>s, the expected results should probably be mocked. Otherwise, controllers would need to be manually instantiated to have the right context.</p>
+
+</div>
+
+<blockquote>
+<p>The most popular e2e testing tool for AngularJS is Protractor. Describe how e2e testing of AngularJS
+<div class="hidden">
+<p>applications work?</p>
+
+<p>The e2e tests are executed against a running app, that is a fully initialized system. They most often spawn a browser instance and involve the actual input of commands through the user interface. The written code is evaluated by an automation program, such as a Selenium server (webdriver). That program sends commands to a browser instance, then evaluates the visible results and reports back to the user.</p>
+
+<p>The assertions are handled by another library, for Protractor (end-to-end) / Karma (unit tests) the default is Jasmine.</p>
+
+</div></p>
+
+<p>What are the basic steps to unit test an AngularJS filter?</p>
+</blockquote>
+
+<div class="hidden">
+<ol>
+<li>Inject the module that contains the filter.</li>
+<li>Provide any mocks that the filter relies on.</li>
+<li>Get an instance of the filter using $filter(&lsquo;yourFilterName&rsquo;).</li>
+<li>Assert your expectations.</li>
+</ol>
+
+<pre><code class="language-javascript">describe('Filter: myFltr', function () {
+  var myFltr;
+
+  beforeEach(function () {
+    // Load the filters's module
+    module('myApp');
+
+    // Provide any mocks needed
+    module(function ($provide) {
+      //$provide.value('Name', new MockName());
+    });
+
+    // Inject in angular constructs otherwise,
+    // you would need to inject these into each test
+    inject(function ($filter) {
+      myFltr = $filter('myFltr');
+    });
+  });
+
+  it('should exist', function () {
+    expect(!!myFltr).toBe(true);
+  });
+
+  describe('when evaluating an expression', function () {
+    it('should return the expected output', function () {
+      var text = 'AngularJS';
+      expect(myFltr(text)).toBe('my filter: ' + text);
+    });
+  });
+});
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>When a scope is terminated, “destroy” events are fired. What are they used for, and why are there two?</p>
+</blockquote>
+
+<div class="hidden">
+<p>The first one is an AngularJS event, “$destroy” can be used by AngularJS scopes where they are accessible, such as in controllers or link functions.</p>
+
+<pre><code class="language-javascript">scope.$on(‘$destroy’, function () {
+  // handle the destroy, i.e. clean up.
+});
+
+// in 1.5.x
+$onDestroy() {...}
+</code></pre>
+
+<p>The jqLite / jQuery event is called whenever a node is removed, which may just happen without scope teardown:</p>
+
+<pre><code class="language-javascript">element.on(‘$destroy’, function () {
+  // respectful jQuery plugins already have this handler.
+  // angular.element(document.body).off(‘someCustomEvent’);
+});
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>How do you reset a <code>$timeout</code>, and disable a <code>$watch()</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> The key to both is assigning the result of the function to a variable.</p>
+
+<p>To cleanup the timeout, just <code>.cancel()</code> it:</p>
+
+<pre><code class="language-js">var customTimeout = $timeout(function () {
+  // arbitrary code
+}, 55);
+
+$timeout.cancel(customTimeout);
+</code></pre>
+
+<p>The same applies to <code>$interval()</code>. To disable a watch, just call it:</p>
+
+<pre><code class="language-js">var deregisterWatchFn = $rootScope.$watch(‘someGloballyAvailableProperty’, function (newVal) {
+  if (newVal) {
+    // we invoke that deregistration function, to disable the watch
+    deregisterWatchFn();
+    ...
+  }
+});
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Name and describe the phases of a directive definition function execution, or describe how directives are instantiated.</p>
+</blockquote>
+
+<div class="hidden">
+<p>Each directive undergoes something similar to a life cycle as AngularJS compiles and links the DOM. The directive lifecycle begins and ends within the AngularJS bootstrapping process, before the page is rendered.</p>
+
+<p>In a directive’s life cycle, there are four distinct functions that can execute if they are defined. Each enables the developer to control and customize the directive at different points of the life cycle.</p>
+
+<ul>
+<li>The <code>compile</code> function allows the directive to manipulate the DOM before it is compiled and linked thereby allowing it to add/remove/change directives, as well as, add/remove/change other DOM elements.</li>
+<li>The <code>controller</code> function facilitates directive communication. Sibling and child directives can request the controller of their siblings and parents to communicate information.</li>
+<li>The <code>pre-link</code> function allows for private <code>$scope</code> manipulation before the <code>post-link</code> process begins.</li>
+<li>The <code>post-link</code> method is the primary workhorse method of the directive.</li>
+</ul>
+
+<pre><code class="language-javascript">.directive(&quot;directiveName&quot;,function () {
+  return {
+    controller: function() {
+      // controller code here...
+    },
+    compile: {
+      // compile code here...
+      return {
+        pre: function() {
+          // pre-link code here...
+        },
+        post: function() {
+          // post-link code here...
+        }
+      };
+    }
+  }
+})
+</code></pre>
+
+<p>Commonly, not all of the functions are needed. In most circumstances, developers will simply create a <code>controller</code> and <code>link</code> (which refers to <code>post-link</code>) function following the pattern below.</p>
+
+<pre><code class="language-javascript">.directive(&quot;directiveName&quot;,function () {
+  return {
+    controller: function() {
+      // controller code here...
+    },
+
+    link: function() {
+      // post-link code here...
+    }
+  }
+})
+</code></pre>
+
+<p>More <a href="https://www.toptal.com/angular-js/angular-js-demystifying-directives">here</a>.</p>
+
+</div>
+
+<blockquote>
+<p>How does interpolation, e.g. <code>{% raw %}{{ someModel }}{% endraw %}</code>, actually works?</p>
+</blockquote>
+
+<div class="hidden">
+<p>During the compilation process the <code>compiler</code> uses the <code>$interpolate</code> service to see if text nodes and element attributes contain interpolation markup with embedded expressions.</p>
+
+<p>If that is the case, the compiler adds watches on the computed interpolation function, which will update the corresponding text nodes or attribute values as part of the normal digest cycle.</p>
+
+</div>
+
+<blockquote>
+<p>How does the digest phase work?</p>
+</blockquote>
+
+<div class="hidden">
+<p>In a nutshell, on every digest cycle all scope models are compared against their previous values. That is dirty checking. If change is detected, the watches set on that model are fired. Then another digest cycle executes, and so on until all models are stable.</p>
+
+<p>As long as core directives are used, we don’t need to worry, but when external code changes models the digest cycle needs to be called manually. Usually to do that, <code>$apply()</code>, <code>$digest()</code>, <code>$timeout()</code>, <code>$evalAsync()</code>.</p>
+
+</div>
+
+<blockquote>
+<p>List a few ways to improve performance in an AngularJS app</p>
+</blockquote>
+
+<div class="hidden">
+<p>The first one can be enabled through the <code>$compileProvider</code>:</p>
+
+<pre><code class="language-javascript">.config(function ($compileProvider) {
+  $compileProvider.debugInfoEnabled(false);
+});
+</code></pre>
+
+<p>Call this method to enable/disable various debug runtime information in the compiler such as adding binding information and a reference to the current scope on to DOM elements. If enabled, the compiler will add the following to DOM elements that have been bound to the scope</p>
+
+<ul>
+<li><code>ng-binding</code> CSS class</li>
+<li><code>$binding</code> data property containing an array of the binding expressions</li>
+</ul>
+
+<p>Using one-time binding where possible. Those bindings are set, e.g. in <code>{ { ::someModel } }</code> interpolations by prefixing the model with two colons. In such a case, no watch is set and the model is ignored during digest.</p>
+
+<p>Making $httpProvider use applyAsync:</p>
+
+<pre><code>myApp.config(function ($httpProvider) {
+  $httpProvider.useApplyAsync(true);
+});
+</code></pre>
+
+<p>That’s it! If the application now receives multiple <code>$http</code> responses at around the same time, this is what happens (a bit simplified though):</p>
+
+<ul>
+<li>The call’s promise is pushed into a queue</li>
+<li>An asynchronous <code>$apply</code> is scheduled in case there’s no one scheduled yet, by telling the browser to execute <code>setTimeout()</code></li>
+<li>Once timed out, the queue is flushed and the actual<code>$apply</code> is triggered</li>
+</ul>
+
+<p>The <code>setTimeout()</code> is called with a 0 delay which causes an actual delay of around 10 milliseconds depending on the browser. That means, if our three asynchronous calls return at around the same time (somewhere inside that particular timeout delay), they get resolve with a single <code>$digest</code> cycle instead of three which speeds up our application.</p>
+
+</div>
+
+<blockquote>
+<p>What is $rootScope and how does it relate to $scope?</p>
+</blockquote>
+
+<div class="hidden">
+<p><code>$rootScope</code> is the parent object of all <code>$scope</code> Angular objects created in a web page.</p>
+
+</div>
+
+<blockquote>
+<p>What is the difference between &ldquo;ng-show&rdquo;/&ldquo;ng-hide&rdquo; and &ldquo;ng-if&rdquo; directives?</p>
+</blockquote>
+
+<div class="hidden">
+<p><code>ng-show</code>/<code>ng-hide</code> will always insert the DOM element, but will display/hide it based on the condition.</p>
+
+<p><code>ng-if</code> will not insert the DOM element until the condition is not fulfilled.</p>
+
+<p><code>ng-if</code> is better when we needed the DOM to be loaded conditionally, as it will help load page bit faster compared to <code>ng-show</code>/<code>ng-hide</code></p>
+
+</div>
+
+<blockquote>
+<p>Where should we implement the DOM manipulation in AngularJS?</p>
+</blockquote>
+
+<div class="hidden">
+<p>In the directives. DOM Manipulations should not exist in controllers, services or anywhere else but in directives.</p>
+
+<p>Otherwise it&rsquo;s:
+* It is not reusable
+* It is not testable
+* It include css hard coded selectors dependencies</p>
+
+</div>
+
+<blockquote>
+<p>Is it a good or bad practice to use AngularJS together with jQuery?</p>
+</blockquote>
+
+<div class="hidden">
+<p>jQuery takes a traditional imperative approach to manipulating the DOM. In an imperative approach, it is up to the programmer to express the individual steps leading up to the desired outcome. What do I mean by this? So if we want an action to occur when a user types say 150 characters into an input, in jQuery we would say, &ldquo;every time the user hits a key, check how many characters are in the input, if it exceeds 150 characters, do the action.&rdquo; Every step is addressed along the way.</p>
+
+<p>AngularJS however takes a declarative approach to DOM manipulation. Here instead of worrying about all of the step by step details regarding how to do the desired outcome, AngularJS abstracts that and allows you to just say what you want done, in this case, &ldquo;AngularJS, when the state of the input is at 150 characters, do this.&rdquo; We are just declaring what we want and AngularJS worries about the rest, taking care of everything for us.</p>
+
+<p>It might seem like I&rsquo;m just splitting hairs here, but it&rsquo;s really an important distinction. AngularJS wants you basing your actions around the data models you create. It&rsquo;s how the entire framework works and how your applications will be structured.</p>
+
+<p>To simply begin writing side scripts in jQuery where you are plucking out elements and setting up side event listeners just goes against the AngularJS approach in my opinion.</p>
+
+</div>
+
+<blockquote>
+<p>If you were to migrate from Angular 1.4 to Angular 1.5, what is the main thing that would need refactoring?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Changing <code>.directive</code> to <code>.component</code> to adapt to the new Angular 1.5 components. More about <a href="http://qetr1ck-op.github.io/2016/07/22/Exploring-AngularJS-1-5-component-method/">.component approach</a></p>
+
+</div>
+
+<blockquote>
+<p>Lifecycle hooks in Angular 1.5</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li><code>$onInit</code></li>
+<li><code>$postLink</code></li>
+<li><code>$onChanges</code></li>
+<li><code>$onDestroy</code></li>
+</ul>
+
+<p>More in <a href="https://toddmotto.com/angular-1-5-lifecycle-hooks">awesome post</a>.</p>
+
+</div>
+
+<blockquote>
+<p>How would you specify that a scope variable should have one-time binding only?</p>
+</blockquote>
+
+<div class="hidden">
+<p>By using <code>::model.property</code> in front of it. This allows the check if the candidate is aware of the available variable bindings in AngularJS.</p>
+
+</div>
+
+<blockquote>
+<p>What is the difference between one-way binding and two-way binding?</p>
+</blockquote>
+
+<div class="hidden">
+<p>One way binding implies that the scope variable in the html will be set to the first value its model is bound to (i.e. assigned to).</p>
+
+<p>Two way binding implies that the scope variable will change it’s value everytime its model is assigned to a different value</p>
+
+</div>
+
+<blockquote>
+<p>What is the role of services in AngularJS and name any services made available by default?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li>Services are objects that provide separation of concerns to an AngularJS app.</li>
+<li>Services can be created using a factory method or a service method.</li>
+<li>Services are singleton components. All components of the application (into which the service is injected) will work with single instance of the service.</li>
+<li>Allows developing of business logic without depending on the View logic which will work with it.</li>
+<li>A typical service can be injected into another service or into an Controller.</li>
+</ul>
+
+<p>Few of the inbuilt services in AngularJS are:
+– the <code>$http</code> service: The <code>$http</code> service is a core Angular service that facilitates communication with the remote HTTP servers via the browser’s XMLHttpRequest object or via JSONP
+– the <code>$log</code> service: Simple service for logging. Default implementation safely writes the message into the browser’s console
+– the <code>$anchorScroll</code>: it scrolls to the element related to the specified hash or (if omitted) to the current value of <code>$location.hash()</code></p>
+
+</div>
+
+<blockquote>
+<p>What are Providers and when to use them?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Each web application you build is composed of objects that collaborate to get stuff done. These objects need to be instantiated and wired together for the app to work. In Angular apps most of these objects are instantiated and wired together automatically by the <code>$injector</code> service.</p>
+
+<p>The <code>$injector</code> creates two types of objects, <em>services</em> and <em>specialized objects</em>.</p>
+
+<ul>
+<li>Services are objects whose API is defined by the developer writing the service.</li>
+<li>Specialized objects conform to a specific Angular framework API. These objects are one of controllers, directives, filters or animations.</li>
+</ul>
+
+<p>The injector needs to know how to create these objects. You tell it by registering a &ldquo;recipe&rdquo; for creating your object with the injector. There are five recipe types.</p>
+
+<p>The most verbose, but also the most comprehensive one is a <code>Provider</code> recipe. The remaining four recipe types — <code>Value</code>, <code>Factory</code>, <code>Service</code> and <code>Constant</code> — are just syntactic sugar on top of a provider recipe.</p>
+
+<p>The <code>Provider</code> recipe is the core recipe type and all the other recipe types are just syntactic sugar on top of it. It is the most verbose recipe with the most abilities, but for most services it&rsquo;s overkill.</p>
+
+<p>When to use?</p>
+
+<p>You should use the Provider recipe only when you want to expose an API for application-wide configuration that must be made before the application starts. This is usually interesting only for reusable services whose behavior might need to vary slightly between applications.</p>
+
+<p>The Provider recipe is syntactically defined as a custom type that implements a <code>$get</code> method. This method is a factory function just like the one we use in the Factory recipe. In fact, if you define a Factory recipe, an empty Provider type with the $get method set to your factory function is automatically created under the hood.</p>
+
+<p>More in <a href="https://docs.angularjs.org/guide/providers">official docs</a>.</p>
+
+</div>
+
+<h3 id="angular">Angular</h3>
+
+<blockquote>
+<p>What are the possible ways to bind component properties to an associated template?</p>
+</blockquote>
+
+<div class="hidden">
+<p>The target of a data binding is something in the DOM. Depending on the binding type, the target can be an (<code>element | component | directive</code>) property, an (<code>element | component | directive</code>) event, or (rarely) an attribute name:</p>
+
+<ul>
+<li>Property</li>
+</ul>
+
+<pre><code class="language-html">&lt;img [src]=&quot;heroImageUrl&quot;&gt;
+&lt;hero-detail [hero]=&quot;currentHero&quot;&gt;&lt;/hero-detail&gt;
+&lt;div [ngClass]=&quot;{'special': isSpecial}&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<ul>
+<li>Event</li>
+</ul>
+
+<pre><code class="language-html">&lt;button (click)=&quot;onSave()&quot;&gt;Save&lt;/button&gt;
+&lt;hero-detail (deleteRequest)=&quot;deleteHero()&quot;&gt;&lt;/hero-detail&gt;
+&lt;div (myClick)=&quot;clicked=$event&quot; clickable&gt;click me&lt;/div&gt;
+</code></pre>
+
+<ul>
+<li>Two-way</li>
+</ul>
+
+<pre><code class="language-html">&lt;input [(ngModel)]=&quot;name&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Attribute</li>
+</ul>
+
+<pre><code class="language-html">&lt;button [attr.aria-label]=&quot;help&quot;&gt;help&lt;/button&gt;
+</code></pre>
+
+<ul>
+<li>Class</li>
+</ul>
+
+<pre><code class="language-html">&lt;div [class.special]=&quot;isSpecial&quot;&gt;Special&lt;/div&gt;
+</code></pre>
+
+<ul>
+<li>Style</li>
+</ul>
+
+<pre><code class="language-html">&lt;button [style.color]=&quot;isSpecial ? 'red' : 'green'&quot;&gt;
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Property binding or interpolation, what is better?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-html">&lt;p&gt;&lt;img src=&quot;{{heroImageUrl}}&quot;&gt; is the &lt;i&gt;interpolated&lt;/i&gt; image.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&quot;{{title}}&quot; is the &lt;i&gt;interpolated&lt;/i&gt; title.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img [src]=&quot;heroImageUrl&quot;&gt; is the &lt;i&gt;property bound&lt;/i&gt; image.&lt;/p&gt;
+&lt;p&gt;&quot;&lt;span [innerHTML]=&quot;title&quot;&gt;&lt;/span&gt;&quot; is the &lt;i&gt;property bound&lt;/i&gt; title.&lt;/p&gt;
+</code></pre>
+
+<p>When rendering data values as strings, there is no technical reason to prefer one form to the other.</p>
+
+<p>You lean toward readability, which tends to favor interpolation. You suggest establishing coding style rules and choosing the form that both conforms to the rules and feels most natural for the task at hand.</p>
+
+<p>Only when setting an element property to a non-string data value, you must use property binding!</p>
+
+</div>
+
+<blockquote>
+<p>How you detect Detect Component Input Changes?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li>You can use the <code>ngOnChanges()</code> lifecycle method:</li>
+</ul>
+
+<pre><code class="language-js">@Input() categoryId: string;
+
+ngOnChanges(changes: SimpleChanges) {
+
+  // You can also use categoryId.previousValue and 
+  // categoryId.firstChange for comparing old and new values
+  this.doSomething(changes.categoryId.currentValue);
+
+}
+</code></pre>
+
+<ul>
+<li>Alternately, you can also use an input property <code>setter</code> as follows:</li>
+</ul>
+
+<pre><code class="language-js">private _name = '';
+ 
+@Input()
+set name(name: string) {
+  this._name = (name &amp;&amp; name.trim()) || '&lt;no name set&gt;';
+}
+</code></pre>
+
+<ul>
+<li>Which approach should you use?</li>
+</ul>
+
+<p>If your component has several inputs, then, if you use <code>ngOnChanges()</code>. Using this approach, you can also compare current and previous values of the input that has changed and take actions accordingly.</p>
+
+<p>However, if you want to do something when only a particular single input changes (and you don&rsquo;t care about the other inputs), then it might be simpler to use an input property <code>setter</code>.</p>
+
+</div>
+
+<blockquote>
+<p>Angular change detection may still not fire under some circumstances. Why?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li><p>Normally, change detection for both <code>setter</code> and <code>ngOnChanges()</code> will fire whenever the parent component changes the data it passes to the child, provided that the data is a JS primitive datatype(<code>string</code>, <code>number</code>, <code>boolean</code>).</p></li>
+
+<li><p>If you are mutating data outside of the angular context (i.e., externally), then angular will not know of the changes. You may have to use <code>ChangeDetectorRef</code> or <code>NgZone</code> in your component for making angular aware of external changes and thereby triggering change detection. Refer to this.</p></li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>Why we need <code>NgModules</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p>The purpose of a <code>NgModule</code> is to declare each thing you create in Angular. There is two kind of main structures:</p>
+
+<ul>
+<li><code>declarations</code> is for things you’ll use in your templates : mainly components (~ views : the classes displaying data), but also directives and pipes;</li>
+<li><code>providers</code> is for services (~ models : the classes getting and handling data).</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p>What kind of classes can you import (meta) in an angular module?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li>Import modules whose public (exported) <code>declarations</code> classes you need to reference in this module&rsquo;s component templates.</li>
+<li>This always means importing <code>CommonModule</code> from <code>@angular/common</code> for access to the Angular directives such as NgIf and NgFor. You can import it directly or from another module that re-exports it.</li>
+<li>Import <code>FormsModule</code> from <code>@angular/forms</code> if your components have <code>[(ngModel)]</code> two-way binding expressions.</li>
+<li>Import shared and feature modules when this module&rsquo;s components incorporate their components, directives, and pipes.</li>
+</ul>
+
+</div>
+
+<blockquote>
+<p><code>NgModule</code> and scopes / visibility ?</p>
+</blockquote>
+
+<div class="hidden">
+<p><code>declarations</code> and <code>providers</code> not having the same scope / visibility:</p>
+
+<ul>
+<li><code>declarations</code> / <code>components</code> / <code>pipes</code> are in local scope (private visibility)</li>
+<li><code>providers</code> / <code>services</code>  are in global scope (public visibility).</li>
+</ul>
+
+<p>It means the components you declared are only usable in the current module. If you need to use them outside, in other modules, you’ll have to export them :</p>
+
+<pre><code class="language-js">import { NgModule } from '@angular/core';
+
+import { SomeComponent } from './some.component';
+import { SomeDirective } from './some.directive';
+import { SomePipe } from './some.pipe';
+
+const components = [SomeComponent, SomeDirective, SomePipe]
+
+@NgModule({
+  declarations: components,
+  exports: components
+})
+export class SomeModule {}
+</code></pre>
+
+<p>On the contrary, <code>services</code> you provided will be available / injectable anywhere in your app, in all modules.</p>
+
+</div>
+
+<blockquote>
+<p>What are template reference variables and how are they different from variables in classes?</p>
+</blockquote>
+
+<div class="hidden">
+<p>A template reference variable is often a reference to a DOM element within a template. It can also be a reference to an Angular component or directive. You can refer to a template reference variable anywhere in the template:</p>
+
+<pre><code class="language-html">&lt;input #phone placeholder=&quot;phone number&quot;&gt;
+&lt;!-- lots of other elements --&gt;
+&lt;!-- phone refers to the input element; pass its `value` to an event handler --&gt;
+&lt;button (click)=&quot;callPhone(phone.value)&quot;&gt;Call&lt;/button&gt;
+</code></pre>
+
+<p>The following is a simplified version of the form example in the Forms guide:</p>
+
+<pre><code class="language-html">&lt;form (ngSubmit)=&quot;onSubmit(heroForm)&quot; #heroForm=&quot;ngForm&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;name&quot;&gt;Name
+      &lt;input class=&quot;form-control&quot; name=&quot;name&quot; required [(ngModel)]=&quot;hero.name&quot;&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot; [disabled]=&quot;!heroForm.form.valid&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div [hidden]=&quot;!heroForm.form.valid&quot;&gt;
+  {{submitMessage}}
+&lt;/div&gt;
+</code></pre>
+
+<p>If Angular hadn&rsquo;t taken it over when you imported the <code>FormsModule</code>, it would be the <code>HTMLFormElement</code>. The <code>heroForm</code> is actually a reference to an Angular <code>NgForm</code> directive with the ability to track the value and validity of every control in the form.</p>
+
+</div>
+
+<blockquote>
+<p>How do you define optional fields in a TypeScript class?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Using the &ldquo;Parameter propeties&rdquo;:</p>
+
+<pre><code class="language-js">class Test {
+  constructor(public a: string, public b: string, public c?: string){}
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>What&rsquo;s the difference between a TypeScript class and an interface?</p>
+</blockquote>
+
+<div class="hidden">
+<ol>
+<li><p>The only job of an interface in TypeScript is to describe a type. While class and function deal with implementation. Class is built upon concept of low-level language: Inheritance, abstract class, accessors, modifier and <a href="http://www.typescriptlang.org/docs/handbook/classes.html">some others</a>.</p></li>
+
+<li><p>Interface’s job is define &ldquo;shape&rdquo; of objects, helps us keep our programs error-free by providing information about the shape. While they don’t generate any code (and thus have no runtime cost!), they are often the key point of contact between any two pieces of TypeScript code:</p></li>
+</ol>
+
+<ul>
+<li>Readonly properties</li>
+</ul>
+
+<pre><code class="language-js">interface Point {
+  readonly x: number;
+  readonly y: number;
+}
+
+let p1: Point = { x: 10, y: 20 };
+p1.x = 5; // error!
+
+let a: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray&lt;number&gt; = a;
+ro[0] = 12; // error!
+ro.push(5); // error!
+ro.length = 100; // error!
+a = ro; // error!
+</code></pre>
+
+<ul>
+<li>Index signature</li>
+</ul>
+
+<pre><code class="language-js">interface SquareConfig {
+  color?: string;
+  width?: number;
+  [propName: string]: number | string;
+}
+
+function createSquare(config: SquareConfig): void {
+    // ...
+}
+
+let mySquare = createSquare({ colour: &quot;red&quot;, width: 100 });
+// or
+let mySquare1 = createSquare({ colour: &quot;red&quot;, width: 100 } as SquareConfig);
+</code></pre>
+
+<ul>
+<li>Function Types</li>
+</ul>
+
+<pre><code class="language-js">interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc = (source: string, subString: string) =&gt; {
+  let result = source.search(subString);
+  return result &gt; -1;
+}
+</code></pre>
+
+<ul>
+<li>Class Types</li>
+</ul>
+
+<pre><code class="language-js">interface ClockInterface {
+  currentTime: Date;
+  setTime(d: Date): Date;
+}
+
+class Clock implements ClockInterface {
+  currentTime: Date;
+  setTime(d: Date) {
+    this.currentTime = d;
+    return this.currentTime;
+  }
+  constructor(h: number, m: number) { }
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>What’s the difference between a promise and Observable?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Both <code>Promises</code> and <code>Observables</code> provide us with abstractions that help us deal with the asynchronous nature of our applications.</p>
+
+<ul>
+<li>Promise</li>
+</ul>
+
+<ol>
+<li>returns a single value</li>
+<li>not cancelable</li>
+</ol>
+
+<ul>
+<li>Observable</li>
+</ul>
+
+<ol>
+<li>works with multiple values over time</li>
+<li>cancelable</li>
+<li>supports <code>map</code>, <code>filter</code>, <code>reduce</code> and similar operators</li>
+<li>proposed feature for ES 2016</li>
+<li>use Reactive Extensions (RxJS)</li>
+<li>an array whose items arrive asynchronously over time</li>
+</ol>
+
+<p><a href="https://stackoverflow.com/questions/37364973/angular-promise-vs-observable">more</a></p>
+
+</div>
+
+<blockquote>
+<p>How do you use a TypeScript and JavaScript (Non TypeScript) third party lib in an Angular 2 App?</p>
+</blockquote>
+
+<div class="hidden">
+<p>For TypeScript libs:</p>
+
+<ol>
+<li>Installing <code>npm i lodash</code></li>
+<li>Install the TS type definitions <code>npm i @types/lodash</code></li>
+<li>Import and use</li>
+</ol>
+
+<pre><code class="language-js">import { chunk } from &quot;lodash&quot;;
+
+fruits = ['bananas', 'oranges', 'strawberries', 'kiwis'];
+
+ngOnInit () {
+  console.log(chunk(this.fruits, 2));
+}
+</code></pre>
+
+<p>For Non TypeScript libs:</p>
+
+<ol>
+<li>Installing <code>npm i shave</code></li>
+<li><code>cannot find module shave</code> -&gt; You are getting this error because the shave library doesn’t have declaration file and Typescript doesn’t know what shave is.</li>
+<li>Create TS type definitions:
+```js
+// shave.d.ts
+declare module “shave” {</li>
+</ol>
+
+<p>export interface IShaveOptions {
+   classname? : string,
+   character? : string
+ }</p>
+
+<p>export default function shave( selector : string|Node, maxHeight : number, options? : IShaveOptions ) : void;</p>
+
+<p>}</p>
+
+<pre><code>4. Add to tsconfig.json:
+
+```js
+&quot;files&quot;: [&quot;typings/shave.d.ts&quot;]
+</code></pre>
+
+<ol>
+<li>Import and use</li>
+</ol>
+
+</div>
+
+<blockquote>
+<p>Why are components not marked with @injectable annotation, but services need to be?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Injectors are also responsible for instantiating components like <code>HeroesComponent</code>. So why doesn&rsquo;t <code>HeroesComponent</code> have <code>@Injectable()</code>?</p>
+
+<p>You can add it if you really want to. It isn&rsquo;t necessary because the <code>HeroesComponent</code> is already marked with<code>@Component</code>, and this decorator class (like <code>@Directive</code> and <code>@Pipe</code>) is a subtype of <code>@Injectable()</code>. It is in fact <code>@Injectable()</code> decorators that identify a class as a target for instantiation by an injector.</p>
+
+<p><a href="https://angular.io/guide/dependency-injection#why-injectable">More</a></p>
+
+</div>
+
+<blockquote>
+<p>Lifecycle Hooks, when and why?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Directive and component instances have a lifecycle as Angular creates, updates, and destroys them. Developers can tap into key moments in that lifecycle by implementing one or more of the lifecycle hook interfaces in the Angular core library.</p>
+
+<ol>
+<li><code>constructor()</code> - is called before any other component lifecycle hook. If our component is based on any dependencies, the constructor is the best place to inject those dependencies</li>
+<li><code>ngOnChanges()</code> - will be called first when the value of a bound property changes. It executes, every time the value of an input property changes. It will receive a changes map, containing the current and previous values of the binding, wrapped in a SimpleChange: <code>{&quot;brand&quot;:{&quot;previousValue&quot;:&quot;&quot;,&quot;currentValue&quot;:&quot;BMW&quot;}}</code></li>
+<li><code>ngOnInit()</code> - is called directly after the <code>constructor</code> and after the <code>ngOnChange</code> after Angular first displays the data-bound properties and sets the directive/component&rsquo;s input properties. It is the perfect place for initialisation work</li>
+<li><code>ngDoCheck()</code> - is called during every change detection run, immediately after <code>ngOnChanges()</code> and <code>ngOnInit()</code></li>
+<li><code>ngAfterContentInit()</code> - (component-only hook) is called after <code>ngOnInit</code> when the component content has been initialised; basically when all the bindings of the component have been checked for the first time</li>
+<li><code>ngAfterContentChecked()</code> - (component-only hook) is called after every check of the component content, effectively when all the bindings of the components have been checked; even if they haven’t changed.</li>
+<li><code>ngAfterViewInit()</code> - (component-only hook) respond after Angular initializes the component&rsquo;s views and child views</li>
+<li><code>ngAfterViewChecked()</code> - (component-only hook) is called after every check of the component’s view. Applies to components only. When all the bindings of the children directives have been checked; even if they haven’t changed. It can be useful if the component is waiting for something coming from its child components.</li>
+<li><code>ngOnDestroy()</code> - Cleanup just before Angular destroys the directive/component. Unsubscribe Observables and detach event handlers to avoid memory leaks.</li>
+</ol>
+
+<p><a href="http://plnkr.co/edit/kBHV6AximaHAC26kYEOA?p=preview">Demo</a></p>
+
+</div>
+
+<blockquote>
+<p>Parent child communication. Component interaction.</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li>Pass data from parent to child with input binding via <code>@Input</code> decorator</li>
+<li>Intercept input property changes with a <code>setter</code></li>
+<li>Intercept input property changes with <code>ngOnChanges()</code></li>
+<li>Parent listens for child event with <code>@Output</code> and <code>EventEmitter</code></li>
+<li>Parent interacts with child via local variable <code>#childComponent</code></li>
+<li>Parent calls child method with <code>@ViewChild()</code></li>
+<li>Parent and children communicate via a service</li>
+</ul>
+
+<p><a href="https://angular.io/guide/component-interaction#parent-and-children-communicate-via-a-service">More</a></p>
+
+</div>
+
+<blockquote>
+<p>What is the proper use of an <code>EventEmitter</code>? How does the event emitter work in Angular 2?</p>
+</blockquote>
+
+<div class="hidden">
+<p><code>EventEmitter</code> is really an Angular abstraction, and should be used pretty much only for emitting custom Events in components. Otherwise, just use <code>Rx</code> as if it was any other library.</p>
+
+<pre><code class="language-js">@Component({
+    selector : 'child',
+    template : `
+        &lt;button (click)=&quot;sendNotification()&quot;&gt;Notify my parent!&lt;/button&gt;
+    `
+})
+class Child {
+    @Output() notifyParent: EventEmitter&lt;string&gt; = new EventEmitter();
+    sendNotification() {
+        this.notifyParent.emit('Some value to send to the parent');
+    }
+}
+
+@Component({
+    selector : 'parent',
+    template : `
+        &lt;child (notifyParent)=&quot;getNotification($event)&quot;&gt;&lt;/child&gt;
+    `
+})
+class Parent {
+    getNotification(evt) {
+        // Do something with the notification (evt) sent by the child!
+    }
+}
+</code></pre>
+
+<p>Unlike DOM events Angular custom events do not bubble.</p>
+
+</div>
+
+<blockquote>
+<p>How to make sure that single instance will be used in an entire application?</p>
+</blockquote>
+
+<div class="hidden">
+<p>With <code>NgModule</code>, the way to do it now I think is to create a <code>'CoreModule'</code> with your service class in it, and list the service in the module&rsquo;s providers. Then you import the core module in your main app module which will provide the one instance to any children requesting that class in their constructors:</p>
+
+<p>A service provided in the <code>app-module</code> will have the same instance provided everywhere:</p>
+
+<pre><code class="language-js">// CoreModule.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ApiService } from './api.service';
+
+@NgModule({
+    imports: [
+        CommonModule
+    ],
+    exports: [ // components that we want to make available
+    ],
+    declarations: [ // components for use in THIS module
+    ],
+    providers: [ // singleton services
+        ApiService,
+    ]
+})
+export class CoreModule { }
+</code></pre>
+
+<pre><code class="language-js">// AppModule.ts
+import { CommonModule } from '@angular/common';
+import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+
+@NgModule({
+    declarations: [ AppComponent ],
+    imports: [
+        CommonModule,
+        CoreModule // will provide service
+    ],
+    providers: [],
+    bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Why do we need to use another class with <code>useClass</code> or aliased providers with <code>useExisting</code>? When to use <code>useValue</code>?  When to use <code>useFactory</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li>By default Angular will inject a provider with the same class name and token, but <code>useClass</code> allows to use a different class. For example, the following will provide a service with the Auth token, but the UserAuth class:</li>
+</ul>
+
+<pre><code class="language-js">providers: [{ provide: Auth, useClass: UserAuth }]
+</code></pre>
+
+<ul>
+<li>If you want to alias an old provider to be handled by a new provider, you can do so with <code>useExisting</code>. This would be useful if, for example, a component needs to be still be using the old provider, but the logic should still be handled by the new provider:</li>
+</ul>
+
+<pre><code class="language-js">providers: [{ provide: OldService, useExisting: NewService }]
+</code></pre>
+
+<ul>
+<li>Most of the time classes are used as providers, but simple values can also be used instead with useValue:</li>
+</ul>
+
+<pre><code class="language-js">const AUTH_CONFIG = {
+  apiKey: &quot;...&quot;,
+  authDomain: &quot;...&quot;
+};
+
+providers: [{ provide: AuthConfig, useValue: AUTH_CONFIG }]
+</code></pre>
+
+<ul>
+<li>With <code>useFactory</code> you can configure a factory object based on other dependency inside function and before returning an instance of it. You can use <code>useFactory</code> to configure your dependency at configuration time. Its same as that of <code>config</code> phase Angular 1, where you are modifying or forming a dependency as you needed:</li>
+</ul>
+
+<pre><code class="language-js">{ 
+  provide: 'CustomDependency',
+  deps: [A, B]
+  useFactory: (a:A, b:B) =&gt; {
+    if (a.isWinner()) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>What is the <code>trackBy</code> with <code>*ngFor</code> directive?</p>
+</blockquote>
+
+<div class="hidden">
+<p>The <code>NgFor</code> directive may perform poorly, especially with large lists. A small change to one item, an item removed, or an item added can trigger a cascade of DOM manipulations. For example, re-querying the server could reset the list with all new hero objects.</p>
+
+<p>Most, if not all, are previously displayed heroes. You know this because the id of each hero hasn&rsquo;t changed. But Angular sees only a fresh list of new object references. It has no choice but to tear down the old DOM elements and insert all new DOM elements.</p>
+
+<p>Angular can avoid this churn with <code>trackBy</code>. Add a method to the component that returns the value <code>NgFor</code> should track. In this case, that value is the hero&rsquo;s id.</p>
+
+<pre><code class="language-js">// app.component.ts
+trackByHeroes(index: number, hero: Hero): number { return hero.id; }
+</code></pre>
+
+<pre><code class="language-html">&lt;div *ngFor=&quot;let hero of heroes; trackBy: trackByHeroes&quot;&gt;
+  ({{hero.id}}) {{hero.name}}
+&lt;/div&gt;
+</code></pre>
+
+<p><a href="https://angular.io/guide/template-syntax#ngfor-with-trackby">More</a></p>
+
+</div>
+
+<blockquote>
+<p>How to get dom element?</p>
+</blockquote>
+
+<div class="hidden">
+<ul>
+<li>You can get a handle to the DOM element via <code>ElementRef</code> by injecting it into your component&rsquo;s constructor:</li>
+</ul>
+
+<pre><code class="language-js">// antipattern
+constructor(element: ElementRef) { ... }
+
+ngAfterViewInit() { 
+  this.element.nativeElement.querySelector('#someElementId')
+}
+</code></pre>
+
+<ul>
+<li>Inject the component&rsquo;s DOM element with attribure directive and <code>ElementRef</code>:</li>
+</ul>
+
+<pre><code class="language-html">&lt;div id=&quot;highlight&quot;  class=&quot;di-component&quot;  myHighlight&gt;
+  &lt;h3&gt;Hero Bios and Contacts&lt;/h3&gt;
+  &lt;div myHighlight=&quot;yellow&quot;&gt;
+    &lt;hero-bios-and-contacts&gt;&lt;/hero-bios-and-contacts&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-js">import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+ 
+@Directive({
+  selector: '[myHighlight]'
+})
+export class HighlightDirective {
+ 
+  @Input('myHighlight') highlightColor: string;
+ 
+  private el: HTMLElement;
+ 
+  constructor(el: ElementRef) {
+    this.el = el.nativeElement;
+  }
+ 
+  @HostListener('mouseenter') onMouseEnter() {
+    this.highlight(this.highlightColor || 'cyan');
+  }
+ 
+  @HostListener('mouseleave') onMouseLeave() {
+    this.highlight(null);
+  }
+ 
+  private highlight(color: string) {
+    this.el.style.backgroundColor = color;
+  }
+}
+</code></pre>
+
+<ul>
+<li>To get access to a component and its methods, we can use the<code>@ViewChild</code> decorator on <code>parent-component</code> or on <code>template-local variable</code>:</li>
+</ul>
+
+<pre><code class="language-js">import { Component, ViewChild } from '@angular/core';
+import { UserProfile } from '../user-profile';
+
+@Component({
+  template: '&lt;user-profile #myProfile (click)=&quot;update()&quot;&gt;&lt;/user-profile&gt;'
+})
+export class MasterPage {
+  @ViewChild('myProfile') userProfile: UserProfile
+  constructor() { }
+  update(){
+    this.userProfile.sendData();
+  }
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Manipulating DOM element. What is <code>Renderer2</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p>The <code>Renderer2</code> class is an abstraction provided by Angular in the form of a service that allows to manipulate elements of your app without having to touch the DOM directly. This is the recommended approach because it then makes it easier to develop apps that can be rendered in environments that don’t have DOM access, like on the server, in a web worker or on native mobile.</p>
+
+<p><a href="https://alligator.io/angular/using-renderer2/">More</a></p>
+
+</div>
+
+<blockquote>
+<p>How do you reference the host of a component? Have you used <code>@HostBinding</code> and <code>@HostListener</code> in custom directive?</p>
+</blockquote>
+
+<div class="hidden">
+<p>You get the host element reference using</p>
+
+<pre><code class="language-js">class MyComponent {
+  constructor(private elRef:ElementRef) {
+    console.log(this.elRef.nativeElement);
+  }
+}
+</code></pre>
+
+<p>You can also subscribe to the focus event</p>
+
+<pre><code class="language-js">class MyComponent {
+  @HostBinding() tabindex = 0;
+  @HostListener('focus', ['$event'])
+  onFocus(event) {
+    console.log(event);
+  }
+}
+</code></pre>
+
+<p><code>@HostBinding</code> and <code>@HostListener</code> are two decorators in Angular that can be really useful in custom directives. <code>@HostBinding</code> lets you set properties on the element or component that hosts the directive, and <code>@HostListener</code> lets you listen for events on the host element or component.</p>
+
+<p><a href="https://alligator.io/angular/hostbinding-hostlistener/">More</a></p>
+
+</div>
+
+<blockquote>
+<p>What types of pipes are supported in Angular 2?</p>
+</blockquote>
+
+<div class="hidden">
+<p><a href="https://auth0.com/blog/angular2-series-working-with-pipes/">The comparison</a></p>
+
+<p><a href="https://angular.io/api?type=pipe">The official table</a></p>
+
+</div>
+
+<blockquote>
+<p>I18n?</p>
+</blockquote>
+
+<div class="hidden">
+<p><a href="http://www.ngx-translate.com/">Popular library</a></p>
+
+</div>
+
+<blockquote>
+<p>How hadnle not found page / 404 ?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Just extend <code>@RouteConfig</code>:</p>
+
+<pre><code class="language-js">@RouteConfig([
+    {path:'/unknown-page', name: '404', component: NotFoundComponent},
+    {path:'/**', redirectTo: ['404']}
+])
+</code></pre>
+
+<p>Or redirect to another router with addition info:</p>
+
+<pre><code class="language-js">@RouteConfig([
+    {path:'/**', redirectTo: ['Home', {error: 'not found'}] }
+])
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Why do we need an http interceptor? How to implement?</p>
+</blockquote>
+
+<div class="hidden">
+<p>Interceptors come in handy in multiple scenarios:</p>
+
+<ol>
+<li>Setting the Origin for each outgoing request.</li>
+<li>Adding authentication token to every request.</li>
+<li>Adding any custom header(s) that your application needs.</li>
+</ol>
+
+<p><a href="https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2">How to implement</a></p>
+
+</div>
+
+<h1 id="fundamentals">Fundamentals</h1>
+
+<h2 id="data-structure-and-algorithm">Data Structure and algorithm</h2>
+
+<blockquote>
+<p>Binary search</p>
+</blockquote>
+
+<div class="hidden">
+<p>A binary search tree is a great place to store data in an ordered way to allow for an easy search for specific information.
+It works by comparing the target value to the midpoint of the array; if they are not equal, the lower or upper half of the array is eliminated depending on the result and the search is repeated until the position of the target value is found.</p>
+
+<p>The basic algorithm, then, can be described as:</p>
+
+<ul>
+<li>If currentValue equals value, you’re done.</li>
+<li>If value is less than currentValue, go left. Go to step 1.</li>
+<li>If value is greater than currentValue, go right. Go to step 1.</li>
+</ul>
+
+<p>Binary search is intuitively recursive; however, it can be done iteratively by keeping track of the bounds of the search with two pointers. Binary search is efficient for sorted arrays that are stored contiguously (close together) in memory, making <code>O(log n)</code> comparisons, where <code>n</code> is the number of elements in the array.</p>
+
+<pre><code>function binarySearch(items, value){
+
+    var startIndex  = 0,
+        stopIndex   = items.length - 1,
+        middle      = Math.floor((stopIndex + startIndex)/2);
+
+    while(items[middle] != value &amp;&amp; startIndex &lt; stopIndex){
+
+        //adjust search area
+        if (value &lt; items[middle]){
+            stopIndex = middle - 1;
+        } else if (value &gt; items[middle]){
+            startIndex = middle + 1;
+        }
+
+        //recalculate middle
+        middle = Math.floor((stopIndex + startIndex)/2);
+    }
+
+    //make sure it's the right value
+    return (items[middle] != value) ? -1 : middle;
+}
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>The fastest method to create unique items in array</p>
+</blockquote>
+
+<div class="hidden">
+<p>With primitive values:</p>
+
+<pre><code class="language-js">new Set([1, 2, 2, 1, 5]); // [1, 2, 5]
+</code></pre>
+
+<p>With objects:</p>
+
+<pre><code class="language-js">Array.prototype.unique = function() {
+    var o = {}, i, l = this.length, r = [];
+    for(i=0; i&lt;l;i+=1) o[this[i]] = this[i];
+    for(i in o) r.push(o[i]);
+    return r;
+};
+</code></pre>
+
+<p>This is somewhat classified  as “Hash Sorting Algorithm” where every item in the array is a hash value and a hash function inserts item into a bucket, replacing existing values in case of hash collision. As such, this can be applied to any programming language for faster sieving of very large arrays.</p>
+
+<p>This algorithm has a linear time complexity of <code>O(2n)</code> in worst case scenario. This is way better than what we will observe for the classic method as described below.</p>
+
+<p>The classic (worst and most popular) method of finding unique items in an array runs two loops in a nested order to compare each element with rest of the elements. Consequently, the time complexity of the classic method to find the unique items in an array is around quadratic <code>O(n²)</code>.</p>
+
+<pre><code>var a = [], l = this.length;
+  for(var i=0; i&lt;l; i++) {
+    for(var j=i+1; j&lt;l; j++)
+          if (this[i] === this[j]) j = ++i;
+    a.push(this[i]);
+  }
+  return a;
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>The fastest method to find items in array</p>
+</blockquote>
+
+<div class="hidden">
+<p>Create a classical hash table with complexity of <code>O(n)</code>:</p>
+
+<pre><code class="language-js">var result = arr.reduce(function(map, obj) {
+  map[obj.id] = obj;
+  return map;
+}, {});
+</code></pre>
+
+<p>And search in the structure is <code>O(1)</code>;</p>
+
+</div>
+
+<blockquote>
+<p>Big-O Complexity Chart</p>
+</blockquote>
+
+<div class="hidden">
+<p><a href="http://bigocheatsheet.com/">An awesome cheat sheet</a></p>
+
+<p>Save my day:</p>
+
+<ul>
+<li><a href="https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95#.qwihvpqxq">10 Interview Questions Every JavaScript Developer Should Know</a></li>
+</ul>
+
+<script>
+  class Interview {
+    constructor() {
+      this.postNode = document.querySelector('article')
+      this.questionTagName = 'blockquote'
+      this.questionNodes = this.postNode.querySelectorAll(this.questionTagName)
+    }
+  
+    hideAnswers() {
+      this.questionNodes.forEach(node => this.toggleAnswerNodes(node))
+    }
+  
+    toggleAnswerNodes(node) {
+      const answerNode = node.nextElementSibling
+      
+      if (!answerNode || this.isQuestionNode(answerNode) || this.isTitleNode(answerNode)) return
+    
+      answerNode.classList.toggle('hidden')
+      this.toggleAnswerNodes(answerNode)
+    }
+  
+    isQuestionNode(node) {
+      return node.tagName.toLowerCase() === this.questionTagName
+    }
+  
+    isTitleNode(node) {
+      return node.tagName.toLowerCase() === 'h1'
+        || node.tagName.toLowerCase() === 'h2'
+        || node.tagName.toLowerCase() === 'h3'
+    }
+  
+    initListener() {
+      this.postNode.addEventListener('click', e => {
+        const questionTag = this.getParentQuestionNode(e.target)
+        
+        if (questionTag) this.toggleAnswerNodes(questionTag)
+      })
+    }
+  
+    getParentQuestionNode(node) {
+      if (this.isQuestionNode(node))
+        return node
+    
+      return node === document.body ? false : this.getParentQuestionNode(node.parentElement)
+    }
+  }
+  
+  const survey = new Interview()
+  survey.initListener()
+  </script>
+
+</div>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

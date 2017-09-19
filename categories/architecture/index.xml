@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/architecture/</link>
+    <description>Recent content in Architecture on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React app with Express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 2</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</link>
+      <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</guid>
+      <description>&lt;p&gt;Part two of original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is Load Balancing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</link>
+      <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</guid>
+      <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 1</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</link>
+      <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</guid>
+      <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Asynchronous Javascript with async/await</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</link>
+      <pubDate>Tue, 09 May 2017 21:57:55 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</guid>
+      <description>&lt;p&gt;ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Advanced NodeJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</link>
+      <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</guid>
+      <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mastering Flux and Redux</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</link>
+      <pubDate>Tue, 02 May 2017 19:38:57 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</guid>
+      <description>At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&amp;rsquo;ll learn the skills and technologies necessary to manage your application&amp;rsquo;s data model in extremely efficient and standards-compliant ways.
+Topics  First, you&amp;rsquo;ll learn all about the popular data-modeling libraries Flux and Redux; their differences and similarities, how they relate to one another, and which is appropriate for what kind of projects.</description>
+    </item>
+    
+    <item>
+      <title>npm scrips as your build tool</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</link>
+      <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</guid>
+      <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
+
+&lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Essential Programming Books</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</link>
+      <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</guid>
+      <description>&lt;p&gt;The list of 129 books deemed fundamental to the art of programming and includes books for various languages.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Favicon generator</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</link>
+      <pubDate>Sun, 09 Apr 2017 20:23:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</guid>
+      <description>&lt;p&gt;With so many platforms and icons, it&amp;rsquo;s hard to know exactly what you should do. What are the dimensions of favicon.ico? How many Touch icons do I need? RealFaviconGenerator did the research and testing for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building a JavaScript development environment</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/building-a-javascript-development-environment/</link>
+      <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/building-a-javascript-development-environment/</guid>
+      <description>&lt;p&gt;Starting a new JavaScript project from scratch is overwhelming. This course provides a playbook outlining the key decisions you need to make. Build a robust development environment that handles bundling, linting, transpiling, testing, and much more.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PatternCraft</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</link>
+      <pubDate>Sun, 05 Mar 2017 01:35:33 +0200</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/03/pattern-craft/</guid>
+      <description>&lt;p&gt;An awesome explanation of GOF design patterns. The only way to learn pattern is to know what problem it solves.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RESTful Web Services with Node.js and Express</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/12/restful-web-services-with-node-js-and-express/</link>
+      <pubDate>Sun, 18 Dec 2016 12:01:04 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/12/restful-web-services-with-node-js-and-express/</guid>
+      <description>&lt;p&gt;Node.js is a simple and powerful tool for backend development. When combined with express, you can create lightweight, fast, scalable APIs quickly and simply.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Book: &#39;Node.js design pattern&#39;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</link>
+      <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</guid>
+      <description>&lt;p&gt;&amp;ldquo;How could I organize my code?&amp;rdquo;, &amp;ldquo;What is the best way to design this?&amp;rdquo;, &amp;ldquo;How can I make my application more modular?&amp;rdquo;, &amp;ldquo;How do I handle a set of asynchronous call effectively?&amp;rdquo;, &amp;ldquo;How can I make sure that my application will not collapse while it grows?&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;If you have such questions without answers, that book is definitely for you!&lt;/p&gt;
+
+&lt;p&gt;The aim of this book is to guide you through this emerging world of patterns, techniques and practices, showing proven solution to the common problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gulp screencast overview</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/gulp-screencast-overview/</link>
+      <pubDate>Wed, 28 Sep 2016 20:43:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/gulp-screencast-overview/</guid>
+      <description>&lt;p&gt;Depth table of contents of one of the most popular screencast about utility for managing tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NG6 starter for new Angular projects</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/ng6-starter-for-new-angular-projects/</link>
+      <pubDate>Sun, 18 Sep 2016 19:03:17 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/ng6-starter-for-new-angular-projects/</guid>
+      <description>&lt;p&gt;The de-facto starter repo for building scalable apps with AngularJS ^1.5, ES6, Gulp and Webpack&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Start new project on Angular ^1.5</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/start-new-project-on-angular-1-5/</link>
+      <pubDate>Sun, 18 Sep 2016 18:42:49 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/start-new-project-on-angular-1-5/</guid>
+      <description>&lt;p&gt;Great series of recommendation how/why to start new &amp;ldquo;NG2 ready&amp;rdquo; Angular 1.5 app with architecture of component-oriented approach.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Moving from &#34;ngModel.$parsers&#34;/&#34;ng-if&#34; to &#34;ngModel.$validators&#34;/&#34;ngMessages&#34;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/moving-from-ngmodel-parsers-ng-if-to-ngmodel-validators-ngmessages/</link>
+      <pubDate>Sat, 03 Sep 2016 22:24:46 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/moving-from-ngmodel-parsers-ng-if-to-ngmodel-validators-ngmessages/</guid>
+      <description>&lt;p&gt;Implementation custom Model validation is typically done by extending the built-in &lt;code&gt;$error&lt;/code&gt; object to &lt;code&gt;ngForm&lt;/code&gt; models.&lt;/p&gt;
+
+&lt;p&gt;Prior to AngularJS 1.3 custom validation was done by injecting a function into the &lt;code&gt;ngModel.$parsers&lt;/code&gt; array pipeline and manually setting validation states using &lt;code&gt;$setValidity(&#39;visa&#39;, true)&lt;/code&gt; if the Model value matched a Visa credit card expression format, for example.&lt;/p&gt;
+
+&lt;p&gt;AngularJS 1.3+ has the &lt;code&gt;$validators&lt;/code&gt; pipeline object, which requires no manual setting of validation states.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s take a look of old school way then we can shift to &lt;code&gt;ngModel.$validators&lt;/code&gt; technique.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Exploring AngularJS 1.5 .component() method</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/exploring-angularjs-1-5-component-method/</link>
+      <pubDate>Fri, 22 Jul 2016 22:20:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/exploring-angularjs-1-5-component-method/</guid>
+      <description>&lt;p&gt;AngularJS 1.5 introduce &lt;code&gt;.component()&lt;/code&gt; helper method which is much simpler than the &lt;code&gt;.directive()&lt;/code&gt; definitions and advocates best practices and common default behavior.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;.component()&lt;/code&gt; will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s compare the difference in syntax and the possibility of new abstraction.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>5 principles that will make a more SOLID Javascript Engineer</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</link>
+      <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/07/5-principles-that-will-make-a-more-solid-javascript-engineer/</guid>
+      <description>&lt;p&gt;Being a SOLID developer in JS isn&amp;rsquo;t so as straight forward as in other languages. Some developers consider functional approach. Others chose OOP style. Some stand in both line. And other think that having class is wrong and redundant and prefer factories. But still, SOLID principles are the basic pillars of object oriented programming.&lt;/p&gt;
+
+&lt;p&gt;But what are they?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Development with Webpack</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</link>
+      <pubDate>Sun, 07 Feb 2016 12:11:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</guid>
+      <description>&lt;p&gt;Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&amp;rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding components approach and thinking in React</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</link>
+      <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</guid>
+      <description>&lt;p&gt;The parts of a web user interface building blocks for both simple websites and modern front-end applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Practical design patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</link>
+      <pubDate>Wed, 03 Feb 2016 12:43:26 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/practical-design-patterns-in-javascript/</guid>
+      <description>&lt;p&gt;One of the most important aspects of writing maintainable code is being able to notice the repeating themes in that code and optimize them. This is an area where knowledge of design patterns can prove invaluable.&lt;/p&gt;
+
+&lt;p&gt;I take a look at a number of popular JavaScript design patterns and explore why certain patterns may be suitable for your projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TOP 10 mistakes when you develop on AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</link>
+      <pubDate>Wed, 23 Sep 2015 18:40:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</guid>
+      <description>&lt;p&gt;The top 10 mistakes when beginners start to develop on AngularJS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Huston, do we have a problem with promises?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/02/huston-do-we-have-a-problem-with-promises/</link>
+      <pubDate>Mon, 02 Feb 2015 20:13:01 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/02/huston-do-we-have-a-problem-with-promises/</guid>
+      <description>&lt;p&gt;Many of us are using promises without really understanding them.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Organizing an application using AMD with require.js</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/organizing-an-application-using-amd-with-require-js/</link>
+      <pubDate>Sat, 20 Dec 2014 12:39:53 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/organizing-an-application-using-amd-with-require-js/</guid>
+      <description>&lt;p&gt;RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Firebase and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/firebase-and-angularjs/</link>
+      <pubDate>Wed, 10 Dec 2014 23:45:45 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/firebase-and-angularjs/</guid>
+      <description>&lt;p&gt;AngularFire is the officially supported AngularJS binding for Firebase. The combination of Angular and Firebase provides a three-way data binding between your HTML, your, JavaScript, and the Firebase database.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OOP in prototype style</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</link>
+      <pubDate>Mon, 15 Sep 2014 22:40:38 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/oop-in-prototype-style/</guid>
+      <description>&lt;p&gt;The main point is that one object can be &lt;code&gt;prototype&lt;/code&gt; of another object. That means if property isn&amp;rsquo;t found in the object - than it takes from &lt;code&gt;prototype&lt;/code&gt; object. In JavaScript this implementation is at the language level.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</link>
+      <pubDate>Tue, 29 Jul 2014 22:01:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/operator-typeof-class-instanceof-duck-typing-and-polymorphism/</guid>
+      <description>&lt;p&gt;Funny to hear when developer says that JS does not have types =) Let&amp;rsquo;s see how to distinguish them right.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Function Invocation Patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</link>
+      <pubDate>Thu, 29 May 2014 05:47:57 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/05/function-invocation-patterns-scope-of-this-and-function-object-literal-in-javascript/</guid>
+      <description>&lt;p&gt;Describe different approaches to define and call functions&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

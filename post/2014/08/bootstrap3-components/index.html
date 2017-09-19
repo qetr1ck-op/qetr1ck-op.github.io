@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Bootstrap 3: Components</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Bootstrap 3: Components</h1>
+<h4>Published 2014-08-02</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#icons">Icons</a></li>
+<li><a href="#dropdowns">Dropdowns</a></li>
+<li><a href="#buttons-group">Buttons group</a></li>
+<li><a href="#input-groups">Input groups</a></li>
+<li><a href="#navs">Navs</a></li>
+<li><a href="#pagination">Pagination</a></li>
+<li><a href="#labels-and-badges">Labels and Badges</a></li>
+<li><a href="#thumbnails">Thumbnails</a></li>
+<li><a href="#alerts">Alerts</a></li>
+<li><a href="#progress-bars">Progress Bars</a></li>
+</ul>
+</nav>
+    <p>Set of standard components from popular library.</p>
+
+<p></p>
+
+<h1 id="icons">Icons</h1>
+
+<p>Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="zAupx" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/zAupx/'>Bootstrap Components: Icons Examples</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="dropdowns">Dropdowns</h1>
+
+<p>Wrap the dropdown&rsquo;s trigger and the dropdown menu within <code>.dropdown</code>, or another element that declares <code>position: relative;</code>. Then add the menu&rsquo;s HTML:</p>
+
+<p>Via data attributes or JavaScript, the dropdown plugin toggles hidden content (dropdown menus) by toggling the <code>.open</code> class on the parent list item. When opened, the plugin also adds <code>.dropdown-backdrop</code> as a click area for closing dropdown menus when clicking outside the menu.</p>
+
+<p>Call the dropdowns via JavaScript: <code>$('.dropdown-toggle').dropdown()</code> or use <code>data-toggle=&quot;dropdown&quot;</code>.</p>
+
+<p><a href="http://getbootstrap.com/javascript/#dropdowns-usage">Full list Dropdown methods</a></p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="yoehq" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/yoehq/'>yoehq</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="buttons-group">Buttons group</h1>
+
+<p>Group a series of buttons together on a single line with the button group. Control via JavaScript: <code>$('.btn').button()</code></p>
+
+<p><a href="http://getbootstrap.com/javascript/#buttons-usage">Full list methods</a></p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="qCbxy" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/qCbxy/'>Bootstrap Components: Buttons Group</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="input-groups">Input groups</h1>
+
+<p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with an <code>.input-group-addon</code> to prepend or append elements to a single <code>.form-control</code>.</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="Cypci" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/Cypci/'>Bootstrap: Components - Input groups</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="navs">Navs</h1>
+
+<p>Navs available in Bootstrap have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
+
+<p>Navs via JavaScript: <code>$('#myTab a').tab()</code></p>
+
+<p><a href="http://getbootstrap.com/javascript/#tabs">Full list methods</a></p>
+
+<p><p data-height="762" data-theme-id="10606" data-slug-hash="ousCl" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/ousCl/'>Bootstrap: Copmonents - Navs</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="pagination">Pagination</h1>
+
+<p>Provide pagination links for your site or app with the multi-page pagination component, or the simpler pager alternative.</p>
+
+<p>Simple pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
+
+<p><p data-height="366" data-theme-id="10606" data-slug-hash="zwqHv" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/zwqHv/'>Bootstrap: Components - Pagination</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="labels-and-badges">Labels and Badges</h1>
+
+<p>Add any of the below mentioned modifier classes to change the appearance of a label.</p>
+
+<p><p data-height="332" data-theme-id="10606" data-slug-hash="Aiywe" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/Aiywe/'>Bootstrap: Components - Labels and Badges</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="thumbnails">Thumbnails</h1>
+
+<p>With a bit of extra markup, it&rsquo;s possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
+
+<p><p data-height="355" data-theme-id="10606" data-slug-hash="rtbqu" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/rtbqu/'>Bootstrap: Components - Thumbnail</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="alerts">Alerts</h1>
+
+<p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
+
+<p><a href="http://getbootstrap.com/javascript/#alerts">Full list methods</a></p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="roLJc" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/roLJc/'>Bootstrap: Components - Alerts</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="progress-bars">Progress Bars</h1>
+
+<p>Provide up-to-date feedback on the progress of a work-flow or action with simple yet flexible progress bars.</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="acvLq" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/acvLq/'>Bootstrap: Components - Progress Bar</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

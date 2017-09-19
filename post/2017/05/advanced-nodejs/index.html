@@ -1,0 +1,558 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Advanced NodeJS</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Advanced NodeJS</h1>
+<h4>Published 2017-05-02</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#node-javascript">Node != Javascript</a>
+<ul>
+<li><a href="#node-s-architecture">Node&rsquo;s architecture</a></li>
+<li><a href="#node-s-cli-and-repl">Node&rsquo;s CLI and REPL</a></li>
+<li><a href="#global-object-process-buffer">&ldquo;global&rdquo; Object, &ldquo;Process&rdquo;, &ldquo;Buffer&rdquo;</a></li>
+<li><a href="#how-require-actually-works">How &ldquo;require&rdquo; actually works</a></li>
+<li><a href="#json-and-c-addons">JSON and C++ addons</a></li>
+<li><a href="#wrapping-and-caching-modules">Wrapping and Caching modules</a></li>
+<li><a href="#know-your-npm">Know your npm</a></li>
+</ul></li>
+<li><a href="#concurrency-model-and-event-loop">Concurrency model and Event Loop</a>
+<ul>
+<li><a href="#what-is-i-o-anyway">What is I/O anyway?</a></li>
+<li><a href="#the-event-loop">The Event Loop</a></li>
+<li><a href="#the-call-stack">The Call Stack</a></li>
+<li><a href="#handling-slow-operation">Handling slow operation</a></li>
+<li><a href="#how-callbacks-actually-work">How callbacks actually work</a></li>
+<li><a href="#settimeout-setimmediate-process-nexttick">&ldquo;setTimeout&rdquo;, &ldquo;setImmediate&rdquo;, &ldquo;process.nextTick&rdquo;</a></li>
+</ul></li>
+<li><a href="#node-s-event-driven-architecture">Node&rsquo;s Event-driven architecture</a>
+<ul>
+<li><a href="#callback-promises-async-await">&ldquo;Callback&rdquo;, &ldquo;Promises&rdquo;, &ldquo;async/await&rdquo;</a></li>
+<li><a href="#event-emitter">Event Emitter</a></li>
+<li><a href="#arguments-errors-order-of-listeners">Arguments, Errors, Order of Listeners</a></li>
+</ul></li>
+<li><a href="#node-for-networking">Node for Networking</a>
+<ul>
+<li><a href="#tcp-networking-with">TCP networking with</a></li>
+<li><a href="#working-with-multiple-sockets">Working with multiple sockets</a></li>
+<li><a href="#improving-the-chat-server">Improving the chat server</a></li>
+<li><a href="#the-dns-module">The DNS module</a></li>
+<li><a href="#udp-sockets">UDP sockets</a></li>
+</ul></li>
+<li><a href="#node-for-web">Node for Web</a>
+<ul>
+<li><a href="#the-basic-streaming-http-server">The basic streaming HTTP server</a></li>
+<li><a href="#working-with-https">Working with HTTPS</a></li>
+<li><a href="#requesting-http-https-data">Requesting HTTP/HTTPS data</a></li>
+<li><a href="#working-with-routes">Working with Routes</a></li>
+<li><a href="#parsing-url-and-query-string">Parsing URL and Query String</a></li>
+</ul></li>
+<li><a href="#node-s-common-built-in-modules">Node&rsquo;s Common built-in modules</a>
+<ul>
+<li><a href="#working-with-operation-system">Working with operation system</a></li>
+<li><a href="#working-with-file-system">Working with File System</a></li>
+<li><a href="#console-and-utilites">Console and Utilites</a></li>
+<li><a href="#debugging">Debugging</a></li>
+</ul></li>
+<li><a href="#working-with-streams">Working with streams</a>
+<ul>
+<li><a href="#streams-all-the-thing">Streams all the thing!</a></li>
+<li><a href="#steam-101">Steam 101</a></li>
+<li><a href="#implementing-readable-and-writable-streams">Implementing Readable and Writable streams</a></li>
+<li><a href="#duplex-and-transform-streams">Duplex and Transform streams</a></li>
+</ul></li>
+<li><a href="#cluster-adn-child-process">Cluster adn Child Process</a>
+<ul>
+<li><a href="#scalling-node-js-application">Scalling Node.js application</a></li>
+<li><a href="#child-processes-events-and-standard-io">Child processes events and standard IO</a></li>
+<li><a href="#the-shell-syntax-with-exec-and-execfile">The Shell syntax with <code>exec()</code> and <code>execFile()</code></a></li>
+<li><a href="#the-fork-function">The <code>fork()</code> function</a></li>
+<li><a href="#the-cluster-module">The Cluster module</a></li>
+<li><a href="#load-balancing-an-http-server">Load-balancing an HTTP server</a></li>
+<li><a href="#broadcasting-messages-to-each-worker">Broadcasting messages to each Worker</a></li>
+<li><a href="#availability-and-zero-downtime-restart">Availability and Zero-downtime restart</a></li>
+<li><a href="#shared-state-and-sticky-load-balancer">Shared State and Sticky Load Balancer</a></li>
+</ul></li>
+<li><a href="#save-my-day">Save my day</a></li>
+</ul>
+</nav>
+    <p>This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.</p>
+
+<p></p>
+
+<!--toc-->
+
+<h1 id="node-javascript">Node != Javascript</h1>
+
+<h2 id="node-s-architecture">Node&rsquo;s architecture</h2>
+
+<ul>
+<li>Node VMs: <code>V8</code>, <code>Chakra</code></li>
+<li>V8 Feature Groups: <code>shipping</code>, <code>staged (--harmony)</code>, <code>inprogress (--harmony_for_in)</code></li>
+<li>All V8 options <code>node --v8-options | less</code></li>
+<li>Node&rsquo;s architecture diagram: <code>V8</code> and <code>libuv</code></li>
+</ul>
+
+<h2 id="node-s-cli-and-repl">Node&rsquo;s CLI and REPL</h2>
+
+<ul>
+<li>Autocomplete feature</li>
+<li><code>_</code> as last evaluated value</li>
+<li><code>.</code> repl commands</li>
+<li><code>repl</code> module</li>
+<li>Node&rsquo;s available list commands <code>node --help | less</code>
+<br /></li>
+</ul>
+
+<h2 id="global-object-process-buffer">&ldquo;global&rdquo; Object, &ldquo;Process&rdquo;, &ldquo;Buffer&rdquo;</h2>
+
+<ul>
+<li>local vs <code>global</code> scope</li>
+<li><code>process</code> as a bridge between Node app and its running env
+
+<ul>
+<li><code>process.versions</code></li>
+<li><code>process.release.lts</code></li>
+<li><code>process.env</code> as <code>PATH</code></li>
+<li>using as <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/index.js">configuration</a></li>
+<li><code>process</code> is an <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/process.js">event emitter</a></li>
+</ul></li>
+<li><code>Buffer</code> is essentially a used to work with binary streams of data.
+
+<ul>
+<li>read length <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/buffer.js">Buffer.from</a></li>
+<li>can use similar method as on array, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/buff.slice.js">slice</a></li>
+<li><code>string_decoder</code> module provides an API for decoding Buffer objects into strings in a manner that preserves encoded multi-byte UTF-8 and UTF-16 characters, [example]()</li>
+</ul></li>
+</ul>
+
+<h2 id="how-require-actually-works">How &ldquo;require&rdquo; actually works</h2>
+
+<ul>
+<li>Steps: resolving -&gt; loading -&gt; wrapping -&gt; evaluating -&gt; caching</li>
+<li><code>module</code> module, <code>module.path</code>, <code>module.parent</code></li>
+<li><code>require.resolve</code></li>
+<li>algorithm of <code>require</code> search</li>
+<li><code>module.exports</code> = <code>exports</code></li>
+<li><code>module.loaded</code></li>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.6/index.js">examples</a></li>
+</ul>
+
+<h2 id="json-and-c-addons">JSON and C++ addons</h2>
+
+<h2 id="wrapping-and-caching-modules">Wrapping and Caching modules</h2>
+
+<ul>
+<li><code>require('module').wrapper</code></li>
+<li><code>require.main === module</code> with CLI and requiring module <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.8/printStars.js">printStars.js</a></li>
+<li>delete <code>require.cache</code> or <code>module.exports</code> as a function</li>
+</ul>
+
+<h2 id="know-your-npm">Know your npm</h2>
+
+<h1 id="concurrency-model-and-event-loop">Concurrency model and Event Loop</h1>
+
+<h2 id="what-is-i-o-anyway">What is I/O anyway?</h2>
+
+<ul>
+<li>the definition</li>
+<li>node architecture in I/O</li>
+<li>handling slow I/O operation: synchronous, <code>fork()</code> for new process, threads (problem with sharing resources), event loop</li>
+</ul>
+
+<h2 id="the-event-loop">The Event Loop</h2>
+
+<ul>
+<li>the definition</li>
+<li>the visualization</li>
+</ul>
+
+<h2 id="the-call-stack">The Call Stack</h2>
+
+<ul>
+<li>the definition</li>
+<li>the visualization</li>
+</ul>
+
+<h2 id="handling-slow-operation">Handling slow operation</h2>
+
+<h2 id="how-callbacks-actually-work">How callbacks actually work</h2>
+
+<ul>
+<li>the visualization</li>
+</ul>
+
+<h2 id="settimeout-setimmediate-process-nexttick">&ldquo;setTimeout&rdquo;, &ldquo;setImmediate&rdquo;, &ldquo;process.nextTick&rdquo;</h2>
+
+<ul>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/2.7/nextTick.js">example</a> how to handle async error</li>
+<li><code>setTimeout</code> vs <code>setImmediate</code> vs <code>process.nextTick</code>, visual explanation [<a href="http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776">http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776</a>]</li>
+<li><code>setImmediate</code> executes after <code>setTimeout</code>, <a href="https://github.com/nodejs/node-v0.x-archive/issues/25788">explanation</a></li>
+</ul>
+
+<h1 id="node-s-event-driven-architecture">Node&rsquo;s Event-driven architecture</h1>
+
+<h2 id="callback-promises-async-await">&ldquo;Callback&rdquo;, &ldquo;Promises&rdquo;, &ldquo;async/await&rdquo;</h2>
+
+<ul>
+<li>Async != Callback</li>
+<li>async <code>callback</code> <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.1/async-callback.js">example</a></li>
+<li>async <code>promise</code> and <code>async/await</code> <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.1/async-promise.js">example</a></li>
+</ul>
+
+<h2 id="event-emitter">Event Emitter</h2>
+
+<ul>
+<li>sync events <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.2/sync-events.js">example</a></li>
+<li>async events <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.2/async-events.js">example</a></li>
+</ul>
+
+<h2 id="arguments-errors-order-of-listeners">Arguments, Errors, Order of Listeners</h2>
+
+<ul>
+<li><code>data</code> event</li>
+<li>handling error with <code>error</code> and <code>uncaughtException</code>, register listener with <code>once</code> method, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.3/errors.js">example</a></li>
+<li>order of invoke listeners, <code>prependListener</code>, <code>removeListener</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.3/order.js">example</a></li>
+<li>Task List Management <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/3.4">example</a></li>
+</ul>
+
+<h1 id="node-for-networking">Node for Networking</h1>
+
+<h2 id="tcp-networking-with">TCP networking with</h2>
+
+<ul>
+<li><code>net</code> module, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.1/net.js">example</a></li>
+</ul>
+
+<h2 id="working-with-multiple-sockets">Working with multiple sockets</h2>
+
+<ul>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.2/net.js">example</a></li>
+</ul>
+
+<h2 id="improving-the-chat-server">Improving the chat server</h2>
+
+<ul>
+<li>remove logging message to ourself, adding names, timestamp, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.3/chat.js">example</a></li>
+</ul>
+
+<h2 id="the-dns-module">The DNS module</h2>
+
+<ul>
+<li><code>lookup</code>, <code>resolve</code>, <code>reverse</code> methods <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.4/dns.js">example</a></li>
+</ul>
+
+<h2 id="udp-sockets">UDP sockets</h2>
+
+<ul>
+<li><code>dgram</code> module and creating event emitter by <code>dgram.createSocket('udp4')</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.5/udp.js">example</a></li>
+</ul>
+
+<h1 id="node-for-web">Node for Web</h1>
+
+<h2 id="the-basic-streaming-http-server">The basic streaming HTTP server</h2>
+
+<ul>
+<li><code>http.createServer</code> as an event emitter, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.1/http.js">example</a></li>
+</ul>
+
+<h2 id="working-with-https">Working with HTTPS</h2>
+
+<ul>
+<li>create key and certificate with <code>openssl</code></li>
+<li>working with <code>https</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js">example</a></li>
+</ul>
+
+<h2 id="requesting-http-https-data">Requesting HTTP/HTTPS data</h2>
+
+<ul>
+<li>5 major classes of <code>http</code> module</li>
+<li>client <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/request.js">example</a></li>
+<li>server <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/server.js">example</a></li>
+</ul>
+
+<h2 id="working-with-routes">Working with Routes</h2>
+
+<ul>
+<li>read requested url with <code>http.IncomingMessage</code> &lt;- <code>req.url</code></li>
+<li>response pages with <code>http.ServerResponse</code> &lt;- <code>res.writeHeader()</code> and <code>res.end()</code></li>
+<li>redirect response</li>
+<li>response with JSON</li>
+<li><code>404</code> response</li>
+<li>get all response in <code>http.STATUS_CODES</code></li>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.4/server.js">example</a></li>
+</ul>
+
+<h2 id="parsing-url-and-query-string">Parsing URL and Query String</h2>
+
+<ul>
+<li>module <code>url</code> with <code>url.parse('hrefString', ?parseQueryString)</code> and <code>url.format()</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/url.js">example</a></li>
+<li><code>querystring</code> module, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/querystring.js">example</a></li>
+</ul>
+
+<h1 id="node-s-common-built-in-modules">Node&rsquo;s Common built-in modules</h1>
+
+<h2 id="working-with-operation-system">Working with operation system</h2>
+
+<ul>
+<li>module <code>os</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.1/index.js">example</a></li>
+</ul>
+
+<h2 id="working-with-file-system">Working with File System</h2>
+
+<ul>
+<li>Task 1: script to fix files in directory. Each file has its data duplicated. Truncate each file in half. <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task1">solution</a></li>
+<li>Task 2: scripts to generate/clean old files in a directory. Anything older than 7 days should be deleted <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task2">solution</a></li>
+<li>Task 3: watch a directory and report events which were occurred: added, removed, changed <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task3">solution</a></li>
+</ul>
+
+<h2 id="console-and-utilites">Console and Utilites</h2>
+
+<ul>
+<li><code>console.Console</code>, <code>util.debuglog</code>, <code>util.deprecate</code>, <code>util.inherits</code> and ES6 <code>extends</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.3/index.js">examples</a></li>
+</ul>
+
+<h2 id="debugging">Debugging</h2>
+
+<ul>
+<li><code>node debug script.js</code>, commands: <code>help</code>, <code>restart</code>, <code>sb(line)</code>, <code>repl</code>, <code>watch(var)</code>, <code>list(lines)</code></li>
+<li><code>node --inspect-brk script.js</code></li>
+</ul>
+
+<h1 id="working-with-streams">Working with streams</h1>
+
+<h2 id="streams-all-the-thing">Streams all the thing!</h2>
+
+<ul>
+<li>The definition</li>
+<li>Distinguish to serve enormous file with buffer <code>fs.readFile</code> and stream <code>fs.createReadStream</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/7.1">example</a></li>
+</ul>
+
+<h2 id="steam-101">Steam 101</h2>
+
+<ul>
+<li>Types of stream</li>
+<li>All stream are instance of EventEmitter</li>
+<li>Consuming streams <code>readableStream.pipe(writableStream)</code> / events</li>
+<li>Stream Events Table</li>
+<li>Readable stream mode: &ldquo;paused/pull&rdquo;, &ldquo;flowing/push&rdquo;</li>
+</ul>
+
+<h2 id="implementing-readable-and-writable-streams">Implementing Readable and Writable streams</h2>
+
+<ul>
+<li>writable <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.3/writable.js">example</a></li>
+<li>readable <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.3/readable.js">example</a></li>
+</ul>
+
+<h2 id="duplex-and-transform-streams">Duplex and Transform streams</h2>
+
+<ul>
+<li>duplex <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/duplex.js">example</a></li>
+<li>transform <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/transform.js">example</a></li>
+<li>transform with <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/zip.js">gzip example</a> and <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/unzip.js">unzip</a></li>
+</ul>
+
+<h1 id="cluster-adn-child-process">Cluster adn Child Process</h1>
+
+<h2 id="scalling-node-js-application">Scalling Node.js application</h2>
+
+<ul>
+<li>Why one process in one CPU is not enough</li>
+<li>Using multiple process is only way to scale</li>
+<li>Scalability strategies:</li>
+<li>&ldquo;Cloning&rdquo;</li>
+<li>&ldquo;Decomposing (associated with term microservices)&rdquo;</li>
+<li>&ldquo;Splitting (sharding)&rdquo;</li>
+</ul>
+
+<h2 id="child-processes-events-and-standard-io">Child processes events and standard IO</h2>
+
+<ul>
+<li>4 different way to create child process: <code>spawn()</code>, <code>fork()</code>, <code>exec()</code>, <code>execFile()</code></li>
+<li><code>spawn()</code> child process <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.2/spawn.js">example</a></li>
+<li>using <code>spawn()</code> as an stream <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.2/spawn-pipe.js">example</a></li>
+</ul>
+
+<h2 id="the-shell-syntax-with-exec-and-execfile">The Shell syntax with <code>exec()</code> and <code>execFile()</code></h2>
+
+<ul>
+<li><code>exec()</code> vs <code>spawn()</code></li>
+<li><code>exec()</code> with options <code>shell, cwd, env</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.3/exec.js">example</a></li>
+<li><code>detached</code> option and <code>childProcess.unref()</code> <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.3/detach.js">example</a> with <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.3/timer.js">timer.js</a></li>
+</ul>
+
+<h2 id="the-fork-function">The <code>fork()</code> function</h2>
+
+<ul>
+<li><code>fork()</code> vs <code>spawn()</code></li>
+<li>communication with <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/parent.js">parent</a> and <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/child.js">child</a></li>
+<li>long running process with http request: <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/server.js">server</a> and <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/compute.js">computation</a></li>
+</ul>
+
+<h2 id="the-cluster-module">The Cluster module</h2>
+
+<ul>
+<li>Using as a Load Balancer</li>
+<li>Diagram with Master Process and Cloning Process</li>
+</ul>
+
+<h2 id="load-balancing-an-http-server">Load-balancing an HTTP server</h2>
+
+<ul>
+<li>benchmark with request per seconds</li>
+<li>clustering HTTP server <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/8.6">example</a></li>
+</ul>
+
+<h2 id="broadcasting-messages-to-each-worker">Broadcasting messages to each Worker</h2>
+
+<ul>
+<li>mocking fetch user from DB only from Master Worker <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/8.7">example</a></li>
+</ul>
+
+<h2 id="availability-and-zero-downtime-restart">Availability and Zero-downtime restart</h2>
+
+<ul>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/8.7">example</a></li>
+</ul>
+
+<h2 id="shared-state-and-sticky-load-balancer">Shared State and Sticky Load Balancer</h2>
+
+<ul>
+<li>Why shared states with different workers is a problem?</li>
+<li>Sticky Load Balancer as a solution</li>
+</ul>
+
+<h1 id="save-my-day">Save my day</h1>
+
+<ul>
+<li><a href="https://www.pluralsight.com/courses/nodejs-advanced">original course by Samer Buna on pluralsight</a></li>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs">github repo of examples</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

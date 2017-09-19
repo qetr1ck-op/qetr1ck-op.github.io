@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dom Api on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/dom-api/</link>
+    <description>Recent content in Dom Api on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/dom-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React app with Express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Maybe, you don&#39;t need jQuery?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/maybe-you-don-t-need-jquery/</link>
+      <pubDate>Sun, 10 Aug 2014 18:08:20 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/maybe-you-don-t-need-jquery/</guid>
+      <description>&lt;p&gt;Do you really need to use jQuery methods instead of vanilla Javascript?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NodeList vs Array in Javascript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/nodelist-vs-array-in-javascript/</link>
+      <pubDate>Wed, 30 Jul 2014 22:39:40 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/nodelist-vs-array-in-javascript/</guid>
+      <description>&lt;p&gt;Essentially, a &lt;code&gt;NodeList&lt;/code&gt; is what you get when you call any method such as &lt;code&gt;elem.getElemetsByTagName()&lt;/code&gt;, &lt;code&gt;elem.querySelectorAll()&lt;/code&gt; and so on.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Class manipulation in Javascript, jQuery and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</link>
+      <pubDate>Wed, 02 Jul 2014 23:24:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</guid>
+      <description>&lt;p&gt;In this article, I would like to create short reference for how &lt;code&gt;add/remove/toogle&lt;/code&gt; class in pure Javascript and with framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Form pop-up with inputs navigation</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/03/form-pop-up-with-inputs-navigation/</link>
+      <pubDate>Sun, 30 Mar 2014 21:41:30 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/03/form-pop-up-with-inputs-navigation/</guid>
+      <description>&lt;p&gt;Modal pop-up confirm with &amp;ldquo;correct&amp;rdquo; navigation through inputs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is event bubbling and capturing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/02/what-is-event-bubbling-and-capturing/</link>
+      <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/02/what-is-event-bubbling-and-capturing/</guid>
+      <description>&lt;p&gt;Event bubbling and capturing are two ways of event propagation in the HTML DOM API.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

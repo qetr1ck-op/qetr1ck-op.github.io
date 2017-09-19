@@ -1,0 +1,656 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>PatternCraft</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>PatternCraft</h1>
+<h4>Published 2017-03-05</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#state">State</a></li>
+<li><a href="#strategy">Strategy</a></li>
+<li><a href="#adapter">Adapter</a></li>
+<li><a href="#visitor">Visitor</a></li>
+<li><a href="#decorator">Decorator</a></li>
+<li><a href="#strategy-1">Strategy</a></li>
+<li><a href="#proxy">Proxy</a></li>
+</ul>
+</nav>
+    <p>An awesome explanation of GOF design patterns. The only way to learn pattern is to know what problem it solves.</p>
+
+<p></p>
+
+<h1 id="state">State</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=yZt7mUVDijU">State Design Pattern</a> can be used, for example, to manage the state of tank in StarCraft game.</p>
+
+<p>The pattern consists in isolating the state logic in different <code>class</code>es than having multiple <code>if</code>s to determinate the flow.</p>
+
+<pre><code class="language-js">class TankState {
+    constructor(damage = 5, canMove = true) {
+        Object.assign(this, { damage, canMove });
+    }
+
+    static get defaultState() { return new SiegeState(); }
+}
+
+// state #1
+class SiegeState extends TankState {
+    constructor() {
+        super(20, false);
+    }
+}
+
+// state #2
+class SpeedState extends TankState {
+    constructor() {
+        super(5, true);
+    }
+}
+
+class Tank {
+    constructor() {
+        this.state = TankState.defaultState;
+    }
+
+    // implementation bellow relies only on current state, without using multiple if/switch
+    get canMove() { return this.state.canMove; } 
+
+    get damage() { return this.state.damage; }
+}
+
+</code></pre>
+
+<p>Test specs:</p>
+
+<pre><code class="language-js">describe('State pattern', () =&gt; {
+    it('Default tank state is SiegeState', () =&gt; {
+        const tank = new Tank();
+        
+        expect(tank.state instanceof SiegeTank).to.be.true;
+    });
+
+    it('SiegeState', () =&gt; {
+        const tank = new SiegeState();
+
+        expect(tank.damage).to.equal(20);
+        expect(tank.canMove).to.be.false;
+    });
+
+    it('SpeedState', () =&gt; {
+        const tank = new SpeedState();
+
+        expect(tank.damage).to.equal(5);
+        expect(tank.canMove).to.be.true;
+    });
+})
+</code></pre>
+
+<h1 id="strategy">Strategy</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=MOEsKHqLiBM">Strategy Design Pattern</a> can be used, for example, to determinate how a unit moves in StarCraft game.</p>
+
+<p>The pattern consists in having different strategy for one functionality. A unit, for example, can move by walking or flying or swimming.</p>
+
+<pre><code class="language-js">// strategy #1
+class Walk() {
+    move(unit) {
+        unit.position += 5;
+    }
+}
+// strategy #2
+class Fly() {
+    move(unit) {
+        unit.position += 20;
+    }
+}
+
+class Viking {
+    constructor() {
+        this.moveBehavior = new Walk();
+        this.position = 0;
+    }
+
+    move() { this.moveBehavior.move(this); } // delegate behavior to strategy
+}
+</code></pre>
+
+<p>Test specs:</p>
+
+<pre><code class="language-js">describe('Strategy pattern', () =&gt; {
+    it('Default viking move behavior is Walk', () =&gt; {
+        const viking = new Viking();
+        
+        expect(viking.moveBehavior instanceof Walk).to.be.true;
+    });
+
+    it('Walk behavior', () =&gt; {
+        const viking = new Viking();
+
+        viking.move();
+        expect(viking.position).to.equal(5);
+        viking.move();
+        expect(viking.position).to.equal(10);
+    });
+
+    it('Fly behavior', () =&gt; {
+        const viking = new Viking();
+        
+        viking.moveBehavior = new Fly();
+        viking.move();
+        expect(viking.position).to.equal(20);
+        viking.move();
+        expect(viking.position).to.equal(40);
+    });
+})
+</code></pre>
+
+<h1 id="adapter">Adapter</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=hvpXKZhNINc">Adapter Design Pattern</a> can be used, to insert an external character in the game.</p>
+
+<p>The pattern consists in having a wrapper class to adapt the external source.</p>
+
+<pre><code class="language-js">// in app characters
+class Marine {
+  attack(target) {
+    target.health -= 6;
+  }
+}
+
+class Zealot {
+  attack(target) {
+    target.health -= 8;
+  }
+}
+
+class Zergling {
+  attack(target) {
+    target.health -= 5;
+  }
+}
+
+// external
+class Mario {
+  jumpAttack() {
+    console.log('Mamamia!');
+    return 3;
+  }
+}
+
+// mario adapter
+class MarioAdapter {
+    constructor(mario) {
+        this.mario = mario;
+    }
+    
+    attack(target) {
+        target.health -= this.mario.jumpAttack();
+    }
+}
+</code></pre>
+
+<p>Test specs:</p>
+
+<pre><code class="language-js">describe('Adapter pattern', () =&gt; {
+    it('Mario can not attack', () =&gt; {
+        const mario = new Mario();
+        
+        expect(mario.attack).to.be.undefined;
+    });
+
+    it('MarioAdapter can attack', () =&gt; {
+        const mario = new MarioAdapter();
+        const target = { health: 50 };
+
+        mario.attack(target);
+
+        expect(target.health).to.equal(47);
+    });
+})
+</code></pre>
+
+<h1 id="visitor">Visitor</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=KSEyIXnknoY">Strategy Design Pattern</a> can be used, for example, to determinate how an attack deals a different amount of damage to unit in StarCraft game.</p>
+
+<p>The pattern delegates the responsibilities to different <code>class</code>. When a unit takes a damage it can say to the <code>visitor</code> what do with itself.</p>
+
+<pre><code class="language-js">class Soldier {
+    constructor(health = 100) {
+        Object.assign(this, { health });
+    }
+}
+
+class Marine extends Soldier {
+    constructor() {
+        super();
+    }
+    
+    // an idiomatic name
+    accept(visitor) {
+        visitor.visitLight(this);
+    }
+}
+
+class Marauder extends Soldier {
+    constructor() {
+        super(180);
+    }
+    
+    accept(visitor) {
+        visitor.visitArmored(this);
+    }
+}
+
+// visitor
+class TankBullet {
+    visitLight(unit) {
+        unit.health -= 11;
+    }
+    visitArmored(unit) {
+        unit.health -= 32;
+    }
+}
+</code></pre>
+
+<p>Test specs:</p>
+
+<pre><code class="language-js">describe('Visitor pattern', () =&gt; {
+    it('Visit light', () =&gt; {
+        const marine = new Marine();
+        const tankBullet = new TankBullet();
+        
+        tankBullet.visitLight(marine);
+
+        expect(mario.health).to.be(89);
+    });
+
+    it('Visit armored', () =&gt; {
+        const marauder = new Marauder();
+        const tankBullet = new TankBullet();
+        
+        tankBullet.visitArmored(marauder);
+
+        expect(mario.health).to.be(148);
+    });
+})
+</code></pre>
+
+<h1 id="decorator">Decorator</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=17XTOODeWQE">Decorator Design Pattern</a> can be used, for example, to manage upgrades.</p>
+
+<p>The pattern is consists in upgrade your base class with extra functionality.</p>
+
+<p>A decorator will receive an instance of base class and use it to call a new thing you want.</p>
+
+<pre><code class="language-js">class Marine {
+    constructor(_damage, _armor) {
+        Object.assign(this, { _damage, _armor });
+    }
+
+    get damage { return this._damage; }
+    get armor { return this._armor; }
+}
+
+// decorator #1
+class WeaponUpgrade {
+    constructor(unit) {
+        this.unit = unit;
+    }
+
+    get damage { return this.unit.damage + 1; }
+    get armor { return this.unit.armor; }
+}
+
+// decorator #2
+class ArmorUpgrade {
+    constructor(unit) {
+        this.unit = unit;
+    }
+
+    get damage { return this.unit.damage; }
+    get armor { return this.unit.armor + 1; }
+}
+
+let marine = new Marine();
+marine = new WeaponUpgrade(marine);
+marine = new WeaponUpgrade(marine);
+</code></pre>
+
+<p>Test specs:</p>
+
+<pre><code class="language-js">describe('Decorator pattern', () =&gt; {
+    it('Weapon upgrade', () =&gt; {
+        let marine = new Marine(10, 2);
+        
+        marine = new WeaponUpgrade(marine);
+        marine = new WeaponUpgrade(marine);
+
+        expect(marine.damage).to.be(12);
+        expect(marine.armor).to.be(2);
+    });
+
+    it('Armor upgrade', () =&gt; {
+        let marine = new Marine(10, 2);
+        
+        marine = new ArmorUpgrade(marine);
+        marine = new ArmorUpgrade(marine);
+
+        expect(marine.armor).to.be(4);
+        expect(marine.damage).to.be(10);
+    });
+})
+</code></pre>
+
+<h1 id="strategy-1">Strategy</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=MOEsKHqLiBM">Strategy Design Pattern</a> can be used, for example, to queue actions.</p>
+
+<p>The pattern consists in isolating command logic in a class so it can:</p>
+
+<ul>
+<li>queue: you can queue actions to move a probe to a different locations</li>
+<li>undone: you can tell a probe to build something and then call a stop command to undo the action</li>
+<li>validate: you can check if the action can be executed or not, you can not move if building action is in progress</li>
+</ul>
+
+<pre><code class="language-js">class Probe {
+    constructor(commands = [], minerals = 0, x = 0, y = 0) {
+        Object.assign(this, {
+            position: { x, y },
+            commands,
+            minerals
+        });
+    }
+
+    move(x, y) {
+        this.commands = [...this.commands, new MoveCommand(this, x, y)];
+    }
+
+    gather() {
+        this.commands = [...this.commands, new GatherCommand(this)];
+    }
+}
+
+// command #1
+class MoveCommand {
+    constructor(unit, x, y) {
+        Object.assign(this, { unit, x, y});
+    }
+
+    // idiomatic 
+    execute() {
+        this.unit.position.x = this.x;
+        this.unit.position.y = this.y;
+    }
+}
+
+// command #2
+class GatherCommand {
+    constructor(unit) {
+        this.unit = unit;
+    }
+
+    execute() {
+        if (this.canExecute) {
+            this.unit.minerals += 5;
+        }
+    }
+
+    get canExecute() {
+        return this.unit.minerals === 0;
+    }
+}
+</code></pre>
+
+<p>Test specs:</p>
+
+<pre><code class="language-js">describe('Command pattern', () =&gt; {
+    it('MoveCommand should move unit', () =&gt; {
+        const unit = new Probe();
+        const moveBehavior = new MoveBehavior(unit, 10, 20);
+
+        moveBehavior.execute();
+
+        expect(unit.position.x).to.equal(10);
+        expect(unit.position.y).to.equal(20);
+    });
+
+    it('GatherCommand should gather resources', () =&gt; {
+        const unit = new Probe();
+        const moveBehavior = new GatherBehavior(unit);
+
+        moveBehavior.execute();
+
+        expect(unit.materials).to.equal(5);
+    });
+
+    it('GatherCommand should only gather resources if unit does not have resources', () =&gt; {
+        const unit = new Probe();
+        const moveBehavior = new GatherBehavior(unit);
+
+        expect(unit.materials).to.equal(5);
+        moveBehavior.execute();
+        expect(unit.materials).to.equal(5);
+        moveBehavior.execute();
+        expect(unit.materials).to.equal(5);
+    });
+})
+</code></pre>
+
+<h1 id="proxy">Proxy</h1>
+
+<p>The <a href="https://www.youtube.com/watch?v=WcAV9rOGjxw">Proxy Design Pattern</a> can be used, for example, to create a <code>drone</code> by using a proxy <code>cocoon</code> class.</p>
+
+<p>The pattern is responsible (&ldquo;stands in&rdquo;) for all requests on original object, typical extend or change behavior, than delegates action again to original object.</p>
+
+<pre><code class="language-js">// original
+class Drone {
+    move(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+// proxy
+class Cocoon {
+    constructor() {
+        this.lifetime = 3000;
+        // proxing
+        this.hatchDrone();
+    }
+
+    hatchDrone() {
+        setTimeout(this.onHatchDroneDone.bind(this), this.lifetime);
+    }
+    
+    onHatchDroneDone() {
+      this.drone = new Drone();
+      this.drone.move(this.rallyPath.x, this.rallyPath.y);
+    }
+
+    move(x, y) {
+        if (this.drone) {
+            this.drone.move(x, y);
+        } else {
+          this.rallyPath = { x, y };
+        }
+    }
+}
+</code></pre>
+
+<pre><code class="language-js">describe('Proxy pattern', () =&gt; {
+    it('Create drone when cocoon is hatched', done =&gt; {
+        const drone = new Cocoon();
+        
+        drone.move(10, 20);
+
+        expect(drone.drone).to.be.undefined;
+        expect(drone.rallyPath).to.be({ x: 10, y: 20 });
+
+        setTimeout(() =&gt; {
+            expect(drone.drone).to.be.defined;
+            expect(drone.drone.x).to.be.equal(10);
+            expect(drone.drone.y).to.be.equal(20);
+            done();
+        }, drone.lifetime)
+    });
+
+    it('Visit armored', () =&gt; {
+        const marauder = new Marauder();
+        const tankBullet = new TankBullet();
+        
+        tankBullet.visitArmored(marauder);
+
+        expect(mario.health).to.be(148);
+    });
+})
+</code></pre>
+
+<p>A classical JS example to proxing, for example, HTTP request by adding logging before every action:</p>
+
+<pre><code class="language-js">// proxy
+const proxiedFetch = fetch;
+
+fetch = (url) =&gt; {
+    // proxing
+    console.log('logging...');
+    // original
+    proxiedFetch(url);
+}
+</code></pre>
+
+<p>Save my day:</p>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL8B19C3040F6381A2">Original series of John Lindquist</a></li>
+<li><a href="https://sourcemaking.com/design_patterns">Just a great resource of Design Patterns</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

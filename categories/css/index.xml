@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/css/</link>
+    <description>Recent content in Css on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React app with Express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Units of measurement: &#34;px&#34;, &#34;em&#34;, &#34;rem&#34; and other</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/11/units-of-measurement-px-em-rem-and-other/</link>
+      <pubDate>Wed, 11 Nov 2015 20:17:58 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/11/units-of-measurement-px-em-rem-and-other/</guid>
+      <description>&lt;p&gt;I will try not only to write about variety of units, but also build a full picture - what and when better to choose.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TOP 10 mistakes when you develop on AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</link>
+      <pubDate>Wed, 23 Sep 2015 18:40:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/09/top-10-mistakes-when-you-develop-on-angularjs/</guid>
+      <description>&lt;p&gt;The top 10 mistakes when beginners start to develop on AngularJS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Centering in CSS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/centering-in-css/</link>
+      <pubDate>Mon, 08 Sep 2014 22:54:09 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/centering-in-css/</guid>
+      <description>&lt;p&gt;A fast guide to help centering everything with CSS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Medium-Style Page Transition</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/09/medium-style-page-transition/</link>
+      <pubDate>Mon, 01 Sep 2014 22:50:51 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/09/medium-style-page-transition/</guid>
+      <description>&lt;p&gt;An article on how to achieve &lt;a href=&#34;https://medium.com/&#34;&gt;Medium’s&lt;/a&gt; next page transition effect—an effect that can be seen by clicking anywhere on the “Read Next” footer at the bottom of the page. This effect is characterized by the lower article easing upward as the current article fades up and out.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Article Intro Effects Examples</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/article-intro-effects-examples/</link>
+      <pubDate>Tue, 19 Aug 2014 12:46:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/article-intro-effects-examples/</guid>
+      <description>&lt;p&gt;Most of the effects we tried are highly experimental; animating large images can become a bit sluggish, also because a couple of transitions happening at the same time. The effect gets triggered when &lt;code&gt;scrolling begins&lt;/code&gt;  or when the &lt;code&gt;button is clicked&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Canvas-off icon navigation with an animated border effect</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/canvas-off-icon-navigation-with-an-animated-border-effect/</link>
+      <pubDate>Mon, 11 Aug 2014 21:11:48 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/canvas-off-icon-navigation-with-an-animated-border-effect/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS Transforms</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/css-transforms/</link>
+      <pubDate>Sun, 03 Aug 2014 22:13:20 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/css-transforms/</guid>
+      <description>&lt;p&gt;So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one state to another.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 3: Components</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/bootstrap3-components/</link>
+      <pubDate>Sat, 02 Aug 2014 16:59:51 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/bootstrap3-components/</guid>
+      <description>&lt;p&gt;Set of standard components from popular library.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 3: CSS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/bootstrap3-css/</link>
+      <pubDate>Thu, 17 Jul 2014 20:10:04 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/bootstrap3-css/</guid>
+      <description>&lt;p&gt;A detailed look for implementation of UI popular library.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Class manipulation in Javascript, jQuery and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</link>
+      <pubDate>Wed, 02 Jul 2014 23:24:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/class-manipulation-in-javascript-jquery-and-angularjs/</guid>
+      <description>&lt;p&gt;In this article, I would like to create short reference for how &lt;code&gt;add/remove/toogle&lt;/code&gt; class in pure Javascript and with framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fluid three column layout with positioning, floats, tables and flexbox</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/04/fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</link>
+      <pubDate>Fri, 18 Apr 2014 11:09:46 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/04/fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</guid>
+      <description>&lt;p&gt;In Web world, fluid layout with 3 column is the most flexible and customizable layout. Mixing percentages and pixels for specify width of column allows create different layouts, for different task.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Original effects with CSS transition</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/04/original-effects-with-css3-transition/</link>
+      <pubDate>Tue, 01 Apr 2014 14:48:05 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/04/original-effects-with-css3-transition/</guid>
+      <description>&lt;p&gt;The power of CSS3 is enormous and in this post I create appearing effect of &amp;ldquo;Sign In Form&amp;rdquo; using differn style in each example.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fluid two-column layout with float and flexbox</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/03/fluid-two-column-layout-with-float-and-flexbox/</link>
+      <pubDate>Mon, 31 Mar 2014 20:49:09 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/03/fluid-two-column-layout-with-float-and-flexbox/</guid>
+      <description>&lt;p&gt;Two-column layout allows effective use browser space. Layout doesn&amp;rsquo;t require hard work and it can used with combining column in pixels or percentage.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Data URIs</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/02/data-uris/</link>
+      <pubDate>Tue, 11 Feb 2014 12:48:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/02/data-uris/</guid>
+      <description>&lt;p&gt;Did you know that you don&amp;rsquo;t have to link to an external image file when using an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; element in HTML, or declaring a &lt;code&gt;background-image&lt;/code&gt; in CSS? You can embed the image data directly into the document with data URIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prevent CSS Caching in Wordpress</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/01/prevent-css-caching/</link>
+      <pubDate>Thu, 02 Jan 2014 19:50:42 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/01/prevent-css-caching/</guid>
+      <description>&lt;p&gt;If you update your WordPress theme’s style.css, you may have noticed that you have to “force-reload” your site in your browser to see the changes. This is because your browser keeps a copy of the CSS cached on your hard drive.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

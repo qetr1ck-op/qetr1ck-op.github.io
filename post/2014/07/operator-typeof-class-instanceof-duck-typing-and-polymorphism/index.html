@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</h1>
+<h4>Published 2014-07-29</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#operator-typeof">Operator typeof</a></li>
+<li><a href="#class-for-objects">[[Class]] for objects</a></li>
+<li><a href="#duck-typing">Duck Typing</a></li>
+<li><a href="#polymorphism">Polymorphism</a></li>
+</ul>
+</nav>
+    <p>Funny to hear when developer says that JS does not have types =) Let&rsquo;s see how to distinguish them right.</p>
+
+<p></p>
+
+<h1 id="operator-typeof">Operator typeof</h1>
+
+<p>Operator <code>typeof</code> return type of argument. He has two syntax: <code>typeof x</code> and <code>typeof(x)</code>.</p>
+
+<pre><code class="language-js">typeof undefined // &quot;undefined&quot; 
+
+typeof 0    // &quot;number&quot; 
+
+typeof true // &quot;boolean&quot; 
+
+typeof &quot;foo&quot; // &quot;string&quot; 
+
+typeof {} // &quot;object&quot; 
+typeof [] // &quot;object&quot; 
+typeof new Date // &quot;object&quot; 
+
+typeof null  // &quot;object&quot; 
+typeof function(){} // &quot;function&quot; 
+</code></pre>
+
+<p><code>typeof</code> operator works great with primitive types, except null, as well as functions. But ordinary objects, arrays, and date for <code>typeof</code> all look the same, they are of type &lsquo;object&rsquo;.</p>
+
+<p>That&rsquo;s why we can&rsquo;t distinguish them using <code>typeof</code>.</p>
+
+<h1 id="class-for-objects">[[Class]] for objects</h1>
+
+<pre><code class="language-js">var date = new Date,
+    arr = [1,2];
+
+console.log({}.toString.call(date)); // [object Date]
+console.log({}.toString.call(arr)); // [object Array]
+
+console.log(getType(date)); // Date
+console.log(getType(arr)); // Array
+console.log(getType({})); // Object
+console.log(getType('str')); // String
+console.log(getType(11)); // Number
+
+function getType(instance) {
+  return {}.toString.call(instance).slice(8,-1);
+}
+</code></pre>
+
+<p>We use this method because the internal implementation of the Object <code>toString</code> returns the standard <code>[[Class]]</code>.</p>
+
+<p>This method can give the type only for embedded objects. For user constructors always <code>[[Class]] = &quot;Object&quot;</code>:</p>
+
+<pre><code class="language-js">function Animal(name) { 
+  this.name = name;
+}
+var animal = new Animal(&quot;Rabbit&quot;);
+
+console.log(getType(animal)); // Object
+</code></pre>
+
+<h1 id="duck-typing">Duck Typing</h1>
+
+<blockquote>
+<p>«If it looks like a duck, swims like a duck and quacks like a duck, then it probably is a duck (who cares what it really is)»</p>
+</blockquote>
+
+<p>Meaning duck typing - to verify the <code>methods</code> and <code>properties</code>, regardless of the type of object.</p>
+
+<pre><code class="language-js">// check if array has method split
+var x = [1,2,3];
+
+if (x.splice) {
+  alert('Array');
+}
+
+// check if date has method getTime
+var z = new Date();
+
+if (z.getTime) {
+  alert('Date!');
+}
+</code></pre>
+
+<p>To check who created the object or his prototype, is the operator:</p>
+
+<pre><code class="language-js">//check custom objects
+function Animal(name) { 
+  this.name = name;
+}
+var animal = new Animal(&quot;Bee&quot;);
+
+console.log( animal instanceof Animal ); // true
+console.log( Object.getPrototypeOf(animal) == Animal.prorotype ); // true
+console.log( animal.contstructor.prototype == Animal.prorotype ); // true
+
+//also works for inner objects
+var d = new Date(); 
+console.log( d instanceof Date ); // true
+console.log( Object.getPrototypeOf(d) == Date.prorotype ); // true
+console.log( d.contstructor.prototype == Date.prorotype ); // true
+
+function f() { }
+console.log( f instanceof Function ); // true
+console.log( Object.getPrototypeOf(f) == Function.prorotype ); // true
+console.log( f.contstructor.prototype == Function.prorotype ); // true
+</code></pre>
+
+<h1 id="polymorphism">Polymorphism</h1>
+
+<p><code>Polymorphic</code> functions, ie, those which are differently treated arguments(polymorphically operate), depending on their type. For example, the output may have a different format numbers and dates.</p>
+
+<p>In example we use type checking to create a <code>polymorphic</code> function <code>sayHi</code>. It will work in three modes:</p>
+
+<ol>
+<li>No arguments: outputs <code>&quot;Hello&quot;</code>.</li>
+<li>With an argument, which is not an array: displays <code>&quot;Hello&quot; + string argument</code></li>
+<li>With an argument, which is an array - <code>&quot;Hello&quot; + arr[i]</code></li>
+</ol>
+
+<pre><code class="language-js">function sayHi(who) {
+  if (!arguments.length) {
+    console.log('Hello');
+    return;
+  }
+
+  if ( Array.isArray(who) ) {
+    for(var i=0; i&lt;who.length; i++) sayHi(who[i]);
+    return;
+  }
+
+  console.log('Hello, ' + who);
+}
+
+sayHi(); // Hello
+sayHi(&quot;Bob&quot;); // Hello, Bob
+
+sayHi( [&quot;Bob&quot;, [&quot;Sam&quot;, &quot;Din&quot;] ] ); // Hello Bob..Sam..Din
+</code></pre>
+
+<p>SaveMyDay:</p>
+
+<ul>
+<li>on <a href="http://learn.javascript.ru/type-detection">learn.javascript.ru</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

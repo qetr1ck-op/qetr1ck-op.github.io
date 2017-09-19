@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>NodeList vs Array in Javascript</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>NodeList vs Array in Javascript</h1>
+<h4>Published 2014-07-30</h4>
+
+
+
+<article>
+    
+    <p>Essentially, a <code>NodeList</code> is what you get when you call any method such as <code>elem.getElemetsByTagName()</code>, <code>elem.querySelectorAll()</code> and so on.</p>
+
+<p></p>
+
+<p>We should note here that <code>NodeLists</code> are not exactly part of the JavaScript but they are instead part of the <code>DOM APIs</code> the browsers provide through JavaScript.</p>
+
+<pre><code class="language-js">var myList = document.querySelectorAll('.story-item');
+console.log(myList)
+[
+  &lt;div class=&quot;story-item&quot;&gt;…&lt;/div&gt;
+  ,
+  &lt;div class=&quot;story-item&quot;&gt;…&lt;/div&gt;
+  ,
+  […]
+  ,
+  &lt;div class=&quot;story-item&quot;&gt;..&lt;/div&gt;
+  ,
+]
+
+// basic array actions
+console.log(myList.length) // 7
+console.log(myList[2]) // &lt;div class=&quot;story-item&quot;&gt;..&lt;/div&gt;
+</code></pre>
+
+<p>So far, <code>myList</code> has been talking and walking like an array so we can probably assume that it’s an array of some sorts. However, it all goes to hell when you try to call any of the basic array <code>methods</code>:</p>
+
+<pre><code class="language-js">myList.slice(2) // indexed from 0
+
+TypeError: Result of expression 'myList.slice' [undefined] is not a function.
+</code></pre>
+
+<p>Wait, what happened? Well, this is where the between <code>NodeLists</code> and arrays in JavaScript start to surface. Let’s see what is distinguish <code>array</code> and <code>NodeList</code>:</p>
+
+<pre><code class="language-js">console.log(myList.constructor.prototype) // &quot;[object NodeListConstructor]&quot;
+
+var surelyArray = ['foo', 'bar'];
+
+console.log(surelyArray.constructor.prototype) //&quot;function Array() { [native code] }&quot;
+</code></pre>
+
+<p>So those two elements, <code>myList</code> and <code>surelyArray</code> are definitely constructed by different constructors so it’s no wonder that they don’t share the same methods.</p>
+
+<p>While <code>arrays</code> are essentially a collection of elements held in memory and are part of the JavaScript, <code>NodeLists</code> are live references to actual DOM elements.</p>
+
+<p>Let’s see a quick way to convert a <code>NodeList</code> into an array:</p>
+
+<pre><code class="language-js">//borrowing the slice() method from the Array’s prototype
+var myArray = Array.prototype.slice.call(myList, 0);
+
+console.log(myArray.constructor.prototype) //&quot;function Array() { [native code] }&quot;
+
+//call pop method
+myArray.pop() //&lt;div class=&quot;story-item&quot;&gt;…&lt;/div&gt;
+
+//Internet Explorer 9 cannot handle calling slice() on NodeLists
+var myIEArray = [];
+
+for (var i = 0; i &lt; myList.length; ++i) { myIEArray.push(myList[i]); }
+console.log(myIEArray.constructor.prototype) //&quot;function Array() { [native code] }&quot;
+</code></pre>
+
+<p>ES6 approach:</p>
+
+<pre><code class="language-js">// Spread operator
+[...elements].forEach(callback);
+
+// Array.from()
+Array.from(elements).forEach(callback);
+
+// for...of statement
+for (var div of elements) { callback(div) };
+</code></pre>
+
+<p>One thing is worth mentioning though; when you convert your <code>NodeList</code> into an <code>array</code>, you are no longer dealing with a live <code>NodeList</code> but instead an array of DOM nodes.</p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

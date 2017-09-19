@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Organizing an application using AMD with require.js</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Organizing an application using AMD with require.js</h1>
+<h4>Published 2014-12-20</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#what-is-amd">What is AMD?</a></li>
+<li><a href="#example-file-structure">Example File Structure</a></li>
+<li><a href="#bootstrapping-your-application">Bootstrapping your application</a></li>
+<li><a href="#what-does-the-require-js-look-like">What does the require.js look like?</a></li>
+</ul>
+</nav>
+    <p>RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments</p>
+
+<p></p>
+
+<h1 id="what-is-amd">What is AMD?</h1>
+
+<p>Asynchronous Module Definitions designed to load modular code asynchronously in the browser and server. It is actually a fork of the <a href="http://requirejs.org/docs/commonjs.html">Common.js</a> specification. Many script loaders have built their implementations around AMD, seeing it as the future of modular JavaScript development.</p>
+
+<h1 id="example-file-structure">Example File Structure</h1>
+
+<p>There are many different ways to lay out your files and I believe it is actually dependent on the size and type of the project. In the example below views and templates are mirrored in file structure.</p>
+
+<pre><code class="language-bash">├── imgs
+├── css
+│   └── style.css
+├── templates
+│   ├── projects
+│   │   ├── list.html
+│   │   └── edit.html
+│   └── users
+│       ├── list.html
+│       └── edit.html
+├── js
+│   ├── libs
+│   │   ├── jquery
+│   │   │   ├── jquery.min.js
+│   │   ├── backbone
+│   │   │   ├── backbone.min.js
+│   │   └── underscore
+│   │   │   ├── underscore.min.js
+│   ├── models
+│   │   ├── users.js
+│   │   └── projects.js
+│   ├── collections
+│   │   ├── users.js
+│   │   └── projects.js
+│   ├── views
+│   │   ├── projects
+│   │   │   ├── list.js
+│   │   │   └── edit.js
+│   │   └── users
+│   │       ├── list.js
+│   │       └── edit.js
+│   ├── router.js
+│   ├── app.js
+│   ├── main.js  // Bootstrap
+│   ├── order.js //Require.js plugin
+│   └── text.js  //Require.js plugin
+└── index.html
+</code></pre>
+
+<h1 id="bootstrapping-your-application">Bootstrapping your application</h1>
+
+<p>Using <a href="http://requirejs.org/docs/start.html">Require.js</a> we define a single entry point on our index page. We should setup any useful containers that might be used by our Backbone views.</p>
+
+<p>Note: The data-main attribute on our single script tag tells Require.js to load the script located at &ldquo;js/main.js&rdquo;. It automatically appends the &ldquo;.js&rdquo;</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Jackie Chan&lt;/title&gt;
+    &lt;!-- Load the script &quot;js/main.js&quot; as our entry point --&gt;
+    &lt;script data-main=&quot;js/main&quot; src=&quot;js/libs/require/require.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+  &lt;div id=&quot;menu&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>You should most always end up with quite a light weight index file. You can serve this off your server and then the rest of your site off a CDN ensuring that everything that can be cached, will be.</p>
+
+<h1 id="what-does-the-require-js-look-like">What does the require.js look like?</h1>
+
+<p>Our bootstrap file will be responsible for configuring Require.js and loading initially important dependencies.</p>
+
+<p>In the example below we configure Require.js to create a shortcut alias to commonly used scripts such as jQuery, Underscore and Backbone.</p>
+
+<p>Note: Modules are loaded relatively to the boot strap and always append with <code>.js</code>. So the module <code>app</code> will load <code>app.js</code> which is in the same directory as the bootstrap.</p>
+
+<pre><code class="language-js">// Filename: main.js
+
+// Require.js allows us to configure shortcut alias
+// There usage will become more apparent further along in the tutorial.
+require.config({
+  paths: {
+    jquery: 'libs/jquery/jquery',
+    underscore: 'libs/underscore/underscore',
+    backbone: 'libs/backbone/backbone'
+  }
+
+});
+
+require([
+
+  // Load our app module and pass it to our definition function
+  'app',
+], function(App){
+  // The &quot;app&quot; dependency is passed in as &quot;App&quot;
+  App.initialize();
+});
+</code></pre>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

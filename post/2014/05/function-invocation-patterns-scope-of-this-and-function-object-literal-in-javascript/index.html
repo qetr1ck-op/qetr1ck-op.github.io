@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Function Invocation Patterns in JavaScript</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Function Invocation Patterns in JavaScript</h1>
+<h4>Published 2014-05-29</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#there-are-four-patterns-of-invocation-in-javascript">There are four patterns of invocation in JavaScript:</a></li>
+<li><a href="#method-invocation-pattern">Method invocation pattern</a></li>
+<li><a href="#function-invocation-pattern">Function invocation pattern</a></li>
+<li><a href="#constructor-invocation-pattern">Constructor invocation pattern</a></li>
+<li><a href="#the-apply-call-invocation-pattern">The Apply/Call Invocation Pattern</a></li>
+</ul>
+</nav>
+    <p>Describe different approaches to define and call functions</p>
+
+<p></p>
+
+<p>Function object are created with function literals:</p>
+
+<pre><code class="language-js">// Create function declaration
+// in it that adds two numbers
+
+function add(a, b) {
+    return a + b;
+};
+</code></pre>
+
+<p>Function literal has four parts.</p>
+
+<ul>
+<li>The first part is the <code>reserved word function</code>.</li>
+<li>The optional second part is the <code>function’s name</code>. The function can use its name to call itself recursively. The name can also be used by debuggers and development tools to identify the function. If a function is not given a name it is said to be anonymous.</li>
+<li>The third part is the set of <code>parameters</code> of the function, wrapped in parentheses. Within the parentheses is a set of zero or more parameter names, separated by commas. These names will be defined as variables in the function. Unlike ordinary variables, instead of being initialized to undefined, they will be initialized to the arguments supplied when the function is invoked.</li>
+<li>The fourth part is a set of <code>statements</code> wrapped in curly braces. These statements are the body of the function. They are executed when the function is invoked.</li>
+</ul>
+
+<p>In addition to the declared parameters, every
+function receives two additional parameters: <code>this</code> and <code>arguments</code>. The this parameter is very important in object oriented programming, and its value is determined by
+the invocation pattern.</p>
+
+<h1 id="there-are-four-patterns-of-invocation-in-javascript">There are four patterns of invocation in JavaScript:</h1>
+
+<ul>
+<li>method invocation pattern</li>
+<li>function invocation pattern</li>
+<li>constructor invocation pattern</li>
+<li>apply, binding invocation pattern</li>
+</ul>
+
+<p>The patterns differ how <code>this</code> will initialize.</p>
+
+<h1 id="method-invocation-pattern">Method invocation pattern</h1>
+
+<p>When a function is stored as a property of an object, we call it a <code>method</code>. When a method is invoked, <code>this</code> is bound to that object. If an invocation expression contains a refinement (that is, a . dot expression or[subscript] expression), it is
+invoked as a method:</p>
+
+<pre><code class="language-js">var myObject = {
+    value: 0,
+    increment: function (inc) {
+        this.value += typeof inc === 'number' ? inc : 1;
+    }
+};
+myObject.increment( );
+console.log(myObject.value); // 1
+myObject.increment(2);
+console.log(myObject.value); // 3
+</code></pre>
+
+<p>The binding of this to the object happens at invocation
+time. This very late binding makes functions that use this highly reusable. Methods
+that get their object context from this are called <code>public methods</code>.</p>
+
+<h1 id="function-invocation-pattern">Function invocation pattern</h1>
+
+<p>When a function is invoked with this pattern, <code>this is bound to the global object or</code>undefined`.
+This was a mistake in the design of the language. Had the language been designed correctly, when the inner function is invoked, this would still be bound to the this variable of the outer function.</p>
+
+<pre><code class="language-js">function outer() {
+    console.log('outer context ' + this);
+    function inner() {
+        console.log('inner context ' + this);
+    }
+    inner();
+}
+
+outer();
+//outer context[object Window]
+//inner context[object Window]
+
+function func() { 
+  &quot;use strict&quot;;
+  console.log(this); 
+}
+
+func();// undefined (expect IE&lt;10)
+</code></pre>
+
+<p>A consequence of this error is that a method cannot use an inner function to help it do its work because the inner function does not share the method access to the object as its this is bound to the wrong value. Fortunately, there is an easy workaround. If the method defines a variable and assigns it the value of this, the inner function will have access to this through that variable. By convention, the name of that variable is <code>that</code></p>
+
+<h1 id="constructor-invocation-pattern">Constructor invocation pattern</h1>
+
+<p>JavaScript is a prototype inheritance language. That means that objects can inherit properties directly from other objects.</p>
+
+<p>Constructor can be any function, which is called with directive <code>new</code></p>
+
+<pre><code class="language-js">function Animal(name) {
+  this.name = name;
+  this.canWalk = true;
+  //public method
+  this.sayHi = function() {
+    console.log(this.name + ', says Hi!');
+  }
+}
+
+var animal = new Animal('bambi');
+</code></pre>
+
+<p>How it works:</p>
+
+<ol>
+<li>Automatically is creating new, empty object</li>
+<li>Special keyword <code>this</code> gets a reference to ^- object</li>
+<li>Function is invoking. Usually, it modifies this, adds methods and properties</li>
+<li>Return this, if return object, than will be return object rather than this</li>
+</ol>
+
+<h1 id="the-apply-call-invocation-pattern">The Apply/Call Invocation Pattern</h1>
+
+<p>The apply method lets us choose the value of <code>this</code>. The apply method takes two parameters. The first is the value that should be bound to this. The second is an array of
+parameters.</p>
+
+<p>Call <code>func.apply(context, [a, b ...])</code> or <code>func.call(context, (a, b ...))</code> - the same as a normal call <code>func(a, b ...)</code>, but with an another <code>context</code>.</p>
+
+<pre><code class="language-js">var user = { 
+  firstName: &quot;Bobby&quot;,
+  surname: &quot;Singler&quot;
+};
+
+function getName(a, b) { 
+  console.log( this[a] + ' ' + this[b] );
+}
+
+getName.apply(user, ['firstName', 'surname'])  // &quot;Bobby Singler&quot;, this - our context
+
+getName('firstName', 'surname')  // undefined undefined, this, will be window
+</code></pre>
+
+<p>Invoke apply/call with <code>null</code> or <code>undefined</code>:</p>
+
+<pre><code class="language-js">function f() {
+  console.log(this);
+}
+
+//if call with null or undefined, this = window 
+f.call(null); // window
+
+function f() {
+  &quot;use strict&quot;
+  console.log(this);
+}
+
+//in strict mode, this = null 
+f.call(null); // null
+</code></pre>
+
+<p>Save My Day:</p>
+
+<ul>
+<li><a href="http://learn.javascript.ru/this" title="learn.javascript.ru">learn.javascript.ru</a></li>
+<li><a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">Crockfords JavaScript: The Good Parts</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

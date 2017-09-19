@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Class manipulation in Javascript, jQuery and AngularJS</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Class manipulation in Javascript, jQuery and AngularJS</h1>
+<h4>Published 2014-07-02</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#javascript">Javascript</a>
+<ul>
+<li><a href="#classname">className</a></li>
+<li><a href="#classlist">classList</a></li>
+</ul></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#angularjs">AngularJS</a>
+<ul>
+<li><a href="#ng-class">ng-class</a></li>
+<li><a href="#ng-style">ng-style</a></li>
+</ul></li>
+</ul>
+</nav>
+    <p>In this article, I would like to create short reference for how <code>add/remove/toogle</code> class in pure Javascript and with framework.</p>
+
+<p></p>
+
+<h1 id="javascript">Javascript</h1>
+
+<h2 id="classname">className</h2>
+
+<p>Property <code>className</code> has value of HTML-atribute <code>class</code>:</p>
+
+<pre><code class="language-html">&lt;body class=&quot;class1 class2&quot;&gt;&lt;/body&gt;
+</code></pre>
+
+<pre><code class="language-js">console.log(document.body.className);
+//class1 class2
+
+document.body.className += ' class3';
+
+console.log(document.body.className);
+//class1 class2 class3
+</code></pre>
+
+<h2 id="classlist">classList</h2>
+
+<p>Property <code>classList</code> gives convenient interface for work with certain classes.</p>
+
+<ul>
+<li><code>elem.classList.contains(cls)</code> - return <code>true/false</code> if element has class <code>cls</code></li>
+<li><code>elem.classList.add/remove(cls)</code> - adding/removing class <code>cls</code></li>
+<li><code>elem.classList.toogle(cls)</code> - if element has class <code>cls</code>, remove it, else add class <code>cls</code></li>
+</ul>
+
+<h1 id="jquery">jQuery</h1>
+
+<p>These methods inspect and manpulate classes assigned to elements:</p>
+
+<ul>
+<li><code>$(elem).hasClass(cls)</code> - return <code>true/false</code> if element has class <code>cls</code></li>
+<li><code>$(elem).addClass/removeClass(cls)</code> - adding/removing class <code>cls</code></li>
+<li><code>$(elem).toogleClass(cls)</code> - if element has class(es) <code>cls</code>, remove it, else add class(es) <code>cls</code></li>
+</ul>
+
+<h1 id="angularjs">AngularJS</h1>
+
+<h2 id="ng-class">ng-class</h2>
+
+<p><code>ng-class</code> accepts an &ldquo;expression&rdquo; that must evaluate to one of the following:</p>
+
+<ul>
+<li>a <code>string</code> of space-delimited class names</li>
+<li>an <code>array</code> of class names</li>
+<li>a <code>map/object</code> of class names to boolean values</li>
+</ul>
+
+<p>See the Pen <a href="http://codepen.io/qetr1ck-op/pen/yjiAp/">AngularJS, ng-class example</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op">@qetr1ck-op</a>) on <a href="http://codepen.io">CodePen</a>.
+<script async src="//codepen.io/assets/embed/ei.js"></script></p>
+
+<h2 id="ng-style">ng-style</h2>
+
+<p><code>ng-style</code> accepts an &ldquo;expression&rdquo; that must evaluate to:</p>
+
+<ul>
+<li>an <code>map/object</code> of CSS style names to CSS values</li>
+</ul>
+
+<p>See the Pen <a href="http://codepen.io/qetr1ck-op/pen/KyBjs/">AngularJS, ng-style example</a> by qetr1ck-op (<a href="http://codepen.io/qetr1ck-op">@qetr1ck-op</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

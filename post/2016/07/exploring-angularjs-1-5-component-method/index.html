@@ -1,0 +1,385 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Exploring AngularJS 1.5 .component() method</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Exploring AngularJS 1.5 .component() method</h1>
+<h4>Published 2016-07-22</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#from-directrive-to-component">From &ldquo;directrive()&rdquo; to &ldquo;component()&rdquo;</a></li>
+<li><a href="#function-to-object">Function to Object</a></li>
+<li><a href="#scope-and-bindtocontroller-become-bindings">&ldquo;scope&rdquo; and &ldquo;bindToController&rdquo; become &ldquo;bindings&rdquo;</a></li>
+<li><a href="#controller-and-contorlleras-changes">Controller and &ldquo;contorllerAs&rdquo; changes</a></li>
+<li><a href="#template">Template</a></li>
+<li><a href="#inheriting-behavior-with-require">Inheriting behavior with &ldquo;require&rdquo;</a></li>
+<li><a href="#one-way-binding">One-way binding</a></li>
+<li><a href="#upgrading-to-angular-2">Upgrading to Angular 2</a></li>
+</ul>
+</nav>
+    <p>AngularJS 1.5 introduce <code>.component()</code> helper method which is much simpler than the <code>.directive()</code> definitions and advocates best practices and common default behavior.</p>
+
+<p>Using <code>.component()</code> will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.</p>
+
+<p>Let&rsquo;s compare the difference in syntax and the possibility of new abstraction.</p>
+
+<p></p>
+
+<h1 id="from-directrive-to-component">From &ldquo;directrive()&rdquo; to &ldquo;component()&rdquo;</h1>
+
+<p>The syntax change is simple:</p>
+
+<pre><code class="language-js">// before
+module.directive(name, fn);
+
+// after
+module.component(name, options);
+</code></pre>
+
+<p>I&rsquo;ve rebuild a simple <code>counter</code> directive which which we&rsquo;ll refactor to <code>component()</code>:</p>
+
+<pre><code class="language-js">module
+  .directive('counter', function counter() {
+    return {
+      scope: {},
+      bindToController: {
+        count: '='
+      },
+      contorllerAs: '$ctlr',
+      controller: function() {
+        this.increment = () =&gt; this.count++;
+        this.decrement = () =&gt; this.count--;
+      },
+      template: `
+        &lt;div&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;$ctlr.count&quot;&gt;
+          &lt;button ng-click=&quot;$ctrl.increment()&quot;&gt;+&lt;/button&gt;
+          &lt;button ng-click=&quot;$ctrl.decrement()&quot;&gt;-&lt;/button&gt;
+        &lt;/div&gt;
+      `
+    }
+  })
+</code></pre>
+
+<h1 id="function-to-object">Function to Object</h1>
+
+<p>Let&rsquo;s start from the top and refactor the function argument to object:</p>
+
+<pre><code class="language-js">// before
+module
+  .directive('counter', function counter() {
+    return {
+
+    }
+  })
+
+// after
+module
+  .component('counter', {
+
+  })
+</code></pre>
+
+<p>Nice and simple.</p>
+
+<h1 id="scope-and-bindtocontroller-become-bindings">&ldquo;scope&rdquo; and &ldquo;bindToController&rdquo; become &ldquo;bindings&rdquo;</h1>
+
+<p>In <code>directive()</code> the <code>scope</code> property allows us to define whether we want to isolate the <code>$scope</code> or inherit it. So repeating every time just create an extra boilerplate. With <a href="https://docs.angularjs.org/api/ng/service/$compile">bindToController</a> we can explicitly define binding directly to instance of controller via <code>this</code>.</p>
+
+<p>With <code>bindings</code> we can remove this boilerplate and simple define what we want to pass down to the component.</p>
+
+<p>And <code>component()</code> will always have an isolated scope.</p>
+
+<pre><code class="language-js">// before
+module
+  .directive('counter', function counter() {
+    return {
+      scope: {
+        count: '='
+      },
+      bindToController: true
+    }
+  })
+
+// after
+module
+  .component('counter', {
+    binding: {
+      count: '='
+    }
+  })
+</code></pre>
+
+<h1 id="controller-and-contorlleras-changes">Controller and &ldquo;contorllerAs&rdquo; changes</h1>
+
+<p>Nothing has changed in the way we declare <code>controller</code>, however it&rsquo;s now smarter and has a default <code>contorllerAs</code> value of <code>$ctrl</code>.</p>
+
+<p>Under the hood it looks like:</p>
+
+<pre><code class="language-js">// inside angular.js
+controllerAs: identifierForController(options.controller) || options.controllerAs || '$ctrl'
+
+//...
+
+var CNTRL_REG = /^(\S+)(\s+as\s+(\w+))?$/;
+function identifierForController(controller, ident) {
+  if (ident &amp;&amp; isString(ident)) return ident;
+  if (isString(controller)) {
+    var match = CNTRL_REG.exec(controller);
+    if (match) return match[3];
+  }
+}
+</code></pre>
+
+<p>This allows us to do the following inside <code>.component()</code>:</p>
+
+<pre><code class="language-js">{
+  ...
+  controller: 'FooController as foo'
+}
+</code></pre>
+
+<p>Based on the information we refactor our <code>Directive</code> to <code>Component</code> by dropping controllerAs property:</p>
+
+<pre><code class="language-js">// before
+.directive('counter', function counter() {
+  return {
+    scope: {
+      count: '='
+    },
+    bindToController: true,
+    controller: function () {
+      this.increment = () =&gt; this.count++;
+      this.decrement = () =&gt; this.count--;
+    },
+    controllerAs: 'counter'
+  };
+});
+
+// after
+.component('counter', {
+  bindings: {
+    count: '='
+  },
+  controller: function () {
+    this.increment = () =&gt; this.count++;
+    this.decrement = () =&gt; this.count--;
+  }
+});
+</code></pre>
+
+<p>Things now are becoming much simpler and funny.</p>
+
+<h1 id="template">Template</h1>
+
+<p>The <code>template</code> property can be defined as a function property with injected <code>$elem</code> and <code>$attrs</code> values:</p>
+
+<pre><code class="language-js">{
+  ...
+  template: function ($element, $attrs) {
+    // access to $element and $attrs
+    return `
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot; ng-model=&quot;$ctrl.count&quot;&gt;
+        &lt;button type=&quot;button&quot; ng-click=&quot;$ctrl.decrement();&quot;&gt;-&lt;/button&gt;
+        &lt;button type=&quot;button&quot; ng-click=&quot;$ctrl.increment();&quot;&gt;+&lt;/button&gt;
+      &lt;/div&gt;
+    `
+  }
+  ...
+}
+</code></pre>
+
+<h1 id="inheriting-behavior-with-require">Inheriting behavior with &ldquo;require&rdquo;</h1>
+
+<p>Inherited Directive or Component methods will be bound to <code>this.parent</code> property in the Controller:</p>
+
+<pre><code class="language-js">{
+  ...
+  require: {
+    parent: '^^parentComponet'
+  },
+  controller: function() {
+    // use this object to access to required Object
+    this.parent.foo();
+  }
+}
+</code></pre>
+
+<h1 id="one-way-binding">One-way binding</h1>
+
+<p>A new syntax expression for isolate scope values:</p>
+
+<pre><code class="language-js">{
+  ...
+  bindings: {
+    oneWay: '&lt;',
+    twoWay: '='
+  },
+  ...
+}
+</code></pre>
+
+<blockquote>
+<p>But still remember that object are passed by reference, and Angular doesn&rsquo;t make a clone of the object when it passed via <code>one-way binding</code>, it actually sets the same value, which means that objects have still <code>two-way binding</code> somehow.</p>
+</blockquote>
+
+<h1 id="upgrading-to-angular-2">Upgrading to Angular 2</h1>
+
+<p>Writing in this style using <code>.component()</code> allows you easily transit to Angular 2, it&rsquo;d look something like this:</p>
+
+<pre><code class="language-js">import { Component } from '@angular/core'
+
+@Component({
+  selector: 'counter',
+  template: `
+    &lt;div&gt;
+      &lt;input type=&quot;number&quot; [(ng-model)]=&quot;count&quot;&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt;+&lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt;-&lt;/button&gt;
+    &lt;/div&gt;
+  `,
+})
+
+export default class CounterComponent {
+  constructor() {}
+  increment() {
+    this.count++;
+  }
+  decrement() {
+    this.count++;
+  }
+}
+</code></pre>
+
+<p>Save my day:</p>
+
+<ul>
+<li><a href="https://toddmotto.com/exploring-the-angular-1-5-component-method/">toddmotto</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cli on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/cli/</link>
+    <description>Recent content in Cli on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 02 May 2017 20:16:35 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Advanced NodeJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</link>
+      <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</guid>
+      <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>npm scrips as your build tool</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</link>
+      <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</guid>
+      <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
+
+&lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prettier as a formating tool for JS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-js/</link>
+      <pubDate>Wed, 26 Apr 2017 22:23:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-js/</guid>
+      <description>Prettier is an opinionated JavaScript formatter with advanced support for language features from ES2017, JSX, and Flow. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.
+This goes way beyond ESLint and other projects built on it. Unlike ESLint, there aren&amp;rsquo;t a million configuration options and rules. But more importantly: everything is fixable. This works because Prettier never &amp;ldquo;checks&amp;rdquo; anything; it takes JavaScript as input and delivers the formatted JavaScript as output.</description>
+    </item>
+    
+    <item>
+      <title>Awesome terminal emulator for Windows</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/awesome-terminal-emulator-for-windows/</link>
+      <pubDate>Tue, 02 Dec 2014 21:15:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/awesome-terminal-emulator-for-windows/</guid>
+      <description>&lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout. Looking sexy from the start.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CLI in Windows, useful commands</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/06/cli-in-windows-useful-commands/</link>
+      <pubDate>Sat, 14 Jun 2014 10:22:15 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/06/cli-in-windows-useful-commands/</guid>
+      <description>&lt;p&gt;The command line lets you communicate directly with your computer and instruct it to perform various tasks. For this you have to use specific commands&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Interview question: NodeJS, part 2</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Interview question: NodeJS, part 2</h1>
+<h4>Published 2017-05-28</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#what-s-the-problem-with-the-process-uncaughtexception-event-how-is-it-different-than-the-exit-event">What’s the problem with the process <code>uncaughtException</code> event? How is it different than the exit event?</a></li>
+<li><a href="#what-does-the-mean-inside-of-node-s-repl">What does the <code>_</code>mean inside of Node’s REPL?</a></li>
+<li><a href="#do-node-buffers-use-v8-memory-can-they-be-resized">Do Node buffers use V8 memory? Can they be resized?</a></li>
+<li><a href="#hat-s-the-difference-between-buffer-alloc-and-buffer-allocunsafe">hat’s the difference between <code>Buffer.alloc</code> and <code>Buffer.allocUnsafe</code>?</a></li>
+<li><a href="#how-is-the-slice-method-on-buffers-different-from-that-on-arrays">How is the slice method on buffers different from that on arrays?</a></li>
+<li><a href="#what-is-the-string-decoder-module-useful-for-how-is-it-different-than-casting-buffers-to-strings">What is the <code>string_decoder</code> module useful for? How is it different than casting buffers to strings?</a></li>
+<li><a href="#what-are-the-5-major-steps-that-the-require-function-does">What are the 5 major steps that the require function does?</a></li>
+<li><a href="#what-is-the-require-resolve-function-and-what-is-it-useful-for">What is the <code>require.resolve</code> function and what is it useful for?</a></li>
+<li><a href="#what-is-the-main-property-in-package-json-useful-for">What is the main property in <code>package.json</code> useful for?</a></li>
+<li><a href="#what-are-circular-modular-dependencies-in-node-and-how-can-they-be-avoided">What are circular modular dependencies in Node and how can they be avoided?</a></li>
+<li><a href="#what-are-the-3-file-extensions-that-will-be-automatically-tried-by-the-require-function">What are the 3 file extensions that will be automatically tried by the require function?</a></li>
+<li><a href="#when-creating-an-http-server-and-writing-a-response-for-a-request-why-is-the-end-function-required">When creating an http server and writing a response for a request, why is the <code>end()</code> function required?</a></li>
+<li><a href="#when-is-it-ok-to-use-the-file-system-sync-methods">When is it ok to use the file system *Sync methods?</a></li>
+<li><a href="#how-can-you-print-only-one-level-of-a-deeply-nested-object">How can you print only one level of a deeply nested object?</a></li>
+<li><a href="#the-objects-exports-require-and-module-are-all-globally-available-in-every-module-but-they-are-different-in-every-module-how">The objects exports, require, and module are all globally available in every module but they are different in every module. How?</a></li>
+<li><a href="#if-you-execute-a-node-script-file-that-has-the-single-line-console-log-arguments-what-exactly-will-node-print">If you execute a node script file that has the single line: <code>console.log(arguments);</code>, what exactly will node print?</a></li>
+<li><a href="#how-can-a-module-be-both-requirable-by-other-modules-and-executable-directly-using-the-node-command">How can a module be both requirable by other modules and executable directly using the node command?</a></li>
+<li><a href="#what-s-an-example-of-a-built-in-stream-in-node-that-is-both-readable-and-writable">What’s an example of a built-in stream in Node that is both readable and writable?</a></li>
+<li><a href="#the-require-function-always-caches-the-module-it-requires-what-can-you-do-if-you-need-to-execute-the-code-in-a-required-module-many-times">The <code>require</code> function always caches the module it requires. What can you do if you need to execute the code in a required module many times?</a></li>
+<li><a href="#what-is-the-console-time-function-useful-for">What is the <code>console.time</code> function useful for?</a></li>
+<li><a href="#what-s-the-difference-between-the-paused-and-the-flowing-modes-of-readable-streams">What’s the difference between the paused and the flowing modes of readable streams?</a></li>
+<li><a href="#what-does-the-inspect-argument-do-for-the-node-command">What does the <code>--inspect</code> argument do for the node command?</a></li>
+<li><a href="#when-working-with-streams-when-do-you-use-the-pipe-function-and-when-do-you-use-events-can-those-two-methods-be-combined">When working with streams, when do you use the pipe function and when do you use events? Can those two methods be combined?</a></li>
+<li><a href="#save-my-day">Save my day</a></li>
+</ul>
+</nav>
+    <p>Part two of original post <a href="https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8">How well do you know Node.js?</a>.</p>
+
+<p></p>
+
+<h1 id="what-s-the-problem-with-the-process-uncaughtexception-event-how-is-it-different-than-the-exit-event">What’s the problem with the process <code>uncaughtException</code> event? How is it different than the exit event?</h1>
+
+<p>The <code>uncaughtException</code> event is emitted when an uncaught Javascript exception bubbles all the way back to the event loop. Once this event emmits, it means that your application is in an undefined state and it is not safe to continue. Hence this event should only be used to perform synchronous cleanup of resources, logging and shutting down the process.</p>
+
+<p>The exit event is emitted when the Node.js process is about the exit as a result of either:</p>
+
+<ul>
+<li>The <code>process.exit()</code> method being called explicitly</li>
+<li>The event loop has no additional work to perform</li>
+</ul>
+
+<h1 id="what-does-the-mean-inside-of-node-s-repl">What does the <code>_</code>mean inside of Node’s REPL?</h1>
+
+<p>Node’s REPL always sets <code>_</code> to the result of the last expression:</p>
+
+<pre><code class="language-bash">&gt; 2
+2
+&gt; _
+2
+&gt; 2+2
+4
+&gt; _
+4
+&gt;
+</code></pre>
+
+<h1 id="do-node-buffers-use-v8-memory-can-they-be-resized">Do Node buffers use V8 memory? Can they be resized?</h1>
+
+<p>No to both questions - Node.js buffers correspond to fixed-sized, raw memory allocations outside the V8 heap.</p>
+
+<h1 id="hat-s-the-difference-between-buffer-alloc-and-buffer-allocunsafe">hat’s the difference between <code>Buffer.alloc</code> and <code>Buffer.allocUnsafe</code>?</h1>
+
+<p><code>Buffer.alloc</code> allocates a memory chunk, initializes it (sets every cell to either zero or some predefined value) and returns a Node.js Buffer wrapping this memory chunk. <code>Buffer.allocUnsafe</code> skips the initialization stage. Instead it returns a Buffer pointing to uninitialized memory. This reduces the allocation time duration, but creates a possibility for (sensitive) data leakage, if this uninitialized memory is exposed to the user. Thus, you should only <code>Buffer.allocUnsafe</code> only if you plan to initialize the memory chunk yourself.</p>
+
+<h1 id="how-is-the-slice-method-on-buffers-different-from-that-on-arrays">How is the slice method on buffers different from that on arrays?</h1>
+
+<p>The <code>buf.slice()</code> method on buffers is a mutating operation which modifies the memory in the original buffer. The <code>Array.prototype.slice()</code> method returns a shallow copy of a portion of an array and does not modify it.</p>
+
+<h1 id="what-is-the-string-decoder-module-useful-for-how-is-it-different-than-casting-buffers-to-strings">What is the <code>string_decoder</code> module useful for? How is it different than casting buffers to strings?</h1>
+
+<p>The <code>string_decoder</code> is useful for decoding a Buffer instance into strings while preserving endoded multi-byte UTF-8 / UTF-16 characters. In oppose to simple buffer cast to string, the string_decodure can detect incomplete multibyte characters and handle them. For example:</p>
+
+<pre><code class="language-js">const StringDecoder = require('string_decoder').StringDecoder;
+const decoder = new StringDecoder('utf8');
+
+const euro = Buffer.from([0xE2, 0x82, 0xAC]);
+const incompleteEuro = Buffer.from([0xE2, 0x82]);
+
+console.log(decoder.write(euro)); // prints '€'
+console.log(incompleteEuro.toString('utf8')); // prints '��'
+console.log(decoder.write(incompleteEuro)); // prints '' 
+</code></pre>
+
+<h1 id="what-are-the-5-major-steps-that-the-require-function-does">What are the 5 major steps that the require function does?</h1>
+
+<ol>
+<li>Check Module._cache for the cached module</li>
+<li>If cache is empty, create a new Module instance and save it to the cache</li>
+<li>Call module.load() with the given filename. This will call module.compile() after reading the file contents</li>
+<li>If there was an error loading/parsing the file, delete the bad module from the cache</li>
+<li>return module.exports</li>
+</ol>
+
+<h1 id="what-is-the-require-resolve-function-and-what-is-it-useful-for">What is the <code>require.resolve</code> function and what is it useful for?</h1>
+
+<p>The <code>require.resolve</code> methods resolves a module to its absolute path.</p>
+
+<h1 id="what-is-the-main-property-in-package-json-useful-for">What is the main property in <code>package.json</code> useful for?</h1>
+
+<p>The main field is a module ID that is the primary entry point to your program. For example, if your package is named foo, and a user does <code>require(&quot;foo&quot;)</code>, then your main module’s exports object will be returned.</p>
+
+<h1 id="what-are-circular-modular-dependencies-in-node-and-how-can-they-be-avoided">What are circular modular dependencies in Node and how can they be avoided?</h1>
+
+<p>We say that module <code>A</code> dependends on module <code>B</code> if <code>A</code> has <code>require('B')</code> in it. Assume a dependency graph where an edge <code>(A,B)</code> means that <code>A</code> dependens on <code>B</code>. Then Circular modular dependencies are cycles in this dependency graph. Two ways to avoid circular modular are:</p>
+
+<ul>
+<li>move the require statements from the top of the file to the point in code they’re actually used. this will delay their execution, allowing for the exports to have been created properly</li>
+<li>restructure the code. For example move the code that both modules depend on into a new module <code>C</code> and let both <code>A</code> and <code>B</code> depend on <code>C</code>.</li>
+</ul>
+
+<h1 id="what-are-the-3-file-extensions-that-will-be-automatically-tried-by-the-require-function">What are the 3 file extensions that will be automatically tried by the require function?</h1>
+
+<p><code>.js</code>, <code>.json</code> and <code>.node</code>.</p>
+
+<h1 id="when-creating-an-http-server-and-writing-a-response-for-a-request-why-is-the-end-function-required">When creating an http server and writing a response for a request, why is the <code>end()</code> function required?</h1>
+
+<p>Since the res object is a stream, we can write into it in several stages. the <code>end()</code> method indicates that we’ve finished writing into it and that the response is ready to be sent to the client.</p>
+
+<h1 id="when-is-it-ok-to-use-the-file-system-sync-methods">When is it ok to use the file system *Sync methods?</h1>
+
+<p>When it is OK to block the process while the synchronous operation takes place. For example, this may be valid when writing a CLI tool. It’s most likely not OK when writing a server that should handle multiple clients concurrently.</p>
+
+<h1 id="how-can-you-print-only-one-level-of-a-deeply-nested-object">How can you print only one level of a deeply nested object?</h1>
+
+<p>You can use the util.inspect method.</p>
+
+<pre><code class="language-js">const obj = {
+  a: &quot;a&quot;,
+  b: {
+    c: &quot;c&quot;,
+    d: {
+      e: &quot;e&quot;,
+      f: {
+        g: &quot;g&quot;,
+      }
+    }
+  }
+};    
+
+const util = require('util');
+console.log(util.inspect(obj, {depth: 0})); // prints: '{ a: \'a\', b: [Object]}'
+console.log(util.inspect(obj, {depth: null})); // prints: '{ a: \'a\', b: { c: \'c\', d: { e: \'e\', f: { g: \'g\' } } } }'
+</code></pre>
+
+<h1 id="the-objects-exports-require-and-module-are-all-globally-available-in-every-module-but-they-are-different-in-every-module-how">The objects exports, require, and module are all globally available in every module but they are different in every module. How?</h1>
+
+<p>Before a module’s code is executed, Node.js wraps it in the following code:</p>
+
+<pre><code class="language-js">(function (exports, require, module, __filename, __dirname) {
+// Your module code actually lives in here
+});
+</code></pre>
+
+<p>This means that while <code>exports</code>, <code>require</code> and <code>module</code> appear to be global variables, they’re actually specific to the module.</p>
+
+<h1 id="if-you-execute-a-node-script-file-that-has-the-single-line-console-log-arguments-what-exactly-will-node-print">If you execute a node script file that has the single line: <code>console.log(arguments);</code>, what exactly will node print?</h1>
+
+<p>As seen in the answer above, the module code is an invocation of a function taking exports, <code>require</code>, <code>module</code>, <code>__filename</code> and <code>__dirname</code> as arguments, so these arguments will be printed.</p>
+
+<h1 id="how-can-a-module-be-both-requirable-by-other-modules-and-executable-directly-using-the-node-command">How can a module be both requirable by other modules and executable directly using the node command?</h1>
+
+<p>A module can detect if its being requirable or executed directly by inspecting the <code>require.main</code> value:</p>
+
+<pre><code class="language-js">if (require.main === module) {
+    console.log('called directly');
+} else {
+    console.log('required as a module');
+}
+</code></pre>
+
+<h1 id="what-s-an-example-of-a-built-in-stream-in-node-that-is-both-readable-and-writable">What’s an example of a built-in stream in Node that is both readable and writable?</h1>
+
+<p>Duplex streams are streams that implement both the Readable and Writable interfaces. Examples of Duplex streams include:</p>
+
+<ul>
+<li>TCP sockets</li>
+<li>zlib streams</li>
+<li>crypto streams</li>
+</ul>
+
+<h1 id="the-require-function-always-caches-the-module-it-requires-what-can-you-do-if-you-need-to-execute-the-code-in-a-required-module-many-times">The <code>require</code> function always caches the module it requires. What can you do if you need to execute the code in a required module many times?</h1>
+
+<p>The cache in which modules are cached in is accessible using <code>require.cache</code>. Thus, if you delete a module key from require.cache, the next time you require it will reload it (and will execute the code in it again).</p>
+
+<h1 id="what-is-the-console-time-function-useful-for">What is the <code>console.time</code> function useful for?</h1>
+
+<p><code>console.time</code> is useful to measure the time difference between two points in the code; calling <code>console.time</code>(&lsquo;label&rsquo;) will record the current time, and later calling <code>console.timeEnd('label'</code>) will display the time difference up to this point (in milliseconds), alongside the label.</p>
+
+<h1 id="what-s-the-difference-between-the-paused-and-the-flowing-modes-of-readable-streams">What’s the difference between the paused and the flowing modes of readable streams?</h1>
+
+<p>Readable streams operate in either paused or flowing modes. When in flowing mode, data is read from the underlying system automatically and provided to an application as quickly as possible using events via the EventEmitter interface. In paused mode, the <code>stream.read()</code> method must be called explicitly to read chunks of data from the stream.</p>
+
+<h1 id="what-does-the-inspect-argument-do-for-the-node-command">What does the <code>--inspect</code> argument do for the node command?</h1>
+
+<p>The <code>--inspect</code> argument allows to attache Chrome DevTools to Node.js instances for debugging and profiling.</p>
+
+<h1 id="when-working-with-streams-when-do-you-use-the-pipe-function-and-when-do-you-use-events-can-those-two-methods-be-combined">When working with streams, when do you use the pipe function and when do you use events? Can those two methods be combined?</h1>
+
+<p><code>.pipe()</code> is a function that takes a readable source stream src and hooks the output to a destination writable stream dst</p>
+
+<pre><code class="language-js">src.pipe(dst)
+</code></pre>
+
+<p>essentially it means that <code>.pipe()</code> takes care of listening for data and end events from src. So, to answer the questions, using <code>.pipe()</code> can make the code more straight forward when this is the functionally you’re interested in. Events can be used to tailor more specific functionally for your use case.</p>
+
+<h1 id="save-my-day">Save my day</h1>
+
+<ul>
+<li><a href="https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8">original questions by Samer Buna</a></li>
+<li><a href="https://asafdav2.github.io/2017/how-well-do-you-know-node-js-answers-part-2/">original post by asafdav2</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

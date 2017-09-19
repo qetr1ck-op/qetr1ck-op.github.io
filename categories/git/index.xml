@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/git/</link>
+    <description>Recent content in Git on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 23 Apr 2017 19:11:25 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git reset, checkout and revert</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/11/reset-checkout-and-revert/</link>
+      <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/11/reset-checkout-and-revert/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;git reset&lt;/code&gt;, &lt;code&gt;git checkout&lt;/code&gt; and &lt;code&gt;git revert&lt;/code&gt; let you to undo changes in repository, and the first two can be use to manipulate either commits or individual files.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git pull VS git pull --rebase</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-versus-git-pull-rebase/</link>
+      <pubDate>Mon, 24 Nov 2014 23:46:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-versus-git-pull-rebase/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git pull vs git fetch</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-vs-git-fetch/</link>
+      <pubDate>Mon, 24 Nov 2014 23:46:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/11/git-pull-vs-git-fetch/</guid>
+      <description>&lt;p&gt;What is the differences between &amp;ldquo;git pull&amp;rdquo; and &amp;ldquo;git fetch&amp;rdquo;?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Got 15 minutes and want to learn Git?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/got-15-minutes-and-want-to-learn-git/</link>
+      <pubDate>Sat, 19 Jul 2014 09:56:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/got-15-minutes-and-want-to-learn-git/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git and GitHub, Git versus Subversion</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/03/git-vs-github/</link>
+      <pubDate>Sat, 29 Mar 2014 17:24:17 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/03/git-vs-github/</guid>
+      <description>&lt;p&gt;How GitHub is connected to Git and basic difference Git and Svn.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

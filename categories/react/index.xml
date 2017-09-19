@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/react/</link>
+    <description>Recent content in React on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React app with Express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding components approach and thinking in React</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</link>
+      <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/understanding-components-approach-and-thinking-in-react/</guid>
+      <description>&lt;p&gt;The parts of a web user interface building blocks for both simple websites and modern front-end applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>First reaction about React.js</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/first-look-at-react-js/</link>
+      <pubDate>Thu, 04 Feb 2016 17:20:14 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/first-look-at-react-js/</guid>
+      <description>&lt;p&gt;Building a dead simple application with following component structure:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

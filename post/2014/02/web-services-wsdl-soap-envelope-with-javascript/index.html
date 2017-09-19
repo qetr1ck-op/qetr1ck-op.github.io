@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Web Services, WSDL, SOAP envelope with JavaScript</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Web Services, WSDL, SOAP envelope with JavaScript</h1>
+<h4>Published 2014-02-02</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#what-is-web-service-and-wsdl">What is Web Service and WSDL?</a></li>
+<li><a href="#soap-protocol">SOAP protocol</a></li>
+<li><a href="#example-of-soap-envelope">Example of SOAP envelope</a></li>
+</ul>
+</nav>
+    <p>The main concept of Web Services is to exchange data between two devices using standardized protocols and messages.</p>
+
+<p></p>
+
+<h1 id="what-is-web-service-and-wsdl">What is Web Service and WSDL?</h1>
+
+<p>The W3C defines a <code>Web services</code>: a software system designed to support machine-to-machine interaction over network. Other systems interact with the Web service using <code>SOAP</code> messages, <code>REST</code>, or using <code>HTTP</code> with an XML serialization with other Web-related standards.</p>
+
+<p>And for be little clear about <code>WSDL</code> (Web Services Description Language) - describes services as collection of network endpoints or ports in <code>XML</code> format.</p>
+
+<p>Exchange messages usually accomplished by protocol <code>HTTP</code>. However, it should be noted that it is still used, but very rarely, protocol - <code>SMTP</code> (Simple Mail Transfer Protocol).</p>
+
+<h1 id="soap-protocol">SOAP protocol</h1>
+
+<p>Protocol <code>SOAP</code> transfers messages or small amount of information. <code>SOAP</code> messages formatted in <code>XML</code> and are typically send using <code>HTTP</code>. Some time ago <code>SOAP</code> was spelled as Simply Object Access Protocol. But time passed and everybody saws that protocol isn&rsquo;t simple and nothingness in common with access to objects.</p>
+
+<p><img alt="post-img" src="images/posts/web-services-WSDL-SOAP-envelope-with-JavaScript/soaps.jpg" alt="SOAP is just a soap"></p>
+
+<h1 id="example-of-soap-envelope">Example of SOAP envelope</h1>
+
+<p>The <code>SOAP</code> message has 3 parts: <code>envelope, head, body</code>. Body contains all <code>response/request</code> data. Also can say that head isn&rsquo;t required and in modern apps doesn&rsquo;t used.</p>
+
+<p><img alt="post-img" src="images/posts/web-services-WSDL-SOAP-envelope-with-JavaScript/soap-message.gif" alt="Example of SOAP envelope"></p>
+
+<p>Example of SOAP XML:</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;soapenv:Envelope
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+    xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
+    xmlns:urn=&quot;urn:WebservicesName&quot;&gt; &lt;!-- service name --&gt;
+    &lt;soap:Header&gt;
+        &lt;m:Trans xmlns:m=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;Header&lt;/m:Trans&gt;
+        &lt;/soap:Header&gt;
+    &lt;soapenv:Body&gt;
+        &lt;!-- method name --&gt;
+        &lt;urn:ProductService.getProductByHash
+            soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;
+            &lt;!-- request to server --&gt;
+            &lt;return xsi:type=&quot;getProductByHash &quot;&gt;
+                &lt;product_hash xsi:type=&quot;xsd:string&quot;&gt;product hash here!&lt;/product_hash&gt;
+            &lt;/return&gt;
+        &lt;/urn:ProductService.getProductByHash&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+
+<p>What here have happened? In the beginning I created SOAP envelope, which call service with URN (Uniform Resource Name). Then calling method <code>getProductByHash</code>.</p>
+
+<p>SOAP <code>response</code> of web-service have next view, only body tag:</p>
+
+<pre><code class="language-xml">&lt;soapenv:Body&gt;
+    &lt;urn:ProductService.getProductByHash
+        soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;
+        &lt;return xsi:type=&quot;getProductByHash &quot;&gt;.
+          &lt;!-- response example --&gt;
+            &lt;product_id xsi:type=&quot;xsd:string&quot;&gt;260891&lt;/emag_id&gt;
+        &lt;/return&gt;
+    &lt;/urn:ProductService.getProductByHash&gt;
+&lt;/soapenv:Body&gt;
+</code></pre>
+
+<p>#Create/receive SOAP request/response via $.soap</p>
+
+<p>This script uses <code>$.ajax</code> to send a <code>SOAP envelope</code>. It can take <code>XML DOM</code>, <code>XML string</code> or <code>JSON</code> as input and the response can be returned as either <code>XML DOM</code>, <code>XML string</code> or <code>JSON</code> too.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-js">$.soap({
+    url: 'http://my.server.com/soapservices/',
+    method: 'helloWorld',
+
+    data: {
+        name: 'Remy Blom',
+        msg: 'Hi!'
+    },
+
+    success: function (soapResponse) {
+        // do stuff with soapResponse
+        // if you want to have the response as JSON use soapResponse.toJSON();
+        // or soapResponse.toString() to get XML string
+        // or soapResponse.toXML() to get XML DOM
+    },
+    error: function (SOAPResponse) {
+        // show error
+    }
+})
+</code></pre>
+
+<p>Full <a href="https://github.com/doedje/jquery.soap">$.soap</a> documentation.</p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

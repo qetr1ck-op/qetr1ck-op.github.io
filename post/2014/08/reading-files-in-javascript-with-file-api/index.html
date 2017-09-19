@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Reading files in JavaScript with File API</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Reading files in JavaScript with File API</h1>
+<h4>Published 2014-08-02</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#check-for-the-file-api-support">Check for the File API support.</a></li>
+<li><a href="#using-form-input-for-selecting">Using form input for selecting</a></li>
+<li><a href="#using-drag-and-drop-for-selecting">Using drag and drop for selecting</a></li>
+<li><a href="#reading-files">Reading files</a></li>
+<li><a href="#monitoring-the-progress-of-a-read">Monitoring the progress of a read</a></li>
+</ul>
+</nav>
+    <p>Reading files in Javascript with File API</p>
+
+<p></p>
+
+<h1 id="overview">Overview</h1>
+
+<p>Using <a href="http://dev.w3.org/2006/webapi/FileAPI/#filereader-interface">File API or file-reader interfaces</a> on the client side code can be checked as to whether the MIME type of the uploaded file to its expansion, or set limits on the size.</p>
+
+<p>This spec provides an API for representing file objects in web applications:</p>
+
+<ul>
+<li>A <code>FileList</code> interface, which represents an array of individually selected files from the underlying system. The user interface for selection can be invoked via <code>input type=&quot;file&quot; multiple</code></li>
+<li>A <code>File</code> interface, which includes readonly informational attributes about a file such as its name, MIME type, and the date of the last modification</li>
+<li>A <code>Blob</code> interface, which represents immutable raw binary data, and allows access to ranges of bytes within the Blob object as a separate Blob.</li>
+<li>A <code>FileReader</code> interface, which provides methods to read a <code>File</code> or a <code>Blob</code>, and an event model to obtain the results of these reads.</li>
+<li>A <code>URL scheme</code> for use with binary data such as files, so that they can be referenced within web applications.</li>
+</ul>
+
+<h1 id="check-for-the-file-api-support">Check for the File API support.</h1>
+
+<pre><code class="language-js">// Check for the various File API support.
+if (window.File &amp;&amp; window.FileReader &amp;&amp; window.FileList &amp;&amp; window.Blob) {
+  // Great success! All the File APIs are supported.
+} else {
+  alert('The File APIs are not fully supported in this browser.');
+}
+</code></pre>
+
+<h1 id="using-form-input-for-selecting">Using form input for selecting</h1>
+
+<p>The most straightforward way to load a file is to use a standard <code>input type=&quot;file&quot;</code> element. JavaScript returns the list of selected <code>File</code> objects as a <code>FileList</code>. Here&rsquo;s an example that uses the <code>multiple</code> attribute to allow selecting several files at once:</p>
+
+<pre><code class="language-js">&lt;input type=&quot;file&quot; id=&quot;files&quot; name=&quot;files[]&quot; multiple /&gt;
+&lt;output id=&quot;list&quot;&gt;&lt;/output&gt;
+
+&lt;script&gt;
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('&lt;li&gt;**', escape(f.name), '** (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                  '&lt;/li&gt;');
+    }
+    document.getElementById('list').innerHTML = '&lt;ul&gt;' + output.join('') + '&lt;/ul&gt;';
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+&lt;/script&gt;
+</code></pre>
+
+<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="185" data-theme-id="10606" data-slug-hash="nhHCi" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/nhHCi/'>Using form input for selecting</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
+
+<h1 id="using-drag-and-drop-for-selecting">Using drag and drop for selecting</h1>
+
+<p>Another technique for loading files is native drag and drop from the desktop to the browser. We can modify the previous example slightly to include drag and drop support:</p>
+
+<pre><code class="language-js">&lt;div id=&quot;drop_zone&quot;&gt;Drop files here&lt;/div&gt;
+&lt;output id=&quot;list&quot;&gt;&lt;/output&gt;
+
+&lt;script&gt;
+  function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    var files = evt.dataTransfer.files; // FileList object.
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('&lt;li&gt;**', escape(f.name), '** (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                  '&lt;/li&gt;');
+    }
+    document.getElementById('list').innerHTML = '&lt;ul&gt;' + output.join('') + '&lt;/ul&gt;';
+  }
+
+  function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+  }
+
+  // Setup the dnd listeners.
+  var dropZone = document.getElementById('drop_zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+&lt;/script&gt;
+</code></pre>
+
+<p data-height="268" data-theme-id="10606" data-slug-hash="EnsgL" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/EnsgL/'>Using drag and drop for selecting</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h1 id="reading-files">Reading files</h1>
+
+<p>Now comes the fun part!</p>
+
+<p>After you&rsquo;ve obtained a <code>File</code> reference, instantiate a <code>FileReader</code> object to read its contents into memory. When the load finishes, the reader&rsquo;s <code>onload</code> event is fired and its result attribute can be used to access the file data.</p>
+
+<p><code>FileReader</code> includes four options for reading a file, asynchronously:</p>
+
+<ol>
+<li><code>FileReader.readAsBinaryString(Blob|File)</code> - The <code>result</code> property will contain the file/blob&rsquo;s data as a binary string. Every byte is represented by an integer in the range [0..255]</li>
+<li><code>FileReader.readAsText(Blob|File, opt_encoding)</code> - The <code>result</code> property will contain the file/blob&rsquo;s data as a text string. By default the string is decoded as &lsquo;UTF-8&rsquo;. Use the optional encoding parameter can specify a different format.</li>
+<li><code>FileReader.readAsDataURL(Blob|File)</code> - The <code>result</code> property will contain the file/blob&rsquo;s data encoded as a data URL.</li>
+<li><code>FileReader.readAsArrayBuffer(Blob|File)</code> - The <code>result</code> property will contain the file/blob&rsquo;s data as an ArrayBuffer object.</li>
+</ol>
+
+<p>Once one of these read methods is called on your <code>FileReader</code> object, the <code>onloadstart</code>, <code>onprogress</code>, <code>onload</code>, <code>onabort</code>, <code>onerror</code>, and <code>onloadend</code> can be used to track its progress.</p>
+
+<p>The example below filters out images from the user&rsquo;s selection, calls <code>reader.readAsDataURL()</code> on the file, and renders a thumbnail by setting the <code>src</code> attribute to a data URL:</p>
+
+<pre><code class="language-js">&lt;style&gt;
+  .thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+&lt;/style&gt;
+
+&lt;input type=&quot;file&quot; id=&quot;files&quot; name=&quot;files[]&quot; multiple /&gt;
+&lt;output id=&quot;list&quot;&gt;&lt;/output&gt;
+
+&lt;script&gt;
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['&lt;img class=&quot;thumb&quot; src=&quot;', e.target.result,
+                '&quot; title=&quot;', escape(f.name), '&quot;/&gt;'
+            ].join('');;
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+&lt;/script&gt;
+</code></pre>
+
+<p data-height="187" data-theme-id="10606" data-slug-hash="sJpmy" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/sJpmy/'>sJpmy</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h1 id="monitoring-the-progress-of-a-read">Monitoring the progress of a read</h1>
+
+<p>One of the nice things that we get for free when using async event handling is the ability to monitor the progress of the file read; useful for large files, catching errors, and figuring out when a read is complete.</p>
+
+<p>The <code>onloadstart</code> and <code>onprogress</code> events can be used to monitor the progress of a read.</p>
+
+<pre><code class="language-js">&lt;style&gt;
+  #progress_bar {
+    margin: 10px 0;
+    padding: 3px;
+    border: 1px solid #000;
+    font-size: 14px;
+    clear: both;
+    opacity: 0;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    -webkit-transition: opacity 1s linear;
+  }
+  #progress_bar.loading {
+    opacity: 1.0;
+  }
+  #progress_bar .percent {
+    background-color: #99ccff;
+    height: auto;
+    width: 0;
+  }
+&lt;/style&gt;
+
+&lt;input type=&quot;file&quot; id=&quot;files&quot; name=&quot;file&quot; /&gt;
+&lt;button onclick=&quot;abortRead();&quot;&gt;Cancel read&lt;/button&gt;
+&lt;div id=&quot;progress_bar&quot;&gt;&lt;div class=&quot;percent&quot;&gt;0%&lt;/div&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  var reader;
+  var progress = document.querySelector('.percent');
+
+  function abortRead() {
+    reader.abort();
+  }
+
+  function errorHandler(evt) {
+    switch(evt.target.error.code) {
+      case evt.target.error.NOT_FOUND_ERR:
+        alert('File Not Found!');
+        break;
+      case evt.target.error.NOT_READABLE_ERR:
+        alert('File is not readable');
+        break;
+      case evt.target.error.ABORT_ERR:
+        break; // noop
+      default:
+        alert('An error occurred reading this file.');
+    };
+  }
+
+  function updateProgress(evt) {
+    // evt is an ProgressEvent.
+    if (evt.lengthComputable) {
+      var percentLoaded = Math.round((evt.loaded / evt.total) * 100);
+      // Increase the progress bar length.
+      if (percentLoaded &lt; 100) {
+        progress.style.width = percentLoaded + '%';
+        progress.textContent = percentLoaded + '%';
+      }
+    }
+  }
+
+  function handleFileSelect(evt) {
+    // Reset progress indicator on new file selection.
+    progress.style.width = '0%';
+    progress.textContent = '0%';
+
+    reader = new FileReader();
+    reader.onerror = errorHandler;
+    reader.onprogress = updateProgress;
+    reader.onabort = function(e) {
+      alert('File read cancelled');
+    };
+    reader.onloadstart = function(e) {
+      document.getElementById('progress_bar').className = 'loading';
+    };
+    reader.onload = function(e) {
+      // Ensure that the progress bar displays 100% at the end.
+      progress.style.width = '100%';
+      progress.textContent = '100%';
+      setTimeout(&quot;document.getElementById('progress_bar').className='';&quot;, 2000);
+    }
+
+    // Read in the image file as a binary string.
+    reader.readAsBinaryString(evt.target.files[0]);
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+&lt;/script&gt;
+</code></pre>
+
+<p data-height="216" data-theme-id="10606" data-slug-hash="GKbhy" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/GKbhy/'>Monitoring the progress of a read</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>SaveMyDay:</p>
+
+<ul>
+<li><a href="http://mailru.github.io/FileAPI/">File Api library</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/file/dndfiles/">html5rocks.com</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

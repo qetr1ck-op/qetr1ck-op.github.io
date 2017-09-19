@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Interview question: NodeJS, part 1</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Interview question: NodeJS, part 1</h1>
+<h4>Published 2017-05-14</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#what-is-the-relationship-between-node-js-and-v8-can-node-work-without-v8">What is the relationship between Node.js and V8? Can Node work without V8?</a></li>
+<li><a href="#how-come-when-you-declare-a-global-variable-in-any-node-js-file-it-s-not-really-global-to-all-modules">How come when you declare a global variable in any Node.js file it’s not really global to all modules?</a></li>
+<li><a href="#when-exporting-the-api-of-a-node-module-why-can-we-sometimes-use-exports-and-other-times-we-have-to-use-module-exports">When exporting the API of a Node module, why can we sometimes use <code>exports</code> and other times we have to use <code>module.exports?</code></a></li>
+<li><a href="#can-we-require-local-files-without-using-relative-paths">Can we require local files without using relative paths?</a></li>
+<li><a href="#can-different-versions-of-the-same-package-be-used-in-the-same-application">Can different versions of the same package be used in the same application?</a></li>
+<li><a href="#what-is-the-event-loop-is-it-part-of-v8">What is the Event Loop? Is it part of V8?</a></li>
+<li><a href="#what-is-libuv-and-how-does-node-js-use-it-is-it-part-of-v8">What is libuv and how does Node.js use it? Is it part of V8?</a></li>
+<li><a href="#what-is-the-call-stack-is-it-part-of-v8">What is the Call Stack? Is it part of V8?</a></li>
+<li><a href="#what-is-the-difference-between-setimmediate-and-process-nexttick">What is the difference between setImmediate and process.nextTick?</a></li>
+<li><a href="#how-do-you-make-an-asynchronous-function-return-a-value">How do you make an asynchronous function return a value?</a></li>
+<li><a href="#can-callbacks-be-used-with-promises-or-is-it-one-way-or-the-other">Can callbacks be used with promises or is it one way or the other?</a></li>
+<li><a href="#what-are-the-major-differences-between-spawn-exec-and-fork">What are the major differences between spawn, exec, and fork?</a></li>
+<li><a href="#how-does-the-cluster-module-work-how-is-it-different-than-using-a-load-balancer">How does the cluster module work? How is it different than using a load balancer?</a></li>
+<li><a href="#what-is-load-balancing">What is load balancing?</a></li>
+<li><a href="#what-are-the-harmony-flags">What are the <code>--harmony-*</code> flags?</a></li>
+<li><a href="#how-can-you-read-and-inspect-the-memory-usage-of-a-node-js-process">How can you read and inspect the memory usage of a Node.js process?</a></li>
+<li><a href="#what-is-process-argv-what-type-of-data-does-it-hold">What is <code>process.argv</code>? What type of data does it hold?</a></li>
+<li><a href="#how-can-we-do-one-final-operation-before-a-node-process-exits-can-that-operation-be-done-asynchronously">How can we do one final operation before a Node process exits? Can that operation be done asynchronously?</a></li>
+<li><a href="#what-are-some-of-the-built-in-dot-commands-you-can-use-in-node-s-repl">What are some of the built-in dot commands you can use in Node’s REPL?</a></li>
+<li><a href="#besides-v8-and-libuv-what-other-external-dependencies-does-node-have">Besides V8 and libuv, what other external dependencies does Node have?</a></li>
+<li><a href="#save-my-day">Save my day</a></li>
+</ul>
+</nav>
+    <p>Based on original post <a href="https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8">How well do you know Node.js?</a>. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.</p>
+
+<p></p>
+
+<h1 id="what-is-the-relationship-between-node-js-and-v8-can-node-work-without-v8">What is the relationship between Node.js and V8? Can Node work without V8?</h1>
+
+<p>V8 is a JavaScript engine developed by The Chromium Project, first for the Google Chrome web browser and later for other projects, including NodeJS. It allows to compile, optimize and run JavaScript code and is the base for code execution inside Node.js. However, V8 is not essential for Node.js; There are attempts to use other javascript engines, such as <a href="https://github.com/nodejs/node-chakracore">node-chakracore</a> (Node.js on ChakraCore) or <a href="https://github.com/mozilla/spidernode">spidernode</a> (Node.js on top of SpiderMonkey).</p>
+
+<h1 id="how-come-when-you-declare-a-global-variable-in-any-node-js-file-it-s-not-really-global-to-all-modules">How come when you declare a global variable in any Node.js file it’s not really global to all modules?</h1>
+
+<p>A module’s code is wrapped by a function wrapper. To see it just execute node.js file with syntax error on first line:</p>
+
+<pre><code class="language-js">&gt; node 1/bugToSeeWrapperFn.js
+&gt; /home/oop/Documents/bugToSeeWrapperFn.js:1
+
+(function (exports, require, module, __filename, __dirname) { foo
+  // module code
+});
+</code></pre>
+
+<p>This wrapping allows to keeps top-level variables (defined with var, const or let) scoped to the module, rather than to the global object.</p>
+
+<p>Read more on the <a href="https://nodejs.org/api/modules.html#modules_the_module_wrapper">module wrapper</a>.</p>
+
+<h1 id="when-exporting-the-api-of-a-node-module-why-can-we-sometimes-use-exports-and-other-times-we-have-to-use-module-exports">When exporting the API of a Node module, why can we sometimes use <code>exports</code> and other times we have to use <code>module.exports?</code></h1>
+
+<p>To understand the difference, we can look at this simplified view of a JavaScript file in Node.js:</p>
+
+<pre><code class="language-js">var module = { exports: {} };
+var exports = module.exports;
+
+// your code
+
+return module.exports;
+</code></pre>
+
+<p>So, <code>exports</code> is initially a reference to <code>module.exports</code>. if you want to simply export an object with named fields, you can use the exports shortcut. For example, had we written <code>exports.a = 9</code>, we’d actually export this object: <code>{ a: 9 }</code>.</p>
+
+<p>However, if you want to export a function or another object, you have to use the <code>module.exports</code> but you cannot use <code>exports</code>. For example: <code>module.exports = function bar() {}</code>. Once you do that, <code>exports</code> and <code>module.exports</code> no longer reference the same object.</p>
+
+<h1 id="can-we-require-local-files-without-using-relative-paths">Can we require local files without using relative paths?</h1>
+
+<p>There are several options, as described <a href="https://gist.github.com/qetr1ck-op/ba2c8ad84ae8cd3ce6c928872eaa6933">here</a>.</p>
+
+<h1 id="can-different-versions-of-the-same-package-be-used-in-the-same-application">Can different versions of the same package be used in the same application?</h1>
+
+<p>No, this is currently prevented by NPM. see this issue for <a href="https://github.com/npm/npm/issues/2943#issuecomment-10388316">more details</a>.</p>
+
+<h1 id="what-is-the-event-loop-is-it-part-of-v8">What is the Event Loop? Is it part of V8?</h1>
+
+<p><img src="../../../../images/posts/nodejs-interview-question/nodejs-arhitecture.jpg" alt="" /></p>
+
+<p>In event-driven programming, an application expresses interest in certain events and respond to them when they occur. This is the way Node.js can handle asynchronous execution while running the code in a single thread.</p>
+
+<p>When an asynchronous operation starts (for example, when we call <code>setTimeout</code>, <code>http.get</code> or <code>fs.readFile</code>), Node.js sends these operations to a different thread allowing <code>V8</code> to keep executing our code. Node also calls the callback when the counter has run down or the <code>IO / http</code> operation has finished.</p>
+
+<p>In Node.js, the responsibility of gathering events from the operating system or monitoring other sources of events is handled by <code>libuv</code>, and the user can register callbacks to be invoked when an event occurs. When async operation is done <code>libuv</code> passes control to <code>V8</code> to execute the callbacks.</p>
+
+<h1 id="what-is-libuv-and-how-does-node-js-use-it-is-it-part-of-v8">What is libuv and how does Node.js use it? Is it part of V8?</h1>
+
+<p><a href="https://github.com/libuv/libuv">libuv</a> is a multi-platform support library with a focus on asynchronous I/O. Its core job is to provide an event loop and callback based notifications of I/O and other activities. In addition, libuv offers core utilities such as timers, non-blocking networking support, asynchronous file system access, child processes and more.</p>
+
+<h1 id="what-is-the-call-stack-is-it-part-of-v8">What is the Call Stack? Is it part of V8?</h1>
+
+<p>The call stack is the basic mechanism for javascript code execution. When we call a function, we push the function parameters and the return address to the stack. This allows to runtime to know where to continue code execution once the function ends. In Node.js, the Call Stack is handled by <code>V8</code>.</p>
+
+<h1 id="what-is-the-difference-between-setimmediate-and-process-nexttick">What is the difference between setImmediate and process.nextTick?</h1>
+
+<ul>
+<li><code>setImmediate</code> queues a function behind whatever I/O event callbacks that are already in the event queue.</li>
+<li><code>process.nextTick</code> queues a function at the head of the event queue so that it executes immediately after the currently running function completes.</li>
+<li><code>setTimeout</code> vs <code>setImmediate</code> vs <code>process.nextTick</code>, <a href="http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776">visual explanation</a></li>
+<li><code>setImmediate</code> executes after <code>setTimeout</code>, <a href="https://github.com/nodejs/node-v0.x-archive/issues/25788">explanation</a></li>
+</ul>
+
+<h1 id="how-do-you-make-an-asynchronous-function-return-a-value">How do you make an asynchronous function return a value?</h1>
+
+<p>You could return a promise resolving to that value, for example return <code>Promise.resolve(value)</code>.</p>
+
+<h1 id="can-callbacks-be-used-with-promises-or-is-it-one-way-or-the-other">Can callbacks be used with promises or is it one way or the other?</h1>
+
+<p>Callbacks and promises can be used together. For example, the following method calls a callback and returns a promise:</p>
+
+<pre><code class="language-js">function processToGetValue(cb) {
+  // do some processing to value
+  if (cb) {
+    cb(value);
+  }
+  return Promise.resolve(value);
+}
+</code></pre>
+
+<h1 id="what-are-the-major-differences-between-spawn-exec-and-fork">What are the major differences between spawn, exec, and fork?</h1>
+
+<ul>
+<li><code>exec</code> methods spawns a shell and then executes a command within that shell, buffering any generated output</li>
+<li><code>spawn</code> works similarly to <code>exec</code>. The main difference is that spawn returns the process output as a stream while exec returns it as a buffer</li>
+<li><code>fork</code> is a special case of spawn that also creates a new <code>V8</code> engine instance. This is useful to create additional workers of the same Node.js code base. (for example, in the <a href="https://nodejs.org/api/cluster.html">cluster module</a>).</li>
+</ul>
+
+<p>Great article <a href="https://dzone.com/articles/understanding-execfile-spawn-exec-and-fork-in-node">Understanding execFile, spawn, exec, and fork in Node.js</a></p>
+
+<h1 id="how-does-the-cluster-module-work-how-is-it-different-than-using-a-load-balancer">How does the cluster module work? How is it different than using a load balancer?</h1>
+
+<p>The cluster module works by forking the server into several worker processes (all run inside the <strong>same host</strong>). The master process listens and accepts new connections and distributes them across the worker processes in a <code>round-robin</code> fashionhug (with some built-in smarts to avoid overloading a worker process).</p>
+
+<p>A load balancer, in contrast, is used to distribute incoming connections across <strong>multiple hosts</strong>.</p>
+
+<h1 id="what-is-load-balancing">What is load balancing?</h1>
+
+<p>Detailed answer <a href="../../../../post/what-is-load-balancing/">here</a></p>
+
+<h1 id="what-are-the-harmony-flags">What are the <code>--harmony-*</code> flags?</h1>
+
+<p>These are flags that one can pass to the Node.js runtime to enable Staged features. Staged features are almost-completed features that are not considered stable by the V8 team.</p>
+
+<h1 id="how-can-you-read-and-inspect-the-memory-usage-of-a-node-js-process">How can you read and inspect the memory usage of a Node.js process?</h1>
+
+<p>You can invoke the <code>process.memoryUsage()</code> method which returns an object describing the memory usage of the Node.js process, measured in bytes.</p>
+
+<h1 id="what-is-process-argv-what-type-of-data-does-it-hold">What is <code>process.argv</code>? What type of data does it hold?</h1>
+
+<p>The <code>process.argv</code> property returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be <code>process.execPath</code>. The second element will be the path to the JavaScript file being executed. The remaining elements will be any additional command line arguments.</p>
+
+<h1 id="how-can-we-do-one-final-operation-before-a-node-process-exits-can-that-operation-be-done-asynchronously">How can we do one final operation before a Node process exits? Can that operation be done asynchronously?</h1>
+
+<p>By registering a handler for <code>process.on('exit')</code>:</p>
+
+<pre><code class="language-js">function exitHandler(options, err) {
+    console.log('clean');
+}
+
+process.on('exit', exitHandler.bind(null));
+</code></pre>
+
+<p>Listener functions to the exit event must only perform synchronous operations. To perform asynchronous operations, one can register a handler for <code>process.on('beforeExit')</code>.</p>
+
+<h1 id="what-are-some-of-the-built-in-dot-commands-you-can-use-in-node-s-repl">What are some of the built-in dot commands you can use in Node’s REPL?</h1>
+
+<p>The following dot commands can be used:</p>
+
+<ul>
+<li><code>.break</code> - When in the process of inputting a multi-line expression, entering the .break command (or pressing the <code>&lt;ctrl&gt;-C</code> key combination) will abort further input or processing of that expression.</li>
+<li><code>.clear</code> - Resets the REPL ‘context’ to an empty object and clears any multi-line expression currently being input.</li>
+<li><code>.exit</code> - Close the I/O stream, causing the REPL to exit.</li>
+<li><code>.help</code> - Show this list of special commands.</li>
+<li><code>.save</code> - Save the current REPL session to a file: <code>&gt; .save ./file/to/save.js</code></li>
+<li><code>.load</code> - Load a file into the current REPL session. <code>&gt; .load ./file/to/load.js</code></li>
+<li><code>.editor</code> - Enter editor mode (<code>&lt;ctrl&gt;-D</code> to finish, <code>&lt;ctrl&gt;-C</code> to cancel)</li>
+</ul>
+
+<h1 id="besides-v8-and-libuv-what-other-external-dependencies-does-node-have">Besides V8 and libuv, what other external dependencies does Node have?</h1>
+
+<p>Beside V8 and libuv, node has several other dependencies:</p>
+
+<ul>
+<li>http-parser: a lightweight C library which handles HTTP parsing</li>
+<li>c-areas: used for some asynchronous DNS requests</li>
+<li>OpenSSL: used extensively in both the tls and crypto modules</li>
+<li>zlib: used for fast compression and decompression</li>
+</ul>
+
+<p>Read more about <a href="https://nodejs.org/en/docs/meta/topics/dependencies/">node dependencies</a>.</p>
+
+<h1 id="save-my-day">Save my day</h1>
+
+<ul>
+<li><a href="https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8">original questions by Samer Buna</a></li>
+<li><a href="https://asafdav2.github.io/2017/how-well-do-you-know-node-js-answers-part-1/">original post by asafdav2</a></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

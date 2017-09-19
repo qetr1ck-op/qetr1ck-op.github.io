@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Huston, do we have a problem with promises?</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Huston, do we have a problem with promises?</h1>
+<h4>Published 2015-02-02</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#wherefore-promises">Wherefore promises?</a></li>
+<li><a href="#rookie-mistakes">Rookie mistakes</a></li>
+<li><a href="#rookie-mistake-1-the-promises-pyramid-of-doom">Rookie mistake #1: the promises pyramid of doom</a></li>
+<li><a href="#rookie-mistake-2-wtf-how-do-i-use-foreach-with-promises">Rookie mistake #2: WTF, how do I use forEach() with promises?</a></li>
+<li><a href="#rookie-mistake-3-forgetting-to-add-catch">Rookie mistake #3: forgetting to add .catch()</a></li>
+<li><a href="#rookie-mistake-4-using-deferred">Rookie mistake #4: using &ldquo;deferred&rdquo;</a></li>
+<li><a href="#rookie-mistake-5-using-side-effects-instead-of-returning">Rookie mistake #5: using side effects instead of returning</a>
+<ul>
+<li><a href="#return-another-promise">Return another promise</a></li>
+<li><a href="#return-a-synchronous-value-or-undefined">Return a synchronous value (or undefined)</a></li>
+<li><a href="#throw-a-synchronous-error">Throw a synchronous error</a></li>
+</ul></li>
+<li><a href="#advanced-mistake-1-don-t-know-about-promise-resolve">Advanced mistake #1: don&rsquo;t know about Promise.resolve</a></li>
+<li><a href="#advanced-mistake-2-catch-isn-t-exactly-like-then-null-cb">Advanced mistake #2: catch() isn&rsquo;t exactly like then(null, cb)</a></li>
+<li><a href="#advanced-mistake-3-use-promise-in-parallel-or-promises-vs-promise-factories">Advanced mistake #3: use promise in parallel or promises vs promise factories</a></li>
+<li><a href="#advanced-mistake-4-okay-what-if-i-want-the-result-of-two-promises">Advanced mistake #4: okay, what if I want the result of two promises?</a></li>
+</ul>
+</nav>
+    <p>Many of us are using promises without really understanding them.</p>
+
+<p></p>
+
+<h1 id="wherefore-promises">Wherefore promises?</h1>
+
+<p>If you read the literature on promises, you&rsquo;ll often find references to the <em>pyramid of doom</em>, with some horrible callback-y code that steadily stretches toward the right side of the screen.</p>
+
+<p>The whole point of promises is to give us back the language fundamentals we lost when we went async: <code>return</code>, <code>throw</code>, and the <code>stack</code>. But you have to know how to use promises correctly in order to take advantage of them.</p>
+
+<h1 id="rookie-mistakes">Rookie mistakes</h1>
+
+<p>I&rsquo;m only going to talk about the official spec, as exposed in modern browsers as <code>window.Promise</code>. Not all browsers have <code>window.Promise</code> though, so for a good <em>polyfill</em>, check out the cheekily-named <a href="https://github.com/calvinmetcalf/lie">Lie</a>, which is about the smallest spec-compliant library out there.</p>
+
+<h1 id="rookie-mistake-1-the-promises-pyramid-of-doom">Rookie mistake #1: the promises pyramid of doom</h1>
+
+<p>The most common bad practice is this one:</p>
+
+<pre><code class="language-js">remotedb.allDocs({
+  include_docs: true,
+  attachments: true
+}).then(function (result) {
+  var docs = result.rows;
+  docs.forEach(function(element) {
+    localdb.put(element.doc).then(function(response) {
+      alert(&quot;Pulled doc with id &quot; + element.doc._id + &quot; and added to local db.&quot;);
+    }).catch(function (err) {
+      if (err.status == 409) {
+        localdb.get(element.doc._id).then(function (resp) {
+          localdb.remove(resp._id, resp._rev).then(function (resp) {
+// et cetera...
+</code></pre>
+
+<p>Yes, it turns out you can use promises as if they were <strong>callbacks</strong>, and yes, it&rsquo;s a lot like using a power sander to file your nails, but you can do it.</p>
+
+<p>A better style is this one:</p>
+
+<pre><code class="language-js">remotedb.allDocs(...).then(function (resultOfAllDocs) {
+  return localdb.put(...);
+}).then(function (resultOfPut) {
+  return localdb.get(...);
+}).then(function (resultOfGet) {
+  return localdb.put(...);
+}).catch(function (err) {
+  console.log(err);
+});
+</code></pre>
+
+<p>This is called <strong>composing</strong> promises, and it&rsquo;s one of the great superpowers of promises. Each function will only be called when the previous promise has resolved, and it&rsquo;ll wbe called with that promise&rsquo;s output. More on that later.</p>
+
+<h1 id="rookie-mistake-2-wtf-how-do-i-use-foreach-with-promises">Rookie mistake #2: WTF, how do I use forEach() with promises?</h1>
+
+<p>This is where most people&rsquo;s understanding of promises starts to break down. As soon as they reach for their familiar <code>forEach()</code> loop (or <code>for</code> loop, or <code>while</code> loop), they have no idea how to make it work with promises. So they write something like this:</p>
+
+<pre><code class="language-js">// I want to remove() all docs
+db.allDocs({include_docs: true}).then(function (result) {
+  result.rows.forEach(function (row) {
+    db.remove(row.doc);  
+  });
+}).then(function () {
+  // I naively believe all docs have been removed() now!
+});
+</code></pre>
+
+<p>What&rsquo;s the problem with this code? The problem is that the first function is actually returning <code>undefined</code>, meaning that the second function isn&rsquo;t waiting for <code>db.remove()</code> to be called on all the documents. In fact, <strong>it isn&rsquo;t waiting on anything</strong>, and can execute when any number of docs have been removed!</p>
+
+<p>The <strong>TLDR</strong> of all this is that <code>forEach()</code>/<code>for</code>/<code>while</code> are not the constructs you&rsquo;re looking for. You want <code>Promise.all()</code>:</p>
+
+<pre><code class="language-js">db.allDocs({include_docs: true}).then(function (result) {
+  return Promise.all(result.rows.map(function (row) {
+    return db.remove(row.doc);
+  }));
+}).then(function (arrayOfResults) {
+  // All docs have really been removed() now!
+});
+</code></pre>
+
+<p>What&rsquo;s going on here? Basically <code>Promise.all()</code> takes an array of promises as input, and then it gives you another promise that only resolves when every one of those other promises has resolved. It is the asynchronous equivalent of a <code>for-loop</code>.</p>
+
+<h1 id="rookie-mistake-3-forgetting-to-add-catch">Rookie mistake #3: forgetting to add .catch()</h1>
+
+<p>Many developers forget to add a <code>.catch()</code> anywhere in their code. Unfortunately this means that any thrown errors will be swallowed, and you won&rsquo;t even see them in your console. This can be a real pain to debug.</p>
+
+<pre><code class="language-js">somePromise().then(function () {
+  return anotherPromise();
+}).then(function () {
+  return yetAnotherPromise();
+}).catch(console.log.bind(console)); // &lt;-- this is badass
+</code></pre>
+
+<h1 id="rookie-mistake-4-using-deferred">Rookie mistake #4: using &ldquo;deferred&rdquo;</h1>
+
+<p>If you are writing that word in your code you are doing something wrong. Here&rsquo;s how to avoid it.</p>
+
+<p>First off, most promise libraries give you a way to <em>import</em> promises from third-party libraries. For instance, Angular&rsquo;s <code>$q</code> module allows you to wrap non-$q promises using <code>$q.when()</code>. So Angular users can wrap PouchDB promises this way:</p>
+
+<pre><code class="language-js">$q.when(db.put(doc)).then(/* ... */); // &lt;-- this is all the code you need
+</code></pre>
+
+<p>Another strategy is to use the revealing constructor pattern, which is useful for wrapping <em>non-promise APIs</em>. For instance, to wrap a callback-based API like Node&rsquo;s <code>fs.readFile()</code>, you can simply do:</p>
+
+<pre><code class="language-js">new Promise(function (resolve, reject) {
+  fs.readFile('myfile.txt', function (err, file) {
+    if (err) {
+      return reject(err);
+    }
+    resolve(file);
+  });
+}).then(/* ... */)
+</code></pre>
+
+<h1 id="rookie-mistake-5-using-side-effects-instead-of-returning">Rookie mistake #5: using side effects instead of returning</h1>
+
+<p>What&rsquo;s wrong with this code?</p>
+
+<pre><code class="language-js">somePromise().then(function () {
+  someOtherPromise();
+}).then(function () {
+  // Gee, I hope someOtherPromise() has resolved!
+  // Spoiler alert: it hasn't.
+});
+</code></pre>
+
+<p>Seriously, this is the <strong>one weird trick</strong> that, once you understand it, will prevent all of the errors I&rsquo;ve been talking about.</p>
+
+<p>As I said before, the magic of promises is that they give us back our precious <code>return</code> and <code>throw</code>. But what does this actually look like in practice?</p>
+
+<p>What can we do here? There are three things:</p>
+
+<p>1.<code>return</code> another promise
+2.<code>return</code> a synchronous value (or <code>undefined</code>)
+3.<code>throw</code> a synchronous error</p>
+
+<h2 id="return-another-promise">Return another promise</h2>
+
+<p>This is a common pattern you see in the promise literature, as in the <strong>composing promises</strong> example above:</p>
+
+<pre><code class="language-js">getUserByName('nolan').then(function (user) {
+  return getUserAccountById(user.id);
+}).then(function (userAccount) {
+  // I got a user account!
+});
+</code></pre>
+
+<p>Notice that I&rsquo;m returning the second promise – that <code>return</code> is crucial. If I didn&rsquo;t say return, then the <code>getUserAccountById()</code> would actually be a <em>side effect</em>, and the next function would receive <code>undefined</code> instead of the <code>userAccount</code>.</p>
+
+<h2 id="return-a-synchronous-value-or-undefined">Return a synchronous value (or undefined)</h2>
+
+<p>Returning <code>undefined</code> is often a mistake, but returning a <em>synchronous value</em> is actually an awesome way to convert synchronous code into promisey code. For instance, let&rsquo;s say we have an in-memory cache of users. We can do:</p>
+
+<pre><code class="language-js">getUserByName('nolan').then(function (user) {
+  if (inMemoryCache[user.id]) {
+    return inMemoryCache[user.id];    // returning a synchronous value!
+  }
+  return getUserAccountById(user.id); // returning a promise!
+}).then(function (userAccount) {
+  // I got a user account!
+});
+</code></pre>
+
+<p>For this reason, I make it a personal habit to always return or throw from inside a <code>then()</code> function. I&rsquo;d recommend you do the same.</p>
+
+<h2 id="throw-a-synchronous-error">Throw a synchronous error</h2>
+
+<p>Let&rsquo;s say we want to throw a synchronous error in case the user is logged out. It&rsquo;s quite easy:</p>
+
+<pre><code class="language-js">getUserByName('nolan').then(function (user) {
+  if (user.isLoggedOut()) {
+    throw new Error('user logged out!'); // throwing a synchronous error!
+  }
+  if (inMemoryCache[user.id]) {
+    return inMemoryCache[user.id];       // returning a synchronous value!
+  }
+  return getUserAccountById(user.id);    // returning a promise!
+}).then(function (userAccount) {
+  // I got a user account!
+}).catch(function (err) {
+  // Boo, I got an error!
+});
+</code></pre>
+
+<h1 id="advanced-mistake-1-don-t-know-about-promise-resolve">Advanced mistake #1: don&rsquo;t know about Promise.resolve</h1>
+
+<p>As I showed above, promises are very useful for wrapping synchronous code as asynchronous code. However, if you find yourself typing this a lot:</p>
+
+<pre><code class="language-js">new Promise(function (resolve, reject) {
+  resolve(someSynchronousValue);
+}).then(/* ... */);
+</code></pre>
+
+<p>You can express this more succinctly using <code>Promise.resolve()</code>:</p>
+
+<pre><code class="language-js">Promise.resolve(someSynchronousValue).then(/* ... */);
+</code></pre>
+
+<pre><code class="language-js">//more verbose exapmle
+function somePromiseAPI() {
+  return Promise.resolve().then(function () {
+    return 'foo';
+  }).then(/* ... */);
+}
+</code></pre>
+
+<h1 id="advanced-mistake-2-catch-isn-t-exactly-like-then-null-cb">Advanced mistake #2: catch() isn&rsquo;t exactly like then(null, cb)</h1>
+
+<p>If you&rsquo;re wondering why they&rsquo;re not equivalent, consider what happens if the first function throws an error:</p>
+
+<pre><code class="language-js">somePromise().then(function () {
+  throw new Error('oh noes');
+}).catch(function (err) {
+  // I caught your error! :)
+});
+
+somePromise().then(function () {
+  throw new Error('oh noes');
+}, function (err) {
+  // I didn't catch your error! :(
+});
+</code></pre>
+
+<p>As it turns out, when you use the then(resolveHandler, rejectHandler) format, the rejectHandler won&rsquo;t actually catch an error if it&rsquo;s thrown by the resolveHandler itself.</p>
+
+<h1 id="advanced-mistake-3-use-promise-in-parallel-or-promises-vs-promise-factories">Advanced mistake #3: use promise in parallel or promises vs promise factories</h1>
+
+<p>That is, you want something like <code>Promise.all()</code>, but which doesn&rsquo;t execute the <em>promises in parallel</em>.</p>
+
+<p>You might naïvely write something like this:</p>
+
+<pre><code class="language-js">function executeSequentially(promises) {
+  var result = Promise.resolve();
+  promises.forEach(function (promise) {
+    result = result.then(promise);
+  });
+  return result;
+}
+</code></pre>
+
+<p>The promises you pass in to <code>executeSequentially()</code> will still execute in parallel.</p>
+
+<p>The reason this happens is that you don&rsquo;t want to operate over an array of promises at all. Per the promise spec, as soon as a promise is created, it begins executing. So what you really want is an array of promise factories.</p>
+
+<p>A promise factory is very simple, though – it&rsquo;s just a function that returns a promise:</p>
+
+<pre><code class="language-js">function myPromiseFactory() {
+  return somethingThatCreatesAPromise();
+}
+</code></pre>
+
+<pre><code class="language-js">function executeSequentially(promiseFactories) {
+  var result = Promise.resolve();
+  promiseFactories.forEach(function (promiseFactory) {
+    result = result.then(promiseFactory);
+  });
+  return result;
+}
+</code></pre>
+
+<p>Why does this work? It works because a promise factory doesn&rsquo;t create the promise until it&rsquo;s asked to. It works the same way as a <code>then</code> function – in fact, it&rsquo;s the same thing!</p>
+
+<p>Another task, create code which will download recurses from array URLs in sequence:</p>
+
+<pre><code class="language-js">let urls = [
+  'user.json',
+  'guest.json'
+];
+</code></pre>
+
+<pre><code class="language-js">// begin of the chain
+let chain = Promise.resolve();
+
+let results = [];
+
+// in loop add tasks in chain
+urls.forEach(function(url) {
+  // task are added in sequence
+  chain = chain
+    .then(() =&gt; httpGet(url))
+    .then((result) =&gt; {
+      results.push(result);
+    });
+});
+
+// result of promises
+chain.then(console.log.bind(console));
+</code></pre>
+
+<p>The same approach with parallel:</p>
+
+<pre><code class="language-js">Promise.all( urls.map(httpGet) )
+  .then(console.log.bind(console));
+</code></pre>
+
+<h1 id="advanced-mistake-4-okay-what-if-i-want-the-result-of-two-promises">Advanced mistake #4: okay, what if I want the result of two promises?</h1>
+
+<p>Often times, one promise will depend on another, but we&rsquo;ll want the output of both promises. For instance:</p>
+
+<pre><code class="language-js">getUserByName('nolan').then(function (user) {
+  return getUserAccountById(user.id);
+}).then(function (userAccount) {
+  // dangit, I need the &quot;user&quot; object too!
+});
+</code></pre>
+
+<p>Wanting to be good JavaScript developers and avoid the pyramid of doom, we might just store the user object in a higher-scoped variable:</p>
+
+<pre><code class="language-js">var user;
+getUserByName('nolan').then(function (result) {
+  user = result;
+  return getUserAccountById(user.id);
+}).then(function (userAccount) {
+  // okay, I have both the &quot;user&quot; and the &quot;userAccount&quot;
+});
+</code></pre>
+
+<p>My recommended strategy: just let go of your preconceptions and embrace the pyramid:</p>
+
+<pre><code class="language-js">getUserByName('nolan').then(function (user) {
+  return getUserAccountById(user.id).then(function (userAccount) {
+    // okay, I have both the &quot;user&quot; and the &quot;userAccount&quot;
+  });
+});
+</code></pre>
+
+<p>If the indentation ever becomes an issue, then you can do what JavaScript developers have been doing since time immemorial, and extract the function into a named function:</p>
+
+<pre><code class="language-js">function onGetUserAndUserAccount(user, userAccount) {
+  return doSomething(user, userAccount);
+}
+
+function onGetUser(user) {
+  return getUserAccountById(user.id).then(function (userAccount) {
+    return onGetUserAndUserAccount(user, userAccount);
+  });
+}
+
+getUserByName('nolan')
+  .then(onGetUser)
+  .then(function () {
+  // at this point, doSomething() is done, and we are back to indentation 0
+});
+</code></pre>
+
+<p>As your promise code starts to get more complex, you may find yourself extracting more and more functions into named functions. I find this leads to very aesthetically-pleasing code, which might look like this:</p>
+
+<pre><code class="language-js">putYourRightFootIn()
+  .then(putYourRightFootOut)
+  .then(putYourRightFootIn)  
+  .then(shakeItAllAbout);
+</code></pre>
+
+<p>Save my day:
+    *   <a href="http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">We have a problem with promises</a></p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

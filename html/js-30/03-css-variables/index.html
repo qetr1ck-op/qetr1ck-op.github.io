@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scoped CSS Variables and JS</title>
+</head>
+
+<body>
+  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-suffix="px">
+
+    <label for="blur">Blur:</label>
+    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-suffix="px">
+
+    <label for="baseColor">Color Color</label>
+    <!--<input id="baseColor" type="color" name="baseColor" value="#ffc600">-->
+    <input id="color_value" type="hidden" name="baseColor" value="#ffc600" data-preffix="#">
+    <button class="jscolor {valueElement:null, valueElement: 'color_value'}" style="width:50px; height:20px;"></button>
+  </div>
+
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+  <style>
+     :root {
+      --baseColor: #ffc600;
+      --spacing: 10px;
+      --blur: 10px
+    }
+    
+    body {
+      text-align: center;
+    }
+    
+    body {
+      background: #193549;
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+    }
+    
+    .controls {
+      margin-bottom: 50px;
+    }
+    
+    input {
+      width: 100px;
+    }
+    
+    img {
+      padding: var(--spacing);
+      background: var(--baseColor);
+      filter: blur(var(--blur))
+    }
+  </style>
+
+  <script>
+    const inputs = document.querySelectorAll('.controls input');
+
+    inputs.forEach(input => {
+      input.addEventListener('change', debounce(onChangeInput, 50));
+      input.addEventListener('input', debounce(onChangeInput, 50));
+    });
+
+    function onChangeInput() {
+      const suffix = this.dataset.suffix || '';
+      const preffix = this.dataset.preffix || '';
+
+      document.documentElement.style.setProperty(`--${this.name}`, `${preffix}${this.value}${suffix}`);
+    }
+
+    function debounce(func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this, args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.js"></script>
+</body>
+
+</html>

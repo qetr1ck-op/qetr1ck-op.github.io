@@ -1,0 +1,2322 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Book: &#39;Node.js design pattern&#39;</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Book: &#39;Node.js design pattern&#39;</h1>
+<h4>Published 2016-10-06</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#chapter-1-welcome-to-the-node-js-platform">Chapter 1: Welcome to the Node.js platform</a>
+<ul>
+<li><a href="#the-node-js-philosophy">The Node.js philosophy</a></li>
+<li><a href="#i-o-is-slow">I/O is slow</a>
+<ul>
+<li><a href="#blocking-i-o">Blocking I/O</a></li>
+<li><a href="#non-blocking-i-o-with-busy-waiting">Non-blocking I/O with &ldquo;busy-waiting&rdquo;</a></li>
+<li><a href="#event-demultiplexing">Event demultiplexing</a></li>
+</ul></li>
+<li><a href="#the-reactor-pattern">The reactor pattern</a></li>
+<li><a href="#the-non-blocking-i-o-engine-of-node-js-libuv">The non-blocking I/O engine of Node.js-libuv</a></li>
+<li><a href="#the-building-blocks-of-node-js-platform">The building blocks of Node.js platform</a></li>
+</ul></li>
+<li><a href="#chapter-2-node-js-essential-patterns">Chapter 2: Node.js essential patterns</a>
+<ul>
+<li><a href="#the-callback-pattern">The callback pattern</a>
+<ul>
+<li><a href="#the-continue-passing-style">The continue-passing style</a></li>
+<li><a href="#asynchronous-continue-passing-style">Asynchronous continue-passing style</a></li>
+<li><a href="#synchronous-or-asynchronous">Synchronous or asynchronous?</a>
+<ul>
+<li><a href="#an-unpredictable-function">An unpredictable function</a></li>
+<li><a href="#unleashing-zalgo">Unleashing Zalgo</a></li>
+</ul></li>
+<li><a href="#using-synchronous-apis">Using synchronous APIs</a></li>
+<li><a href="#using-asynchronous-operation-with-deferred-execution">Using asynchronous operation with deferred execution</a></li>
+<li><a href="#node-js-callback-convention">Node.js callback convention</a>
+<ul>
+<li><a href="#callback-come-last">Callback come last</a></li>
+<li><a href="#error-comes-first">Error comes first</a></li>
+<li><a href="#propagation-errors">Propagation errors</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#the-module-system-and-its-pattern">The module system and its pattern</a>
+<ul>
+<li><a href="#the-revealing-module-pattern">The revealing module pattern</a></li>
+<li><a href="#node-js-modules-explained">Node.js modules explained</a>
+<ul>
+<li><a href="#a-homemade-module-loader">A homemade module loader</a></li>
+<li><a href="#defining-a-modules">Defining a modules</a></li>
+<li><a href="#defining-globals">Defining globals</a></li>
+<li><a href="#module-exports-vs-exports">&ldquo;module.exports&rdquo; VS &ldquo;exports&rdquo;</a></li>
+<li><a href="#the-require-function-is-synchronous">The &ldquo;require&rdquo; function is synchronous</a></li>
+<li><a href="#the-resolving-algorithm">The resolving algorithm</a></li>
+<li><a href="#the-module-cache">The module cache</a></li>
+</ul></li>
+<li><a href="#module-definition-patterns">Module definition patterns</a>
+<ul>
+<li><a href="#named-exports">Named exports</a></li>
+<li><a href="#exporting-a-function">Exporting a function</a></li>
+<li><a href="#exporting-a-constructor">Exporting a constructor</a></li>
+<li><a href="#exporting-an-instance">Exporting an instance</a></li>
+<li><a href="#modifying-other-modules-or-the-global-scope">Modifying other modules or the global scope</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#the-observer-pattern">The observer pattern</a>
+<ul>
+<li><a href="#the-eventemitter-class">The EventEmitter class</a></li>
+<li><a href="#creating-and-using-eventemitter">Creating and using EventEmitter</a></li>
+<li><a href="#extends-from-eventemitter-class">Extends from EventEmitter class</a></li>
+<li><a href="#combining-callbacks-with-eventemitter">Combining callbacks with EventEmitter</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-3-asynchronous-control-flow-patterns-with-callbacks">Chapter 3: Asynchronous control flow patterns with callbacks</a>
+<ul>
+<li><a href="#creating-a-simple-web-spider">Creating a simple web spider</a></li>
+<li><a href="#the-callback-hell">The callback hell</a></li>
+<li><a href="#applying-the-callback-discipline">Applying the callback discipline</a></li>
+<li><a href="#sequential-execution">Sequential execution</a>
+<ul>
+<li><a href="#execution-a-set-of-known-task-in-sequence">Execution a set of known task in sequence</a></li>
+<li><a href="#sequential-iteration-with-crawling-of-links">Sequential iteration with crawling of links</a></li>
+<li><a href="#the-pattern-sequential-iteration">The pattern &ldquo;sequential iteration&rdquo;</a></li>
+</ul></li>
+<li><a href="#parallel-execution">Parallel execution</a>
+<ul>
+<li><a href="#execution-with-spiderlinks">Execution with &ldquo;spiderLinks&rdquo;</a></li>
+<li><a href="#the-pattern-unlimited-parallel-execution">The pattern &ldquo;unlimited parallel execution&rdquo;</a></li>
+<li><a href="#limited-parallel-execution">Limited parallel execution</a></li>
+<li><a href="#taskqueue-to-rescue">&ldquo;TaskQueue&rdquo; to rescue</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-4-asynchronous-control-flow-with-es6-and-beyond">Chapter 4: Asynchronous Control Flow with ES6 and beyond</a>
+<ul>
+<li><a href="#es6-promises-techniques">ES6 Promises techniques</a>
+<ul>
+<li><a href="#promisifying-a-node-js-style-function">Promisifying a Node.js style function</a></li>
+<li><a href="#sequential-execution-1">Sequential execution</a></li>
+<li><a href="#sequential-iteration">Sequential iteration</a></li>
+<li><a href="#parallel-execution-1">Parallel execution</a>
+<ul>
+<li><a href="#limited-parallel-execution-1">Limited parallel execution</a></li>
+<li><a href="#exposing-callbacks-and-promises-in-public-apis">Exposing callbacks and promises in public APIs</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#generators">Generators</a>
+<ul>
+<li><a href="#asynchronous-control-flow-with-generators">Asynchronous control flow with generators</a></li>
+<li><a href="#sequential-execution-2">Sequential execution</a></li>
+<li><a href="#parallel-execution-2">Parallel execution</a></li>
+<li><a href="#limited-parallel-execution-2">Limited parallel execution</a></li>
+</ul></li>
+<li><a href="#async-await-with-babel">&ldquo;async&hellip;await&rdquo; with Babel</a></li>
+<li><a href="#comparison-table">Comparison Table</a></li>
+</ul></li>
+</ul>
+</nav>
+    <p>&ldquo;How could I organize my code?&rdquo;, &ldquo;What is the best way to design this?&rdquo;, &ldquo;How can I make my application more modular?&rdquo;, &ldquo;How do I handle a set of asynchronous call effectively?&rdquo;, &ldquo;How can I make sure that my application will not collapse while it grows?&rdquo;.</p>
+
+<p>If you have such questions without answers, that book is definitely for you!</p>
+
+<p>The aim of this book is to guide you through this emerging world of patterns, techniques and practices, showing proven solution to the common problem.</p>
+
+<p></p>
+
+<p><a href="https://www.amazon.com/Node-js-Design-Patterns-Mario-Casciaro/dp/1783287314">Link</a></p>
+
+<h1 id="chapter-1-welcome-to-the-node-js-platform">Chapter 1: Welcome to the Node.js platform</h1>
+
+<h2 id="the-node-js-philosophy">The Node.js philosophy</h2>
+
+<p>Some of these principles arise from the technology itself, some of them are enabled by its ecosystem, some are just trends in community, some directly comes from its creator, another are influenced by the Unix culture.</p>
+
+<ul>
+<li>Small core</li>
+<li>Small modules</li>
+<li>Small surface area</li>
+<li>Simplicity and pragmatism</li>
+</ul>
+
+<h2 id="i-o-is-slow">I/O is slow</h2>
+
+<p>I/O is definitely the slowest among the fundamental operations of a computer. Accessing to RAM is in the order of nanoseconds, while accessing data on disk the network is in order of milliseconds. For the bandwidth is the same story. RAM has a transfer rate consistently in the order of GB/s, while disk and network varies from MB/s to, optimistically, GB/s.</p>
+
+<p>On the top of that, we also have to consider the human factor. Often input of an application comes from a real person, so the speed or frequency of I/O doesn&rsquo;t only depend on technical aspects.</p>
+
+<h3 id="blocking-i-o">Blocking I/O</h3>
+
+<p>In traditional blocking I/O programming the function call corresponding to an I/O request will block the execution of the thread until the operation completes.</p>
+
+<pre><code class="language-javascript">// block the thread until the data is available
+data = socket.read()
+// data is available
+print(data)
+</code></pre>
+
+<p>It&rsquo;s trivial to notice how web-server which is busing blocking I/O will not be able to handle multiple connection in the same thread. Each operation will block the processing of any other connection:</p>
+
+<p>{% image fancybox center images/blocking-input-output.png %}</p>
+
+<p>The preceding image emphasis on the amount of time each thread is idle, waiting for new data to be received from associated connection. Also we need to consider how much time of I/O can possibly block a request, for example, while interacting with database or with filesystem.</p>
+
+<h3 id="non-blocking-i-o-with-busy-waiting">Non-blocking I/O with &ldquo;busy-waiting&rdquo;</h3>
+
+<p>In this operation mode, the system call always returns immediately without waiting for data to be read or written. If no result are available at the moment of call, the function will simply return a predefined constant, indicating that there is no data available to return at the moment.</p>
+
+<p>The most basic pattern for accessing this kind of non-blocking I/O is <code>busy-waiting</code> - it actively poll the resource within a loop until some actual data is returned.</p>
+
+<pre><code class="language-javascript">resource = [socketA, socketB, pipeA]
+
+while(!resources.isEmpty()) {
+  foreach resource in resources {
+    // try to read
+    let data = resource.read()
+
+    if (data === NO_DATA_AVAILABLE) {
+      // there is no data to read at the moment
+      continue
+    }
+    if (data === RESOUCE_CLOSED) {
+      // there was closed, remove it from list
+      resources.remove(resource)
+    } else {
+      // data was received, proceed it
+      consumeData(data)
+    }
+  }
+}
+</code></pre>
+
+<p>With this technique it&rsquo;s already possible to achieve handling different resources in the same thread, but still it isn&rsquo;t efficient.</p>
+
+<h3 id="event-demultiplexing">Event demultiplexing</h3>
+
+<p>Luckily, most modern operation systems provide a mechanism to handle concurrent, non-blocking resources in efficient way. It&rsquo;s a <code>synchronous event demultiplexing</code> or <code>event notification interface</code> - it&rsquo;s collect and queues I/O events that come from set of watched resources, and block until new events are available for process.</p>
+
+<pre><code class="language-javascript">watchedList.add(socketA, FOR_READ)
+watchedList.add(socketB, FOR_READ)
+watchedList.add(pipeA, FOR_READ) // [1]
+
+while(events = demultiplexer.watch(watchedList)) { // [2]
+  // event loop
+  foreach (event in events) { // [3]
+    // this read operation won't never block
+    // and we will always return data
+    data = event.resource.read()
+    if (data === RESOUCE_CLOSED) {
+      // remove from watched list
+      demultiplexer.unwatch(event.resource)
+    } else {
+      // data was received, proceed it
+      consumeData(data)
+    }
+  }
+}
+</code></pre>
+
+<ol>
+<li>The resources was added to a data structure, associated with specific operation</li>
+<li>The event notifier is set up with the group of resources to be watched. This call is synchronous and blocks until any of watched resource is ready for <code>read</code> operation. When the resource is ready for an operation the <code>event demultiplexer</code> returns from the call new set of events.</li>
+<li>Each event is proceed. At this point, the resource associated with each event is guaranteed to be ready to processing and not to block during the operation. When all events are processed, the flow will be blocked again on the <code>event demultiplexer</code> until new events are again available to be proceed.</li>
+</ol>
+
+<blockquote>
+<p>This is called the <code>event loop</code></p>
+</blockquote>
+
+<p>It&rsquo;s interesting that with this pattern, we can now handle several I/O operation inside a single thread. How web-server will handle multiple requests using synchronous <code>event demultiplexer</code> with single thread:</p>
+
+<p>{% image fancybox center images/webserver-event-demultiplexer.png %}</p>
+
+<h2 id="the-reactor-pattern">The reactor pattern</h2>
+
+<p>The main idea behind it is to have a handler (which in Node.js is represented by <code>callback</code> function) associated with each I/O operation, which will be invoked as soon as an event is produces and processed by <code>event loop</code>:</p>
+
+<p>{% image fancybox center images/reactor-pattern.png %}</p>
+
+<p>What&rsquo;s happen when application use the <code>reactor patter</code>:</p>
+
+<ol>
+<li>The application generates a new I/O operation by submitting a request to <code>event demultiplexer</code>. Also application specified a handler, which will be invoked when the operation is completes. Submitting a new request is non-blocking call and it immediately returns control to the application</li>
+<li>When set of I/O operation completes, the <code>event demultiplexer</code> pushes the new events into the <code>event loop</code></li>
+<li>At this point, <code>event loop</code> iterates over the items of the <code>event queue</code></li>
+<li>For each event, the associated handler is invoked</li>
+<li>
+
+<ul>
+<li>(a) The handler which is a part of application code, will give control to <code>event loop</code> when it&rsquo;s execution completes.</li>
+<li>(b) However, new asynchronous operation might be requested during the execution of handler, causing new operation to registered in the <code>event demultiplexer</code>, before control is given back to <code>event loop</code></li>
+</ul></li>
+<li>When all items are processed in <code>event queue</code>, the loop will blocked again on <code>event demultiplexer</code> which will trigger another cycle of when a new events are available</li>
+</ol>
+
+<p>A Node.js application will exit automatically when there are no more pending operation in <code>event demultiplexer</code> and no more events to be processed in <code>event queue</code></p>
+
+<blockquote>
+<p><code>Pattern Reactor</code> handles I/O by blocking until new events are available from a set of observable resources and then reacts by dispatching each event with associated handler.</p>
+</blockquote>
+
+<h2 id="the-non-blocking-i-o-engine-of-node-js-libuv">The non-blocking I/O engine of Node.js-libuv</h2>
+
+<p>Each operation system has its own interface for the <code>event demultiplexer</code>. Besides that, each I/O operation can behave quite differently depending on type of resource, even within the same OS. All this inconsistencies required a higher abstraction for <code>event demultiplexer</code>.</p>
+
+<p>This is exactly why Node.js core created a C library called <code>libuv</code> with objective to make Node.js compatible with all the major platform and normalize the non-blocking behavior of the different types of resource.</p>
+
+<h2 id="the-building-blocks-of-node-js-platform">The building blocks of Node.js platform</h2>
+
+<p>The <code>reactor pattern</code> and <code>libuv</code> are the basic building blocks but we need the following three other components to build the full platform:</p>
+
+<ul>
+<li>a set of bindings responsible for wrapping and expose <code>libuv</code> and other low-level functionality to Javascript</li>
+<li><code>V8</code> the Javascript engine, this one of the reason why Node.js is so fast and efficient</li>
+<li>a <code>node-core</code> that implements the high-level Node.js API</li>
+</ul>
+
+<p>{% image fancybox center images/building-nodejs-blocks.png %}</p>
+
+<h1 id="chapter-2-node-js-essential-patterns">Chapter 2: Node.js essential patterns</h1>
+
+<p>In this chapter, we&rsquo;ll use two of the most important asynchronous patterns: <code>callback</code> and <code>event-emitter</code></p>
+
+<h2 id="the-callback-pattern">The callback pattern</h2>
+
+<p>Callbacks are materialization of the handlers of the <code>reactor pattern</code>. Callback is a function that is invoked to propagate the result of an operation and this is exactly what we need when we dealing with asynchronous operation. Another ideal construct for implementing callbacks is <code>closure</code></p>
+
+<h3 id="the-continue-passing-style">The continue-passing style</h3>
+
+<blockquote>
+<p>In Javascript, a callback is a function that is passed as an argument to another function and is invoked with the result when operation is complete.</p>
+</blockquote>
+
+<p>Meanwhile,</p>
+
+<blockquote>
+<p>in function programming, this way of propagating the result is called <code>continuation-passing style</code> (CPS)</p>
+</blockquote>
+
+<p>To clarify the concept lets see a <code>direct style</code>:</p>
+
+<pre><code class="language-javascript">function add(a, b) {
+  return a + b;
+}
+</code></pre>
+
+<p>The equivalent <code>continue-passing style</code> would be as follow:</p>
+
+<pre><code class="language-javascript">function add(a, b, callback) {
+  callback(a + b);
+}
+</code></pre>
+
+<p>Since <code>add()</code> is a synchronous <code>CPS</code> function the result will be:</p>
+
+<pre><code class="language-javascript">console.log('before');
+add(1, 2, result =&gt; console.log(`Result ${result}`));
+console.log('after');
+
+// before
+// Result 3
+// after
+</code></pre>
+
+<h3 id="asynchronous-continue-passing-style">Asynchronous continue-passing style</h3>
+
+<p>Lets consider a case where the <code>add()</code> function is asynchronous:</p>
+
+<pre><code class="language-js">function addAsync(a, b, callback) {
+  setTimeout(callback(a + b));
+}
+
+console.log('before');
+addAsync(1, 2, result =&gt; console.log(`Result ${result}`));
+console.log('after');
+
+// before
+// after
+// Result 3
+</code></pre>
+
+<p>Since <code>setTimeout()</code> triggers an asynchronous operation, it won&rsquo;t wait for the callback to be executed, but instead, it returns immediately, giving control back to <code>addAsync()</code> and then back to its caller. This is crucial and following image shows how it works:</p>
+
+<p>{% image fancybox center images/async-cps-in-action.png %}</p>
+
+<p>The execution will start from the <code>event loop</code> so it will have a fresh stack. Thanks to <code>closure</code> it&rsquo;s trivial to maintain the context of the caller in asynchronous function.</p>
+
+<h3 id="synchronous-or-asynchronous">Synchronous or asynchronous?</h3>
+
+<p>The following is an analysis of these two paradigms and their pitfalls.</p>
+
+<h4 id="an-unpredictable-function">An unpredictable function</h4>
+
+<p>One of the most dangerous situation is to have API that behaves synchronously under certain conditions and asynchronous under others:</p>
+
+<pre><code class="language-js">const fs = require('fs');
+const cache = {};
+
+function inconsistentRead(filename, callback) {
+  if (cache[filename]) {
+    // invoked synchronously
+    callback(cache[filename]);
+  } else {
+    // async call
+    fs.readFile(filename, 'utf8', (err, data) =&gt; {
+      cache[filename] = data;
+      callback(data);
+    })
+  }
+}
+</code></pre>
+
+<h4 id="unleashing-zalgo">Unleashing Zalgo</h4>
+
+<p>Now lets see how to use an unpredictable function, such as to easily break an application:</p>
+
+<pre><code class="language-js">function createFileReader(filename) {
+  const listeners = [];
+
+  incosistentRead(filename, value =&gt; {
+    listeners.forEach(listener =&gt; listener(value));
+  })
+
+  return {
+    onDateReady: listener =&gt; listeners.push(listener)
+  }
+}
+</code></pre>
+
+<p>When the preceding function is invoked, it creates a new object that acts as notifier, allowing us to set multiple listeners for a file read operation. All listeners will be invoked at once when the read operation completes and the data is available:</p>
+
+<pre><code class="language-js">const reader1 = createFileReader('data.txt');
+
+reader1.onDateReady(data =&gt; {
+  console.log(`First data call ready: ${data}`);
+
+  // same time letter we try to read the same file again
+  const reader2 = createFileReader('data.txt');
+
+  reader2.onDateReady(data =&gt; {
+    console.log(`Second data call ready: ${data}`);
+  })
+})
+</code></pre>
+
+<p>The result output is:</p>
+
+<pre><code class="language-js">First data call ready: foo bar here!
+</code></pre>
+
+<p>You can see the callback of the second operation is never invoked. Lets see why:</p>
+
+<ol>
+<li>During the creation of <code>reader1</code>, our <code>inconsistentRead()</code> function behaves asynchronously, because there isn&rsquo;t cached result. Therefore, we have all time in the world to register our listener, as it will invoked later in another cycle of <code>event loop</code>, when the read operation is complete.</li>
+<li>Then the <code>reader2</code> is created when requested file is in the cache. In this case the inner call of <code>inconsistentRead()</code> will be synchronous. So its call back will be invoked immediately, which mean that listener of <code>reader2</code> will be invoked synchronously as well. However, we registering the listeners after creation of <code>reader2</code>, so they will never be invoked!</li>
+</ol>
+
+<h3 id="using-synchronous-apis">Using synchronous APIs</h3>
+
+<p>One suitable fix for our <code>inconsistentRead()</code> function is to make it totally synchronous:</p>
+
+<pre><code class="language-js">const fs = require('fs');
+const cache = {};
+
+function consistentRead(filename) {
+  if (cache[filename]) {
+    return cache[filename];
+  }
+  cache[filename] = fs.readFileSync(filename, 'utf8');
+  return cache[filename];
+}
+</code></pre>
+
+<p>There is no reason for a function to have a continue-passing style it&rsquo;s synchronous. In fact, it&rsquo;s always a best practice to implement synchronous API using a <code>direct style</code>.</p>
+
+<blockquote>
+<p>Pattern:
+Prefer <code>direct style</code> for purely synchronous function</p>
+</blockquote>
+
+<p>Bear in mind, that changing an API from <code>CPS</code> to a <code>direct style</code> (from asynchronous to synchronous or vice versa) require a change of style of all code using:</p>
+
+<pre><code class="language-js">function createFileReader(filename) {
+  const listeners = [];
+  const fileData = consistentRead(filename)
+
+  return {
+    onDateReady: listener =&gt; {
+      listeners.push(listener);
+      listeners.forEach(listener =&gt; listener(fileData));
+    }
+  }
+}
+</code></pre>
+
+<h3 id="using-asynchronous-operation-with-deferred-execution">Using asynchronous operation with deferred execution</h3>
+
+<p>The trick here is to schedule the synchronous callback invocation to be executed &ldquo;in the future&rdquo;, instead of being run immediately in the same event loop cycle. In Node.js this is possible using <code>process.nextTick()</code>, which defers the execution of a function until next the event loop cycle. This function is a very simple, it takes a callback and pushes it to the top of event queue, in front of any pending I/O event, and returns control immediately. So callback will run be invoked as soon as the event loop runs again.</p>
+
+<p>Apply this technique to fix <code>inconsistentRead()</code>:</p>
+
+<pre><code class="language-js">const fs = require('fs');
+const cache = {};
+
+function inconsistentRead(filename, callback) {
+  if (cache[filename]) {
+    // now invoked asynchronously
+    process.nextTick(() =&gt; callback(cache[filename]));
+  } else {
+    // async call
+    fs.readFile(filename, 'utf8', (err, data) =&gt; {
+      cache[filename] = data;
+      callback(data);
+    })
+  }
+}
+</code></pre>
+
+<p>Now, our function is guaranteed to invoke its callback asynchronous, under any circumstances.</p>
+
+<p>Another API for deferring the execution is <code>setImmediate()</code>. While their purposes are very similar, their semantics are quite different. Callback deferred with <code>process.nextTick()</code> run before any other I/O event fired, while with <code>setImmediate()</code>, the execution is queued behind any I/O event that is already in the queue. Since <code>process.nextTick()</code> runs before any already scheduled I/O, it might cause I/O starvation under certain circumstances, for example, a recursive invocation, this can never happen with <code>setImmediate()</code></p>
+
+<blockquote>
+<p>Pattern:
+We guarantee that a callback is invoked asynchronously be deferring it execution using <code>process.nextTick()</code></p>
+</blockquote>
+
+<h3 id="node-js-callback-convention">Node.js callback convention</h3>
+
+<p>CPS APIs and callbacks follows a set of specific convention.</p>
+
+<h4 id="callback-come-last">Callback come last</h4>
+
+<p>In all core Node.js methods, the standard convention is that when a function accept callback as input, this has to be passed as last parameter:</p>
+
+<pre><code class="language-js">fs.readFile(filename[, options], callback)
+</code></pre>
+
+<h4 id="error-comes-first">Error comes first</h4>
+
+<p>In Node.js, any errors produced by a CPS function is always passed as first argument of the callback, and any actual result is passed starting from the second argument. It the operation is succeeds without errors, the first error will be <code>null</code> or <code>undefined</code>:</p>
+
+<pre><code class="language-js">fs.readFile('foo.txt', 'utf8', (err, data) =&gt; {
+  if (err) {
+    handleError(err);
+  } else {
+    handleData(data);
+  }
+})
+</code></pre>
+
+<h4 id="propagation-errors">Propagation errors</h4>
+
+<p>Propagation errors in synchronous, direct function is done with well-known <code>throw</code> statement.</p>
+
+<p>In CPS style however, proper propagation is done by passing the error to the next callback in the chain:</p>
+
+<pre><code class="language-js">function readJson(filename, callback) {
+  fs.readFile(filename, 'utf8', (err, data) =&gt; {
+    let parsed;
+    if (err) {
+      // propagate the error and exit
+      return callback(err);
+    }
+
+    try {
+      parsed = JSON.parse(data);
+    } catch(err) {
+      // catch parsing error
+      return callback(err);
+    }
+
+    // no error propagate just data
+    callback(null, parsed);
+  })
+}
+</code></pre>
+
+<h2 id="the-module-system-and-its-pattern">The module system and its pattern</h2>
+
+<p>Modules are bricks for structuring non-trivial application, but also the main mechanism to enforce hiding information by keeping private all the function and variable that are not explicitly marked to be exported.</p>
+
+<h3 id="the-revealing-module-pattern">The revealing module pattern</h3>
+
+<p>Once of the major problem in Javascript is an absence of namespacing. A popular technique to solve this issue is called <code>the revealing module pattern</code>:</p>
+
+<pre><code class="language-js">const module = (() =&gt; {
+  const privateFoo = () =&gt; {};
+  const privateBar = [];
+
+  const exported = {
+    publicFoo: 'dataFoo',
+    publicBar: 'dataBar',
+  }
+
+  return export
+}())
+</code></pre>
+
+<p>We have a private scope and exporting only the parts that are meant to be public. As we&rsquo;ll see at the moment, the idea behind this pattern is used as a base for a Node.js module system.</p>
+
+<h3 id="node-js-modules-explained">Node.js modules explained</h3>
+
+<p>CommonJS is a group with the aim to standardize the Javascript ecosystem, and one of their most popular proposal is <code>CommonJS module system</code>. Node.js built its module system on the top of this specification, with the addition of some custom extensions.</p>
+
+<h4 id="a-homemade-module-loader">A homemade module loader</h4>
+
+<p>To explain how Node.js modules work let&rsquo;s built a similar system from scratch. The code mimics a subset of functionality of original <code>require</code>:</p>
+
+<pre><code class="language-js">function loadModule(filename, module, require) {
+  const wrappedSrc = `function(module, module, require) {
+    ${fs.readFileSync(filename, 'utf8')}
+  }(module, module.exports, require)`;
+
+  eval(wrappedSrc);
+}
+</code></pre>
+
+<p>Bear in mind, that this code is only for example, feature such as <code>eval()</code> or <code>vm</code> <a href="https://nodejs.org/api/vm.html">module</a> can be easily used in a wrong way or with a wrong input to inject attack. They should be used always with extreme care.</p>
+
+<p>Now implementation of our <code>require()</code> function:</p>
+
+<pre><code class="language-js">function require(moduleName) {
+  console.log(`Require invoked for module: ${moduleName}`);
+  const id = require.resolve(moduleName); // [1]
+
+  if (require.cache[id]) { // [2]
+    return require.cache[id].exports;
+  }
+
+  // module metadata
+  const module = { // [3]
+    exports: {},
+    id
+  };
+  // update the cache
+  require.cache[id] = module; // [4]
+
+  // load the module
+  loadModule(id, module, require); // [5]
+
+  // return exported variables
+  return module.exports; // [6]
+}
+
+require.cache = {};
+require.resolve = function(moduleName) {
+  // resolve a full module id from the moduleName
+}
+</code></pre>
+
+<p>What our homemade module system does is explain as follows:</p>
+
+<ol>
+<li>Module name is accepted as input, and the very first thing that we do is resolve the full path of module, and receive module <code>id</code>. It&rsquo;s implementing by special resolving algorithm of <code>require.resolve()</code></li>
+<li>If the module has already been loaded it should be available in the cache.</li>
+<li>If the module hasn&rsquo;t loaded yet, we set up environment for the first load. The property <code>module.exports</code> will be used to export public API.</li>
+<li>The <code>module</code> object is cached.</li>
+<li>The <code>loadModule()</code> code reads from its file, and the code is evaluated. We provide the module with <code>module</code> object that we just created, and a reference to <code>require()</code> function. The module exports its public API by manipulation or replacing the <code>module.exports</code> object.</li>
+<li>Finally the content of <code>module.exports</code> is returned from caller.</li>
+</ol>
+
+<h4 id="defining-a-modules">Defining a modules</h4>
+
+<p>By looking how us <code>require()</code> works be are able to define a module:</p>
+
+<pre><code class="language-js">// module.js
+// load another module-dependency
+const dependency = require('./anotherModule');
+
+// private section
+function privateFoo() {}
+
+// the exported API
+module.exports.run = function publicBar() {
+  privateFoo()
+}
+</code></pre>
+
+<p>The essential concept to remember that everything in the module is private unless it&rsquo;s assigned to <code>module.exports</code></p>
+
+<h4 id="defining-globals">Defining globals</h4>
+
+<p>It&rsquo;s still possible to define a global variable, in fact, module system exposes a special variable <code>global</code>, which can be used for this purpose</p>
+
+<h4 id="module-exports-vs-exports">&ldquo;module.exports&rdquo; VS &ldquo;exports&rdquo;</h4>
+
+<p>A common source of confusion is the difference between using <code>module.exports</code> and <code>exports</code> to expose the public API. The code of our custom <code>require</code> function should again clear any doubts.</p>
+
+<p>The variable <code>exports</code> is just a reference to initial value of <code>module.exports</code>, essentially it&rsquo;s an empty object before the module is loaded. This means that we can only attach new properties referencing by <code>exports</code> variable:</p>
+
+<pre><code class="language-js">exports.hello = () =&gt; { console.log('Hello') };
+</code></pre>
+
+<p>Reassigning the <code>exports</code> variable doesn&rsquo;t have any sense, because it doesn&rsquo;t change content of <code>module.exports</code>. That&rsquo;s how object in Javascript works. The following code therefore is wrong:</p>
+
+<pre><code class="language-js">exports.hello = () =&gt; { console.log('Hello') };
+</code></pre>
+
+<p>If we want to export something other than an object literal, we can reassigning <code>module.exports</code> as follow:</p>
+
+<pre><code class="language-js">module.exports = () =&gt; { console.log('Hello') };
+</code></pre>
+
+<h4 id="the-require-function-is-synchronous">The &ldquo;require&rdquo; function is synchronous</h4>
+
+<p>We should take into account that our homemade <code>require</code> is synchronous. In fact, it returns the module contents using simple direct style therefore no callback is required. This is true for original Node.js <code>require</code> function too. As a consequence any assignments to <code>module.exports</code> must be synchronous. The following code is incorrect:</p>
+
+<pre><code class="language-js">setTimeout(() =&gt; {
+  module.exports = () =&gt; {}
+}, 100);
+</code></pre>
+
+<p>This is one of the important reasons why Node.js libraries offer synchronous APIs as alternative to asynchronous ones.</p>
+
+<h4 id="the-resolving-algorithm">The resolving algorithm</h4>
+
+<p>Node.js solver the <code>dependency hell</code> elegantly by loading different version of module depending on where the module is loaded from. As we saw the <code>resolve()</code> function takes a module name (<code>moduleName</code> in our loader) as input, and it returns the full path of module. This path is used to load its code and to identify the module uniquely.</p>
+
+<p>The resolving algorithm can be divided into the following three major branches:
+* file modules
+* core modules
+* package modules</p>
+
+<p>The resolving algorithm can be be found at <a href="https://nodejs.org/api/modules.html#modules_all_together">official spec</a>.</p>
+
+<p>The <code>node_modules</code> directory is where <code>npm</code> installs the dependencies of each package. Based on the algorithm, each package can have its own private dependencies. Consider the following structure:</p>
+
+<pre><code>myApp
+├── foo.js
+└── node_modules
+    ├── depA
+    │   └── index.js
+    ├── depB
+    │   ├── bar.js
+    │   └── node_modules
+    │       └── depA
+    │           └── index.js
+    └── depC
+        ├── foobar.js
+        └── node_modules
+            └── depA
+            └── index.js
+</code></pre>
+
+<p>Following rules of resolving algorithm, using <code>require('depA')</code> will load a different file depending on the module that requires it:</p>
+
+<ul>
+<li>Calling <code>require('depA')</code> from <code>/myApp/foo.js</code> will load <code>/myApp/node_modules/depA/index.js</code></li>
+<li>Calling <code>require('depA')</code> from <code>/myApp/node_modules/depB/bar.js</code> will load <code>/myApp/node_modules/depB/node_modules/depA/index.js</code></li>
+<li>Calling <code>require('depA')</code> from <code>/myApp/node_modules/depC/foobar.js</code> will load <code>/myApp/node_modules/depc/node_modules/depA/index.js</code></li>
+</ul>
+
+<h4 id="the-module-cache">The module cache</h4>
+
+<p>Each module is only loaded and evaluated the first time it&rsquo;s required, since any subsequent call of <code>require()</code> will return the cached version. Again, it should be clear by looking at the code of homemade <code>require()</code> function.</p>
+
+<p>The module cache is exposed via the <code>require.cache</code> reference, so it&rsquo;s possible to directly access it if needed.</p>
+
+<h3 id="module-definition-patterns">Module definition patterns</h3>
+
+<p>The module system besides being a mechanism for loading dependencies, is also a tool for defining APIs. To aim is to maximize information hading and API usability, with balancing with other software quality such as <code>code reuse</code> and <code>extensibility</code>.</p>
+
+<h4 id="named-exports">Named exports</h4>
+
+<p>The most basic method for exposing public API is using <code>named exports</code>, which consist to assignment all the public values to object referenced by <code>exports</code> or <code>module.exports</code>. Most of the Node.js core modules use this pattern.</p>
+
+<pre><code class="language-js">// file logger.js
+exports.info = (msg) = {
+  console.log(`info: ${msg}`)
+};
+
+exports.verbose = (msg) = {
+  console.log(`verbose: ${msg}`)
+};
+
+// file main.js
+const logger = require('./logger');
+
+logger.info('Info massage');
+logger.verbose('Verbose massage');
+</code></pre>
+
+<h4 id="exporting-a-function">Exporting a function</h4>
+
+<p>One of the most popular module definition pattern consists of reassigning of the whole <code>module.exports</code> variable to the function. The main goal to provide a clear entry point for the module, making it simpler to understand and use. It also honors the principle of <code>small area surface</code>. This way of defining modules also is known as the <code>substack pattern</code>.</p>
+
+<pre><code class="language-js">// file logger.js
+module.exports = (msg) = {
+  console.log(`info: ${msg}`)
+};
+</code></pre>
+
+<p>A possible extension for this pattern is using the exported function as namespace for other public APIs. This is a very powerful technique, because it still gives clarity of a single entry point.</p>
+
+<pre><code class="language-js">// the same file logger.js
+module.exports.verbose = (msg) = {
+  console.log(`verbose: ${msg}`)
+};
+
+// file main.js
+const logger = require('./logger');
+
+logger('Info massage');
+logger.verbose('Verbose massage');
+</code></pre>
+
+<blockquote>
+<p>Pattern:
+Substack or Single Responsibility Principle (SRP)
+Expose the main functionality of a module by exporting only one function. Use the exported function as a namespace to expose any auxiliary functionality</p>
+</blockquote>
+
+<h4 id="exporting-a-constructor">Exporting a constructor</h4>
+
+<p>The difference is with this approach we allow user to create a new instance using the constructor with ability to extend its prototype and forge new classes.</p>
+
+<pre><code class="language-js">// file logger.js
+class Logger {
+  constructor(name) {
+    this.name = name;
+  }
+
+  log(msg) {
+    console.log(`[${this.name}] ${msg}`)
+  }
+
+  info(msg) {
+    console.log(`info: ${msg}`)
+  }
+
+  verbose(msg) {
+    console.log(`info: ${msg}`)
+  }
+}
+
+module.exports = Logger;
+</code></pre>
+
+<p>A variation of this pattern consists of applying a security check against invocation that doesn&rsquo;t use <code>new</code> directive. This a little trick allows us to use our module as <code>factory</code>:</p>
+
+<pre><code class="language-js">function LoggerFactory(name) {
+  if (!this instanceof Logger) {
+    return new Logger(name)
+  }
+  return new Logger(name);
+}
+</code></pre>
+
+<p>A much cleaner approach is offered by ES6 <code>new.targer</code> which is available starting from Node.js v6. The syntax expose the <code>new.targer</code> which is called <code>meta property</code>, made available inside all the function, end evaluates to true at runtime if the function was called using the <code>new</code> directive.</p>
+
+<pre><code class="language-js">function LoggerFactory(name) {
+  if (!new.target) {
+    return new Logger(name);
+  }
+  return new Logger(name);
+}
+</code></pre>
+
+<h4 id="exporting-an-instance">Exporting an instance</h4>
+
+<p>We can leverage the caching mechanism of <code>require()</code> to define stateful instance with a state created from a constructor or factory, shared across different modules:</p>
+
+<pre><code class="language-js">// file logger.js
+class Logger {
+  constructor(name) {
+    this.name = name;
+    this.count = 0;
+  }
+
+  log(msg) {
+    this.count++;
+    console.log(`[${this.name}] ${msg}`)
+  }
+}
+
+module.exports = new Logger('default');
+
+// file main.js
+const logger = require('./logger.js');
+logger.log('test the singleton');
+</code></pre>
+
+<p>This is much like a <code>singleton pattern</code>, however it doesn&rsquo;t guarantee the uniqueness of the instance across the whole application, as it happens with traditional singleton pattern. When analyzing the resolving algorithm, we have seen in fact, that a module might be installed multiple times inside the dependency tree of an application.</p>
+
+<h4 id="modifying-other-modules-or-the-global-scope">Modifying other modules or the global scope</h4>
+
+<p>A module can even export nothing. We should not forger that module can modify the global scope and the object in it, including other modules in the cache. In general it&rsquo;s considering as a bad practice.</p>
+
+<blockquote>
+<p>Pattern:
+Monkey patching is when module can modify other modules or object in global scope. It change the existing objects at runtime to change or extend their behavior or apply temporary fixes</p>
+</blockquote>
+
+<p>How we can add a new function to another module:</p>
+
+<pre><code class="language-js">// file patcher.js
+require('./logger').customMessage = () =&gt; console.log('this is a new functionality');
+
+// main.js
+require('./patcher');
+
+const logger = require('./logger');
+logger.customMessage();
+</code></pre>
+
+<p>The technique is dangerous, because it affects the state of entire app.</p>
+
+<h2 id="the-observer-pattern">The observer pattern</h2>
+
+<p>Together with the <code>reactor</code>, <code>callbacks</code> and <code>modules</code>, the <code>observer pattern</code> is one of the pillars of the platform and is used by mane Node.js core and user-land modules.</p>
+
+<blockquote>
+<p>Pattern Observer:
+Defines an object (subject), which can notify a set of observers (listeners) when change is occur.</p>
+</blockquote>
+
+<p>The main difference from the callback pattern is that the <code>subject</code> can notify multiple observers, while a traditional <code>CPS</code> will propagate its result to only one listener, the callback.</p>
+
+<h3 id="the-eventemitter-class">The EventEmitter class</h3>
+
+<p>The observer pattern built into core and it&rsquo;s available through the <code>EventEmitter</code> class. It allows to register one or multiple function as <code>listeners</code>, which will be notified when a particular event type is fired. The following explains the concept:</p>
+
+<p>{% image fancybox center images/event-emitter.png %}</p>
+
+<p>How to require <code>EventEmitter</code> from core <code>events</code> module:</p>
+
+<pre><code class="language-js">const EventEmitter = require('events');
+const eeInstance = new EventEmitter;
+</code></pre>
+
+<p>The API is in <a href="https://nodejs.org/api/events.html#events_class_eventemitter">official Node.js specification</a>.</p>
+
+<p>We can already see that there is a big difference between a listener and a traditional Node.js callback, in particular, the first argument isn&rsquo;t an error, but any data which is passed to <code>emit()</code> at the moment of invocation.</p>
+
+<h3 id="creating-and-using-eventemitter">Creating and using EventEmitter</h3>
+
+<p>The following code shows a function that uses <code>EventEmitter</code> to notify its subscribers in real time when a particular pattern is found in a list of files:</p>
+
+<pre><code class="language-js">const EventEmitter = require('events');
+const fs = require('fs');
+
+function findPattern(files, regexp) {
+  const emitter = new EventEmitter;
+
+  files.forEach(file =&gt; {
+    fs.readFile(file, 'utf8', (err, content) =&gt; {
+      let match;
+
+      if (err) {
+        emitter.emit('error', err);
+      }
+
+      emitter.emit('fileread', file); 
+
+      if (match = content.match(regexp)) {
+        match.forEach(elem =&gt; emitter.emit('found', file, elem))        
+      }
+    })
+  })
+
+  return emitter;
+}
+</code></pre>
+
+<p>Lets see how <code>findPattern</code> can be used:</p>
+
+<pre><code class="language-js">findPattern(
+  ['data1.txt', 'data2.txt'],
+  /foo \w+/g
+)
+  .on('fileread', file =&gt; console.log(`${file} was read`))
+  .on('found', (file, match) =&gt; console.log(`matched ${match} in file ${file}`))
+  .on('error', err =&gt; console.log(`Error: ${err}`))
+</code></pre>
+
+<h3 id="extends-from-eventemitter-class">Extends from EventEmitter class</h3>
+
+<p>To demonstrate the pattern lets implement the functionality of the <code>findPattern()</code>:</p>
+
+<pre><code class="language-js">const EventEmitter = require('events');
+const fs = require('fs');
+
+class FindPattern extends EventEmitter {
+  constructor(regexp) {
+    super();
+    this.regexp = regexp;
+    this.files = [];
+  }
+
+  addFile(file) {
+    this.files.push(file);
+
+    return this;
+  }
+
+  find() {
+    this.files.forEach(file =&gt; {
+      fs.readFile(file, 'utf8', (err, content) =&gt; {
+        let match;
+
+        if (err) {
+          this.emit('error', err);
+        }
+
+        this.emit('fileread', content); 
+
+        if (match = content.match(this.regexp)) {
+          match.forEach(elem =&gt; this.emit('found', file, elem); )        
+        }
+      })
+    })
+    return this;
+  }
+}
+</code></pre>
+
+<p>The <code>FindPattern</code> prototype extends <code>EventEmitter</code>. In this way it becomes a fully-fledged observable class. The usage:</p>
+
+<pre><code class="language-js">const findPatternObj = new FindPattern(/hello \w+/g);
+
+findPatternObj
+  .addFile('data1.txt')
+  .addFile('data2.txt')
+  .on('fileread', file =&gt; console.log(`${file} was read`))
+  .on('found', (file, match) =&gt; console.log(`matched ${match} in file ${file}`))
+  .on('error', err =&gt; console.log(`Error: ${err}`))
+</code></pre>
+
+<p>This is a pretty common pattern in the Node.js ecosystem, for example, the <code>Server</code> object of the core HTTP module defines methods such as <code>listen()</code>, <code>close()</code>, <code>setTimeout()</code> and internally it inherits from the <code>EventEmitter</code> function. It allows to produce events such as <code>request</code> when a new connection is received, or <code>connection</code> when a new connection is established, or <code>close</code> when server is shut down.</p>
+
+<h3 id="combining-callbacks-with-eventemitter">Combining callbacks with EventEmitter</h3>
+
+<p>There are also circumstances where <code>EventEmitter</code> can be combining with a <code>callback</code>. One example of this pattern is offered by the <code>node-glob</code> module, which performs a glob-style searching. The function <code>glob(pattern, [options], callback)</code> takes a <code>callback</code> that is invoked with the list of all files which are matched by the providing pattern. At the same time it returns <code>EventEmitter</code> that provides an interface to report over the state of the process:</p>
+
+<pre><code class="language-js">const glob = require('glob');
+
+glob('*.txt', (err, files) =&gt; console.log(`Founded files: ${JSON.stringify(files)}`))
+  .on('match', match =&gt; console.log(`Matched files: ${match}`))
+</code></pre>
+
+<h1 id="chapter-3-asynchronous-control-flow-patterns-with-callbacks">Chapter 3: Asynchronous control flow patterns with callbacks</h1>
+
+<p>One of the common mistake is to fail into the trap of the callback hell and see how the code is growing horizontally rather than vertically, with the nesting which makes even simple routine hard to read and maintain.</p>
+
+<p>In this chapter we we&rsquo;ll see how it&rsquo;s actually possible to tame callbacks and write clean, manageable asynchronous code with the aid of some patterns.</p>
+
+<h2 id="creating-a-simple-web-spider">Creating a simple web spider</h2>
+
+<p>To explain the problem we&rsquo;ll create a little CLI application that takes a web URL as input and downloads its contents locally into file.</p>
+
+<pre><code class="language-js">// file spider.js
+const fs = require('fs');
+const path = require('path');
+const request = require('request'); // HTTP request client
+const mkdirp = require('mkdirp'); // Recursively mkdir, like mkdir -p
+const chalk = require('chalk'); // Terminal string styling done right.
+
+const utils = require('./utils');
+
+function spider(url, cb) {
+  const filePath = utils.urlToFilePath(url);
+  const fileName = utils.urlToFileName(url);
+  let isFileExists = false;
+
+  fs.stat(filePath, (err, stats) =&gt; { // [1]
+    if (stats) {
+      cb(null, fileName, isFileExists = true);
+    } else {
+      request(url, (err, response, body) =&gt; { // [2]
+        if (err) {
+          cb(err);
+        } else {
+          mkdirp(filePath, err =&gt; { // [3]
+            if (err) {
+              cb(err);
+            } else {
+              fs.writeFile(path.join(filePath, fileName), body, err =&gt; { // [3]
+                if (err) {
+                  cb(err);
+                } else {
+                  cb(null, fileName, isFileExists);
+                }
+              })
+            }
+          })
+        }
+      })
+    }
+  })
+}
+
+spider(process.argv[2], (err, fileName, fileExists) =&gt; {
+  if (err) {
+    console.log(chalk.red(`Error: ${err}`));
+  } else if (fileExists) {
+    console.log(chalk.blue(`File: ${fileName} exists`));
+  } else {
+    console.log(chalk.green(`File: ${fileName} is downloaded`));
+
+  }
+})
+
+// file utils.js
+/*
+* Converts urls to simplified strings
+*/
+const slugifyUrl = require('slugify-url');
+
+exports.urlToFilePath = urlToFilePath;
+exports.urlToFileName = urlToFileName;
+
+function urlToFilePath(url) { // http://example.com/bar
+  const slashChar = '/';
+
+  return slugifyUrl(url, { slashChar }); // example.com/bar
+}
+
+function urlToFileName(url) { // http://example.com/bar
+  const slashChar = '/';
+  const parsedUrl = slugifyUrl(url, { slashChar }).split('/');
+
+  return parsedUrl[parsedUrl.length - 1]; // bar
+}
+</code></pre>
+
+<p>The preceding functions execute the following tasks:</p>
+
+<ol>
+<li>Check if the URL was already downloaded by verifying that corresponding file hasn&rsquo;t already created.</li>
+<li>If the file is not found, it would download content of provided URL</li>
+<li>Then it creates recursively directories</li>
+<li>Finally, it writes the body of HTTP response to file system</li>
+</ol>
+
+<h2 id="the-callback-hell">The callback hell</h2>
+
+<p>We can surely notice that even though the algorithm was straightforward, the resulting code has several level of indentation and it&rsquo;s very hard to read. Implementing a similar function in <code>direct style</code> would more straightforward, and it would be very few chances to make it look so wrong. However, using <code>CPS</code> is another story, and making bad use of closure may lead to to incredible bad code.</p>
+
+<p>That&rsquo;s known as <code>callback hell</code> or <code>piramid of domm</code>. The typical structure of code affected by the problem looks like the following:</p>
+
+<pre><code class="language-js">asyncFoo(err =&gt; {
+  asyncBar(err2 =&gt; {
+    asyncFooBar(err3 =&gt; {
+      // ...
+    })
+  })
+})
+</code></pre>
+
+<p>Another problem is caused by overlapping of the variable names used in each scope. Some people try to avoid it with variation of variables <code>error, err, err2</code>.</p>
+
+<p>Also we should keep in mind that closure can create memory leaks that are not so easy to identify. We shouldn&rsquo;t forget that any context referenced by an active closure is retained from garbage collector.</p>
+
+<h2 id="applying-the-callback-discipline">Applying the callback discipline</h2>
+
+<p>Basic principles that can help to keep the nesting level low and improve the organization of our code in general:</p>
+
+<ul>
+<li>you must exit as soon as possible. Use <code>return</code>, <code>continue</code> or <code>break</code>, depending on context to immediately exit the current statement</li>
+<li>create a named function for callbacks. Will keep our code shallow and better look for stack trace</li>
+<li>modularize the code. Create a small, reusable function whenever it&rsquo;s possible</li>
+</ul>
+
+<p>After applying the following recommendation our <code>spider()</code> would look as following:</p>
+
+<pre><code class="language-js">function spider(url, cb) {
+  const filePath = utils.urlToFilePath(url);
+  const fileName = utils.urlToFileName(url);
+  let isFileExists = false;
+
+  fs.stat(filePath, (err, stats) =&gt; {
+    if (stats) {
+      return cb(null, fileName, isFileExists = true); // [!]
+    }
+    download(url, filePath, fileName, isFileExists, cb);
+  })
+}
+
+function download(url, filePath, fileName, isFileExists, cb) {
+  request(url, (err, response, body) =&gt; {
+    if (err) {
+      return cb(err); // [!]
+    } else {
+      saveFile(filePath, fileName, body, isFileExists, cb); // [!]
+    }
+  })
+}
+
+function saveFile(filePath, fileName, content, isFileExists, cb) {
+  mkdirp(filePath, err =&gt; {
+    if (err) {
+      return cb(err); // [!]
+    } else {
+      writeContent(filePath, fileName, content, isFileExists, cb);
+    }
+  })
+}
+
+function writeContent(filePath, fileName, content, isFileExists, cb) {
+  fs.writeFile(path.join(filePath, fileName), content, err =&gt; {
+    if (err) {
+      return cb(err); // [!]
+    } else {
+      return cb(null, fileName, isFileExists); // [!]
+    }
+  })
+}
+</code></pre>
+
+<h2 id="sequential-execution">Sequential execution</h2>
+
+<p>Executing a set of task in sequence means running them one at time, one ofter other. The order of execution matters. The concept:</p>
+
+<p>{% image fancybox center images/sequential-execution.png %}</p>
+
+<p>There are different variation of this flow:</p>
+
+<ul>
+<li><code>execution a set of known task in sequence</code>, without chaining and propagate the result</li>
+<li>using output of task as the input to the next task, also known as <code>chain</code>, <code>pipe</code>, or <code>waterfall</code></li>
+<li>iterating over a collection while running an asynchronous task on each element, one ofter other</li>
+</ul>
+
+<h3 id="execution-a-set-of-known-task-in-sequence">Execution a set of known task in sequence</h3>
+
+<p>We&rsquo;ve already met a sequential execution while implementing the <code>spider()</code> function. Taking that code as guideline we can generalize the solution into the following pattern:</p>
+
+<pre><code class="language-js">function task1(cb) {
+  asyncOperation(() =&gt; task2(cb))
+}
+
+function task2(cb) {
+  asyncOperation(() =&gt; task3(cb))
+}
+
+function task3(cb) {
+  asyncOperation(() =&gt; cb()) // finally executes the callback
+}
+
+function asyncOperation(cb) { // emulates asynchronous operation
+  setTimeout(() =&gt; cb());
+}
+
+task1(() =&gt; console.log('task 1, 2 and 3 executed'));
+</code></pre>
+
+<h3 id="sequential-iteration-with-crawling-of-links">Sequential iteration with crawling of links</h3>
+
+<p>What if we want to invoke an asynchronous operation for each file in a collection?</p>
+
+<p>With new feature, downloading all the links contained in the web-page recursively. To do that, we are going to extract all links from the page and than trigger our web spider on each of them recursively and in sequence.</p>
+
+<p>The new version of <code>spider()</code> is as following:</p>
+
+<pre><code class="language-js">function spider(url, nesting, callback) {
+  const filename = utilities.urlToFilename(url);
+  fs.readFile(filename, 'utf8', (err, body) =&gt; {
+    if(err) {
+      if(err.code ! == 'ENOENT') {
+        return callback(err);
+      } 
+      return download(url, filename, (err, body) =&gt; {
+        if(err) {
+          return callback(err);
+        }
+        spiderLinks(url, body, nesting, callback);
+      });
+    }
+
+    spiderLinks(url, body, nesting, callback);
+  });
+}
+
+function spiderLink(url, body, nesting, cb) {
+  if (nesting === 0) {
+    return process.nextTick(cb);
+  }
+  // require('get-urls')
+  const links = utils.getUrls(body); // [1]
+
+  function iterate(index) { // [2]
+    if (index === links.length) {
+      return cb();
+    }
+
+    spider(links[index], nesting - 1, err =&gt; { // [3]
+      if (err) {
+        return cb(err);
+      }
+      iterate(index - 1);
+    })
+  }
+  iterate(0); // [4]
+}
+</code></pre>
+
+<p>The important steps to understand:</p>
+
+<ol>
+<li>Obtain the list of all links on the page using the <code>utils.getUrls()</code>. This links should return only with the same hostname</li>
+<li>Iterate through links via local function <code>iterate()</code>. The first thing it checks if the <code>index</code> is equal to the length of <code>links</code>, in which case it immediately invokes the <code>cb()</code> as it means it proceeds all items</li>
+<li>At this point everything is ready to processing the links. It invokes the <code>spider()</code> function by decreasing the nesting level and invoking the next step of iteration then the operation is complete</li>
+<li>It&rsquo;s a bootstrapping the iteration by <code>iterate(0)</code></li>
+</ol>
+
+<h3 id="the-pattern-sequential-iteration">The pattern &ldquo;sequential iteration&rdquo;</h3>
+
+<p>It can be generalize as follow:</p>
+
+<pre><code class="language-js">function iterate(index) {
+  if (index === tasks.length) {
+    return finish();
+  }
+
+  const task = tasks[index];
+  task(function() {
+    iterate(index + 1);
+  })
+}
+
+function finish() {
+  // iteration completed
+}
+
+iterate(0);
+</code></pre>
+
+<p>It&rsquo;s important to notice that these type of algorithm become really recursive if <code>task()</code> is an asynchronous operation. In such a case there might be a risk of hitting the maximum call stack limit.</p>
+
+<blockquote>
+<p>Pattern sequential iterator:
+execute a list of tasks in sequence by creating a function <code>iterate()</code> which invokes the next available task in the collection and makes sure to invoke next step of iteration when the current task is completed</p>
+</blockquote>
+
+<h2 id="parallel-execution">Parallel execution</h2>
+
+<p>There is some situation when the order of execution of the set of asynchronous tasks is not important and we want just to be notified when all these running tasks are completed.</p>
+
+<p>{% image fancybox center images/parallel-execution.png %}</p>
+
+<p>We realize that even thought we have one thread we can still achieve <code>concurrency</code>, thanks to not-blocking nature of Node.js. In fact, the word <code>parallel</code> is used improperly in this case, as it doesn&rsquo;t mean that the task run simultaneously, but rather their execution is carried out by an underlying non-blocking API and invoked by the event loop.</p>
+
+<p>As we know, a task gives control back to the event loop when it request a new asynchronous operation, allowing the event loop to execute another task. The proper word is to use for this kind of flow is <code>concurrency</code>, but we still use parallel for simplicity sake.</p>
+
+<p><a href="http://stackoverflow.com/questions/1050222/concurrency-vs-parallelism-what-is-the-difference">Concurrency vs Parallelism</a></p>
+
+<p>The following diagram shows how two asynchronous tasks can run in parallel in a Node.js program:</p>
+
+<p>{% image fancybox center images/parallel-execution-diagram.png %}</p>
+
+<p>We have <code>Main</code> function that executes two asynchronous tasks:</p>
+
+<ol>
+<li>The <code>Main</code> function triggers the execution of <code>Task1</code> and <code>Task2</code>. As they are asynchronous operations the immediately return control to <code>Main</code>, which then returns to <code>event loop</code></li>
+<li>When the asynchronous operation of <code>Task1</code> is completed, the <code>event loop</code> gives control to it. When <code>task1</code> completes the internal synchronous operation processing as well, it notifies the <code>Main</code></li>
+<li>The same as described in p2 but now with <code>event loop</code> triggers the <code>Task2</code>. At this point <code>Main</code> function knows that <code>Task1</code> and <code>Task2</code> are completed, so it can continue the execution or return the result of the operation to another callback.</li>
+</ol>
+
+<h3 id="execution-with-spiderlinks">Execution with &ldquo;spiderLinks&rdquo;</h3>
+
+<p>So far application is executing the recursive download of the linked pages in a sequential fashion. We can easily improve performance of this process by downloading all the linked pages in parallel:</p>
+
+<pre><code class="language-js">function spiderLink(url, body, nesting, cb) {
+  if (nesting === 0) {
+    return process.nextTick(cb);
+  }
+  const links = utils.getUrls(body);
+
+  if (links.length === 0) {
+    return process.nextTick(cb)
+  }
+
+  let completed = 0;
+  let hasErrors = false;
+
+  function done(err) {
+    if (err) {
+      hasErrors = true;
+      return cb(err);
+    }
+    if (++completed === links.length &amp;&amp; !hasErrors) {
+      return cb()
+    }
+  }
+
+  links.forEach(link =&gt; {
+    spider(link, nesting - 1, done);
+  })
+}
+</code></pre>
+
+<p>The trick to make our application to wait for all the task to complete is to invoke the <code>spider()</code> with a special callback <code>done()</code>. The <code>done()</code> increases a counter when a <code>spider()</code> task completes. When the number of completed downloads reaches the size of <code>links[]</code>, the final callback is invoked.</p>
+
+<h3 id="the-pattern-unlimited-parallel-execution">The pattern &ldquo;unlimited parallel execution&rdquo;</h3>
+
+<p>We can represent a generic version of the pattern:</p>
+
+<pre><code class="language-js">const tasks = [ /*...*/ ];
+let completed = 0;
+
+tasks.forEach(task =&gt; {
+  task(() =&gt; {
+    if (++competed === tasks.length) {
+      finish();  
+    }
+  })
+})
+
+function finish() {
+  // all tasks are completed
+}
+
+</code></pre>
+
+<blockquote>
+<p>Pattern unlimited parallel execution
+Run a set of asynchronous tasks in parallel by spawning them all at once, and then waiting for all of them to complete by counting the number of the times their callback are invoked</p>
+</blockquote>
+
+<h3 id="limited-parallel-execution">Limited parallel execution</h3>
+
+<p>Imagine having thousands of files to read, URLs to access, or DB queries run in parallel. A common problem in such situation is running out of memory. In all such situation its a good idea to limit the number of tasks that can run in the same time. The following diagram show a situation where we have five tasks that run in parallel with an concurrency limit of 2:</p>
+
+<p>{% image fancybox center images/concurency-limit.png %}</p>
+
+<p>The algorithm to execute a set of given tasks in parallel with limited concurrency:</p>
+
+<pre><code class="language-js">const tasks = [ /*...*/ ];
+let concurrency = 0;
+let running = 0;
+let completed = 0;
+let index = 0;
+
+function next() {
+  while(running &lt; concurrency &amp;&amp; index &lt; tasks.length) {
+    const task = tasks[index];
+
+    running++;
+    task(() =&gt; {
+      if (completed === tasks.length) {
+        return finish();
+      }
+      completed++;
+      running--;
+      next();
+    })
+  }
+}
+
+next();
+
+function finish() {
+  // all tasks are completed
+}
+
+</code></pre>
+
+<h3 id="taskqueue-to-rescue">&ldquo;TaskQueue&rdquo; to rescue</h3>
+
+<p>We are now going to implement a simple class which will combine a queue algorithm we presented before:</p>
+
+<pre><code class="language-js">class TaskQueue {
+  constructor(concurrency) {
+    this.concurrency = concurrency;
+    this.running = 0;
+    this.queue = [];
+  }
+
+  pushTask(taks) {
+    this.queue.push(task);
+    this.next();
+  }
+
+  next() {
+    while(this.running &lt; this.concurrency &amp;&amp; this.queue.length) {
+      const task = this.queue.shift();
+
+      this.running++;
+      task(() =&gt; {
+        this.running--;
+        this.next();
+      })
+    }
+  }
+}
+</code></pre>
+
+<p>Now we can update our <code>spiderLink()</code> to execute tasks in a limited parallel flow:</p>
+
+<pre><code class="language-js">const TaskQueue = require('./task-queue');
+const downloadQueue = new TaskQueue(2);
+
+function spiderLink(url, body, nesting, cb) {
+  if (nesting === 0) {
+    return process.nextTick(cb);
+  }
+  const links = utils.getUrls(body);
+
+  if (links.length === 0) {
+    return process.nextTick(cb)
+  }
+
+  let completed = 0;
+  let hasErrors = false;
+
+  links.forEach(link =&gt; {
+    downloadQueue.pushTask(done =&gt; {
+      spider(link, nesting - 1, done);
+    })
+  })
+}
+</code></pre>
+
+<h1 id="chapter-4-asynchronous-control-flow-with-es6-and-beyond">Chapter 4: Asynchronous Control Flow with ES6 and beyond</h1>
+
+<p>We are going to explore some of the most famous alternatives, <code>promises</code>, <code>generators</code> and an innovative syntax of ES7 the <code>async await</code>.</p>
+
+<p>Historically, there have been many different implementation of promise libraries, and most of them aren&rsquo;t compatible between each other. The JS community worked hard to sort out this limitation and these efforts leads to creation of <code>Promise/A+</code> spec.</p>
+
+<p>The several poplar libraries which implement the <code>Promise/A+</code> spec:</p>
+
+<ul>
+<li>Bluebird</li>
+<li>Q</li>
+<li>RSVP</li>
+<li>When.js</li>
+<li>ES6 promises</li>
+</ul>
+
+<h2 id="es6-promises-techniques">ES6 Promises techniques</h2>
+
+<h3 id="promisifying-a-node-js-style-function">Promisifying a Node.js style function</h3>
+
+<p>In JS not all the asynchronous functions and libraries support promises out-of-box. We can convert a typical callback-based function into one that returns a promise, this process is also known as <code>promisification</code>:</p>
+
+<pre><code class="language-js">module.exports.promisify = function(fn) {
+  return function promisified(...callArgs) {
+    return new Promise((resolve, reject) =&gt; { //[1]
+      callArgs.push((err, result, ...restResults) =&gt; { //[2]
+        if (err) {
+          return reject(err); //[3]
+        }
+        console.log(callArgs)
+        if (callArgs.length &lt;= 2) { //[4]
+          resolve(result);
+        } else {
+          resolve([result, ...restResults]);
+        }
+      });
+
+      // the same as fn.apply(null, callArgs)
+      fn(...callArgs); //[5]
+    });
+  }
+};
+</code></pre>
+
+<p>This is how it works:</p>
+
+<ol>
+<li>The <code>promisified()</code> creates a new promise using <code>Promise</code> constructor and immediately return it to caller</li>
+<li>We make sure to pass a special callback to <code>fn()</code>. As we know that the callback always comes last, we append it to the arguments (<code>args</code>) provided to the <code>promisified()</code></li>
+<li>In the special callback if we receive an error we immediately reject an error</li>
+<li>If no error, we resolve the promise with a value or an array of values, depending how many results are passing to callback</li>
+<li>Finally, we simply invoke the <code>fs()</code> with the list of arguments we have built</li>
+</ol>
+
+<p>Another approach is to use one of the ready-production npm packages, for example <a href="https://www.npmjs.com/package/tiny-promisify">tini-promisify</a></p>
+
+<h3 id="sequential-execution-1">Sequential execution</h3>
+
+<p>We are now ready to convert our web spider application to use promises:</p>
+
+<pre><code class="language-js">const utilities = require('utilities');
+const promisify = utilities.promisify;
+
+// const fs = require(fs);
+const request = promisify(require('request'));
+const makedirp = promisify(require('makedirp'));
+const readFile = promisify(require(fs.readFile));
+const writeFile = promisify(require(fs.writeFile));
+
+function spider(url, nesting) {
+  const filePath = utils.urlToFilePath(url);
+  const fileName = utils.urlToFileName(url);
+
+  return readFile(path.join(filePath, fileName), 'utf8')
+    .then(body =&gt; spiderLink(url, body, nesting))
+    .catch((err) =&gt; {
+      if (err) {
+        if (err.code === 'ENOENT') { 
+          return download(url, fileName);
+        }
+      }
+    })
+    .then(body =&gt; {
+      spiderLink(url, body, nesting)
+    })
+}
+
+function download(url, filename) {
+  let body = body;
+
+  return request(url)
+    .then(resp =&gt; {
+      body = resp.body;
+      return mkdirp(path.dirname(url));
+    })
+    .then(() =&gt; writeFile(filename, body))
+    .then(() =&gt; {
+      console.log(`Download and saved ${fileName} from ${url}`);
+      return body;
+    })
+}
+</code></pre>
+
+<p>Also we modify its invocation as follow:</p>
+
+<pre><code class="language-js">spider(url, 5)
+  .then(() =&gt; console.log(chalk.green(`Download and saved from ${url}`)))
+  .catch((err) =&gt; console.log(chalk.red(`Error: ${err}`)));
+</code></pre>
+
+<p>If we look again at code we have written so far, we would be pleasantly surprised by the fact that we haven&rsquo;t include any error propagation logic, as we would be forced to do with callbacks. This is clearly a huge advantage, as it reduced boilerplate in our code.</p>
+
+<h3 id="sequential-iteration">Sequential iteration</h3>
+
+<p>So far it was shown how simple and elegant is to implement sequential execution flow using promises. However code involves only the <code>execution of a well known set of asynchronous operation</code>. So, we missing peace that will complete our exploration of sequential execution flow with implementation of <code>asynchronous iteration</code> using promises</p>
+
+<pre><code class="language-js">function spiderLink(url, body, nesting) {
+  const links = utils.getUrls(body);
+  let promise = Promise.resolve();
+  
+  if (nesting === 0) {
+    return promise;
+  }
+
+  links.forEach(link =&gt; {
+    promise = promise.then(() =&gt; spider(link, nesting--;))
+  })
+
+  return promise;
+}
+</code></pre>
+
+<p>To iterate asynchronously over links we had dynamically build a chain of promises:</p>
+
+<ol>
+<li>Starting with an &ldquo;empty&rdquo; promise, resolving to <code>undefined</code>. This is a starting point to build our chain</li>
+<li>Then, in the loop, we&rsquo;re updating the <code>promise</code> variable with a new promise which is invoked from <code>then()</code> on the previous promise in the chain. This is actually our asynchronous iteration pattern using promises.</li>
+</ol>
+
+<p>Let&rsquo;s extract a pattern for a sequential execution using promises:</p>
+
+<pre><code class="language-js">const tasks = [/*...*/];
+let promise = Promise.resolve();
+
+tasks.forEach(task =&gt; {
+  promise = promise.then(() =&gt; task());
+})
+
+// an alternative with &quot;reduce()&quot;
+/*
+tasks.reduce((prev, task) =&gt; {
+  return prev.then(() =&gt; task());
+}, Promise.resolve())
+*/
+
+promise.then(() =&gt; /*all task are completed*/)
+</code></pre>
+
+<blockquote>
+<p>The pattern: sequential iteration with promises
+Dynamically builds a chain of promises in a loop</p>
+</blockquote>
+
+<h3 id="parallel-execution-1">Parallel execution</h3>
+
+<p>Another execution flow is become trivial with promises is the parallel execution flow using <code>Promise.all()</code>. This static method creates promise which fulfills only when all the promises received as input are fulfilled:</p>
+
+<pre><code class="language-js">function spiderLink(url, body, nesting) {
+  const links = utils.getUrls(body);
+  
+  if (nesting === 0) {
+    Promise.resolve()
+  }
+
+  let promises = links.map(link =&gt; spider(link, --nesting));
+
+  return Promise.all(promises);
+}
+</code></pre>
+
+<h4 id="limited-parallel-execution-1">Limited parallel execution</h4>
+
+<p>In fact, the pattern we&rsquo;ve implemented in <code>TaskQueue</code> class can be easily adapted to support tasks that return a promise. This can be achieve by modifying <code>next()</code>:</p>
+
+<pre><code class="language-js">next() {
+  while(this.running &lt; this.concurrency &amp;&amp; this.queue.length) {
+    const task = this.queue.shift();
+
+    this.running++;
+    
+    task().then(() =&gt; {
+      completed++;
+      running--;
+      this.next();
+    })
+  }
+}
+</code></pre>
+
+<p>Then we can modify the <code>spideLinks()</code> to achieve limit of concurrency:</p>
+
+<pre><code class="language-js">const TaskQueue = require('./task-queue');
+const downloadQueue = new TaskQueue(2);
+
+function spiderLink(url, body, nesting) {
+  if (nesting === 0 || links.length === 0) {
+    return Promise.resolve;
+  }
+  const links = utils.getUrls(body);
+
+  let completed = 0;
+  let hasErrors = false;
+
+  return Promise((resolve, reject) =&gt; {
+    let completed = 0;
+    let error = false;
+
+    links.forEach(link =&gt; {
+      let task = () =&gt; {
+        return spider(link, --nesting)
+          .then(() =&gt; {
+            if (++completed === links.length) {
+              resolve()
+            }
+          })
+          .catch((err) =&gt; {
+            if (!error) {
+              error = true;
+              reject();
+            }
+          })
+      };
+      downloadQueue.pushTask(task)
+    })
+  })
+}
+</code></pre>
+
+<h4 id="exposing-callbacks-and-promises-in-public-apis">Exposing callbacks and promises in public APIs</h4>
+
+<p>Now let&rsquo;s imagine that we want to build a public library that performs asynchronous operations. Do we need to create CPS API or a promise-oriented one?</p>
+
+<p>The first approach is used by popular libraries such as <code>request</code>, <code>redis</code> and <code>mysql</code>, consists of offering a simply API that is only based on callbacks and leaves the developer the option to promisify the exposed functionality of needed. Some of these libraries provides helpers to achieve a such behavior.</p>
+
+<p>The second approach is more transparent. It offers the developers a callback-oriented API, but it makes the callback argument optional. When the callback is not passed, the function will immediately return a <code>Promise</code> object. This approach gives possibility to choose at call time what interface to adopt, without any needs to promisify the functionality in advance. Many libraries, such as <code>mongoose</code> or <code>sequelize</code>, support this approach.</p>
+
+<p>A dummy module that executes division asynchronously:</p>
+
+<pre><code class="language-js">//divider.js
+module.exports = (divident, divisor, cb) {
+  return new Promise(resolve, reject) =&gt; {
+    process.nextTich(() =&gt; {
+      const result = divident / divisor;
+
+      if (!Number.isInteger(result)) {
+        const err = new Error('Invalid operands');
+
+        if (cb) return cb(err);
+        reject(err);
+      }
+      if (cb) return cb(null, result);
+      resolve(result);
+    })
+  }
+}
+
+//main.js
+const divider = require('./divider')
+divider(10, 0, (err, res) =&gt; {
+  if (err) return console.error(err);
+
+  console.log(res);
+});
+
+divider(10, 2)
+  .then(res =&gt; console.log(res))
+  .catch(err =&gt; console.error(err));
+</code></pre>
+
+<h2 id="generators">Generators</h2>
+
+<p>In fact, in a normal function we can only have one entry point which corresponds to the invocation of function itself. A generator is similar to a function, but in addition, it can be suspended (using the <code>yield</code> statement) and then resumed at a later time.</p>
+
+<h3 id="asynchronous-control-flow-with-generators">Asynchronous control flow with generators</h3>
+
+<p>To demonstrate how generator will help us with this by creating a special function that accepts a generator as an argument and allows us to use asynchronous code inside the generator. The function take care to resume the execution of the generator when the asynchronous operation is complete:</p>
+
+<pre><code class="language-js">function asyncFlow(generatorFn) {
+  const generator = generatorFn(cb);
+  generator.next();
+
+  // special callback to resume/stop the generator
+  // resume by passing back the result receiving in the cb function
+  function cb(err, ...result) {
+    if (err) {
+      return generator.throw(err);
+    }
+
+    generator.next(result);
+  }
+}
+</code></pre>
+
+<p>To demonstrate the power of this simple function with new module:</p>
+
+<pre><code class="language-js">// clone.js
+const fs = require('fs');
+const path = require('path');
+
+asyncFlow(function* (cb) {
+  const filename = path.basename(__filename);
+  const content = yield fs.readFile(filename, 'utf8', cb);
+
+  yield fs.writeFile(`clone_of_${filename}`, content, cb);
+  console.log('clone created');
+})
+</code></pre>
+
+<p>Remarkable with help of <code>asyncFlow()</code> we were able to write asynchronous code using the linear approach, as we using blocking function! The callback passed to each asynchronous function will in turn resume the generator as soon as a asynchronous operation is complete.</p>
+
+<p>There are two other variation of these technique, one involves to use <code>promises</code> and other use <code>thunks</code>.</p>
+
+<p>A <code>thunk</code> used in the generator based control flow it&rsquo;s just a function which partially applies all the arguments of original function except its callback. An example of thunkified version of <code>fs.readFile()</code>:</p>
+
+<pre><code class="language-js">function readFileThunk(filename, options) {
+  return function(cb) {
+    fs.readFile(filename, options, cb);
+  }
+}
+</code></pre>
+
+<p>Both promises and thunks allow us to create generators that do not need a callback argument. Thunkfied version of <code>asynkFlow()</code>:</p>
+
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+asyncFlowWithThunks(function* () {
+  const filename = path.basename(__filename);
+  const content = yield readFileThunk(filename, 'utf8');
+
+  yield writeFileThunk(`clone_of_${filename}`, content);
+  console.log('clone created');
+})
+
+function readFileThunk(filename, options) {
+  return function(cb) {
+    fs.readFile(filename, options, cb);
+  }
+}
+
+function writeFileThunk(filename, constent) {
+  return function(cb) {
+    fs.writeFile(filename, constent, cb);
+  }
+}
+
+
+function asyncFlow(generatorFn) {
+  const generator = generatorFn();
+  const thunk = generator.next().value;
+  thunk &amp;&amp; thunk(cb);
+  
+  function cb(err, ...result) {
+    let thunk;
+
+    if (err) {
+      return generator.throw(err);
+    }
+
+    thunk = generator.next(result).value;
+    thunk &amp;&amp; thunk(cb);
+  }
+}
+</code></pre>
+
+<p>In the same way we could implement a version with promises:</p>
+
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+asyncFlowWithPromises(function* () {
+  const filename = path.basename(__filename);
+  const content = yield readFilePromise(filename, 'utf8');
+
+  yield writeFilePromise(`clone_of_${filename}`, content);
+  console.log('clone created');
+})
+
+function readFilePromise(filename, options) {
+  const readFile = promisify(fs.readFile);
+  return (cb) =&gt; {
+    fs.readFile(filename, options, cb);
+  };
+}
+
+function writeFilePromise(filename, content) {
+  const readFile = promisify(fs.writeFile);
+  return (cb) =&gt; {
+    fs.writeFile(filename, content, cb);
+  };
+}
+
+function promisify(fn) {
+  return function promisified(...callArgs) {
+    return new Promise((resolve, reject) =&gt; { 
+      callArgs.push((err, result, ...restResults) =&gt; { 
+        if (err) {
+          return reject(err); 
+        }
+        console.log(callArgs)
+        if (callArgs.length &lt;= 2) { 
+          resolve(result);
+        } else {
+          resolve([result, ...restResults]);
+        }
+      });
+      
+      fn(...callArgs); 
+    });
+  }
+}
+
+function asyncFlow(generatorFn) {
+  const generator = generatorFn();
+  const thunk = generator.next().value;
+  thunk &amp;&amp; thunk(cb);
+  
+  function cb(err, ...result) {
+    let thunk;
+
+    if (err) {
+      return generator.throw(err);
+    }
+
+    thunk = generator.next(result).value;
+    thunk &amp;&amp; thunk(cb);
+  }
+}
+</code></pre>
+
+<p>Generator based control flow using &ldquo;co&rdquo;</p>
+
+<p>In this section we chose to use <a href="https://www.npmjs.com/package/co">co</a>. It supports several types of yieldables:</p>
+
+<ul>
+<li>thunks</li>
+<li>promises</li>
+<li>array (parallel execution)</li>
+<li>object (parallel execution)</li>
+<li>generators (delegation)</li>
+<li>generator function (delegation)</li>
+</ul>
+
+<p>To convert Node.js style function to thunks, we are going to library <a href="https://www.npmjs.com/package/thunkify">thunkify</a></p>
+
+<h3 id="sequential-execution-2">Sequential execution</h3>
+
+<p>Load and convert all dependencies:</p>
+
+<pre><code class="language-js">// spider.js
+const thunkify = require('thunkify');
+const co = require('co');
+const path = require('path');
+
+const request = thunkify(require('request'));
+const fs = require('fs');
+const mkdirp = thunkify(require('mkdirp'));
+const readFile = thunkify(fs.readFile);
+const writeFile = thunkify(fs.writeFile);
+const nextTick = thunkify(process.nextTick);
+</code></pre>
+
+<p>Is interesting to point out if we decided to use the promisified version of our function instead of their thunkified alternatives, so code would be remain exactly the same, thanks to the fact that <code>co</code> supports both promises and thunks yiedlable objects.</p>
+
+<p>Now implementation of <code>download()</code> and <code>spider()</code> becomes trivial:</p>
+
+<pre><code class="language-js">function* download(url, filename) {
+  console.log(`download ${url}`);
+  const response = yield request(url);
+  const body = response[1];
+
+  yield mkdirp(path.dirname(filename));
+  yield writeFile(filename, body);
+  console.log(`downloaded and saved file ${filename}`);
+
+  return body;
+}
+
+function* spider(url, nesting) {
+  const filename = utilities.urlToFilename(url);
+  let body;
+
+  try {
+    body = yield readFile(url, 'utf8');
+  } catch(e) {
+    if (e.code !== 'ENOENT') {
+      throw e;
+    }
+    body = yield download(url, filename);
+  }
+  yield spiderLink(url, body, nesting);
+}
+</code></pre>
+
+<p>The interesting detail to notice that we&rsquo;re able to use a <code>try...catch</code> and propagate error with <code>throw</code>! Another remarkable line is where we use <code>yield download()</code> which is not a promise nor a thunk, but just another generator. This is possible thanks to <code>co</code>.</p>
+
+<p>Converting <code>spiderLinks()</code> becomes trivial as well:</p>
+
+<pre><code class="language-js">function spiderLinks(url, body, nesting) {
+  if (nesting === 0) {
+    return nextTick();
+  }
+
+  const links = utilities.getPageLinks(body);
+  links.forEach(link =&gt; {
+    yield spider(link, nesting - 1);
+  })
+}
+</code></pre>
+
+<p>The is no pattern to show for sequential iteration, generators and <code>co</code> are doing the all dirty work for us, so we&rsquo;re able to write asynchronous iteration as we were using blocking, direct APIs.</p>
+
+<p>Now an important entry point:</p>
+
+<pre><code class="language-js">co(function* () {
+  const nesting = 1;
+  try {
+    yield spider(process.argv[2], nesting);
+  } catch(e) {
+    console.log(e);
+  }
+})
+</code></pre>
+
+<p>The whole implementation:</p>
+
+<pre><code class="language-js">const thunkify = require('thunkify');
+const co = require('co');
+const path = require('path');
+
+const request = thunkify(require('request'));
+const fs = require('fs');
+const mkdirp = thunkify(require('mkdirp'));
+const readFile = thunkify(fs.readFile);
+const writeFile = thunkify(fs.writeFile);
+const nextTick = thunkify(process.nextTick);
+
+const utilities = require('./utils');
+
+co(function* () {
+  const nesting = 1;
+  try {
+    yield spider(process.argv[2], nesting);
+  } catch(e) {
+    console.log(e);
+  }
+})
+
+function* download(url, filename) {
+  console.log(`download ${url}`);
+  const response = yield request(url);
+  const body = response[1];
+
+  yield mkdirp(path.dirname(filename));
+  yield writeFile(filename, body);
+  console.log(`downloaded and saved file ${filename}`);
+
+  return body;
+}
+
+function* spider(url, nesting) {
+  const filename = utilities.urlToFileName(url);
+  let body;
+
+  try {
+    body = yield readFile(filename, 'utf8');
+  } catch(e) {
+    if (e.code !== 'ENOENT') {
+      throw e;
+    }
+    body = yield download(url, filename);
+  }
+  yield spiderLinks(filename, body, nesting);
+}
+
+function* spiderLinks(url, body, nesting) {
+  if (nesting === 0) {
+    return nextTick();
+  }
+
+  const links = utilities.getUrls(body);
+
+  for (var i = 0; i &lt; links.length; i++) {
+    yield spider(links[i], nesting - 1);
+  }
+}
+</code></pre>
+
+<h3 id="parallel-execution-2">Parallel execution</h3>
+
+<p>The bad news about generators is that they are good to write sequential algorithm, they can&rsquo;t be used to parallelize the execution of set of tasks.</p>
+
+<p>Luckily, for the specific case of the unlimited parallel execution, <code>co</code> already allows us to obtain it natively by simpling yielding an array of promises, thunks, etc.</p>
+
+<pre><code class="language-js">function* spiderLinks(url, body, nesting) {
+  if (nesting === 0) {
+    return nextTick();
+  }
+
+  const links = utilities.getUrls(body);
+  const tasks = links.map(link =&gt; spider(link, nesting - 1));
+  yield tasks;
+}
+</code></pre>
+
+<p>What we just did was just to collect all the download tasks, which are essentially generators, and then yield on the resulting array. All these task will be executed by <code>co</code> in parallel and then execution will be resumed when all tasks finish running.</p>
+
+<h3 id="limited-parallel-execution-2">Limited parallel execution</h3>
+
+<p>The main straightforward approach for me is to use <a href="https://www.npmjs.com/package/co-limiter">co-limiter</a></p>
+
+<pre><code class="language-js">const co = require('co');
+const wait = require('co-wait');
+const limiter = require('co-limiter');
+
+const limit = limiter(2);
+
+const job = function *() {
+  console.log('Doing something...');
+  yield wait(1000);
+}
+
+for (let i = 0; i &lt; 10; i++) {
+  co(function *() {
+    yield limit(job());
+  })();
+}
+</code></pre>
+
+<h2 id="async-await-with-babel">&ldquo;async&hellip;await&rdquo; with Babel</h2>
+
+<p>Preparation:</p>
+
+<pre><code class="language-bash"># install babel cli
+$ npm install -D babel-cli
+# extension to support &quot;async...await&quot; parsing
+$ npm install -D babel-plugin-syntax-async-functions
+babel-plugin-transform-async-to-generator
+# run the example
+$ node_modules\.bin\babel-node --plugins
+&quot;syntax-async-functions,transform-async-to-generator&quot; index.js
+</code></pre>
+
+<p>The problem is that generator function are designed to deal mostly as iterators and their usage with asynchronous operations feel a bit cumbersome. It might be hard to understand, leading to code that hard to read and maintain.</p>
+
+<p>The <code>async</code> function specification aims to dramatically improve the language model for waiting asynchronous code by introducing <code>async</code> and <code>await</code> directives:</p>
+
+<pre><code class="language-js">const promisify = require('tiny-promisify');
+const request = promisify(require('request'));
+
+function getPage(url) {
+  return request(url).then(res =&gt; {
+    return res.body;
+  });
+}
+
+async function main() {
+  const html = await getPage('http://example.com');
+  console.log(html);
+}
+main();
+
+console.log('loading...');
+</code></pre>
+
+<h2 id="comparison-table">Comparison Table</h2>
+
+<ul>
+<li>Plain JS
+
+<ul>
+<li>Pros:</li>
+<li>Does not require any additional libraries or technology</li>
+<li>Offer the best performance</li>
+<li>Provides the best compatibility with 3-th party libraries</li>
+<li>Allows creation of ad hoc and more advanced algorithms</li>
+<li>Cons:</li>
+<li>Require extra code and relatively complex algorithms</li>
+</ul></li>
+<li>Promises
+
+<ul>
+<li>Pros:</li>
+<li>Simplify the most common control flow patters</li>
+<li>Robust error handling</li>
+<li>Part of ES6 spec</li>
+<li>Cons:</li>
+<li>Require promisify callback-based APIs</li>
+<li>A small performance hit</li>
+</ul></li>
+<li>Generators:
+
+<ul>
+<li>Pros:</li>
+<li>Makes non-blocking code looks like a blocking one</li>
+<li>Simplify error handling</li>
+<li>Part of ES6 spec</li>
+<li>Cons:</li>
+<li>Require a complementary control flow library</li>
+<li>Require callback or promises to implement non-sequential flows</li>
+<li>Require thunkify or promisify nongenerator-based APIs</li>
+</ul></li>
+<li>Async await
+
+<ul>
+<li>Pros:</li>
+<li>Makes a non-blocking code looks like blocking</li>
+<li>Clean and intuitive syntax</li>
+<li>Future part of spec</li>
+<li>Cons:</li>
+<li>Not yet a standard</li>
+<li>Require transpilers such as Babel</li>
+<li></li>
+</ul></li>
+</ul>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

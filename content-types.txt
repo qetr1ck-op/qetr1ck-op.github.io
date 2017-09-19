@@ -1,0 +1,27 @@
++++
+title = ""
+date = "yyyy-mm-dd"
+categories = [
+    "Javascript",
+    "NodeJS", 
+    "OOP",
+    "Architecture",
+    "Patterns",
+    "ES2015+",
+    "DOM API",
+    "CSS",
+    "AngularJS",
+    "React",
+    "Flux/Redux",
+    "Git",
+    "Web API",
+    "HTTP",
+    "Performance",
+    "Books",
+    "Katas",
+    "RegExp",
+    "CLI",
+    "Build Tools",
+    "Deploy"
+]
++++

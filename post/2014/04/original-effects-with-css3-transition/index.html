@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Original effects with CSS transition</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Original effects with CSS transition</h1>
+<h4>Published 2014-04-01</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#example-1">Example 1</a></li>
+<li><a href="#example-2">Example 2</a></li>
+<li><a href="#example-3">Example 3</a></li>
+<li><a href="#example-4">Example 4</a></li>
+<li><a href="#example-5">Example 5</a></li>
+<li><a href="#example-6">Example 6</a></li>
+<li><a href="#example-7">Example 7</a></li>
+<li><a href="#example-8">Example 8</a></li>
+</ul>
+</nav>
+    <p>The power of CSS3 is enormous and in this post I create appearing effect of &ldquo;Sign In Form&rdquo; using differn style in each example.</p>
+
+<p></p>
+
+<p>Actually, now transition property of CSS supporting almost in all browsers, just in some case you need to use prefix <code>-webkit, -moz, -ms, -o</code>. You may check it on <a href="http://caniuse.com/#search=transition" title="Can I use...">Can I use&hellip;</a></p>
+
+<p>Awesome and simple <a href="http://css3generator.com/" title="css3generator.com">CSS3 Transition generator</a> (and not only).</p>
+
+<p>More about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function" title="transition-timing-function">transition-timing-funtion with example</a>.</p>
+
+<p>If you look closely you may see that in all example firstly I hide &ldquo;Sign In Form&rdquo; with <code>transform: scale, rotate, translateX/Y</code> and add <code>transition</code>. Than I use different value of transform, transition-delay, opacity for show original transition CSS effects.</p>
+
+<h1 id="example-1">Example 1</h1>
+
+<p data-height="268" data-theme-id="10606" data-slug-hash="gwJsh" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/gwJsh/'>CSS3 transition effects example 1</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>In first example I used <code>transition</code> for base elements with different timestamps and time function. Also I used <code>transform: translateY</code> property that push &ldquo;Sign In Form&rdquo; and child elements from current position.</p>
+
+<p>When you click on main section, you can see delay property that emulate animation. In this example I added a <code>transition-delay: ...s</code> which make transition effect start a bit later.</p>
+
+<h1 id="example-2">Example 2</h1>
+
+<p data-height="268" data-theme-id="10606" data-slug-hash="wlxGq" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/wlxGq/'>CSS3 transition effects example 2</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>In second example I used new <code>div.content</code>, you can see it in HTML mark-up. For &ldquo;Sign In Form&rdquo; I applied <code>transform: translate(...px, ...px) rotate(...deg)</code> for children used only <code>translate</code>. Of course added <code>transition</code> for elements.</p>
+
+<p>Translate transformation in order move elements in place. The &ldquo;Sign In Form&rdquo; will also be rotated. The each elements of the description will come with a little delay.</p>
+
+<h1 id="example-3">Example 3</h1>
+
+<p data-height="270" data-theme-id="10606" data-slug-hash="tLaic" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/tLaic/'>CSS3 transition effects example 3</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>In third example I used the <code>translate</code> and  <code>transforms: rotate</code> to bring up content.</p>
+
+<p>Than I just need to reset <code>transform: translateX(0px) rotate(0deg)</code> and add <code>transition-delay: ...s</code>.</p>
+
+<h1 id="example-4">Example 4</h1>
+
+<p>Here in four example I performed zoom out for main block and zoom in for &ldquo;Sign In Form&rdquo; with rotation effect. All thanks to <code>transform: scale and rotate</code>.</p>
+
+<p data-height="266" data-theme-id="10606" data-slug-hash="aGqou" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/aGqou/'>CSS3 transition effects example 4</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h1 id="example-5">Example 5</h1>
+
+<p>In this example I used <code>transform: translateX()</code> and transition timing function <code>ease-in-out</code>. Transition effect make the &ldquo;Sign In Form&rdquo; slide from right, with pushing effect for main container.</p>
+
+<p data-height="268" data-theme-id="10606" data-slug-hash="Jbzvm" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/Jbzvm/'>CSS3 transition effects example 5</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h1 id="example-6">Example 6</h1>
+
+<hr />
+
+<p>In sixth example I performed that &ldquo;Sign In Form&rdquo; comes from the front, zooming out until its original size: <code>transform: scale(from 10 to 1)</code>. And inputs will slide from bottom, used <code>transform: translateY</code>.</p>
+
+<p data-height="271" data-theme-id="10606" data-slug-hash="Deijo" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/Deijo/'>CSS3 transition effects example 6</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h1 id="example-7">Example 7</h1>
+
+<p>In this seven example the idea is to rotate the image to center and scale it down: <code>transform: rotate(0deg)-&gt;(720deg) scale(1)-&gt;(0)</code>. Then the &ldquo;Sign In Form&rdquo; comes from up with description content following. <code>transform: translateY())</code>.</p>
+
+<p>Also Added delay for the &ldquo;Sign In Form&rdquo; elements <code>transition-delay: ..s</code>. This will show us the rotating main block first and then the description will come into. In the reverse transition, everything will disappear immediately and image will rotate back.</p>
+
+<p data-height="268" data-theme-id="10606" data-slug-hash="pIrwa" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/pIrwa/'>CSS3 transition effects example 7</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h1 id="example-8">Example 8</h1>
+
+<p>In eighth example I used an animation which recreate a bounce effect. The &ldquo;Sign In Form&rdquo; will bounce in from top. <code>animation: bounceY 0.9 linear</code>.</p>
+
+<pre><code>animation: bounceY 0.9 linear
+</code></pre>
+
+<p data-height="277" data-theme-id="10606" data-slug-hash="veLhG" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/veLhG/'>CSS3 transition effects example 8</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

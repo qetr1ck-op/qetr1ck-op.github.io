@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Misconceptions About Inheritance in JS</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Misconceptions About Inheritance in JS</h1>
+<h4>Published 2016-02-14</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#aren-t-classical-and-prototype-inheritance-really-the-same-thing-just-a-stylistic-preference">Aren’t classical and prototype inheritance really the same thing, just a stylistic preference?</a></li>
+<li><a href="#aren-t-classes-the-right-way-to-create-objects-in-javascript">Aren’t classes the right way to create objects in JavaScript?</a></li>
+<li><a href="#don-t-you-need-a-constructor-function-to-specify-object-instantiation-behavior-and-handle-object-initialization">Don’t you need a constructor function to specify object instantiation behavior and handle object initialization?</a></li>
+<li><a href="#don-t-you-need-constructor-functions-for-privacy-in-javascript">Don’t you need constructor functions for privacy in JavaScript?</a></li>
+<li><a href="#does-new-mean-that-code-is-using-classical-inheritance">Does <code>new</code> mean that code is using classical inheritance?</a></li>
+<li><a href="#is-there-a-big-performance-difference-between-classical-and-prototypal-inheritance">Is There a Big Performance Difference Between Classical and Prototypal Inheritance?</a></li>
+<li><a href="#the-native-apis-use-constructors-aren-t-they-more-idiomatic-than-factories">The Native APIs use Constructors. Aren’t they More Idiomatic than Factories?</a></li>
+<li><a href="#doesn-t-the-choice-between-classical-and-prototype-inheritance-depend-on-the-use-case">Doesn’t the Choice Between Classical and Prototype Inheritance Depend on the Use Case?</a></li>
+<li><a href="#why-does-this-matter">Why Does this Matter?</a></li>
+</ul>
+</nav>
+    <p>What’s the Difference Between Class &amp; Prototype Inheritance?</p>
+
+<p>This can be a tricky question, and you’ll probably need to defend your answer with follow-up Q&amp;A, so pay special attention to learning the differences, and how to apply the knowledge to write better code.</p>
+
+<p></p>
+
+<h1 id="aren-t-classical-and-prototype-inheritance-really-the-same-thing-just-a-stylistic-preference">Aren’t classical and prototype inheritance really the same thing, just a stylistic preference?</h1>
+
+<p>No.</p>
+
+<p>Classical and prototype inheritance are fundamentally and semantically distinct.</p>
+
+<p>In class inheritance, instances inherit from a <code>blueprint</code> (the class), and create sub-class relationships. In other words, you can’t use the class like you would use an instance. You can’t invoke instance methods on a class definition itself. You must first create an instance and then invoke methods on that instance.</p>
+
+<p>In prototype inheritance, <code>instances inherit from other instances</code>. Using delegate prototypes (setting the prototype of one instance to refer to an exemplar object), it’s literally Objects Linking to Other Objects, or <strong>OLOO</strong>. Using concatenative inheritance, you just copy properties from an exemplar object to a new instance.</p>
+
+<h1 id="aren-t-classes-the-right-way-to-create-objects-in-javascript">Aren’t classes the right way to create objects in JavaScript?</h1>
+
+<p>No.</p>
+
+<p>There are several right ways to create objects in JavaScript. The first and most common is an object literal:</p>
+
+<pre><code class="language-js">let mouse = {
+  furColor: 'brown',
+  legs: 4,
+  tail: 'long, skinny',
+  describe () {
+    return `A mouse with ${this.furColor} fur,
+      ${this.legs} legs, and a ${this.tail} tail.`;
+  }
+};
+</code></pre>
+
+<p>You can attach delegate prototypes with <code>Object.create()</code>:</p>
+
+<pre><code class="language-js">let animal = {
+  animalType: 'animal',
+  
+  describe () {
+    return `An ${this.animalType}, with ${this.furColor} fur, 
+      ${this.legs} legs, and a ${this.tail} tail.`;
+  }
+};
+
+let mouse = Object.assign(Object.create(animal), {
+  animalType: 'mouse',
+  furColor: 'brown',
+  legs: 4,
+  tail: 'long, skinny'
+});
+</code></pre>
+
+<p>Let’s break this one down a little:</p>
+
+<ul>
+<li><em>animal</em> is a delegate prototype.</li>
+<li><em>mouse</em> is an instance.</li>
+<li>When you try to access a property on <code>mouse</code> that isn’t there, the JavaScript runtime will look for the property on <code>animal</code> (the delegate).</li>
+</ul>
+
+<p>I’m skipping the constructor function example because I can’t recommend them.</p>
+
+<h1 id="don-t-you-need-a-constructor-function-to-specify-object-instantiation-behavior-and-handle-object-initialization">Don’t you need a constructor function to specify object instantiation behavior and handle object initialization?</h1>
+
+<p>No.</p>
+
+<p>Any function can create and return objects. When it’s not a constructor function, it’s called a <em>factory function</em>.</p>
+
+<p>Factory function:</p>
+
+<pre><code class="language-js">let animal = {
+  animalType: 'animal',
+ 
+  describe () {
+    return `An ${this.animalType} with ${this.furColor} fur, 
+      ${this.legs} legs, and a ${this.tail} tail.`;
+  }
+};
+ 
+let mouseFactory = mouseFactory () =&gt; {
+  return Object.assign(Object.create(animal), {
+    animalType: 'mouse',
+    furColor: 'brown',
+    legs: 4,
+    tail: 'long, skinny'
+  });
+};
+
+let mickey = mouseFactory();
+</code></pre>
+
+<h1 id="don-t-you-need-constructor-functions-for-privacy-in-javascript">Don’t you need constructor functions for privacy in JavaScript?</h1>
+
+<p>No.</p>
+
+<p>In JavaScript, any time you export a function, that function has access to the outer function’s variables. When you use them, the JS engine creates a <code>closure</code>.</p>
+
+<p>Closures are not unique to constructor functions. Any function can create a closure for data privacy:</p>
+
+<pre><code class="language-js">let animal = {
+  animalType: 'animal',
+ 
+  describe () {
+    return `An ${this.animalType} with ${this.furColor} fur, 
+      ${this.legs} legs, and a ${this.tail} tail.`;
+  }
+};
+ 
+let mouseFactory = function mouseFactory () {
+  let secret = 'secret agent';
+
+  return Object.assign(Object.create(animal), {
+    animalType: 'mouse',
+    furColor: 'brown',
+    legs: 4,
+    tail: 'long, skinny',
+    profession () {
+      return secret;
+    }
+  });
+};
+ 
+let james = mouseFactory();
+</code></pre>
+
+<h1 id="does-new-mean-that-code-is-using-classical-inheritance">Does <code>new</code> mean that code is using classical inheritance?</h1>
+
+<p>No.</p>
+
+<p>The <code>new</code> keyword is used to invoke a constructor. What it actually does is:</p>
+
+<ul>
+<li>Create a new instance</li>
+<li>Bind <code>this</code> to the new instance</li>
+<li>Reference the new object’s delegate <code>[[Prototype]]</code> to the object referenced by the constructor function’s <code>prototype</code> property.</li>
+<li>Names the object type after the constructor, which you’ll notice mostly in the debugging console. You’ll see <code>[Object Foo]</code>, for example, instead of <code>[Object object]</code>.</li>
+<li>Allows <code>instanceof</code> to check whether or not an object’s prototype reference is the same object referenced by the .prototype property of the constructor.</li>
+</ul>
+
+<h1 id="is-there-a-big-performance-difference-between-classical-and-prototypal-inheritance">Is There a Big Performance Difference Between Classical and Prototypal Inheritance?</h1>
+
+<p>No.</p>
+
+<p>Can you tell the difference between .0000000001 seconds and .000000001 seconds? Neither can I, but I sure can tell the difference between loading 10 small icons or loading one web font, instead!</p>
+
+<h1 id="the-native-apis-use-constructors-aren-t-they-more-idiomatic-than-factories">The Native APIs use Constructors. Aren’t they More Idiomatic than Factories?</h1>
+
+<p>Factories are extremely common in JavaScript. For instance, the most popular JavaScript library of all time, <code>jQuery</code> exposes a factory to users.</p>
+
+<p>What else exposes factories?</p>
+
+<ul>
+<li><em>React</em> <code>React.createClass()</code> is a factory.</li>
+<li><em>Angular</em> uses classes &amp; factories, but wraps them all with a factory in the Dependency Injection container. All providers are sugar that use the <code>.provider()</code> factory. There’s even a <code>.factory()</code> provider, and even the <code>.service()</code> provider wraps normal constructors and exposes … you guessed it: A factory for DI consumers.</li>
+<li><em>Ember</em> <code>Ember.Application.create();</code> is a factory that produces the app. Rather than creating constructors to call with <code>new</code>, the <code>.extend()</code> methods augment the app.</li>
+<li><em>Node</em> core services like <code>http.createServer()</code> and <code>net.createServer()</code> are factory functions.</li>
+<li><em>Express</em> is a factory that creates an express app.</li>
+</ul>
+
+<p>The only object instantiation pattern more common than factories in JS is the object literal.</p>
+
+<p>JavaScript built-ins started out using constructors because Brendan Eich was told to make it look like Java. JavaScript continues to use constructors for self-consistency. It would be awkward to try to change everything to factories and deprecate constructors now.</p>
+
+<h1 id="doesn-t-the-choice-between-classical-and-prototype-inheritance-depend-on-the-use-case">Doesn’t the Choice Between Classical and Prototype Inheritance Depend on the Use Case?</h1>
+
+<p>No.</p>
+
+<p>I recommend that you follow the Gang of Four’s advice on this point:</p>
+
+<blockquote>
+<p>“Favor object composition over class inheritance.”</p>
+</blockquote>
+
+<p>In Java, that was harder than class inheritance because you actually had to use classes to achieve it.</p>
+
+<p>In JavaScript, we don’t have that excuse. It’s actually much easier in JavaScript to simply create the object that you need by assembling various prototypes together than it is to manage object hierarchies.</p>
+
+<p>You don’t have to <code>extend</code> a <code>class</code>. JavaScript has dynamic object extension, and jQuery exposes its own prototype so you can just extend that:</p>
+
+<pre><code class="language-js">/*
+How to extend the jQuery prototype:
+So difficult.
+Brain hurts.
+ouch.
+*/
+
+jQuery.fn.megaCalendarWidget = megaCalendarWidget;
+
+// omg I'm so glad that's over.
+</code></pre>
+
+<p>The next time you call the jQuery factory, you’ll get an instance that can make your date inputs mega awesome.</p>
+
+<p>Similarly, you can use <code>Object.assign()</code> to compose any number of objects together with last-in priority:</p>
+
+<pre><code class="language-js">import ninja from 'ninja';
+import mouse from 'mouse';
+
+let ninjamouse = Object.assign({}, mouse, ninja);
+</code></pre>
+
+<p>No, really — any number of objects:</p>
+
+<pre><code class="language-js">// I'm not sure Object.assign() is available (ES6)
+// so this time I'll use Lodash.
+var assign = require('lodash/object/assign');
+
+var skydiving = require('skydiving');
+var ninja = require('ninja');
+var mouse = require('mouse');
+var wingsuit = require('wingsuit');
+
+// The amount of awesome in this next bit might be too much
+// for seniors with heart conditions or young children.
+var skydivingNinjaMouseWithWingsuit = assign({}, // create a new object
+  skydiving, ninja, mouse, wingsuit); // copy all the awesome to it.
+</code></pre>
+
+<p>This technique is called <strong>concatenative inheritance</strong>, and the prototypes you inherit from are sometimes referred to as exemplar prototypes, which differ from <strong>delegate prototypes</strong> in that you copy from them, rather than delegate to them.</p>
+
+<h1 id="why-does-this-matter">Why Does this Matter?</h1>
+
+<p>Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can <strong>create a lot of problems</strong>.</p>
+
+<p>In fact, class inheritance causes many well known problems in OO design:</p>
+
+<ul>
+<li>Class inheritance creates parent/child object taxonomies as a side-effect.</li>
+<li>The tight coupling problem (class inheritance is the tightest coupling available in oo design), which leads to the next one…</li>
+<li>The fragile base class problem
+Inflexible hierarchy problem (eventually, all evolving hierarchies are wrong for new uses)</li>
+<li>The duplication by necessity problem (due to inflexible hierarchies, new use cases are often shoe-horned in by duplicating, rather than adapting existing code)</li>
+<li>The Gorilla/banana problem (What you wanted was a banana, but what you got was a gorilla holding the banana, and the entire jungle)</li>
+</ul>
+
+<p>The solution to all of these problems is to favor object <strong>composition over class inheritance</strong>.</p>
+
+<p>Save my day - <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9#.2cya8y3jf">Eric Elliott on Medium</a></p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

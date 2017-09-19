@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Http on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/http/</link>
+    <description>Recent content in Http on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 14 May 2017 23:49:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is Load Balancing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</link>
+      <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</guid>
+      <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Preflighted HTTP OPTIONS requests</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/09/preflighted-http-options-requests/</link>
+      <pubDate>Sun, 18 Sep 2016 21:02:27 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/09/preflighted-http-options-requests/</guid>
+      <description>&lt;p&gt;What is not-so-simple HTTP request?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Questions</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</link>
+      <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/front-end-interview-questions/</guid>
+      <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Difference of HTTP and HTTPS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/05/difference-of-http-and-https/</link>
+      <pubDate>Sat, 31 May 2014 06:00:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/05/difference-of-http-and-https/</guid>
+      <description>&lt;p&gt;Hyper Text Transfer Protocol Secure (HTTPS) is a &lt;code&gt;secure version&lt;/code&gt; of the Hyper Text Transfer Protocol (HTTP). HTTPS allows secure e-commerce transactions, such as on-line banking.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

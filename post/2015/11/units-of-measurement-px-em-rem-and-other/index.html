@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>Units of measurement: &#34;px&#34;, &#34;em&#34;, &#34;rem&#34; and other</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Units of measurement: &#34;px&#34;, &#34;em&#34;, &#34;rem&#34; and other</h1>
+<h4>Published 2015-11-11</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#pixels-px">Pixels: &ldquo;px&rdquo;</a></li>
+<li><a href="#relatively-to-font-size-em">Relatively to font size: &ldquo;em&rdquo;</a></li>
+<li><a href="#percentage">Percentage, &ldquo;%&rdquo;</a></li>
+<li><a href="#mixture-of-px-and-em-rem">Mixture of &ldquo;px&rdquo; and &ldquo;em&rdquo;: &ldquo;rem&rdquo;</a></li>
+<li><a href="#relatively-to-screen-size-vw-vh-vmin-vmax">Relatively to screen size: vw, vh, vmin, vmax</a></li>
+</ul>
+</nav>
+    <p>I will try not only to write about variety of units, but also build a full picture - what and when better to choose.</p>
+
+<p></p>
+
+<h1 id="pixels-px">Pixels: &ldquo;px&rdquo;</h1>
+
+<p>Pixel <code>px</code> - is the most basic, absolute and final unit of measurement.</p>
+
+<p>The number of pixels on monitor is set in screen resolution configuration. A <code>px</code> is such a one pixel on the screen. All values browser eventually translated into pixels.</p>
+
+<p>The main advantage <code>px</code> is clarity.</p>
+
+<p>The <code>px</code> are not relative and don&rsquo;t allow to set relationships between other dimensions.</p>
+
+<h1 id="relatively-to-font-size-em">Relatively to font size: &ldquo;em&rdquo;</h1>
+
+<p>Measurement in <code>em</code> are relative, they are defined by current context.</p>
+
+<p><code>1em</code> it&rsquo;s current font size.</p>
+
+<p>Since the value of em is calculated to the current font size, the nested string will <code>1.5</code> times larger than parent:</p>
+
+<pre><code class="language-html">&lt;div style=&quot;font-size:1.5em&quot;&gt;
+  My size is 1.5em
+  &lt;div style=&quot;font-size:1.5em&quot;&gt;My size is parrentSize * 1.5&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h1 id="percentage">Percentage, &ldquo;%&rdquo;</h1>
+
+<p>The <code>%</code> as the <code>em</code> are relative to current context measurements but there are nuances.</p>
+
+<p>Is works different with these properties: <code>margin-left</code>, <code>line-height</code>, <code>width/height</code> with <code>position: fixed</code>.</p>
+
+<p>The same example:</p>
+
+<pre><code class="language-html">&lt;div style=&quot;font-size:150%&quot;&gt;
+  My size is 1.5em
+  &lt;div style=&quot;font-size:150%&quot;&gt;My size is parrentSize + 150%&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h1 id="mixture-of-px-and-em-rem">Mixture of &ldquo;px&rdquo; and &ldquo;em&rdquo;: &ldquo;rem&rdquo;</h1>
+
+<p>Measure <code>rem</code> defines font size relatively to <code>html</code> element size.</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="bVzVaQ" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/bVzVaQ/'>em vs rem</a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="relatively-to-screen-size-vw-vh-vmin-vmax">Relatively to screen size: vw, vh, vmin, vmax</h1>
+
+<p>The principles behind <code>vw</code>, <code>vh</code> are to represent percentage of browser viewport <code>width</code> / <code>height</code>.</p>
+
+<p><code>1vw</code> = <code>1/100</code> of the current viewport width, i.e. <code>1%</code> of width.</p>
+
+<p><code>10vh</code> = <code>10/100</code> of the current viewport height, i.e. <code>10%</code> of height.</p>
+
+<p>After first glance, it seems that <code>vw</code>, <code>vh</code> are redundant, because we already have <code>%</code> measurement system:</p>
+
+<pre><code class="language-css">div {
+  width: 100%;
+}
+</code></pre>
+
+<p>Limitation of percentage measurement system:</p>
+
+<ul>
+<li><p>viewport height is always hard to measure, as the height of <code>&lt;body&gt;</code> depends on content, not on the dimension of the browser window</p></li>
+
+<li><p>body measurement cannot be applied to the <code>font-size</code>, because it relates to parent container, not to the dimension of viewport</p></li>
+</ul>
+
+<p>Example, backgrounds and <code>vh</code>:</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="ZbdWvp" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/ZbdWvp/'>Backgrounds and the vh unit </a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>Example, backgrounds and <code>vw</code>:</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="xwoVPX" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/xwoVPX/'>Backgrounds and the vw unit </a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>Image, <code>vw</code>:</p>
+
+<p><p data-height="268" data-theme-id="10606" data-slug-hash="bVPpaX" data-default-tab="result" data-user="qetr1ck-op" class='codepen'>See the Pen <a href='http://codepen.io/qetr1ck-op/pen/bVPpaX/'>Images and vw width </a> by qetr1ck-op (<a href='http://codepen.io/qetr1ck-op'>@qetr1ck-op</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>Respectively are related to the maximum or minimum of those widths and heights, depending on which is smaller and larger. For example, if the browser was set to <code>1100px</code> wide and the <code>700px</code> tall, <code>1vmin</code> would be <code>7px</code> and <code>1vmax</code> would be <code>11px</code>.</p>
+
+<p><code>1vmin</code> = <code>1vw</code> or <code>1vh</code>, whichever is smaller
+<code>1vmax</code> = <code>1vw</code> or <code>1vh</code>, whichever is larger</p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

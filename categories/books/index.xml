@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Books on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/books/</link>
+    <description>Recent content in Books on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 23 Apr 2017 22:35:48 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/books/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Essential Programming Books</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</link>
+      <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</guid>
+      <description>&lt;p&gt;The list of 129 books deemed fundamental to the art of programming and includes books for various languages.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Book: &#39;Node.js design pattern&#39;</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</link>
+      <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/10/node-js-design-pattern-book-review/</guid>
+      <description>&lt;p&gt;&amp;ldquo;How could I organize my code?&amp;rdquo;, &amp;ldquo;What is the best way to design this?&amp;rdquo;, &amp;ldquo;How can I make my application more modular?&amp;rdquo;, &amp;ldquo;How do I handle a set of asynchronous call effectively?&amp;rdquo;, &amp;ldquo;How can I make sure that my application will not collapse while it grows?&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;If you have such questions without answers, that book is definitely for you!&lt;/p&gt;
+
+&lt;p&gt;The aim of this book is to guide you through this emerging world of patterns, techniques and practices, showing proven solution to the common problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Development with Webpack</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</link>
+      <pubDate>Sun, 07 Feb 2016 12:11:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/development-with-webpack/</guid>
+      <description>&lt;p&gt;Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&amp;rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

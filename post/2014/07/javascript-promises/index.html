@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+    <base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../../../favicon/manifest.json">
+<link rel="mask-icon" href="../../../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="description" content="">
+
+<title>JavaScript Promises</title>
+<meta name="generator" content="Hugo 0.27.1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link">
+        <a href="../../../../">Root</a>
+        <a href="../../../../about">About</a>
+        <a href="../../../../search">
+            <i class="search-btn"></i>
+        </a>
+    </h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">OP blog - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="../../../../categories/angularjs">angularjs</a></li>
+            
+            <li><a href="../../../../categories/architecture">architecture</a></li>
+            
+            <li><a href="../../../../categories/books">books</a></li>
+            
+            <li><a href="../../../../categories/build-tools">build-tools</a></li>
+            
+            <li><a href="../../../../categories/cli">cli</a></li>
+            
+            <li><a href="../../../../categories/css">css</a></li>
+            
+            <li><a href="../../../../categories/deploy">deploy</a></li>
+            
+            <li><a href="../../../../categories/dom-api">dom-api</a></li>
+            
+            <li><a href="../../../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../../../categories/flux/redux">flux/redux</a></li>
+            
+            <li><a href="../../../../categories/git">git</a></li>
+            
+            <li><a href="../../../../categories/http">http</a></li>
+            
+            <li><a href="../../../../categories/javascript">javascript</a></li>
+            
+            <li><a href="../../../../categories/katas">katas</a></li>
+            
+            <li><a href="../../../../categories/nodejs">nodejs</a></li>
+            
+            <li><a href="../../../../categories/oop">oop</a></li>
+            
+            <li><a href="../../../../categories/patterns">patterns</a></li>
+            
+            <li><a href="../../../../categories/performance">performance</a></li>
+            
+            <li><a href="../../../../categories/react">react</a></li>
+            
+            <li><a href="../../../../categories/regexp">regexp</a></li>
+            
+            <li><a href="../../../../categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>JavaScript Promises</h1>
+<h4>Published 2014-07-13</h4>
+
+
+
+<article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#promises-arrive-in-javascript">Promises arrive in JavaScript!</a></li>
+<li><a href="#promisifying-xmlhttprequest">Promisifying XMLHttpRequest</a></li>
+<li><a href="#chaining">Chaining</a></li>
+<li><a href="#error-handling">Error handling</a></li>
+<li><a href="#creating-a-sequence">Creating a sequence</a></li>
+</ul>
+</nav>
+    <p></p>
+
+<h1 id="promises-arrive-in-javascript">Promises arrive in JavaScript!</h1>
+
+<p>Here&rsquo;s how you create a promise:</p>
+
+<pre><code class="language-js">var promise = new Promise(function(resolve, reject) {
+  // do a thing, possibly async, then…
+
+  if (/* everything turned out fine */) {
+    resolve(&quot;Stuff worked!&quot;);
+  }
+  else {
+    reject(Error(&quot;It broke&quot;));
+  }
+});
+</code></pre>
+
+<p>The <code>promise constructor</code> takes one argument, a callback with two parameters, <code>resolve</code> and <code>reject</code>. Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.</p>
+
+<p>Here&rsquo;s how you use that promise:</p>
+
+<pre><code class="language-js">promise.then(function(res) {
+    console.log(res) //Stuff worked!
+}, function(err) {
+    console.log(err) //Error!
+});
+</code></pre>
+
+<p><code>then</code> takes two arguments, a callback for a <code>success</code> case, and another for the <code>failure</code> case. Both are optional, so you can add a callback for the success or failure case only.</p>
+
+<h1 id="promisifying-xmlhttprequest">Promisifying XMLHttpRequest</h1>
+
+<p>Old APIs will be updated to use promises, if it&rsquo;s possible in a backwards compatible way. <code>XMLHttpRequest</code> is a prime candidate, but in the mean time let&rsquo;s write a simple function to make a GET request:</p>
+
+<pre><code class="language-js">function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error(&quot;Network Error&quot;));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+</code></pre>
+
+<p>Now let&rsquo;s use it:</p>
+
+<pre><code class="language-js">get('story.json').then(function(response) {
+  console.log(&quot;Success!&quot;, response);
+}, function(error) {
+  console.error(&quot;Failed!&quot;, error);
+});
+</code></pre>
+
+<h1 id="chaining">Chaining</h1>
+
+<p><code>then</code> isn&rsquo;t the end of the story, you can chain <code>then&quot;s</code> together to transform values or run additional async actions one after another:</p>
+
+<pre><code class="language-js">var promise = new Promise(function(resolve, reject) {
+  resolve(1);
+}
+
+promise.then(function(val) {
+  console.log(val); // 1
+  return val + 2;
+}).then(function(val) {
+  console.log(val); // 3
+});
+</code></pre>
+
+<p>As a practical example, let&rsquo;s go back to:</p>
+
+<pre><code class="language-js">get('story.json').then(function(response) {
+  return JSON.parse(response);
+}).then(function(response) {
+  console.log(&quot;Yey JSON!&quot;, response);
+});
+</code></pre>
+
+<p><code>getJSON</code> still returns a promise, one that fetches a url then parses the response as JSON.</p>
+
+<pre><code class="language-js">function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+</code></pre>
+
+<h1 id="error-handling">Error handling</h1>
+
+<p>As we saw earlier, <code>then</code> takes two arguments, one for <code>success</code>, one for <code>failure</code> (or fulfill and reject, in promises-speak):</p>
+
+<pre><code class="language-js">get('story.json').then(function(response) {
+  console.log(&quot;Success!&quot;, response);
+}, function(error) {
+  console.log(&quot;Failed!&quot;, error);
+});
+</code></pre>
+
+<p>You can also use <code>catch</code>:</p>
+
+<pre><code class="language-js">get('story.json').then(function(response) {
+  console.log(&quot;Success!&quot;, response);
+}).catch(function(error) {
+  console.log(&quot;Failed!&quot;, error);
+});
+</code></pre>
+
+<p>With our story and chapters, we can use catch to display an error to the user:</p>
+
+<pre><code class="language-js">getJSON('story.json').then(function(story) {
+  return getJSON(story.chapterUrls[0]);
+}).then(function(chapter1) {
+  addHtmlToPage(chapter1.html);
+}).catch(function() {
+  addTextToPage(&quot;Failed to show chapter&quot;);
+}).then(function() {
+  document.querySelector('.spinner').style.display = 'none';
+});
+</code></pre>
+
+<h1 id="creating-a-sequence">Creating a sequence</h1>
+
+<p>But how can we loop through the <code>story.chapter</code> urls and fetch them in order?</p>
+
+<pre><code class="language-js">getJSON('story.json').then(function(story) {
+  addHtmlToPage(story.heading);
+  // TODO: for each url in story.chapterUrls, fetch &amp; display
+}).then(function() {
+  // And we're all done!
+  addTextToPage(&quot;All done&quot;);
+}).catch(function(err) {
+  // Catch any error that happened along the way
+  addTextToPage(&quot;Argh, broken: &quot; + err.message);
+}).then(function() {
+  // Always hide the spinner
+  document.querySelector('.spinner').style.display = 'none';
+});
+</code></pre>
+
+<p>This doesn&rsquo;t work:</p>
+
+<pre><code class="language-js">story.chapterUrls.forEach(function(chapterUrl) {
+  // Fetch chapter
+  getJSON(chapterUrl).then(function(chapter) {
+    // and add it to the page
+    addHtmlToPage(chapter.html);
+  });
+});
+</code></pre>
+
+<p>We want to turn our chapterUrls array into a <code>sequence of promises</code>. We can do that using <code>then</code>:</p>
+
+<pre><code class="language-js">// Start off with a promise that always resolves
+var sequence = Promise.resolve();
+
+// Loop through our chapter urls
+story.chapterUrls.forEach(function(chapterUrl) {
+  // Add these actions to the end of the sequence
+  sequence = sequence.then(function() {
+    return getJSON(chapterUrl);
+  }).then(function(chapter) {
+    addHtmlToPage(chapter.html);
+  });
+});
+</code></pre>
+
+<p>We can tidy up the above code using <code>array.reduce</code>:</p>
+
+<pre><code class="language-js">// Loop through our chapter urls
+story.chapterUrls.reduce(function(sequence, chapterUrl) {
+  // Add these actions to the end of the sequence
+  return sequence.then(function() {
+    return getJSON(chapterUrl);
+  }).then(function(chapter) {
+    addHtmlToPage(chapter.html);
+  });
+}, Promise.resolve());
+</code></pre>
+
+<p>Let&rsquo;s put it all together…</p>
+
+<pre><code class="language-js">getJSON('story.json').then(function(story) {
+  addHtmlToPage(story.heading);
+
+  return story.chapterUrls.reduce(function(sequence, chapterUrl) {
+    // Once the last chapter's promise is done…
+    return sequence.then(function() {
+      // …fetch the next chapter
+      return getJSON(chapterUrl);
+    }).then(function(chapter) {
+      // and add it to the page
+      addHtmlToPage(chapter.html);
+    });
+  }, Promise.resolve());
+}).then(function() {
+  // And we're all done!
+  addTextToPage(&quot;All done&quot;);
+}).catch(function(err) {
+  // Catch any error that happened along the way
+  addTextToPage(&quot;Argh, broken: &quot; + err.message);
+}).then(function() {
+  // Always hide the spinner
+  document.querySelector('.spinner').style.display = 'none';
+});
+</code></pre>
+
+<p>But we can do better. At the moment our page is downloading like this:</p>
+
+<p><img src="http://www.html5rocks.com/en/tutorials/es6/promises/promise1.gif" alt="" /></p>
+
+<p>Browsers aren&rsquo;t pretty good at downloading <code>multiple</code> things at once, so we&rsquo;re losing performance by downloading chapters one after the other. What we want to do is download them all at the same time, then process them when they&rsquo;ve all arrived. Thankfully there&rsquo;s an API for this:</p>
+
+<pre><code class="language-js">Promise.all(arrayOfPromises).then(function(arrayOfResults) {
+  //...
+});
+</code></pre>
+
+<p><code>Promise.all</code> takes an array of promises and creates a promise that fulfills when all of them successfully complete. You get an array of results (whatever the promises fulfilled to) in the same order as the promises you passed in.</p>
+
+<pre><code class="language-js">getJSON('story.json').then(function(story) {
+  addHtmlToPage(story.heading);
+
+  // Take an array of promises and wait on them all
+  return Promise.all(
+    // Map our array of chapter urls to
+    // an array of chapter json promises
+    story.chapterUrls.map(getJSON)
+  );
+}).then(function(chapters) {
+  // Now we have the chapters jsons in order! Loop through…
+  chapters.forEach(function(chapter) {
+    // …and add to the page
+    addHtmlToPage(chapter.html);
+  });
+  addTextToPage(&quot;All done&quot;);
+}).catch(function(err) {
+  // catch any error that happened so far
+  addTextToPage(&quot;Argh, broken: &quot; + err.message);
+}).then(function() {
+  document.querySelector('.spinner').style.display = 'none';
+});
+</code></pre>
+
+<p>Depending on connection, this can be seconds faster than loading one-by-one:</p>
+
+<p><img src="http://www.html5rocks.com/en/tutorials/es6/promises/promise2.gif" alt="" /></p>
+</article>
+
+
+
+</div>
+</div>
+<script src="../../../../js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

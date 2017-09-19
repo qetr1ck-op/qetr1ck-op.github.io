@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Build Tools on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/build-tools/</link>
+    <description>Recent content in Build Tools on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 28 May 2017 17:43:40 +0300</lastBuildDate>
+    
+	<atom:link href="https://qetr1ck-op.github.io/blog/categories/build-tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interview question: NodeJS, part 2</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</link>
+      <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</guid>
+      <description>&lt;p&gt;Part two of original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 1</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</link>
+      <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</guid>
+      <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>npm scrips as your build tool</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</link>
+      <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</guid>
+      <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
+
+&lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
