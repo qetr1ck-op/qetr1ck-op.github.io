@@ -43,6 +43,8 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/post/2017/10/flexbox-guide/">Flexbox Guides and Demo</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/post/2017/06/react-app-with-express-in-production/">React app with Express in production</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/post/2017/05/interview-question-nodejs-part-2/">Interview question: NodeJS, part 2</a></li>
@@ -50,8 +52,6 @@
             <li><a href="https://qetr1ck-op.github.io/post/2017/05/what-is-load-balancing/">What is Load Balancing?</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/post/2017/05/interview-question-nodejs-part-1/">Interview question: NodeJS, part 1</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/post/2017/05/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
             
         </ul>
     </div>
@@ -224,11 +224,11 @@ declaredVariable;
 </div>
 
 <blockquote>
-<p>Why <code>typeof bar === object</code> isn&rsquo;t right? How can this pitfall be avoided?</p>
+<p>Why <code>typeof {} === 'object'</code> isn&rsquo;t right? How can this pitfall be avoided?</p>
 </blockquote>
 
 <div class="hidden">
-<p><strong>Answer:</strong> Use <code>Object.prototype.toString.call(&lt;object&gt;)</code> or use Duck Typing.</p>
+<p><strong>Answer:</strong> Use <code>(Object.prototype | {}).toString.call(&lt;object&gt;)</code> or use Duck Typing.</p>
 
 <p><strong>Explanation:</strong> The surprising gotcha in JavaScript is that <code>null</code> is also considered an object!</p>
 
@@ -775,25 +775,6 @@ date.nextDay();//Sat May 17 2014 20:47:14 GMT-0500 (Central Daylight Time)
 </div>
 
 <blockquote>
-<p>Extend Core Object through prototype. Example 2. How could you make this work <code>[1,2,3,4,5].duplicator()</code> to return <code>[1,2,3,4,5,1,2,3,4,5]</code>?</p>
-</blockquote>
-
-<div class="hidden">
-<p><strong>Answer:</strong> We need to add a method in the prototype of Array object.</p>
-
-<pre><code class="language-js">// ES5
-Array.prototype.duplicator = function(){
-  return this.concat(this);
-}
-
-Array.prototype.duplicator = function() {
-  return [...this, ...this];
-} 
-</code></pre>
-
-</div>
-
-<blockquote>
 <p>Example. Make a subclass from parent class <code>Animal</code></p>
 </blockquote>
 
@@ -876,6 +857,25 @@ class Rabbit extends Animal {
 
 var rabbit = new Rabbit('white rabbit');
 rabbit.run();
+</code></pre>
+
+</div>
+
+<blockquote>
+<p>Extend Core Object through prototype. Example 2. How could you make this work <code>[1,2,3,4,5].duplicator()</code> to return <code>[1,2,3,4,5,1,2,3,4,5]</code>?</p>
+</blockquote>
+
+<div class="hidden">
+<p><strong>Answer:</strong> We need to add a method in the prototype of Array object.</p>
+
+<pre><code class="language-js">// ES5
+Array.prototype.duplicator = function(){
+  return this.concat(this);
+}
+
+Array.prototype.duplicator = function() {
+  return [...this, ...this];
+} 
 </code></pre>
 
 </div>
@@ -976,10 +976,13 @@ var bob = Object.create(userB, { // object descriptor
 </blockquote>
 
 <div class="hidden">
-<p><strong>Answer:</strong>
-* <code>window.onload</code> is fired when all page is loaded, including all resources (images, styles, iframes)
-* <code>document.onload</code> is fired when DOM (DOM tree built from markup code within the document) is ready which without external content.
-* <code>DOMContentLoaded</code> means that DOM has already been built, we can use handlers or search through the nodes, but resources such as images, styles don&rsquo;t be loaded yet</p>
+<p><strong>Answer:</strong></p>
+
+<ul>
+<li><code>window.onload</code> is fired when all page is loaded, including all resources (images, styles, iframes)</li>
+<li><code>document.onload</code> is fired when DOM (DOM tree built from markup code within the document) is ready which without external content.</li>
+<li><code>DOMContentLoaded</code> means that DOM has already been built, we can use handlers or search through the nodes, but resources such as images, styles don&rsquo;t be loaded yet</li>
+</ul>
 
 </div>
 
@@ -1580,6 +1583,7 @@ xhr.send(body);
 </blockquote>
 
 <div class="hidden">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">Link</a></p>
 
 </div>
 
@@ -1946,8 +1950,10 @@ promise 6
 
 <p>To understand this you need to know how the event loop handles macrotasks and microtasks.</p>
 
-<p>macrotasks: <code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>, I/O, UI rendering
-microtasks: <code>process.nextTick</code>, <code>Promises</code>, <code>Object.observe</code>, <code>MutationObserver</code></p>
+<ul>
+<li>macrotasks: <code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>, I/O, UI rendering</li>
+<li>microtasks: <code>process.nextTick</code>, <code>Promises</code>, <code>Object.observe</code>, <code>MutationObserver</code></li>
+</ul>
 
 <p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/">A great post</a>.</p>
 
@@ -3254,6 +3260,8 @@ providers: [{ provide: AuthConfig, useValue: AUTH_CONFIG }] // app.constant() an
   }
 }
 </code></pre>
+
+<p><a href="https://stackoverflow.com/questions/34986922/define-global-constants-in-angular-2/40287063#40287063">More</a></p>
 
 </div>
 

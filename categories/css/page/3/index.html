@@ -18,7 +18,7 @@
 
 <meta name="description" content="">
 
-<title>Performance: JavaScript loops</title>
+<title>Css</title>
 <meta name="generator" content="Hugo 0.27.1" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
@@ -113,48 +113,80 @@
 </div>
 <div class="col-md-9 content">
 
-<h1>Performance: JavaScript loops</h1>
-<h4>Published 2014-08-06</h4>
 
 
 
-<article>
+<div class="articles-list">
     
-    <p>Is it faster to use the native forEach or just loop with for?</p>
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/post/2014/01/prevent-css-caching/">Prevent CSS Caching in Wordpress</a> - 2014-01-02</h3>
+        <p>If you update your WordPress theme’s style.css, you may have noticed that you have to “force-reload” your site in your browser to see the changes. This is because your browser keeps a copy of the CSS cached on your hard drive.</p>
 
 <p></p>
+    </article>
+    
+</div>
 
-<p>Types of methods for test:</p>
 
-<ul>
-<li>forEach</li>
-<li>for loop, simple</li>
-<li>for loop, cached length</li>
-<li>for loop, reverse</li>
-<li>for loop, cached length, callback</li>
-<li>$.each</li>
-<li>for &hellip; in</li>
-<li>for loop, reverse decrement</li>
-<li>other crazy loops</li>
+
+<ul class="pagination">
+    
+    <li>
+        <a href="../../../../categories/css/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    >
+    <a href="../../../../categories/css/page/2/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="../../../../categories/css/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="../../../../categories/css/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    class="active"><a href="../../../../categories/css/page/3/">3</a></li>
+    
+    
+    <li
+    class="disabled">
+    <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="../../../../categories/css/page/3/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
 </ul>
-
-<p>Is it faster to use the native forEach or just loop with for?</p>
-
-<p>Obviously, the most faster loop is <code>for</code> with <code>cashed array length</code>. But in my case it was ordinary for loop :)</p>
-
-<p>Also I was confused that Array.forEach method is slowest more than 89% from classic for loop&hellip;</p>
-
-<p>Screenshot from jsperf:</p>
-
-<p><img src="../../../../images/posts/Performance-JavaScript-loops/performaceArray.png" alt="" /></p>
-
-<p>SaveMyDay:</p>
-
-<ul>
-<li>on <a href="http://jsperf.com/for-vs-foreach/37">jsperf.com</a></li>
-</ul>
-</article>
-
 
 
 </div>

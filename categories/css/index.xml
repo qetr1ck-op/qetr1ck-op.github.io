@@ -6,10 +6,26 @@
     <description>Recent content in Css on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 07:47:10 +0300</lastBuildDate>
     
 	<atom:link href="https://qetr1ck-op.github.io/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flexbox Guides and Demo</title>
+      <link>https://qetr1ck-op.github.io/post/2017/10/flexbox-guide/</link>
+      <pubDate>Mon, 02 Oct 2017 07:47:10 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/post/2017/10/flexbox-guide/</guid>
+      <description>Vocabulary of useful material regarding flexbox model.
+Everything what you need to know about flexbox link
+ What is Flexbox? What is flex container and flex items? link
+ The Flex container properties link
+ flex-direction: row || column || row-reverse || column-reverse link
+ flex-wrap: wrap || nowrap || wrap-reverse link
+ flex-flow: shorthand offlex-direction&amp;amp;flex-wrap` link
+ justify-content: flex-start || flex-end || center || space-between || space-around link</description>
+    </item>
     
     <item>
       <title>React app with Express in production</title>
