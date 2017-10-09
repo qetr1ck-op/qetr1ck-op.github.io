@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://qetr1ck-op.github.io/post/2017/10/understanding-the-critical-rendering-path/</loc>
+    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/post/2017/10/flexbox-guide/</loc>
     <lastmod>2017-10-02T07:47:10+03:00</lastmod>
   </url>
@@ -544,7 +549,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/</loc>
-    <lastmod>2017-10-02T07:47:10+03:00</lastmod>
+    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -566,13 +571,13 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/categories/performance/</loc>
-    <lastmod>2017-05-14T23:49:01+03:00</lastmod>
+    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/post/</loc>
-    <lastmod>2017-10-02T07:47:10+03:00</lastmod>
+    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -18,7 +18,7 @@
 
 <meta name="description" content="">
 
-<title>What is Load Balancing?</title>
+<title>Understanding the critical rendering path</title>
 <meta name="generator" content="Hugo 0.27.1" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
@@ -113,35 +113,33 @@
 </div>
 <div class="col-md-9 content">
 
-<h1>What is Load Balancing?</h1>
-<h4>Published 2017-05-14</h4>
+<h1>Understanding the critical rendering path</h1>
+<h4>Published 2017-10-09</h4>
 
 
 
 <article>
     <nav id="TableOfContents">
 <ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#link">Link</a></li>
+<li><a href="#resources">Resources:</a></li>
 </ul>
 </nav>
-    <p>Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.</p>
+    <ul>
+<li>0-100ms - instant feel</li>
+<li>100-300ms - slight perceptible delay</li>
+<li>300-1000ms - loss of task focus, perceptible delay</li>
+<li>1s+ - mental context switch</li>
+<li>3s+ - user leaves</li>
+</ul>
 
 <p></p>
 
-<h1 id="summary">Summary</h1>
+<h1 id="resources">Resources:</h1>
 
 <ul>
-<li>Definition and why to use Load Balancer</li>
-<li>Load Balancing algorithm</li>
-<li>Session persistency</li>
-<li>Elastic/Dynamic configuration of Server Groups</li>
-<li>Hardware vs Software Load Balancing<br /></li>
+<li><a href="https://blog.stackpath.com/glossary/critical-rendering-path">What is Critical Rendering Path?</a></li>
+<li><a href="https://medium.com/@luisvieira_gmr/understanding-the-critical-rendering-path-rendering-pages-in-1-second-735c6e45b47a">Understanding the critical rendering path, rendering pages in 1 second</a></li>
 </ul>
-
-<h1 id="link">Link</h1>
-
-<p><a href="https://www.nginx.com/resources/glossary/load-balancing">official nginx resource</a></p>
 </article>
 
 

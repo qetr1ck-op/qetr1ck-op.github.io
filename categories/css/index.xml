@@ -17,14 +17,9 @@
       <pubDate>Mon, 02 Oct 2017 07:47:10 +0300</pubDate>
       
       <guid>https://qetr1ck-op.github.io/post/2017/10/flexbox-guide/</guid>
-      <description>Vocabulary of useful material regarding flexbox model.
-Everything what you need to know about flexbox link
- What is Flexbox? What is flex container and flex items? link
- The Flex container properties link
- flex-direction: row || column || row-reverse || column-reverse link
- flex-wrap: wrap || nowrap || wrap-reverse link
- flex-flow: shorthand offlex-direction&amp;amp;flex-wrap` link
- justify-content: flex-start || flex-end || center || space-between || space-around link</description>
+      <description>&lt;p&gt;Vocabulary of useful material regarding &lt;code&gt;flexbox&lt;/code&gt; model.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
