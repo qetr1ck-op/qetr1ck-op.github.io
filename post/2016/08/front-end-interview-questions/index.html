@@ -386,7 +386,7 @@ console.log( counter2() ); // ?
 
 <pre><code class="language-js">for(var i = 0; i &lt; 10; i++) {
   setTimeout(function() {
-    console.log(i);  
+    console.log(i);
   }, 0);
 }
 </code></pre>
@@ -418,7 +418,7 @@ for(var i = 0; i &lt; 10; i++) {
 // ES6
 for(let i = 0; i &lt; 10; i++) {
   setTimeout(() =&gt; {
-    console.log(i);  
+    console.log(i);
   }, 10);
 }
 </code></pre>
@@ -450,10 +450,10 @@ function isFooPassed(...params) {
 </blockquote>
 
 <div class="hidden">
-<pre><code class="language-js">Math.max(...arr);  
+<pre><code class="language-js">Math.max(...arr);
 
 //ES5 way
-//Math.max.apply(Math, arr);  
+//Math.max.apply(Math, arr);
 </code></pre>
 
 </div>
@@ -472,7 +472,7 @@ function log(){
   console.log.apply(console, args);
 }
 
-// ES6 
+// ES6
 function log(...params){
   console.log(['(app)', ...params]);
 }
@@ -559,7 +559,7 @@ function log(...params){
 <p>Also will work with <code>!</code> and <code>+</code> operators:</p>
 
 <pre><code class="language-javascript">+function() {
-  
+
 }();
 
 !function() {
@@ -624,7 +624,7 @@ function log(...params){
 
     for (var i = 0; i &lt; aProps.length; i++) {
         var propName = aProps[i];
-        
+
         if (a[propName] !== b[propName]) {
             return false;
         }
@@ -740,7 +740,7 @@ console.log(child.surname) // 'Winchester'
 
 <p><strong>Answer</strong></p>
 
-<pre><code class="language-js">// 1. 
+<pre><code class="language-js">// 1.
 Object.setPrototypeOf(child, parent);
 
 // 2.
@@ -765,9 +765,9 @@ const child = Object.assign({}, parent, child);
 
 <pre><code class="language-js">Date.prototype.nextDay = function () {
   return new Date(this.setDate(this.getDate() + 1));
-} 
+}
 
-const date = new Date(); 
+const date = new Date();
 date; //Fri May 16 2014 20:47:14 GMT-0500 (Central Daylight Time)
 date.nextDay();//Sat May 17 2014 20:47:14 GMT-0500 (Central Daylight Time)
 </code></pre>
@@ -875,7 +875,7 @@ Array.prototype.duplicator = function(){
 
 Array.prototype.duplicator = function() {
   return [...this, ...this];
-} 
+}
 </code></pre>
 
 </div>
@@ -1611,8 +1611,8 @@ xhr.send(body);
 <li>They allow you to compile code in the latest version into older versions of the language</li>
 <li>As browser support gets better, we’ll transpile ES2016 and ES2017 into ES6 and beyond</li>
 <li>We’ll need better source mapping functionality</li>
-<li>They’re the most reliable way to run ES6 source code in production today (although browsers get ES5)</li>
-<li>
+<li>They’re the most reliable way to run ES6 source code in production today (although browsers get ES5)
+*
 Use <code>babel</code> to transpile ES6 into ES5 for static build</li>
 </ul>
 
@@ -1899,11 +1899,11 @@ urls
 
 <pre><code class="language-js">console.log('script start')
 
-const interval = setInterval(() =&gt; {  
+const interval = setInterval(() =&gt; {
   console.log('setInterval')
 }, 0)
 
-setTimeout(() =&gt; {  
+setTimeout(() =&gt; {
   console.log('setTimeout 1')
   Promise.resolve().then(() =&gt; {
     console.log('promise 3')
@@ -1923,7 +1923,7 @@ setTimeout(() =&gt; {
   })
 }, 0)
 
-Promise.resolve().then(() =&gt; {  
+Promise.resolve().then(() =&gt; {
   console.log('promise 1')
 }).then(() =&gt; {
   console.log('promise 2')
@@ -1935,17 +1935,17 @@ console.log('script end')
 
 <pre><code class="language-js">script start
 script end
-promise 1  
-promise 2  
-setInterval  
-setTimeout 1  
-promise 3  
-promise 4  
-setInterval  
-setTimeout 2  
-setInterval  
-promise 5  
-promise 6  
+promise 1
+promise 2
+setInterval
+setTimeout 1
+promise 3
+promise 4
+setInterval
+setTimeout 2
+setInterval
+promise 5
+promise 6
 </code></pre>
 
 <p>To understand this you need to know how the event loop handles macrotasks and microtasks.</p>
@@ -2751,7 +2751,7 @@ $timeout.cancel(customTimeout);
 
 ngOnChanges(changes: SimpleChanges) {
 
-  // You can also use categoryId.previousValue and 
+  // You can also use categoryId.previousValue and
   // categoryId.firstChange for comparing old and new values
   this.doSomething(changes.categoryId.currentValue);
 
@@ -2762,11 +2762,11 @@ ngOnChanges(changes: SimpleChanges) {
 <li>Alternately, you can also use an input property <code>setter</code> as follows:</li>
 </ul>
 
-<pre><code class="language-js">private _name = '';
- 
+<pre><code class="language-js">private entityName = '';
+
 @Input()
 set name(name: string) {
-  this._name = (name &amp;&amp; name.trim()) || '&lt;no name set&gt;';
+  this.entityName = (name &amp;&amp; name.trim()) || '&lt;no name set&gt;';
 }
 </code></pre>
 
@@ -2829,8 +2829,8 @@ set name(name: string) {
 <p><code>declarations</code> and <code>providers</code> not having the same scope / visibility:</p>
 
 <ul>
-<li><code>declarations</code> / <code>components</code> / <code>pipes</code> are in local scope (private visibility)</li>
-<li><code>providers</code> / <code>services</code>  are in global scope (public visibility).</li>
+<li><code>declarations</code>:  <code>components</code> / <code>directives</code> / <code>pipes</code> are in local scope (private visibility)</li>
+<li><code>providers</code>: <code>services</code> are in global scope (public visibility).</li>
 </ul>
 
 <p>It means the components you declared are only usable in the current module. If you need to use them outside, in other modules, you’ll have to export them :</p>
@@ -3045,30 +3045,32 @@ ngOnInit () {
 <ol>
 <li>Installing <code>npm i shave</code></li>
 <li><code>cannot find module shave</code> -&gt; You are getting this error because the shave library doesn’t have declaration file and Typescript doesn’t know what shave is.</li>
-<li>Create TS type definitions:
-```js
-// shave.d.ts
-declare module “shave” {</li>
+<li>Create TS type definitions:</li>
 </ol>
 
-<p>export interface IShaveOptions {
-   classname? : string,
-   character? : string
- }</p>
+<pre><code class="language-js">// shave.d.ts
+declare module “shave” {
 
-<p>export default function shave( selector : string|Node, maxHeight : number, options? : IShaveOptions ) : void;</p>
+export interface IShaveOptions {
+  classname? : string,
+  character? : string
+}
 
-<p>}</p>
+export default function shave( selector : string|Node, maxHeight : number, options? : IShaveOptions ) : void;
 
-<pre><code>4. Add to tsconfig.json:
-
-```js
-&quot;files&quot;: [&quot;typings/shave.d.ts&quot;]
+}
 </code></pre>
 
-<ol>
+<ul>
+<li>Add to <code>tsconfig.json</code>:</li>
+</ul>
+
+<pre><code class="language-js">&quot;files&quot;: [&quot;typings/shave.d.ts&quot;]
+</code></pre>
+
+<ul>
 <li>Import and use</li>
-</ol>
+</ul>
 
 </div>
 
@@ -3228,7 +3230,7 @@ export class AppModule { }
 <li>If you want to alias an old provider to be handled by a new provider, you can do so with <code>useExisting</code>. This would be useful if, for example, a component needs to be still be using the old provider, but the logic should still be handled by the new provider:</li>
 </ul>
 
-<pre><code class="language-js">providers: [{ provide: OldService, useExisting: NewService }] 
+<pre><code class="language-js">providers: [{ provide: OldService, useExisting: NewService }]
 </code></pre>
 
 <ul>
@@ -3248,7 +3250,7 @@ providers: [{ provide: AuthConfig, useValue: AUTH_CONFIG }] // app.constant() an
 </ul>
 
 <pre><code class="language-js">// app.factory() in ng1
-{ 
+{
   provide: 'CustomDependency',
   deps: [A, B]
   useFactory: (a:A, b:B) =&gt; {
@@ -3301,7 +3303,7 @@ trackByHeroes(index: number, hero: Hero): number { return hero.id; }
 <pre><code class="language-js">// antipattern
 constructor(element: ElementRef) { ... }
 
-ngAfterViewInit() { 
+ngAfterViewInit() {
   this.element.nativeElement.querySelector('#someElementId')
 }
 </code></pre>
@@ -3319,28 +3321,28 @@ ngAfterViewInit() {
 </code></pre>
 
 <pre><code class="language-js">import { Directive, ElementRef, HostListener, Input } from '@angular/core';
- 
+
 @Directive({
   selector: '[myHighlight]'
 })
 export class HighlightDirective {
- 
+
   @Input('myHighlight') highlightColor: string;
- 
+
   private el: HTMLElement;
- 
+
   constructor(el: ElementRef) {
     this.el = el.nativeElement;
   }
- 
+
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.highlightColor || 'cyan');
   }
- 
+
   @HostListener('mouseleave') onMouseLeave() {
     this.highlight(null);
   }
- 
+
   private highlight(color: string) {
     this.el.style.backgroundColor = color;
   }
@@ -3466,6 +3468,148 @@ export class MasterPage {
 </ol>
 
 <p><a href="https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2">How to implement</a></p>
+
+</div>
+
+<blockquote>
+<p>How to create a Custom Validator for Reactive Form?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">// url.validator.ts
+import { AbstractControl } from '@angular/forms';
+
+export function ValidateUrl(control: AbstractControl) {
+  if (!control.value.startsWith('https') || !control.value.includes('.io')) {
+    return { validUrl: true };
+  }
+  return null;
+}
+</code></pre>
+
+<pre><code class="language-js">// app.component.ts
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidateUrl } from './validators/url.validator';
+
+@Component({
+  // ...
+})
+export class AppComponent implements OnInit {
+  myForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.myForm = this.fb.group({
+      userName: ['', Validators.required],
+      websiteUrl: ['', [Validators.required, ValidateUrl]],
+    });
+  }
+}
+</code></pre>
+
+<pre><code class="language-html">&lt;!--app.html--&gt;
+&lt;div
+*ngIf=&quot;myForm.get('websiteUrl').errors &amp;&amp;
+      myForm.get('websiteUrl').dirty &amp;&amp;
+      myForm.get('websiteUrl').errors.validUrl&quot;&gt;
+  Oops, only urls served over https and only from the .io top-level domain are accepted.
+  Talk about restrictions!
+&lt;/div&gt;
+</code></pre>
+
+<p><a href="https://alligator.io/angular/reactive-forms-custom-validator/">More</a></p>
+
+</div>
+
+<blockquote>
+<p>How to create a Custom Validator for Template-Driven Form?</p>
+</blockquote>
+
+<div class="hidden">
+<p>In template-driven forms, you don&rsquo;t have direct access to the <code>FormControl</code> instance, so you can&rsquo;t pass the validator in like you can for reactive forms. Instead, you need to add a directive to the template.</p>
+
+<pre><code class="language-js">// url-validator.directive.ts
+import { AbstractControl } from '@angular/forms';
+
+export function ValidateUrl(control: AbstractControl) {
+  if (!control.value.startsWith('https') || !control.value.includes('.io')) {
+    return { validUrl: true };
+  }
+  return null;
+}
+
+@Directive({
+  selector: '[urlValidator]',
+  providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
+})
+export class ForbiddenValidatorDirective implements Validator {
+  validate(control: AbstractControl) {
+    if (!control.value.startsWith('https') || !control.value.includes('.io')) {
+      return { validUrl: true };
+    }
+    return null;
+  }
+}
+</code></pre>
+
+<pre><code class="language-html">&lt;!--app.html---&gt;
+&lt;input id=&quot;name&quot; name=&quot;name&quot; class=&quot;form-control&quot;
+       required
+       minlength=&quot;4&quot;
+       urlValidator
+       [(ngModel)]=&quot;hero.name&quot; #name=&quot;ngModel&quot; &gt;
+</code></pre>
+
+<p><a href="https://angular.io/guide/form-validation#adding-to-template-driven-forms">More</a></p>
+
+</div>
+
+<blockquote>
+<p>How to create a Custom Async Validator?</p>
+</blockquote>
+
+<div class="hidden">
+<pre><code class="language-js">import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl
+} from '@angular/forms';
+
+import { SignupService } from './signup.service';
+
+@Component({ ... })
+export class AppComponent implements OnInit {
+  myForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private signupService: SignupService
+  ) {}
+
+  ngOnInit() {
+    this.myForm = this.fb.group({
+      name: ['', Validators.required],
+      email: [
+        '',
+        [Validators.required, Validators.email],
+        this.validateEmailNotTaken.bind(this)
+      ]
+    });
+  }
+
+  validateEmailNotTaken(control: AbstractControl) {
+    return this.signupService.checkEmailNotTaken(control.value).map(res =&gt; {
+      return res ? null : { emailTaken: true };
+    });
+  }
+}
+</code></pre>
+
+<p><a href="https://alligator.io/angular/async-validators/">More</a></p>
 
 </div>
 
